@@ -13,7 +13,7 @@ package com.playfab.models
 			if(data == null)
 				return;
 
-			Data = {}; for(var Data_iter:String in data.Data) { Data[Data_iter] = new UserDataRecord(data.Data[Data_iter]); }
+			if(data.Data) { Data = {}; for(var Data_iter:String in data.Data) { Data[Data_iter] = new UserDataRecord(data.Data[Data_iter]); }}
 
 		}
 	}

@@ -14,7 +14,7 @@ package com.playfab.models
 			if(data == null)
 				return;
 
-			FacebookIDs = Vector.<String>(data.FacebookIDs);
+			FacebookIDs = data.FacebookIDs ? Vector.<String>(data.FacebookIDs) : null;
 			PublisherId = data.PublisherId;
 
 		}

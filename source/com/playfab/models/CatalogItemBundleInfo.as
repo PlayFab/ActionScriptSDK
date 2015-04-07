@@ -15,8 +15,8 @@ package com.playfab.models
 			if(data == null)
 				return;
 
-			BundledItems = Vector.<String>(data.BundledItems);
-			BundledResultTables = Vector.<String>(data.BundledResultTables);
+			BundledItems = data.BundledItems ? Vector.<String>(data.BundledItems) : null;
+			BundledResultTables = data.BundledResultTables ? Vector.<String>(data.BundledResultTables) : null;
 			BundledVirtualCurrencies = data.BundledVirtualCurrencies;
 
 		}

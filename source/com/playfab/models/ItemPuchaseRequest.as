@@ -19,7 +19,7 @@ package com.playfab.models
 			ItemId = data.ItemId;
 			Quantity = data.Quantity;
 			Annotation = data.Annotation;
-			UpgradeFromItems = Vector.<String>(data.UpgradeFromItems);
+			UpgradeFromItems = data.UpgradeFromItems ? Vector.<String>(data.UpgradeFromItems) : null;
 
 		}
 	}

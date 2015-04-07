@@ -25,7 +25,7 @@ package com.playfab.models
 			BuildVersion = data.BuildVersion;
 			GameMode = data.GameMode;
 			MaxPlayers = data.MaxPlayers;
-			PlayerUserIds = Vector.<String>(data.PlayerUserIds);
+			PlayerUserIds = data.PlayerUserIds ? Vector.<String>(data.PlayerUserIds) : null;
 			RunTime = data.RunTime;
 			GameServerState = data.GameServerState;
 

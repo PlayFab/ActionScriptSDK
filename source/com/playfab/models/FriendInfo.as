@@ -23,7 +23,7 @@ package com.playfab.models
 			FriendPlayFabId = data.FriendPlayFabId;
 			Username = data.Username;
 			TitleDisplayName = data.TitleDisplayName;
-			Tags = Vector.<String>(data.Tags);
+			Tags = data.Tags ? Vector.<String>(data.Tags) : null;
 			CurrentMatchmakerLobbyId = data.CurrentMatchmakerLobbyId;
 			FacebookInfo = new UserFacebookInfo(data.FacebookInfo);
 			SteamInfo = new UserSteamInfo(data.SteamInfo);

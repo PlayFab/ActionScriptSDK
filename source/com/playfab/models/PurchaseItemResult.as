@@ -13,7 +13,7 @@ package com.playfab.models
 			if(data == null)
 				return;
 
-			Items = new Vector.<PurchasedItem>(); for(var Items_iter:int in data.Items) { Items[Items_iter] = new PurchasedItem(data.Items[Items_iter]); }
+			if(data.Items) { Items = new Vector.<PurchasedItem>(); for(var Items_iter:int in data.Items) { Items[Items_iter] = new PurchasedItem(data.Items[Items_iter]); }}
 
 		}
 	}

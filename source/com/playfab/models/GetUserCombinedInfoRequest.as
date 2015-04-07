@@ -25,9 +25,9 @@ package com.playfab.models
 			GetInventory = data.GetInventory;
 			GetVirtualCurrency = data.GetVirtualCurrency;
 			GetUserData = data.GetUserData;
-			UserDataKeys = Vector.<String>(data.UserDataKeys);
+			UserDataKeys = data.UserDataKeys ? Vector.<String>(data.UserDataKeys) : null;
 			GetReadOnlyData = data.GetReadOnlyData;
-			ReadOnlyDataKeys = Vector.<String>(data.ReadOnlyDataKeys);
+			ReadOnlyDataKeys = data.ReadOnlyDataKeys ? Vector.<String>(data.ReadOnlyDataKeys) : null;
 
 		}
 	}

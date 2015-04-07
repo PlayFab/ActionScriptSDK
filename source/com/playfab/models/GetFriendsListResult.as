@@ -13,7 +13,7 @@ package com.playfab.models
 			if(data == null)
 				return;
 
-			Friends = new Vector.<FriendInfo>(); for(var Friends_iter:int in data.Friends) { Friends[Friends_iter] = new FriendInfo(data.Friends[Friends_iter]); }
+			if(data.Friends) { Friends = new Vector.<FriendInfo>(); for(var Friends_iter:int in data.Friends) { Friends[Friends_iter] = new FriendInfo(data.Friends[Friends_iter]); }}
 
 		}
 	}

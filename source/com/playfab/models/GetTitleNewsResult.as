@@ -13,7 +13,7 @@ package com.playfab.models
 			if(data == null)
 				return;
 
-			News = new Vector.<TitleNewsItem>(); for(var News_iter:int in data.News) { News[News_iter] = new TitleNewsItem(data.News[News_iter]); }
+			if(data.News) { News = new Vector.<TitleNewsItem>(); for(var News_iter:int in data.News) { News[News_iter] = new TitleNewsItem(data.News[News_iter]); }}
 
 		}
 	}

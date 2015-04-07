@@ -17,7 +17,7 @@ package com.playfab.models
 
 			PlayFabId = data.PlayFabId;
 			CharacterId = data.CharacterId;
-			Keys = Vector.<String>(data.Keys);
+			Keys = data.Keys ? Vector.<String>(data.Keys) : null;
 
 		}
 	}

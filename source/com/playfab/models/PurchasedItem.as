@@ -25,7 +25,7 @@ package com.playfab.models
 			DisplayName = data.DisplayName;
 			UnitCurrency = data.UnitCurrency;
 			UnitPrice = data.UnitPrice;
-			BundleContents = Vector.<String>(data.BundleContents);
+			BundleContents = data.BundleContents ? Vector.<String>(data.BundleContents) : null;
 
 		}
 	}

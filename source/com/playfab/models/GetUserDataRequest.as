@@ -14,7 +14,7 @@ package com.playfab.models
 			if(data == null)
 				return;
 
-			Keys = Vector.<String>(data.Keys);
+			Keys = data.Keys ? Vector.<String>(data.Keys) : null;
 			PlayFabId = data.PlayFabId;
 
 		}

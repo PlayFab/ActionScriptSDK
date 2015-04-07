@@ -32,9 +32,9 @@ package com.playfab.models
 			Description = data.Description;
 			VirtualCurrencyPrices = data.VirtualCurrencyPrices;
 			RealCurrencyPrices = data.RealCurrencyPrices;
-			Tags = Vector.<String>(data.Tags);
+			Tags = data.Tags ? Vector.<String>(data.Tags) : null;
 			CustomData = data.CustomData;
-			GrantedIfPlayerHas = Vector.<String>(data.GrantedIfPlayerHas);
+			GrantedIfPlayerHas = data.GrantedIfPlayerHas ? Vector.<String>(data.GrantedIfPlayerHas) : null;
 			Consumable = new CatalogItemConsumableInfo(data.Consumable);
 			Container = new CatalogItemContainerInfo(data.Container);
 			Bundle = new CatalogItemBundleInfo(data.Bundle);

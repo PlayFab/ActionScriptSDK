@@ -20,10 +20,10 @@ package com.playfab.models
 
 			PlayFabId = data.PlayFabId;
 			AccountInfo = new UserAccountInfo(data.AccountInfo);
-			Inventory = new Vector.<ItemInstance>(); for(var Inventory_iter:int in data.Inventory) { Inventory[Inventory_iter] = new ItemInstance(data.Inventory[Inventory_iter]); }
+			if(data.Inventory) { Inventory = new Vector.<ItemInstance>(); for(var Inventory_iter:int in data.Inventory) { Inventory[Inventory_iter] = new ItemInstance(data.Inventory[Inventory_iter]); }}
 			VirtualCurrency = data.VirtualCurrency;
-			Data = {}; for(var Data_iter:String in data.Data) { Data[Data_iter] = new UserDataRecord(data.Data[Data_iter]); }
-			ReadOnlyData = {}; for(var ReadOnlyData_iter:String in data.ReadOnlyData) { ReadOnlyData[ReadOnlyData_iter] = new UserDataRecord(data.ReadOnlyData[ReadOnlyData_iter]); }
+			if(data.Data) { Data = {}; for(var Data_iter:String in data.Data) { Data[Data_iter] = new UserDataRecord(data.Data[Data_iter]); }}
+			if(data.ReadOnlyData) { ReadOnlyData = {}; for(var ReadOnlyData_iter:String in data.ReadOnlyData) { ReadOnlyData[ReadOnlyData_iter] = new UserDataRecord(data.ReadOnlyData[ReadOnlyData_iter]); }}
 
 		}
 	}

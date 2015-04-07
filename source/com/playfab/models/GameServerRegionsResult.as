@@ -13,7 +13,7 @@ package com.playfab.models
 			if(data == null)
 				return;
 
-			Regions = new Vector.<RegionInfo>(); for(var Regions_iter:int in data.Regions) { Regions[Regions_iter] = new RegionInfo(data.Regions[Regions_iter]); }
+			if(data.Regions) { Regions = new Vector.<RegionInfo>(); for(var Regions_iter:int in data.Regions) { Regions[Regions_iter] = new RegionInfo(data.Regions[Regions_iter]); }}
 
 		}
 	}

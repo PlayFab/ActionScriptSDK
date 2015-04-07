@@ -15,7 +15,7 @@ package com.playfab.models
 				return;
 
 			SharedGroupId = data.SharedGroupId;
-			PlayFabIds = Vector.<String>(data.PlayFabIds);
+			PlayFabIds = data.PlayFabIds ? Vector.<String>(data.PlayFabIds) : null;
 
 		}
 	}

@@ -13,7 +13,7 @@ package com.playfab.models
 			if(data == null)
 				return;
 
-			GrantedItems = new Vector.<ItemInstance>(); for(var GrantedItems_iter:int in data.GrantedItems) { GrantedItems[GrantedItems_iter] = new ItemInstance(data.GrantedItems[GrantedItems_iter]); }
+			if(data.GrantedItems) { GrantedItems = new Vector.<ItemInstance>(); for(var GrantedItems_iter:int in data.GrantedItems) { GrantedItems[GrantedItems_iter] = new ItemInstance(data.GrantedItems[GrantedItems_iter]); }}
 
 		}
 	}

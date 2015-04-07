@@ -14,8 +14,8 @@ package com.playfab.models
 			if(data == null)
 				return;
 
-			Data = {}; for(var Data_iter:String in data.Data) { Data[Data_iter] = new SharedGroupDataRecord(data.Data[Data_iter]); }
-			Members = Vector.<String>(data.Members);
+			if(data.Data) { Data = {}; for(var Data_iter:String in data.Data) { Data[Data_iter] = new SharedGroupDataRecord(data.Data[Data_iter]); }}
+			Members = data.Members ? Vector.<String>(data.Members) : null;
 
 		}
 	}

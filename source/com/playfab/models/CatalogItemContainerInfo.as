@@ -17,8 +17,8 @@ package com.playfab.models
 				return;
 
 			KeyItemId = data.KeyItemId;
-			ItemContents = Vector.<String>(data.ItemContents);
-			ResultTableContents = Vector.<String>(data.ResultTableContents);
+			ItemContents = data.ItemContents ? Vector.<String>(data.ItemContents) : null;
+			ResultTableContents = data.ResultTableContents ? Vector.<String>(data.ResultTableContents) : null;
 			VirtualCurrencyContents = data.VirtualCurrencyContents;
 
 		}

@@ -16,7 +16,7 @@ package com.playfab.models
 				return;
 
 			SharedGroupId = data.SharedGroupId;
-			Keys = Vector.<String>(data.Keys);
+			Keys = data.Keys ? Vector.<String>(data.Keys) : null;
 			GetMembers = data.GetMembers;
 
 		}

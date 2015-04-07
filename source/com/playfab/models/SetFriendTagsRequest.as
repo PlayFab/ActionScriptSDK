@@ -15,7 +15,7 @@ package com.playfab.models
 				return;
 
 			FriendPlayFabId = data.FriendPlayFabId;
-			Tags = Vector.<String>(data.Tags);
+			Tags = data.Tags ? Vector.<String>(data.Tags) : null;
 
 		}
 	}
