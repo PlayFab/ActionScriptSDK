@@ -1,12 +1,15 @@
 package
 {
 
-	import flash.display.Sprite;
-
 	import com.playfab.PlayFabClientAPI;
 	import com.playfab.PlayFabError;
 	import com.playfab.PlayFabSettings;
-	import com.playfab.models.*;
+	import com.playfab.models.GetSharedGroupDataRequest;
+	import com.playfab.models.GetSharedGroupDataResult;
+	import com.playfab.models.LoginResult;
+	import com.playfab.models.LoginWithPlayFabRequest;
+	
+	import flash.display.Sprite;
 	
 	public class SDKTest extends Sprite
 	{
@@ -15,7 +18,7 @@ package
 			PlayFabSettings.TitleId = "F00";
 			PlayFabSettings.GlobalErrorHandler = onPlayFabError;
 			
-
+			
 			PlayFabClientAPI.LoginWithPlayFab(new LoginWithPlayFabRequest(
 				{
 					Username: "SDKTestUser1",
