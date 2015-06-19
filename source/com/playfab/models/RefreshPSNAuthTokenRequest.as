@@ -6,6 +6,8 @@ package com.playfab.models
 	public class RefreshPSNAuthTokenRequest
 	{
 		public var AuthCode:String;
+		public var RedirectUri:String;
+		public var IssuerId:*;
 
 
 		public function RefreshPSNAuthTokenRequest(data:Object=null)
@@ -14,6 +16,8 @@ package com.playfab.models
 				return;
 
 			AuthCode = data.AuthCode;
+			RedirectUri = data.RedirectUri;
+			IssuerId = data.IssuerId;
 
 		}
 	}

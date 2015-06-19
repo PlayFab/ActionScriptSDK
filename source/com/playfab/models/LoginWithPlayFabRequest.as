@@ -8,7 +8,6 @@ package com.playfab.models
 		public var TitleId:String;
 		public var Username:String;
 		public var Password:String;
-		public var PublisherId:String;
 
 
 		public function LoginWithPlayFabRequest(data:Object=null)
@@ -19,7 +18,6 @@ package com.playfab.models
 			TitleId = data.TitleId;
 			Username = data.Username;
 			Password = data.Password;
-			PublisherId = data.PublisherId;
 
 		}
 	}

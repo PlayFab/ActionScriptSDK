@@ -6,6 +6,7 @@ package com.playfab.models
 	public class GetFriendsListRequest
 	{
 		public var IncludeSteamFriends:*;
+		public var IncludeFacebookFriends:*;
 
 
 		public function GetFriendsListRequest(data:Object=null)
@@ -14,6 +15,7 @@ package com.playfab.models
 				return;
 
 			IncludeSteamFriends = data.IncludeSteamFriends;
+			IncludeFacebookFriends = data.IncludeFacebookFriends;
 
 		}
 	}

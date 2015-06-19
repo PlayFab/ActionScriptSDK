@@ -3,12 +3,12 @@ package com.playfab.models
 {
 	
 
-	public class LinkFacebookAccountRequest
+	public class LinkGoogleAccountRequest
 	{
 		public var AccessToken:String;
 
 
-		public function LinkFacebookAccountRequest(data:Object=null)
+		public function LinkGoogleAccountRequest(data:Object=null)
 		{
 			if(data == null)
 				return;

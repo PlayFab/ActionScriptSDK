@@ -141,6 +141,20 @@ package com.playfab
 		public static const PhotonNotEnabledForTitle:int = 1139;
 		public static const PhotonApplicationNotFound:int = 1140;
 		public static const PhotonApplicationNotAssociatedWithTitle:int = 1141;
+		public static const InvalidEmailOrPassword:int = 1142;
+		public static const FacebookAPIError:int = 1143;
+		public static const InvalidContentType:int = 1144;
+		public static const KeyLengthExceeded:int = 1145;
+		public static const DataLengthExceeded:int = 1146;
+		public static const TooManyKeys:int = 1147;
+		public static const FreeTierCannotHaveVirtualCurrency:int = 1148;
+		public static const MissingAmazonSharedKey:int = 1149;
+		public static const AmazonValidationError:int = 1150;
+		public static const InvalidPSNIssuerId:int = 1151;
+		public static const PSNInaccessible:int = 1152;
+		public static const ExpiredAuthToken:int = 1153;
+		public static const FailedToGetEntitlements:int = 1154;
+		public static const FailedToConsumeEntitlement:int = 1155;
 
 
 		public function PlayFabError(data:Object=null)

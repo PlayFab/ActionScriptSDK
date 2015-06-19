@@ -5,7 +5,6 @@ package com.playfab.models
 
 	public class GetCharacterLeaderboardRequest
 	{
-		public var CharacterId:String;
 		public var CharacterType:String;
 		public var StatisticName:String;
 		public var StartPosition:int;
@@ -17,7 +16,6 @@ package com.playfab.models
 			if(data == null)
 				return;
 
-			CharacterId = data.CharacterId;
 			CharacterType = data.CharacterType;
 			StatisticName = data.StatisticName;
 			StartPosition = data.StartPosition;

@@ -16,6 +16,8 @@ package com.playfab.models
 		public static const Revoked:String = "Revoked";
 		public static const TradePending:String = "TradePending";
 		public static const Upgraded:String = "Upgraded";
+		public static const StackPending:String = "StackPending";
+		public static const Stacked:String = "Stacked";
 		public static const Other:String = "Other";
 		public static const Failed:String = "Failed";
 

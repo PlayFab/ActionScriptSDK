@@ -7,6 +7,8 @@ package com.playfab.models
 	{
 		public var Region:String;
 		public var BuildVersion:String;
+		public var GameMode:String;
+		public var StatisticName:String;
 
 
 		public function CurrentGamesRequest(data:Object=null)
@@ -16,6 +18,8 @@ package com.playfab.models
 
 			Region = data.Region;
 			BuildVersion = data.BuildVersion;
+			GameMode = data.GameMode;
+			StatisticName = data.StatisticName;
 
 		}
 	}
