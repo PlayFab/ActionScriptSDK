@@ -15,6 +15,7 @@ package com.playfab.models
 		public static const FailedByUber:String = "FailedByUber";
 		public static const Revoked:String = "Revoked";
 		public static const TradePending:String = "TradePending";
+		public static const Traded:String = "Traded";
 		public static const Upgraded:String = "Upgraded";
 		public static const StackPending:String = "StackPending";
 		public static const Stacked:String = "Stacked";

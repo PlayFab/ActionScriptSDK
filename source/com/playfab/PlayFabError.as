@@ -155,6 +155,26 @@ package com.playfab
 		public static const ExpiredAuthToken:int = 1153;
 		public static const FailedToGetEntitlements:int = 1154;
 		public static const FailedToConsumeEntitlement:int = 1155;
+		public static const TradeAcceptingUserNotAllowed:int = 1156;
+		public static const TradeInventoryItemIsAssignedToCharacter:int = 1157;
+		public static const TradeInventoryItemIsBundle:int = 1158;
+		public static const TradeStatusNotValidForCancelling:int = 1159;
+		public static const TradeStatusNotValidForAccepting:int = 1160;
+		public static const TradeDoesNotExist:int = 1161;
+		public static const TradeCancelled:int = 1162;
+		public static const TradeAlreadyFilled:int = 1163;
+		public static const TradeWaitForStatusTimeout:int = 1164;
+		public static const TradeInventoryItemExpired:int = 1165;
+		public static const TradeMissingOfferedAndAcceptedItems:int = 1166;
+		public static const TradeAcceptedItemIsBundle:int = 1167;
+		public static const TradeAcceptedItemIsStackable:int = 1168;
+		public static const TradeInventoryItemInvalidStatus:int = 1169;
+		public static const TradeAcceptedCatalogItemInvalid:int = 1170;
+		public static const TradeAllowedUsersInvalid:int = 1171;
+		public static const TradeInventoryItemDoesNotExist:int = 1172;
+		public static const TradeInventoryItemIsConsumed:int = 1173;
+		public static const TradeInventoryItemIsStackable:int = 1174;
+		public static const TradeAcceptedItemsMismatch:int = 1175;
 
 
 		public function PlayFabError(data:Object=null)
