@@ -5,7 +5,9 @@ package com.playfab.models
 
 	public class ModifyUserVirtualCurrencyResult
 	{
+		public var PlayFabId:String;
 		public var VirtualCurrency:String;
+		public var BalanceChange:int;
 		public var Balance:int;
 
 
@@ -14,7 +16,9 @@ package com.playfab.models
 			if(data == null)
 				return;
 
+			PlayFabId = data.PlayFabId;
 			VirtualCurrency = data.VirtualCurrency;
+			BalanceChange = data.BalanceChange;
 			Balance = data.Balance;
 
 		}

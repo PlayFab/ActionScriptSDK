@@ -23,7 +23,7 @@ package com.playfab.models
 
 			PlayFabId = data.PlayFabId;
 			AccountInfo = new UserAccountInfo(data.AccountInfo);
-			if(data.Inventory) { Inventory = new Vector.<ItemInstance>(); for(var Inventory_iter:int in data.Inventory) { Inventory[Inventory_iter] = new ItemInstance(data.Inventory[Inventory_iter]); }}
+			if(data.Inventory) { Inventory = new Vector.<ItemInstance>(); for(var Inventory_iter:int = 0; Inventory_iter < data.Inventory.Length; Inventory_iter++) { Inventory[Inventory_iter] = new ItemInstance(data.Inventory[Inventory_iter]); }}
 			VirtualCurrency = data.VirtualCurrency;
 			if(data.VirtualCurrencyRechargeTimes) { VirtualCurrencyRechargeTimes = {}; for(var VirtualCurrencyRechargeTimes_iter:String in data.VirtualCurrencyRechargeTimes) { VirtualCurrencyRechargeTimes[VirtualCurrencyRechargeTimes_iter] = new VirtualCurrencyRechargeTime(data.VirtualCurrencyRechargeTimes[VirtualCurrencyRechargeTimes_iter]); }}
 			if(data.Data) { Data = {}; for(var Data_iter:String in data.Data) { Data[Data_iter] = new UserDataRecord(data.Data[Data_iter]); }}

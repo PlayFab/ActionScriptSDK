@@ -7,6 +7,7 @@ package com.playfab.models
 	{
 		public var Keys:Vector.<String>;
 		public var PlayFabId:String;
+		public var IfChangedFromDataVersion:*;
 
 
 		public function GetUserDataRequest(data:Object=null)
@@ -16,6 +17,7 @@ package com.playfab.models
 
 			Keys = data.Keys ? Vector.<String>(data.Keys) : null;
 			PlayFabId = data.PlayFabId;
+			IfChangedFromDataVersion = data.IfChangedFromDataVersion;
 
 		}
 	}

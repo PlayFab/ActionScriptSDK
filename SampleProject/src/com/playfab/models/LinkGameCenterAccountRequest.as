@@ -6,7 +6,6 @@ package com.playfab.models
 	public class LinkGameCenterAccountRequest
 	{
 		public var GameCenterId:String;
-		public var PublisherId:String;
 
 
 		public function LinkGameCenterAccountRequest(data:Object=null)
@@ -15,7 +14,6 @@ package com.playfab.models
 				return;
 
 			GameCenterId = data.GameCenterId;
-			PublisherId = data.PublisherId;
 
 		}
 	}

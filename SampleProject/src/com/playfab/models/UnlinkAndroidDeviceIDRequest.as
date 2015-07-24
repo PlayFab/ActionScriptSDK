@@ -5,6 +5,7 @@ package com.playfab.models
 
 	public class UnlinkAndroidDeviceIDRequest
 	{
+		public var AndroidDeviceId:String;
 
 
 		public function UnlinkAndroidDeviceIDRequest(data:Object=null)
@@ -12,6 +13,7 @@ package com.playfab.models
 			if(data == null)
 				return;
 
+			AndroidDeviceId = data.AndroidDeviceId;
 
 		}
 	}

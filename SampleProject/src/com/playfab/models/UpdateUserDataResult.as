@@ -5,6 +5,7 @@ package com.playfab.models
 
 	public class UpdateUserDataResult
 	{
+		public var DataVersion:uint;
 
 
 		public function UpdateUserDataResult(data:Object=null)
@@ -12,6 +13,7 @@ package com.playfab.models
 			if(data == null)
 				return;
 
+			DataVersion = data.DataVersion;
 
 		}
 	}

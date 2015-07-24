@@ -15,7 +15,7 @@ package com.playfab.models
 			if(data == null)
 				return;
 
-			if(data.Games) { Games = new Vector.<GameInfo>(); for(var Games_iter:int in data.Games) { Games[Games_iter] = new GameInfo(data.Games[Games_iter]); }}
+			if(data.Games) { Games = new Vector.<GameInfo>(); for(var Games_iter:int = 0; Games_iter < data.Games.Length; Games_iter++) { Games[Games_iter] = new GameInfo(data.Games[Games_iter]); }}
 			PlayerCount = data.PlayerCount;
 			GameCount = data.GameCount;
 

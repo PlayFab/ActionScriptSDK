@@ -9,7 +9,6 @@ package com.playfab.models
 		public var FriendUsername:String;
 		public var FriendEmail:String;
 		public var FriendTitleDisplayName:String;
-		public var PublisherId:String;
 
 
 		public function AddFriendRequest(data:Object=null)
@@ -21,7 +20,6 @@ package com.playfab.models
 			FriendUsername = data.FriendUsername;
 			FriendEmail = data.FriendEmail;
 			FriendTitleDisplayName = data.FriendTitleDisplayName;
-			PublisherId = data.PublisherId;
 
 		}
 	}

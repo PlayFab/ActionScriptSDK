@@ -10,7 +10,6 @@ package com.playfab.models
 		public var OS:String;
 		public var DeviceModel:String;
 		public var CreateAccount:*;
-		public var PublisherId:String;
 
 
 		public function LoginWithIOSDeviceIDRequest(data:Object=null)
@@ -23,7 +22,6 @@ package com.playfab.models
 			OS = data.OS;
 			DeviceModel = data.DeviceModel;
 			CreateAccount = data.CreateAccount;
-			PublisherId = data.PublisherId;
 
 		}
 	}

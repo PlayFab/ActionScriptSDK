@@ -10,7 +10,6 @@ package com.playfab.models
 		public var Email:String;
 		public var Password:String;
 		public var Origination:String;
-		public var PublisherId:String;
 
 
 		public function RegisterPlayFabUserRequest(data:Object=null)
@@ -23,7 +22,6 @@ package com.playfab.models
 			Email = data.Email;
 			Password = data.Password;
 			Origination = data.Origination;
-			PublisherId = data.PublisherId;
 
 		}
 	}

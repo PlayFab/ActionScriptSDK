@@ -17,8 +17,8 @@ package com.playfab.models
 				return;
 
 			OrderId = data.OrderId;
-			if(data.Contents) { Contents = new Vector.<CartItem>(); for(var Contents_iter:int in data.Contents) { Contents[Contents_iter] = new CartItem(data.Contents[Contents_iter]); }}
-			if(data.PaymentOptions) { PaymentOptions = new Vector.<PaymentOption>(); for(var PaymentOptions_iter:int in data.PaymentOptions) { PaymentOptions[PaymentOptions_iter] = new PaymentOption(data.PaymentOptions[PaymentOptions_iter]); }}
+			if(data.Contents) { Contents = new Vector.<CartItem>(); for(var Contents_iter:int = 0; Contents_iter < data.Contents.Length; Contents_iter++) { Contents[Contents_iter] = new CartItem(data.Contents[Contents_iter]); }}
+			if(data.PaymentOptions) { PaymentOptions = new Vector.<PaymentOption>(); for(var PaymentOptions_iter:int = 0; PaymentOptions_iter < data.PaymentOptions.Length; PaymentOptions_iter++) { PaymentOptions[PaymentOptions_iter] = new PaymentOption(data.PaymentOptions[PaymentOptions_iter]); }}
 			VirtualCurrencyBalances = data.VirtualCurrencyBalances;
 
 		}

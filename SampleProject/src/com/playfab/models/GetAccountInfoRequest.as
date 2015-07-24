@@ -6,6 +6,9 @@ package com.playfab.models
 	public class GetAccountInfoRequest
 	{
 		public var PlayFabId:String;
+		public var Username:String;
+		public var Email:String;
+		public var TitleDisplayName:String;
 
 
 		public function GetAccountInfoRequest(data:Object=null)
@@ -14,6 +17,9 @@ package com.playfab.models
 				return;
 
 			PlayFabId = data.PlayFabId;
+			Username = data.Username;
+			Email = data.Email;
+			TitleDisplayName = data.TitleDisplayName;
 
 		}
 	}

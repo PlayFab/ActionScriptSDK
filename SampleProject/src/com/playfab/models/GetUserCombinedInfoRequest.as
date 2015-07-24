@@ -6,6 +6,9 @@ package com.playfab.models
 	public class GetUserCombinedInfoRequest
 	{
 		public var PlayFabId:String;
+		public var Username:String;
+		public var Email:String;
+		public var TitleDisplayName:String;
 		public var GetAccountInfo:*;
 		public var GetInventory:*;
 		public var GetVirtualCurrency:*;
@@ -21,6 +24,9 @@ package com.playfab.models
 				return;
 
 			PlayFabId = data.PlayFabId;
+			Username = data.Username;
+			Email = data.Email;
+			TitleDisplayName = data.TitleDisplayName;
 			GetAccountInfo = data.GetAccountInfo;
 			GetInventory = data.GetInventory;
 			GetVirtualCurrency = data.GetVirtualCurrency;
