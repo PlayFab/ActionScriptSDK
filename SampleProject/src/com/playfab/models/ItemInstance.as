@@ -14,6 +14,7 @@ package com.playfab.models
 		public var Annotation:String;
 		public var CatalogVersion:String;
 		public var BundleParent:String;
+		public var CustomData:Object;
 
 
 		public function ItemInstance(data:Object=null)
@@ -30,6 +31,7 @@ package com.playfab.models
 			Annotation = data.Annotation;
 			CatalogVersion = data.CatalogVersion;
 			BundleParent = data.BundleParent;
+			CustomData = data.CustomData;
 
 		}
 	}

@@ -6,7 +6,6 @@ package com.playfab.models
 	public class LoginWithAndroidDeviceIDRequest
 	{
 		public var TitleId:String;
-		public var PublisherId:String;
 		public var AndroidDeviceId:String;
 		public var OS:String;
 		public var AndroidDevice:String;
@@ -19,7 +18,6 @@ package com.playfab.models
 				return;
 
 			TitleId = data.TitleId;
-			PublisherId = data.PublisherId;
 			AndroidDeviceId = data.AndroidDeviceId;
 			OS = data.OS;
 			AndroidDevice = data.AndroidDevice;

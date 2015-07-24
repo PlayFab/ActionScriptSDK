@@ -6,6 +6,7 @@ package com.playfab.models
 	public class UserFacebookInfo
 	{
 		public var FacebookId:String;
+		public var FullName:String;
 
 
 		public function UserFacebookInfo(data:Object=null)
@@ -14,6 +15,7 @@ package com.playfab.models
 				return;
 
 			FacebookId = data.FacebookId;
+			FullName = data.FullName;
 
 		}
 	}

@@ -8,6 +8,8 @@ package com.playfab.models
 		public var BuildVersion:String;
 		public var Region:String;
 		public var GameMode:String;
+		public var StatisticName:String;
+		public var CharacterId:String;
 		public var CustomCommandLineData:String;
 
 
@@ -19,6 +21,8 @@ package com.playfab.models
 			BuildVersion = data.BuildVersion;
 			Region = data.Region;
 			GameMode = data.GameMode;
+			StatisticName = data.StatisticName;
+			CharacterId = data.CharacterId;
 			CustomCommandLineData = data.CustomCommandLineData;
 
 		}

@@ -8,6 +8,8 @@ package com.playfab.models
 		public var StatisticName:String;
 		public var StartPosition:int;
 		public var MaxResultsCount:int;
+		public var IncludeSteamFriends:*;
+		public var IncludeFacebookFriends:*;
 
 
 		public function GetFriendLeaderboardRequest(data:Object=null)
@@ -18,6 +20,8 @@ package com.playfab.models
 			StatisticName = data.StatisticName;
 			StartPosition = data.StartPosition;
 			MaxResultsCount = data.MaxResultsCount;
+			IncludeSteamFriends = data.IncludeSteamFriends;
+			IncludeFacebookFriends = data.IncludeFacebookFriends;
 
 		}
 	}

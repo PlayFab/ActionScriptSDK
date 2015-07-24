@@ -8,7 +8,6 @@ package com.playfab.models
 		public var DeviceId:String;
 		public var OS:String;
 		public var DeviceModel:String;
-		public var PublisherId:String;
 
 
 		public function LinkIOSDeviceIDRequest(data:Object=null)
@@ -19,7 +18,6 @@ package com.playfab.models
 			DeviceId = data.DeviceId;
 			OS = data.OS;
 			DeviceModel = data.DeviceModel;
-			PublisherId = data.PublisherId;
 
 		}
 	}

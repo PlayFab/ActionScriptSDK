@@ -17,7 +17,7 @@ package com.playfab.models
 
 			OrderId = data.OrderId;
 			PurchaseDate = PlayFabUtil.parseDate(data.PurchaseDate);
-			if(data.Items) { Items = new Vector.<PurchasedItem>(); for(var Items_iter:int in data.Items) { Items[Items_iter] = new PurchasedItem(data.Items[Items_iter]); }}
+			if(data.Items) { Items = new Vector.<PurchasedItem>(); for(var Items_iter:int = 0; Items_iter < data.Items.Length; Items_iter++) { Items[Items_iter] = new PurchasedItem(data.Items[Items_iter]); }}
 
 		}
 	}

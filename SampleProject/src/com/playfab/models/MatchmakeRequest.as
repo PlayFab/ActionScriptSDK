@@ -9,6 +9,8 @@ package com.playfab.models
 		public var Region:String;
 		public var GameMode:String;
 		public var LobbyId:String;
+		public var StatisticName:String;
+		public var CharacterId:String;
 		public var EnableQueue:*;
 
 
@@ -21,6 +23,8 @@ package com.playfab.models
 			Region = data.Region;
 			GameMode = data.GameMode;
 			LobbyId = data.LobbyId;
+			StatisticName = data.StatisticName;
+			CharacterId = data.CharacterId;
 			EnableQueue = data.EnableQueue;
 
 		}

@@ -18,6 +18,8 @@ package com.playfab.models
 		public var Consumable:CatalogItemConsumableInfo;
 		public var Container:CatalogItemContainerInfo;
 		public var Bundle:CatalogItemBundleInfo;
+		public var CanBecomeCharacter:Boolean;
+		public var IsStackable:Boolean;
 
 
 		public function CatalogItem(data:Object=null)
@@ -38,6 +40,8 @@ package com.playfab.models
 			Consumable = new CatalogItemConsumableInfo(data.Consumable);
 			Container = new CatalogItemContainerInfo(data.Container);
 			Bundle = new CatalogItemBundleInfo(data.Bundle);
+			CanBecomeCharacter = data.CanBecomeCharacter;
+			IsStackable = data.IsStackable;
 
 		}
 	}
