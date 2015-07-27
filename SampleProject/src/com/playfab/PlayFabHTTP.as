@@ -67,9 +67,15 @@ package com.playfab
 			{
 				cleanup();
 				
+				var message:String = event.toString(); // Default to the IOError
+				if (event.currentTarget != null)
+				{
+					message = event.currentTarget.data; // But, when possible try to display the actual error returned from the PlayFab server
+				}
+				
 				var error:PlayFabError = new PlayFabError({
 					Error: PlayFabError.NetworkIOError,
-					ErrorMessage: event.toString()
+					ErrorMessage: message
 				});
 				onComplete(null, error);
 			}
