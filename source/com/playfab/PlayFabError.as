@@ -175,6 +175,14 @@ package com.playfab
 		public static const TradeInventoryItemIsConsumed:int = 1173;
 		public static const TradeInventoryItemIsStackable:int = 1174;
 		public static const TradeAcceptedItemsMismatch:int = 1175;
+		public static const InvalidKongregateToken:int = 1176;
+		public static const FeatureNotConfiguredForTitle:int = 1177;
+		public static const NoMatchingCatalogItemForReceipt:int = 1178;
+		public static const InvalidCurrencyCode:int = 1179;
+		public static const NoRealMoneyPriceForCatalogItem:int = 1180;
+		public static const TradeInventoryItemIsNotTradable:int = 1181;
+		public static const TradeAcceptedCatalogItemIsNotTradable:int = 1182;
+		public static const UsersAlreadyFriends:int = 1183;
 
 
 		public function PlayFabError(data:Object=null)
