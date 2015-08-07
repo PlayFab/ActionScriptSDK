@@ -13,7 +13,7 @@ package com.playfab.models
 			if(data == null)
 				return;
 
-			if(data.Data) { Data = new Vector.<PSNAccountPlayFabIdPair>(); for(var Data_iter:int in data.Data) { Data[Data_iter] = new PSNAccountPlayFabIdPair(data.Data[Data_iter]); }}
+			if(data.Data) { Data = new Vector.<PSNAccountPlayFabIdPair>(); for(var Data_iter:int = 0; Data_iter < data.Data.Length; Data_iter++) { Data[Data_iter] = new PSNAccountPlayFabIdPair(data.Data[Data_iter]); }}
 
 		}
 	}
