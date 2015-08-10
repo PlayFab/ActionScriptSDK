@@ -14,12 +14,12 @@ package com.playfab.models
 		public var RealCurrencyPrices:Object;
 		public var Tags:Vector.<String>;
 		public var CustomData:String;
-		public var GrantedIfPlayerHas:Vector.<String>;
 		public var Consumable:CatalogItemConsumableInfo;
 		public var Container:CatalogItemContainerInfo;
 		public var Bundle:CatalogItemBundleInfo;
 		public var CanBecomeCharacter:Boolean;
 		public var IsStackable:Boolean;
+		public var IsTradable:Boolean;
 
 
 		public function CatalogItem(data:Object=null)
@@ -36,12 +36,12 @@ package com.playfab.models
 			RealCurrencyPrices = data.RealCurrencyPrices;
 			Tags = data.Tags ? Vector.<String>(data.Tags) : null;
 			CustomData = data.CustomData;
-			GrantedIfPlayerHas = data.GrantedIfPlayerHas ? Vector.<String>(data.GrantedIfPlayerHas) : null;
 			Consumable = new CatalogItemConsumableInfo(data.Consumable);
 			Container = new CatalogItemContainerInfo(data.Container);
 			Bundle = new CatalogItemBundleInfo(data.Bundle);
 			CanBecomeCharacter = data.CanBecomeCharacter;
 			IsStackable = data.IsStackable;
+			IsTradable = data.IsTradable;
 
 		}
 	}
