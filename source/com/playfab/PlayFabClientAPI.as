@@ -197,6 +197,38 @@ package com.playfab
 			PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LoginWithIOSDeviceID", requetJson, null, null, onPostComplete);
 		}
 
+		public static function LoginWithKongregate(request:LoginWithKongregateRequest, onComplete:Function, onError:Function):void
+		{
+			request.TitleId = PlayFabSettings.TitleId != null ? PlayFabSettings.TitleId : request.TitleId;
+			if(request.TitleId == null) throw new Error ("Must be have PlayFabSettings.TitleId set to call this method");
+
+
+			var requetJson:String = JSON.stringify( request );
+			
+			var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+			{
+				if(error)
+				{
+					if(onError != null)
+						onError(error);
+					if(PlayFabSettings.GlobalErrorHandler != null)
+						PlayFabSettings.GlobalErrorHandler(error);
+				}
+				else
+				{
+					var result:LoginResult = new LoginResult(resultData);
+					
+					SessionTicket = result.SessionTicket != null ? result.SessionTicket : SessionTicket;
+
+
+					if(onComplete != null)
+						onComplete(result);
+				}
+			}
+			
+			PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LoginWithKongregate", requetJson, null, null, onPostComplete);
+		}
+
 		public static function LoginWithPlayFab(request:LoginWithPlayFabRequest, onComplete:Function, onError:Function):void
 		{
 			request.TitleId = PlayFabSettings.TitleId != null ? PlayFabSettings.TitleId : request.TitleId;
@@ -653,6 +685,36 @@ package com.playfab
 			PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkIOSDeviceID", requetJson, "X-Authorization", SessionTicket, onPostComplete);
 		}
 
+		public static function LinkKongregate(request:LinkKongregateAccountRequest, onComplete:Function, onError:Function):void
+		{
+			if (SessionTicket == null) throw new Error("Must be logged in to call this method");
+
+
+			var requetJson:String = JSON.stringify( request );
+			
+			var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+			{
+				if(error)
+				{
+					if(onError != null)
+						onError(error);
+					if(PlayFabSettings.GlobalErrorHandler != null)
+						PlayFabSettings.GlobalErrorHandler(error);
+				}
+				else
+				{
+					var result:LinkKongregateAccountResult = new LinkKongregateAccountResult(resultData);
+					
+					
+
+					if(onComplete != null)
+						onComplete(result);
+				}
+			}
+			
+			PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkKongregate", requetJson, "X-Authorization", SessionTicket, onPostComplete);
+		}
+
 		public static function LinkSteamAccount(request:LinkSteamAccountRequest, onComplete:Function, onError:Function):void
 		{
 			if (SessionTicket == null) throw new Error("Must be logged in to call this method");
@@ -860,6 +922,36 @@ package com.playfab
 			}
 			
 			PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkIOSDeviceID", requetJson, "X-Authorization", SessionTicket, onPostComplete);
+		}
+
+		public static function UnlinkKongregate(request:UnlinkKongregateAccountRequest, onComplete:Function, onError:Function):void
+		{
+			if (SessionTicket == null) throw new Error("Must be logged in to call this method");
+
+
+			var requetJson:String = JSON.stringify( request );
+			
+			var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+			{
+				if(error)
+				{
+					if(onError != null)
+						onError(error);
+					if(PlayFabSettings.GlobalErrorHandler != null)
+						PlayFabSettings.GlobalErrorHandler(error);
+				}
+				else
+				{
+					var result:UnlinkKongregateAccountResult = new UnlinkKongregateAccountResult(resultData);
+					
+					
+
+					if(onComplete != null)
+						onComplete(result);
+				}
+			}
+			
+			PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkKongregate", requetJson, "X-Authorization", SessionTicket, onPostComplete);
 		}
 
 		public static function UnlinkSteamAccount(request:UnlinkSteamAccountRequest, onComplete:Function, onError:Function):void
@@ -1490,6 +1582,36 @@ package com.playfab
 			}
 			
 			PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetCharacterInventory", requetJson, "X-Authorization", SessionTicket, onPostComplete);
+		}
+
+		public static function GetPurchase(request:GetPurchaseRequest, onComplete:Function, onError:Function):void
+		{
+			if (SessionTicket == null) throw new Error("Must be logged in to call this method");
+
+
+			var requetJson:String = JSON.stringify( request );
+			
+			var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+			{
+				if(error)
+				{
+					if(onError != null)
+						onError(error);
+					if(PlayFabSettings.GlobalErrorHandler != null)
+						PlayFabSettings.GlobalErrorHandler(error);
+				}
+				else
+				{
+					var result:GetPurchaseResult = new GetPurchaseResult(resultData);
+					
+					
+
+					if(onComplete != null)
+						onComplete(result);
+				}
+			}
+			
+			PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPurchase", requetJson, "X-Authorization", SessionTicket, onPostComplete);
 		}
 
 		public static function GetUserInventory(request:GetUserInventoryRequest, onComplete:Function, onError:Function):void

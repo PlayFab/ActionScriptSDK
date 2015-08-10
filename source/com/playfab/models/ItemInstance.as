@@ -11,9 +11,14 @@ package com.playfab.models
 		public var PurchaseDate:Date;
 		public var Expiration:Date;
 		public var RemainingUses:*;
+		public var UsesIncrementedBy:*;
 		public var Annotation:String;
 		public var CatalogVersion:String;
 		public var BundleParent:String;
+		public var DisplayName:String;
+		public var UnitCurrency:String;
+		public var UnitPrice:uint;
+		public var BundleContents:Vector.<String>;
 		public var CustomData:Object;
 
 
@@ -28,9 +33,14 @@ package com.playfab.models
 			PurchaseDate = PlayFabUtil.parseDate(data.PurchaseDate);
 			Expiration = PlayFabUtil.parseDate(data.Expiration);
 			RemainingUses = data.RemainingUses;
+			UsesIncrementedBy = data.UsesIncrementedBy;
 			Annotation = data.Annotation;
 			CatalogVersion = data.CatalogVersion;
 			BundleParent = data.BundleParent;
+			DisplayName = data.DisplayName;
+			UnitCurrency = data.UnitCurrency;
+			UnitPrice = data.UnitPrice;
+			BundleContents = data.BundleContents ? Vector.<String>(data.BundleContents) : null;
 			CustomData = data.CustomData;
 
 		}
