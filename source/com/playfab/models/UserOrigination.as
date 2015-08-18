@@ -16,6 +16,7 @@ package com.playfab.models
 		public static const Android:String = "Android";
 		public static const PSN:String = "PSN";
 		public static const GameCenter:String = "GameCenter";
+		public static const CustomId:String = "CustomId";
 
 	}
 }

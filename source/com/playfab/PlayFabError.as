@@ -183,6 +183,8 @@ package com.playfab
 		public static const TradeInventoryItemIsNotTradable:int = 1181;
 		public static const TradeAcceptedCatalogItemIsNotTradable:int = 1182;
 		public static const UsersAlreadyFriends:int = 1183;
+		public static const LinkedIdentifierAlreadyClaimed:int = 1184;
+		public static const CustomIdNotLinked:int = 1185;
 
 
 		public function PlayFabError(data:Object=null)

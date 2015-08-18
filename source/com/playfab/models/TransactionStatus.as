@@ -8,6 +8,7 @@ package com.playfab.models
 		public static const Approved:String = "Approved";
 		public static const Succeeded:String = "Succeeded";
 		public static const FailedByProvider:String = "FailedByProvider";
+		public static const DisputePending:String = "DisputePending";
 		public static const RefundPending:String = "RefundPending";
 		public static const Refunded:String = "Refunded";
 		public static const RefundFailed:String = "RefundFailed";

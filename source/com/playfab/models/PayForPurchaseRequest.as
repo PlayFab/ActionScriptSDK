@@ -8,6 +8,7 @@ package com.playfab.models
 		public var OrderId:String;
 		public var ProviderName:String;
 		public var Currency:String;
+		public var ProviderTransactionId:String;
 
 
 		public function PayForPurchaseRequest(data:Object=null)
@@ -18,6 +19,7 @@ package com.playfab.models
 			OrderId = data.OrderId;
 			ProviderName = data.ProviderName;
 			Currency = data.Currency;
+			ProviderTransactionId = data.ProviderTransactionId;
 
 		}
 	}
