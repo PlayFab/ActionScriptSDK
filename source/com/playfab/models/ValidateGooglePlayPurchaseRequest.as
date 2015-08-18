@@ -7,6 +7,8 @@ package com.playfab.models
 	{
 		public var ReceiptJson:String;
 		public var Signature:String;
+		public var CurrencyCode:String;
+		public var PurchasePrice:*;
 
 
 		public function ValidateGooglePlayPurchaseRequest(data:Object=null)
@@ -16,6 +18,8 @@ package com.playfab.models
 
 			ReceiptJson = data.ReceiptJson;
 			Signature = data.Signature;
+			CurrencyCode = data.CurrencyCode;
+			PurchasePrice = data.PurchasePrice;
 
 		}
 	}
