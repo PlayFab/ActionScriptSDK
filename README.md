@@ -1,4 +1,4 @@
-ActionScriptSDK REAMDE
+ActionScriptSDK README
 ========
 1. Overview:
 ----
