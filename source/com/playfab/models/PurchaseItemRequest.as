@@ -10,6 +10,7 @@ package com.playfab.models
 		public var Price:int;
 		public var CatalogVersion:String;
 		public var StoreId:String;
+		public var CharacterId:String;
 
 
 		public function PurchaseItemRequest(data:Object=null)
@@ -22,6 +23,7 @@ package com.playfab.models
 			Price = data.Price;
 			CatalogVersion = data.CatalogVersion;
 			StoreId = data.StoreId;
+			CharacterId = data.CharacterId;
 
 		}
 	}

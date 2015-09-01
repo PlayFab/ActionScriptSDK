@@ -7,6 +7,7 @@ package com.playfab.models
 	{
 		public var ContainerItemId:String;
 		public var CatalogVersion:String;
+		public var CharacterId:String;
 
 
 		public function UnlockContainerItemRequest(data:Object=null)
@@ -16,6 +17,7 @@ package com.playfab.models
 
 			ContainerItemId = data.ContainerItemId;
 			CatalogVersion = data.CatalogVersion;
+			CharacterId = data.CharacterId;
 
 		}
 	}
