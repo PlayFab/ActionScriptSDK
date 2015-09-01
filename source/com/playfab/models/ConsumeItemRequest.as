@@ -7,6 +7,7 @@ package com.playfab.models
 	{
 		public var ItemInstanceId:String;
 		public var ConsumeCount:int;
+		public var CharacterId:String;
 
 
 		public function ConsumeItemRequest(data:Object=null)
@@ -16,6 +17,7 @@ package com.playfab.models
 
 			ItemInstanceId = data.ItemInstanceId;
 			ConsumeCount = data.ConsumeCount;
+			CharacterId = data.CharacterId;
 
 		}
 	}
