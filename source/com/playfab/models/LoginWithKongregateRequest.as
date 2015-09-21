@@ -6,7 +6,7 @@ package com.playfab.models
 	public class LoginWithKongregateRequest
 	{
 		public var TitleId:String;
-		public var KongregateId:Number;
+		public var KongregateId:String;
 		public var AuthTicket:String;
 		public var CreateAccount:*;
 

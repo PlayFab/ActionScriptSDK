@@ -5,7 +5,7 @@ package com.playfab.models
 
 	public class LinkKongregateAccountRequest
 	{
-		public var KongregateId:Number;
+		public var KongregateId:String;
 		public var AuthTicket:String;
 
 
