@@ -6,6 +6,7 @@ package com.playfab.models
 	public class LinkFacebookAccountRequest
 	{
 		public var AccessToken:String;
+		public var ForceLink:*;
 
 
 		public function LinkFacebookAccountRequest(data:Object=null)
@@ -14,6 +15,7 @@ package com.playfab.models
 				return;
 
 			AccessToken = data.AccessToken;
+			ForceLink = data.ForceLink;
 
 		}
 	}
