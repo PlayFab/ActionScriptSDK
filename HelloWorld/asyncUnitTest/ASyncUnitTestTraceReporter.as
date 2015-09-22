@@ -36,8 +36,8 @@ package asyncUnitTest
 			line += "Tests Passed: " + testsPassed + ", ";
 			line += "Tests Failed: " + testsFailed + ", ";
 			line += "Tests Errored: " + testsErrored + ", ";
-			line += "Test TimeOuts: " + testsTimedOut + "\n";
-			line += "Tests Skipped: " + testsSkipped + ", ";
+			line += "Test TimeOuts: " + testsTimedOut + ", ";
+			line += "Tests Skipped: " + testsSkipped + "\n";
 			trace(line);
 		}
 		

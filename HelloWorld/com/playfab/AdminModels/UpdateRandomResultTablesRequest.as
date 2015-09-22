@@ -12,7 +12,7 @@ package com.playfab.AdminModels
                 return;
 
             CatalogVersion = data.CatalogVersion;
-            if(data.Tables) { Tables = new Vector.<RandomResultTable>(); for(var Tables_iter:int = 0; Tables_iter < data.Tables.Length; Tables_iter++) { Tables[Tables_iter] = new RandomResultTable(data.Tables[Tables_iter]); }}
+            if(data.Tables) { Tables = new Vector.<RandomResultTable>(); for(var Tables_iter:int = 0; Tables_iter < data.Tables.length; Tables_iter++) { Tables[Tables_iter] = new RandomResultTable(data.Tables[Tables_iter]); }}
 
         }
     }

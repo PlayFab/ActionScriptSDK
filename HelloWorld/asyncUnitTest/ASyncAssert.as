@@ -32,7 +32,7 @@ package asyncUnitTest
 			throw new ASyncUnitTestFailError(sharedEvent);
 		}
 
-        public static function fail(message:String = null) : void
+        public static function Fail(message:String = null) : void
 		{
 			if (!message)
 				message = "";

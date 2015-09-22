@@ -14,7 +14,7 @@ package com.playfab.ClientModels
 
             CatalogVersion = data.CatalogVersion;
             StoreId = data.StoreId;
-            if(data.Items) { Items = new Vector.<ItemPuchaseRequest>(); for(var Items_iter:int = 0; Items_iter < data.Items.Length; Items_iter++) { Items[Items_iter] = new ItemPuchaseRequest(data.Items[Items_iter]); }}
+            if(data.Items) { Items = new Vector.<ItemPuchaseRequest>(); for(var Items_iter:int = 0; Items_iter < data.Items.length; Items_iter++) { Items[Items_iter] = new ItemPuchaseRequest(data.Items[Items_iter]); }}
 
         }
     }

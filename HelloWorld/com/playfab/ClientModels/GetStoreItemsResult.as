@@ -10,7 +10,7 @@ package com.playfab.ClientModels
             if(data == null)
                 return;
 
-            if(data.Store) { Store = new Vector.<StoreItem>(); for(var Store_iter:int = 0; Store_iter < data.Store.Length; Store_iter++) { Store[Store_iter] = new StoreItem(data.Store[Store_iter]); }}
+            if(data.Store) { Store = new Vector.<StoreItem>(); for(var Store_iter:int = 0; Store_iter < data.Store.length; Store_iter++) { Store[Store_iter] = new StoreItem(data.Store[Store_iter]); }}
 
         }
     }

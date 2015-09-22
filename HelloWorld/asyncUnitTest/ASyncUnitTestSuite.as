@@ -145,7 +145,7 @@ package asyncUnitTest
 			activeState = ASyncUnitTestEvent.STATE_TEST_RUNNING;
 			testsRun += 1
 
-			var wrappedCall:Function = Wrap(activeTest.testFunc);
+			var wrappedCall:Function = Wrap(activeTest.testFunc, activeTest.testName);
 			wrappedCall.call();
 		}
 
@@ -244,7 +244,7 @@ package asyncUnitTest
 		}
 
 		// All callbacks passed into sequential steps should use Wrap, so that errors in those functions will be caught as error-failures here
-		protected function Wrap(func:Function) : Function
+		protected function Wrap(func:Function, description:String) : Function
 		{
 			function Wrapper(... args) : void
 			{
@@ -259,7 +259,7 @@ package asyncUnitTest
 				}
 				catch(error:Error)
 				{
-					var testMessage:String = "\n" + error.getStackTrace();
+					var testMessage:String = description + "\n" + error.getStackTrace();
 					FinishTestHandler(new ASyncUnitTestEvent(ASyncUnitTestEvent.FINISH_TEST, ASyncUnitTestEvent.RESULT_ERROR, testMessage));
 				}
 			}

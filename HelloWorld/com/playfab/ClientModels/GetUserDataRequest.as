@@ -15,7 +15,6 @@ package com.playfab.ClientModels
             Keys = data.Keys ? Vector.<String>(data.Keys) : null;
             PlayFabId = data.PlayFabId;
             IfChangedFromDataVersion = data.IfChangedFromDataVersion;
-
         }
     }
 }

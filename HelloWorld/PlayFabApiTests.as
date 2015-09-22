@@ -1,25 +1,26 @@
 package
 {
-	import flash.net.*;
+    import flash.net.*;
     import flash.errors.*;
     import flash.events.*;
 
-	import com.playfab.ClientModels.*;
-	import com.playfab.ServerModels.*;
-	import com.playfab.PlayFabClientAPI;
-	import com.playfab.PlayFabServerAPI;
-	import com.playfab.PlayFabSettings;
-	import com.playfab.PlayFabHTTP;
-	import com.playfab.PlayFabError;
+    import com.playfab.ClientModels.*;
+    import com.playfab.ServerModels.*;
+    import com.playfab.PlayFabClientAPI;
+    import com.playfab.PlayFabServerAPI;
+    import com.playfab.PlayFabSettings;
+    import com.playfab.PlayFabHTTP;
+    import com.playfab.PlayFabError;
 
-	import asyncUnitTest.ASyncUnitTestSuite;
-	import asyncUnitTest.ASyncUnitTestEvent;
-	import asyncUnitTest.ASyncAssert;
-	import asyncUnitTest.ASyncUnitTestReporter;
+    import asyncUnitTest.ASyncUnitTestSuite;
+    import asyncUnitTest.ASyncUnitTestEvent;
+    import asyncUnitTest.ASyncAssert;
+    import asyncUnitTest.ASyncUnitTestReporter;
+    import asyncUnitTest.ASyncUnitTestFileReporter;
 
-	public class PlayFabApiTests extends ASyncUnitTestSuite
-	{
-		private static var TITLE_DATA_FILENAME:String;
+    public class PlayFabApiTests extends ASyncUnitTestSuite
+    {
+        private static var TITLE_DATA_FILENAME:String;
 
         private static const TEST_STAT_BASE:int = 10;
         private static const TEST_STAT_NAME:String = "str";
@@ -41,29 +42,40 @@ package
         private static var playFabId:String;
         private static var characterId:String;
 
-		public function PlayFabApiTests(titleDataFileName:String, reporter:ASyncUnitTestReporter)
-		{
-			super(reporter);
-			TITLE_DATA_FILENAME = titleDataFileName;
+        // Variables for specific tests
+        private var testIntExpected:int;
+        private var testIntActual:int;
+        private var timeInitial:Date;
+        private var timeUpdated:Date;
 
-			AddTest("TestIntegerMath", TestIntegerMath);
-			AddTest("InvalidLogin", InvalidLogin);
+        public function PlayFabApiTests(titleDataFileName:String, reporter:ASyncUnitTestReporter)
+        {
+            super(reporter);
+            TITLE_DATA_FILENAME = titleDataFileName;
 
-			KickOffTests();
-		}
+            AddTest("InvalidLogin", InvalidLogin);
+            AddTest("LoginOrRegister", LoginOrRegister);
+            AddTest("UserDataApi", UserDataApi);
+            AddTest("UserStatisticsApi", UserStatisticsApi);
+            AddTest("UserCharacter", UserCharacter);
+            AddTest("LeaderBoard", LeaderBoard);
+            AddTest("AccountInfo", AccountInfo);
 
-		override protected function SuiteSetUp() : void
-		{
-			var myTextLoader:URLLoader = new URLLoader();
-			myTextLoader.addEventListener(Event.COMPLETE, Wrap(OnTitleDataLoaded));
-			myTextLoader.load(new URLRequest(TITLE_DATA_FILENAME));
-		}
+            KickOffTests();
+        }
 
-		private function OnTitleDataLoaded(event:Event) : void
-		{
-			SetTitleInfo(event.target.data);
-			SuiteSetUpCompleteHandler();
-		}
+        override protected function SuiteSetUp() : void
+        {
+            var myTextLoader:URLLoader = new URLLoader();
+            myTextLoader.addEventListener(Event.COMPLETE, Wrap(OnTitleDataLoaded, "TitleData"));
+            myTextLoader.load(new URLRequest(TITLE_DATA_FILENAME));
+        }
+
+        private function OnTitleDataLoaded(event:Event) : void
+        {
+            SetTitleInfo(event.target.data);
+            SuiteSetUpCompleteHandler();
+        }
 
         /// <summary>
         /// PlayFab Title cannot be created from SDK tests, so you must provide your titleId to run unit tests.
@@ -71,35 +83,26 @@ package
         /// </summary>
         private static function SetTitleInfo(titleDataString):Boolean
         {
-			var testTitleData:Object = JSON.parse(titleDataString);
+            var testTitleData:Object = JSON.parse(titleDataString);
 
-			PlayFabSettings.TitleId = testTitleData.titleId;
+            PlayFabSettings.TitleId = testTitleData.titleId;
             PlayFabSettings.DeveloperSecretKey = testTitleData.developerSecretKey;
-			TITLE_CAN_UPDATE_SETTINGS = testTitleData.titleCanUpdateSettings.toLowerCase() == "true";
-			USER_NAME = testTitleData.userName;
-			USER_EMAIL = testTitleData.userEmail;
-			USER_PASSWORD = testTitleData.userPassword;
-			CHAR_NAME = testTitleData.characterName;
+            TITLE_CAN_UPDATE_SETTINGS = testTitleData.titleCanUpdateSettings.toLowerCase() == "true";
+            USER_NAME = testTitleData.userName;
+            USER_EMAIL = testTitleData.userEmail;
+            USER_PASSWORD = testTitleData.userPassword;
+            CHAR_NAME = testTitleData.characterName;
 
             TITLE_INFO_SET = Boolean(PlayFabSettings.TitleId)
-				|| Boolean(PlayFabSettings.TitleId)
-				|| Boolean(PlayFabSettings.DeveloperSecretKey)
-				|| Boolean(TITLE_CAN_UPDATE_SETTINGS)
-				|| Boolean(USER_NAME)
-				|| Boolean(USER_EMAIL)
-				|| Boolean(USER_PASSWORD)
-				|| Boolean(CHAR_NAME);
-			return TITLE_INFO_SET;
-		}
-
-		private function TestIntegerMath() : void
-		{
-			var i:int = 5;
-			ASyncAssert.AssertEquals(5, i);
-			i += 4;
-			ASyncAssert.AssertEquals(9, i);
-			FinishTestHandler(new ASyncUnitTestEvent(ASyncUnitTestEvent.FINISH_TEST, ASyncUnitTestEvent.RESULT_PASSED, ""));
-		}
+                || Boolean(PlayFabSettings.TitleId)
+                || Boolean(PlayFabSettings.DeveloperSecretKey)
+                || Boolean(TITLE_CAN_UPDATE_SETTINGS)
+                || Boolean(USER_NAME)
+                || Boolean(USER_EMAIL)
+                || Boolean(USER_PASSWORD)
+                || Boolean(CHAR_NAME);
+            return TITLE_INFO_SET;
+        }
 
         /// <summary>
         /// CLIENT API
@@ -113,18 +116,240 @@ package
             request.TitleId = PlayFabSettings.TitleId;
             request.Email = USER_EMAIL;
             request.Password = USER_PASSWORD + "INVALID";
-            PlayFabClientAPI.LoginWithEmailAddress(request, Wrap(InvalidLogin_Success), Wrap(InvalidLogin_Failure));
+            PlayFabClientAPI.LoginWithEmailAddress(request, Wrap(InvalidLogin_Success, "Success"), Wrap(InvalidLogin_Failure, "Fail"));
         }
         private function InvalidLogin_Success(result:com.playfab.ClientModels.LoginResult) : void
         {
-			FinishTestHandler(new ASyncUnitTestEvent(ASyncUnitTestEvent.FINISH_TEST, ASyncUnitTestEvent.RESULT_FAILED, "Login unexpectedly succeeded."));
+            reporter.Debug("InvalidLogin_Success");
+            ASyncAssert.Fail("Login unexpectedly succeeded.");
         }
         private function InvalidLogin_Failure(error:com.playfab.PlayFabError) : void
         {
-			ASyncAssert.AssertNotNull(error.ErrorMessage);
-			if(error.ErrorMessage.toLowerCase().indexOf("Password") >= 0)
-				FinishTestHandler(new ASyncUnitTestEvent(ASyncUnitTestEvent.FINISH_TEST, ASyncUnitTestEvent.RESULT_PASSED, ""));
-			FinishTestHandler(new ASyncUnitTestEvent(ASyncUnitTestEvent.FINISH_TEST, ASyncUnitTestEvent.RESULT_FAILED, "Unexpected error result: " + error.ErrorMessage));
+            ASyncAssert.AssertNotNull(error.errorMessage);
+            if(error.errorMessage.toLowerCase().indexOf("password") >= 0)
+                FinishTestHandler(new ASyncUnitTestEvent(ASyncUnitTestEvent.FINISH_TEST, ASyncUnitTestEvent.RESULT_PASSED, ""));
+            else
+                ASyncAssert.Fail("Unexpected error result: " + error.errorMessage);
         }
-	}
+
+        private function Shared_ApiCallFailure(error:com.playfab.PlayFabError) : void
+        {
+            ASyncAssert.Fail(error.errorMessage);
+        }
+
+        /// <summary>
+        /// CLIENT API
+        /// Test a sequence of calls that modifies saved data,
+        ///   and verifies that the next sequential API call contains updated data.
+        /// Verify that the data is correctly modified on the next call.
+        /// Parameter types tested: string, Dictionary<string, string>, DateTime
+        /// </summary>
+        private function LoginOrRegister() : void
+        {
+            var loginRequest:com.playfab.ClientModels.LoginWithEmailAddressRequest = new com.playfab.ClientModels.LoginWithEmailAddressRequest();
+            loginRequest.TitleId = PlayFabSettings.TitleId;
+            loginRequest.Email = USER_EMAIL;
+            loginRequest.Password = USER_PASSWORD;
+            // Try to login, but if we fail, just fall-back and try to create character
+            PlayFabClientAPI.LoginWithEmailAddress(loginRequest, Wrap(LoginOrRegister_LoginSuccess, "Login1"), Wrap(LoginOrRegister_AcceptableFailure, "Fail1"));
+        }
+        private function LoginOrRegister_LoginSuccess(result:com.playfab.ClientModels.LoginResult) : void
+        {
+            // Typical success
+            playFabId = result.PlayFabId;
+            FinishTestHandler(new ASyncUnitTestEvent(ASyncUnitTestEvent.FINISH_TEST, ASyncUnitTestEvent.RESULT_PASSED, ""));
+        }
+        private function LoginOrRegister_AcceptableFailure(error:com.playfab.PlayFabError) : void
+        {
+            // Acceptable failure - register character and re-attempt
+            var registerRequest:com.playfab.ClientModels.RegisterPlayFabUserRequest = new com.playfab.ClientModels.RegisterPlayFabUserRequest();
+            registerRequest.TitleId = PlayFabSettings.TitleId;
+            registerRequest.Username = USER_NAME;
+            registerRequest.Email = USER_EMAIL;
+            registerRequest.Password = USER_PASSWORD;
+            PlayFabClientAPI.RegisterPlayFabUser(registerRequest, Wrap(LoginOrRegister_RegisterSuccess, "Register"), Wrap(Shared_ApiCallFailure, "Fail2"));
+        }
+        private function LoginOrRegister_RegisterSuccess(result:com.playfab.ClientModels.LoginResult) : void
+        {
+            var loginRequest:com.playfab.ClientModels.LoginWithEmailAddressRequest = new com.playfab.ClientModels.LoginWithEmailAddressRequest();
+            loginRequest.TitleId = PlayFabSettings.TitleId;
+            loginRequest.Email = USER_EMAIL;
+            loginRequest.Password = USER_PASSWORD;
+            // Try again, but this time, error on failure
+            PlayFabClientAPI.LoginWithEmailAddress(loginRequest, Wrap(LoginOrRegister_LoginSuccess, "Login2"), Wrap(Shared_ApiCallFailure, "Fail3"));
+        }
+
+        /// <summary>
+        /// CLIENT API
+        /// Test a sequence of calls that modifies saved data,
+        ///   and verifies that the next sequential API call contains updated data.
+        /// Verify that the data is correctly modified on the next call.
+        /// Parameter types tested: string, Dictionary<string, string>, DateTime
+        /// </summary>
+        private function UserDataApi() : void
+        {
+            var getRequest:com.playfab.ClientModels.GetUserDataRequest = new com.playfab.ClientModels.GetUserDataRequest();
+            PlayFabClientAPI.GetUserData(getRequest, Wrap(UserDataApi_GetSuccess1, "GetSuccess1"), Wrap(Shared_ApiCallFailure, "Fail1"));
+        }
+        private function UserDataApi_GetSuccess1(result:com.playfab.ClientModels.GetUserDataResult) : void
+        {
+            timeInitial = result.Data[TEST_DATA_KEY].LastUpdated;
+            testIntExpected = int(result.Data[TEST_DATA_KEY].Value);
+            testIntExpected = (testIntExpected + 1) % 100; // This test is about the expected value changing - but not testing more complicated issues like bounds
+
+            var updateRequest:com.playfab.ClientModels.UpdateUserDataRequest = new com.playfab.ClientModels.UpdateUserDataRequest();
+            updateRequest.Data = new Object();
+            updateRequest.Data[TEST_DATA_KEY] = String(testIntExpected);
+            PlayFabClientAPI.UpdateUserData(updateRequest, Wrap(UserDataApi_UpdateSuccess, "UpdateSuccess"), Wrap(Shared_ApiCallFailure, "Fail2"));
+        }
+        private function UserDataApi_UpdateSuccess(result:com.playfab.ClientModels.UpdateUserDataResult) : void
+        {
+            var getRequest:com.playfab.ClientModels.GetUserDataRequest = new com.playfab.ClientModels.GetUserDataRequest();
+            PlayFabClientAPI.GetUserData(getRequest, Wrap(UserDataApi_GetSuccess2, "GetSuccess2"), Wrap(Shared_ApiCallFailure, "Fail3"));
+        }
+        private function UserDataApi_GetSuccess2(result:com.playfab.ClientModels.GetUserDataResult) : void
+        {
+            timeUpdated = result.Data[TEST_DATA_KEY].LastUpdated;
+            testIntActual = int(result.Data[TEST_DATA_KEY].Value);
+
+            ASyncAssert.AssertEquals(testIntExpected, testIntActual);
+            ASyncAssert.AssertTrue(timeUpdated > timeInitial);
+            FinishTestHandler(new ASyncUnitTestEvent(ASyncUnitTestEvent.FINISH_TEST, ASyncUnitTestEvent.RESULT_PASSED, ""));
+        }
+
+        /// <summary>
+        /// CLIENT API
+        /// Test a sequence of calls that modifies saved data,
+        ///   and verifies that the next sequential API call contains updated data.
+        /// Verify that the data is saved correctly, and that specific types are tested
+        /// Parameter types tested: Dictionary<string, int>
+        /// </summary>
+        private function UserStatisticsApi() : void
+        {
+            var getRequest:com.playfab.ClientModels.GetUserStatisticsRequest = new com.playfab.ClientModels.GetUserStatisticsRequest();
+            PlayFabClientAPI.GetUserStatistics(getRequest, Wrap(UserStatisticsApi_GetSuccess1, "GetSuccess1"), Wrap(Shared_ApiCallFailure, "Fail1"));
+        }
+        private function UserStatisticsApi_GetSuccess1(result:com.playfab.ClientModels.GetUserStatisticsResult) : void
+        {
+            testIntExpected = int(result.UserStatistics[TEST_STAT_NAME]);
+            testIntExpected = (testIntExpected + 1) % 100; // This test is about the expected value changing - but not testing more complicated issues like bounds
+
+            var updateRequest:com.playfab.ClientModels.UpdateUserStatisticsRequest = new com.playfab.ClientModels.UpdateUserStatisticsRequest();
+            updateRequest.UserStatistics = new Object();
+            updateRequest.UserStatistics[TEST_STAT_NAME] = testIntExpected;
+            PlayFabClientAPI.UpdateUserStatistics(updateRequest, Wrap(UserStatisticsApi_UpdateSuccess, "UpdateSuccess"), Wrap(Shared_ApiCallFailure, "Fail2"));
+        }
+        private function UserStatisticsApi_UpdateSuccess(result:com.playfab.ClientModels.UpdateUserStatisticsResult) : void
+        {
+            var getRequest:com.playfab.ClientModels.GetUserStatisticsRequest = new com.playfab.ClientModels.GetUserStatisticsRequest();
+            PlayFabClientAPI.GetUserStatistics(getRequest, Wrap(UserStatisticsApi_GetSuccess2, "GetSuccess2"), Wrap(Shared_ApiCallFailure, "Fail3"));
+        }
+        private function UserStatisticsApi_GetSuccess2(result:com.playfab.ClientModels.GetUserStatisticsResult) : void
+        {
+            testIntActual = int(result.UserStatistics[TEST_STAT_NAME]);
+
+            ASyncAssert.AssertEquals(testIntExpected, testIntActual);
+            FinishTestHandler(new ASyncUnitTestEvent(ASyncUnitTestEvent.FINISH_TEST, ASyncUnitTestEvent.RESULT_PASSED, ""));
+        }
+
+        /// <summary>
+        /// SERVER API
+        /// Get or create the given test character for the given user
+        /// Parameter types tested: Contained-Classes, string
+        /// </summary>
+        private function UserCharacter() : void
+        {
+            var getRequest:com.playfab.ServerModels.ListUsersCharactersRequest = new com.playfab.ServerModels.ListUsersCharactersRequest();
+            getRequest.PlayFabId = playFabId;
+            PlayFabServerAPI.GetAllUsersCharacters(getRequest, Wrap(UserCharacter_GetSuccess1, "GetSuccess1"), Wrap(Shared_ApiCallFailure, "Fail1"));
+        }
+        private function UserCharacter_GetSuccess1(result:com.playfab.ServerModels.ListUsersCharactersResult) : void
+        {
+            for each(var eachCharacter:com.playfab.ServerModels.CharacterResult in result.Characters)
+                if (eachCharacter.CharacterName == CHAR_NAME)
+                    characterId = eachCharacter.CharacterId;
+
+            if (characterId)
+            {
+                // Character is defined and found, success
+                FinishTestHandler(new ASyncUnitTestEvent(ASyncUnitTestEvent.FINISH_TEST, ASyncUnitTestEvent.RESULT_PASSED, ""));
+            }
+            else
+            {
+                // Character not found, create it
+                var grantRequest:com.playfab.ServerModels.GrantCharacterToUserRequest = new com.playfab.ServerModels.GrantCharacterToUserRequest();
+                grantRequest.PlayFabId = playFabId;
+                grantRequest.CharacterName = CHAR_NAME;
+                grantRequest.CharacterType = CHAR_TEST_TYPE;
+                PlayFabServerAPI.GrantCharacterToUser(grantRequest, Wrap(UserCharacter_RegisterSuccess, "RegisterSuccess"), Wrap(Shared_ApiCallFailure, "Fail2"));
+            }
+        }
+        private function UserCharacter_RegisterSuccess(result:com.playfab.ServerModels.GrantCharacterToUserResult) : void
+        {
+            var getRequest:com.playfab.ServerModels.ListUsersCharactersRequest = new com.playfab.ServerModels.ListUsersCharactersRequest();
+            getRequest.PlayFabId = playFabId;
+            PlayFabServerAPI.GetAllUsersCharacters(getRequest, Wrap(UserCharacter_GetSuccess2, "GetSuccess2"), Wrap(Shared_ApiCallFailure, "Fail3"));
+        }
+        private function UserCharacter_GetSuccess2(result:com.playfab.ServerModels.ListUsersCharactersResult) : void
+        {
+            for each(var eachCharacter:com.playfab.ServerModels.CharacterResult in result.Characters)
+                if (eachCharacter.CharacterName == CHAR_NAME)
+                    characterId = eachCharacter.CharacterId;
+
+            ASyncAssert.AssertTrue(characterId, "Character not found, " + result.Characters.length + ", " + playFabId);
+            // Character is defined and found, success
+            FinishTestHandler(new ASyncUnitTestEvent(ASyncUnitTestEvent.FINISH_TEST, ASyncUnitTestEvent.RESULT_PASSED, ""));
+        }
+
+        /// <summary>
+        /// CLIENT AND SERVER API
+        /// Test that leaderboard results can be requested
+        /// Parameter types tested: List of contained-classes
+        /// </summary>
+        private function LeaderBoard() : void
+        {
+            var clientRequest:com.playfab.ClientModels.GetLeaderboardAroundCurrentUserRequest = new com.playfab.ClientModels.GetLeaderboardAroundCurrentUserRequest();
+            clientRequest.MaxResultsCount = 3;
+            clientRequest.StatisticName = TEST_STAT_NAME;
+            PlayFabClientAPI.GetLeaderboardAroundCurrentUser(clientRequest, Wrap(GetClientLbCallback, "ClientLB"), Wrap(Shared_ApiCallFailure, "ClientLB_Fail"));
+        }
+        private function GetClientLbCallback(result:com.playfab.ClientModels.GetLeaderboardAroundCurrentUserResult) : void
+        {
+            if (result.Leaderboard.length == 0)
+                ASyncAssert.Fail("Client leaderboard results not found");
+
+            var serverRequest:com.playfab.ServerModels.GetLeaderboardAroundUserRequest = new com.playfab.ServerModels.GetLeaderboardAroundUserRequest();
+            serverRequest.MaxResultsCount = 3;
+            serverRequest.StatisticName = TEST_STAT_NAME;
+            serverRequest.PlayFabId = playFabId;
+            PlayFabServerAPI.GetLeaderboardAroundUser(serverRequest, Wrap(GetServerLbCallback, "ServerLB"), Wrap(Shared_ApiCallFailure, "ServerLB_Fail"));
+        }
+        private function GetServerLbCallback(result:com.playfab.ServerModels.GetLeaderboardAroundUserResult) : void
+        {
+            if (result.Leaderboard.length == 0)
+                ASyncAssert.Fail("Server leaderboard results not found");
+
+            FinishTestHandler(new ASyncUnitTestEvent(ASyncUnitTestEvent.FINISH_TEST, ASyncUnitTestEvent.RESULT_PASSED, ""));
+        }
+
+        /// <summary>
+        /// CLIENT API
+        /// Test that AccountInfo can be requested
+        /// Parameter types tested: List of enum-as-strings converted to list of enums
+        /// </summary>
+        private function AccountInfo() : void
+        {
+            var request:com.playfab.ClientModels.GetAccountInfoRequest = new com.playfab.ClientModels.GetAccountInfoRequest();
+            PlayFabClientAPI.GetAccountInfo(request, Wrap(GetInfoCallback, "ServerLB"), Wrap(Shared_ApiCallFailure, "Fail"));
+        }
+        private function GetInfoCallback(result:com.playfab.ClientModels.GetAccountInfoResult) : void
+        {
+            ASyncAssert.AssertNotNull(result.AccountInfo);
+            ASyncAssert.AssertNotNull(result.AccountInfo.TitleInfo);
+            ASyncAssert.AssertNotNull(result.AccountInfo.TitleInfo.Origination);
+            ASyncAssert.AssertTrue(result.AccountInfo.TitleInfo.Origination.length > 0); // This is not a string-enum in AS3, so this test is a bit pointless
+
+            FinishTestHandler(new ASyncUnitTestEvent(ASyncUnitTestEvent.FINISH_TEST, ASyncUnitTestEvent.RESULT_PASSED, ""));
+        }
+    }
 }

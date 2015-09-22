@@ -22,7 +22,7 @@ package com.playfab.ClientModels
             TransactionId = data.TransactionId;
             TransactionStatus = data.TransactionStatus;
             PurchaseDate = PlayFabUtil.parseDate(data.PurchaseDate);
-            if(data.Items) { Items = new Vector.<ItemInstance>(); for(var Items_iter:int = 0; Items_iter < data.Items.Length; Items_iter++) { Items[Items_iter] = new ItemInstance(data.Items[Items_iter]); }}
+            if(data.Items) { Items = new Vector.<ItemInstance>(); for(var Items_iter:int = 0; Items_iter < data.Items.length; Items_iter++) { Items[Items_iter] = new ItemInstance(data.Items[Items_iter]); }}
 
         }
     }

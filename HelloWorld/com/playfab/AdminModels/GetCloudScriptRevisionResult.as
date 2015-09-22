@@ -19,7 +19,7 @@ package com.playfab.AdminModels
             Version = data.Version;
             Revision = data.Revision;
             CreatedAt = PlayFabUtil.parseDate(data.CreatedAt);
-            if(data.Files) { Files = new Vector.<CloudScriptFile>(); for(var Files_iter:int = 0; Files_iter < data.Files.Length; Files_iter++) { Files[Files_iter] = new CloudScriptFile(data.Files[Files_iter]); }}
+            if(data.Files) { Files = new Vector.<CloudScriptFile>(); for(var Files_iter:int = 0; Files_iter < data.Files.length; Files_iter++) { Files[Files_iter] = new CloudScriptFile(data.Files[Files_iter]); }}
             IsPublished = data.IsPublished;
 
         }
