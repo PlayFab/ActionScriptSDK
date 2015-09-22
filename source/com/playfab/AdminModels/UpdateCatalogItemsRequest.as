@@ -12,7 +12,7 @@ package com.playfab.AdminModels
                 return;
 
             CatalogVersion = data.CatalogVersion;
-            if(data.Catalog) { Catalog = new Vector.<CatalogItem>(); for(var Catalog_iter:int = 0; Catalog_iter < data.Catalog.Length; Catalog_iter++) { Catalog[Catalog_iter] = new CatalogItem(data.Catalog[Catalog_iter]); }}
+            if(data.Catalog) { Catalog = new Vector.<CatalogItem>(); for(var Catalog_iter:int = 0; Catalog_iter < data.Catalog.length; Catalog_iter++) { Catalog[Catalog_iter] = new CatalogItem(data.Catalog[Catalog_iter]); }}
 
         }
     }

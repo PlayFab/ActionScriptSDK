@@ -10,7 +10,7 @@ package com.playfab.ClientModels
             if(data == null)
                 return;
 
-            if(data.Characters) { Characters = new Vector.<CharacterResult>(); for(var Characters_iter:int = 0; Characters_iter < data.Characters.Length; Characters_iter++) { Characters[Characters_iter] = new CharacterResult(data.Characters[Characters_iter]); }}
+            if(data.Characters) { Characters = new Vector.<CharacterResult>(); for(var Characters_iter:int = 0; Characters_iter < data.Characters.length; Characters_iter++) { Characters[Characters_iter] = new CharacterResult(data.Characters[Characters_iter]); }}
 
         }
     }

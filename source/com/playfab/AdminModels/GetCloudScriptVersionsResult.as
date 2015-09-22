@@ -10,7 +10,7 @@ package com.playfab.AdminModels
             if(data == null)
                 return;
 
-            if(data.Versions) { Versions = new Vector.<CloudScriptVersionStatus>(); for(var Versions_iter:int = 0; Versions_iter < data.Versions.Length; Versions_iter++) { Versions[Versions_iter] = new CloudScriptVersionStatus(data.Versions[Versions_iter]); }}
+            if(data.Versions) { Versions = new Vector.<CloudScriptVersionStatus>(); for(var Versions_iter:int = 0; Versions_iter < data.Versions.length; Versions_iter++) { Versions[Versions_iter] = new CloudScriptVersionStatus(data.Versions[Versions_iter]); }}
 
         }
     }

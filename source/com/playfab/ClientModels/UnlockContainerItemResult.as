@@ -15,7 +15,7 @@ package com.playfab.ClientModels
 
             UnlockedItemInstanceId = data.UnlockedItemInstanceId;
             UnlockedWithItemInstanceId = data.UnlockedWithItemInstanceId;
-            if(data.GrantedItems) { GrantedItems = new Vector.<ItemInstance>(); for(var GrantedItems_iter:int = 0; GrantedItems_iter < data.GrantedItems.Length; GrantedItems_iter++) { GrantedItems[GrantedItems_iter] = new ItemInstance(data.GrantedItems[GrantedItems_iter]); }}
+            if(data.GrantedItems) { GrantedItems = new Vector.<ItemInstance>(); for(var GrantedItems_iter:int = 0; GrantedItems_iter < data.GrantedItems.length; GrantedItems_iter++) { GrantedItems[GrantedItems_iter] = new ItemInstance(data.GrantedItems[GrantedItems_iter]); }}
             VirtualCurrency = data.VirtualCurrency;
 
         }
