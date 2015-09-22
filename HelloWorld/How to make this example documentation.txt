@@ -119,3 +119,5 @@ Finally, to wrap it up into one step, go.bat:
 
     call mxmlc HelloWorld.as -load-config flexcfg.xml
     call adl HelloWorld.xml
+
+(Then rename everything HelloWorld to PfApiTests)

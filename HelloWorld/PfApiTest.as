@@ -9,12 +9,12 @@ package
 	import asyncUnitTest.ASyncUnitTestEvent;
 	import asyncUnitTest.ASyncUnitTestFileReporter;
 
-	public class HelloWorld extends Sprite
+	public class PfApiTest extends Sprite
 	{
 		private var textField:TextField = new TextField();
 		private var testSuite:PlayFabApiTests;
 
-		public function HelloWorld()
+		public function PfApiTest()
 		{
 			NativeApplication.nativeApplication.addEventListener(InvokeEvent.INVOKE, onInvoke);
 

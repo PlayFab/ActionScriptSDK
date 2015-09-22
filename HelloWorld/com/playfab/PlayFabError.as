@@ -1,7 +1,5 @@
 package com.playfab
 {
-    import flash.utils.Dictionary;
-
     public class PlayFabError
     {
         public static const Unknown:int = 1;
