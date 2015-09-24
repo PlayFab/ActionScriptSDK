@@ -18,6 +18,7 @@ package com.playfab.ServerModels
         public var CanBecomeCharacter:Boolean;
         public var IsStackable:Boolean;
         public var IsTradable:Boolean;
+        public var ItemImageUrl:String;
 
         public function CatalogItem(data:Object=null)
         {
@@ -39,6 +40,7 @@ package com.playfab.ServerModels
             CanBecomeCharacter = data.CanBecomeCharacter;
             IsStackable = data.IsStackable;
             IsTradable = data.IsTradable;
+            ItemImageUrl = data.ItemImageUrl;
 
         }
     }
