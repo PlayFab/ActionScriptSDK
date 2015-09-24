@@ -248,6 +248,7 @@ package asyncUnitTest
 		{
 			function Wrapper(... args) : void
 			{
+				TickTestHandler();
 				try
 				{
 					func.apply(null, args);
@@ -262,6 +263,7 @@ package asyncUnitTest
 					var testMessage:String = description + "\n" + error.getStackTrace();
 					FinishTestHandler(new ASyncUnitTestEvent(ASyncUnitTestEvent.FINISH_TEST, ASyncUnitTestEvent.RESULT_ERROR, testMessage));
 				}
+				TickTestHandler();
 			}
 			return Wrapper;
 		}

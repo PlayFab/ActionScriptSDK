@@ -60,6 +60,7 @@ package
             AddTest("UserCharacter", UserCharacter);
             AddTest("LeaderBoard", LeaderBoard);
             AddTest("AccountInfo", AccountInfo);
+            AddTest("CloudScript", CloudScript);
 
             KickOffTests();
         }
@@ -351,5 +352,42 @@ package
 
             FinishTestHandler(new ASyncUnitTestEvent(ASyncUnitTestEvent.FINISH_TEST, ASyncUnitTestEvent.RESULT_PASSED, ""));
         }
+
+        /// <summary>
+        /// CLIENT API
+        /// Test that CloudScript can be properly set up and invoked
+        /// </summary>
+        private function CloudScript() : void
+		{
+            if (!PlayFabSettings.LogicServerURL)
+            {
+				var urlRequest:com.playfab.ClientModels.GetCloudScriptUrlRequest = new com.playfab.ClientModels.GetCloudScriptUrlRequest();
+                PlayFabClientAPI.GetCloudScriptUrl(urlRequest, Wrap(GetCloudUrlCallback, "CloudUrl"), Wrap(Shared_ApiCallFailure, "Fail"));
+            }
+			else
+			{
+				CallHelloWorldCloudScript();
+			}
+		}
+		private function GetCloudUrlCallback(result:com.playfab.ClientModels.GetCloudScriptUrlResult) : void
+		{
+			ASyncAssert.AssertTrue(result.Url.length > 0);
+			CallHelloWorldCloudScript();
+		}
+		private function CallHelloWorldCloudScript() : void
+		{
+			var hwRequest:com.playfab.ClientModels.RunCloudScriptRequest = new com.playfab.ClientModels.RunCloudScriptRequest();
+            hwRequest.ActionId = "helloWorld";
+            PlayFabClientAPI.RunCloudScript(hwRequest, Wrap(CloudScriptHWCallback, "CloudUrl"), Wrap(Shared_ApiCallFailure, "Fail"));
+			
+            //UUnitAssert.Equals("Hello " + playFabId + "!", lastReceivedMessage);
+		}
+		private function CloudScriptHWCallback(result:com.playfab.ClientModels.RunCloudScriptResult) : void
+		{
+			ASyncAssert.AssertTrue(result.ResultsEncoded.length > 0);
+			ASyncAssert.AssertEquals(result.Results.messageValue, "Hello " + playFabId + "!");
+
+            FinishTestHandler(new ASyncUnitTestEvent(ASyncUnitTestEvent.FINISH_TEST, ASyncUnitTestEvent.RESULT_PASSED, ""));
+		}
     }
 }
