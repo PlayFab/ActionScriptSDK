@@ -33,7 +33,7 @@ The PfApiTest example project can be entirely built and tested with free tools. 
 * Extract the ActionScript Sdk to your computer (referenced as {ActionScriptSDK-Location} within this document)
 * Navigate to: {ActionScriptSDK-Location}/PfApiTest
 * Open {ActionScriptSDK-Location}/PfApiTest/builtTests.bat in a text editor such as Notepad++ or FlashDevelop (Regular notepad may not load unix line endings properly)
-* Update the path for your testTitleData.json file:
+* Update the titleData path in your builtTests.bat file:
  * call adl PfApiTest.xml -- C:\depot\pf-main\tools\SDKBuildScripts\testTitleData.json
  * You will need to create a new testTitleData.json file, and change the above path to match your new file (see next section for details)
 * A very detailed description of how this example was created can be found here:
