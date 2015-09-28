@@ -4,6 +4,7 @@ package com.playfab.AdminModels
     public class RevokeInventoryItemRequest
     {
         public var PlayFabId:String;
+        public var CharacterId:String;
         public var ItemInstanceId:String;
 
         public function RevokeInventoryItemRequest(data:Object=null)
@@ -12,6 +13,7 @@ package com.playfab.AdminModels
                 return;
 
             PlayFabId = data.PlayFabId;
+            CharacterId = data.CharacterId;
             ItemInstanceId = data.ItemInstanceId;
 
         }
