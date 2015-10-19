@@ -14,6 +14,7 @@ package com.playfab.ClientModels
         public static const RefundFailed:String = "RefundFailed";
         public static const ChargedBack:String = "ChargedBack";
         public static const FailedByUber:String = "FailedByUber";
+        public static const FailedByPlayFab:String = "FailedByPlayFab";
         public static const Revoked:String = "Revoked";
         public static const TradePending:String = "TradePending";
         public static const Traded:String = "Traded";
