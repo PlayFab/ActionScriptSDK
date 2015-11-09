@@ -5,6 +5,7 @@ package com.playfab.AdminModels
     {
         public var PlayFabId:String;
         public var Data:Object;
+        public var KeysToRemove:Vector.<String>;
 
         public function UpdateUserInternalDataRequest(data:Object=null)
         {
@@ -13,6 +14,7 @@ package com.playfab.AdminModels
 
             PlayFabId = data.PlayFabId;
             Data = data.Data;
+            KeysToRemove = data.KeysToRemove ? Vector.<String>(data.KeysToRemove) : null;
 
         }
     }
