@@ -183,6 +183,8 @@ package com.playfab
         public static const UsersAlreadyFriends:int = 1183;
         public static const LinkedIdentifierAlreadyClaimed:int = 1184;
         public static const CustomIdNotLinked:int = 1185;
+        public static const TotalDataSizeExceeded:int = 1186;
+        public static const DeleteKeyConflict:int = 1187;
 
 
         public function PlayFabError(data:Object=null)

@@ -3,8 +3,8 @@ package com.playfab
 {
     public class PlayFabVersion
     {
-        public static const ApiRevision:String = "1.7.20151019";
-        public static const SdkRevision:String = "1.0.0";
+        public static const ApiRevision:String = "1.9.20151109";
+        public static const SdkRevision:String = "0.4.151109";
         
         public static function getVersionString():String
         {
