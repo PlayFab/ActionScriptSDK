@@ -187,6 +187,7 @@ package com.playfab
         public static const DeleteKeyConflict:int = 1187;
         public static const InvalidXboxLiveToken:int = 1188;
         public static const ExpiredXboxLiveToken:int = 1189;
+        public static const ResettableStatisticVersionRequired:int = 1190;
 
 
         public function PlayFabError(data:Object=null)
