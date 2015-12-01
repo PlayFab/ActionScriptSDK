@@ -158,6 +158,37 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LoginWithFacebook", requetJson, null, null, onPostComplete);
         }
 
+        public static function LoginWithGameCenter(request:LoginWithGameCenterRequest, onComplete:Function, onError:Function):void
+        {
+            request.TitleId = PlayFabSettings.TitleId != null ? PlayFabSettings.TitleId : request.TitleId;
+			if(request.TitleId == null) throw new Error ("Must be have PlayFabSettings.TitleId set to call this method");
+
+            var requetJson:String = JSON.stringify( request );
+            
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:LoginResult = new LoginResult(resultData);
+                    
+                    SessionTicket = result.SessionTicket != null ? result.SessionTicket : SessionTicket;
+
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LoginWithGameCenter", requetJson, null, null, onPostComplete);
+        }
+
         public static function LoginWithGoogleAccount(request:LoginWithGoogleAccountRequest, onComplete:Function, onError:Function):void
         {
             request.TitleId = PlayFabSettings.TitleId != null ? PlayFabSettings.TitleId : request.TitleId;
@@ -1095,6 +1126,35 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetFriendLeaderboard", requetJson, "X-Authorization", SessionTicket, onPostComplete);
+        }
+
+        public static function GetFriendLeaderboardAroundCurrentUser(request:GetFriendLeaderboardAroundCurrentUserRequest, onComplete:Function, onError:Function):void
+        {
+            if (SessionTicket == null) throw new Error("Must be logged in to call this method");
+
+            var requetJson:String = JSON.stringify( request );
+            
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:GetFriendLeaderboardAroundCurrentUserResult = new GetFriendLeaderboardAroundCurrentUserResult(resultData);
+                    
+                    
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetFriendLeaderboardAroundCurrentUser", requetJson, "X-Authorization", SessionTicket, onPostComplete);
         }
 
         public static function GetLeaderboard(request:GetLeaderboardRequest, onComplete:Function, onError:Function):void
