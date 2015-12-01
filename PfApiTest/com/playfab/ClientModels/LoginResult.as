@@ -6,6 +6,7 @@ package com.playfab.ClientModels
         public var SessionTicket:String;
         public var PlayFabId:String;
         public var NewlyCreated:Boolean;
+        public var SettingsForUser:UserSettings;
 
         public function LoginResult(data:Object=null)
         {
@@ -15,6 +16,7 @@ package com.playfab.ClientModels
             SessionTicket = data.SessionTicket;
             PlayFabId = data.PlayFabId;
             NewlyCreated = data.NewlyCreated;
+            SettingsForUser = new UserSettings(data.SettingsForUser);
 
         }
     }
