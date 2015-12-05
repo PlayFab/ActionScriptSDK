@@ -191,6 +191,7 @@ package com.playfab
         public static const NotAuthorizedByTitle:int = 1191;
         public static const NoPartnerEnabled:int = 1192;
         public static const InvalidPartnerResponse:int = 1193;
+        public static const APINotEnabledForGameServerAccess:int = 1194;
 
 
         public function PlayFabError(data:Object=null)
