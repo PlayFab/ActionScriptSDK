@@ -1,4 +1,3 @@
-
 package com.playfab
 {
     import com.playfab.ServerModels.*;
@@ -8,9 +7,8 @@ package com.playfab
         public static function AuthenticateSessionTicket(request:AuthenticateSessionTicketRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -23,8 +21,6 @@ package com.playfab
                 else
                 {
                     var result:AuthenticateSessionTicketResult = new AuthenticateSessionTicketResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -37,9 +33,8 @@ package com.playfab
         public static function GetPlayFabIDsFromFacebookIDs(request:GetPlayFabIDsFromFacebookIDsRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -52,8 +47,6 @@ package com.playfab
                 else
                 {
                     var result:GetPlayFabIDsFromFacebookIDsResult = new GetPlayFabIDsFromFacebookIDsResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -66,9 +59,8 @@ package com.playfab
         public static function GetUserAccountInfo(request:GetUserAccountInfoRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -81,8 +73,6 @@ package com.playfab
                 else
                 {
                     var result:GetUserAccountInfoResult = new GetUserAccountInfoResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -95,9 +85,8 @@ package com.playfab
         public static function SendPushNotification(request:SendPushNotificationRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -110,8 +99,6 @@ package com.playfab
                 else
                 {
                     var result:SendPushNotificationResult = new SendPushNotificationResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -124,9 +111,8 @@ package com.playfab
         public static function DeleteUsers(request:DeleteUsersRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -139,8 +125,6 @@ package com.playfab
                 else
                 {
                     var result:DeleteUsersResult = new DeleteUsersResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -153,9 +137,8 @@ package com.playfab
         public static function GetLeaderboard(request:GetLeaderboardRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -168,8 +151,6 @@ package com.playfab
                 else
                 {
                     var result:GetLeaderboardResult = new GetLeaderboardResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -182,9 +163,8 @@ package com.playfab
         public static function GetLeaderboardAroundUser(request:GetLeaderboardAroundUserRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -197,8 +177,6 @@ package com.playfab
                 else
                 {
                     var result:GetLeaderboardAroundUserResult = new GetLeaderboardAroundUserResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -211,9 +189,8 @@ package com.playfab
         public static function GetUserData(request:GetUserDataRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -226,8 +203,6 @@ package com.playfab
                 else
                 {
                     var result:GetUserDataResult = new GetUserDataResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -240,9 +215,8 @@ package com.playfab
         public static function GetUserInternalData(request:GetUserDataRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -255,8 +229,6 @@ package com.playfab
                 else
                 {
                     var result:GetUserDataResult = new GetUserDataResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -269,9 +241,8 @@ package com.playfab
         public static function GetUserPublisherData(request:GetUserDataRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -284,8 +255,6 @@ package com.playfab
                 else
                 {
                     var result:GetUserDataResult = new GetUserDataResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -298,9 +267,8 @@ package com.playfab
         public static function GetUserPublisherInternalData(request:GetUserDataRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -313,8 +281,6 @@ package com.playfab
                 else
                 {
                     var result:GetUserDataResult = new GetUserDataResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -327,9 +293,8 @@ package com.playfab
         public static function GetUserPublisherReadOnlyData(request:GetUserDataRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -342,8 +307,6 @@ package com.playfab
                 else
                 {
                     var result:GetUserDataResult = new GetUserDataResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -356,9 +319,8 @@ package com.playfab
         public static function GetUserReadOnlyData(request:GetUserDataRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -371,8 +333,6 @@ package com.playfab
                 else
                 {
                     var result:GetUserDataResult = new GetUserDataResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -385,9 +345,8 @@ package com.playfab
         public static function GetUserStatistics(request:GetUserStatisticsRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -400,8 +359,6 @@ package com.playfab
                 else
                 {
                     var result:GetUserStatisticsResult = new GetUserStatisticsResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -414,9 +371,8 @@ package com.playfab
         public static function UpdateUserData(request:UpdateUserDataRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -429,8 +385,6 @@ package com.playfab
                 else
                 {
                     var result:UpdateUserDataResult = new UpdateUserDataResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -443,9 +397,8 @@ package com.playfab
         public static function UpdateUserInternalData(request:UpdateUserInternalDataRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -458,8 +411,6 @@ package com.playfab
                 else
                 {
                     var result:UpdateUserDataResult = new UpdateUserDataResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -472,9 +423,8 @@ package com.playfab
         public static function UpdateUserPublisherData(request:UpdateUserDataRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -487,8 +437,6 @@ package com.playfab
                 else
                 {
                     var result:UpdateUserDataResult = new UpdateUserDataResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -501,9 +449,8 @@ package com.playfab
         public static function UpdateUserPublisherInternalData(request:UpdateUserInternalDataRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -516,8 +463,6 @@ package com.playfab
                 else
                 {
                     var result:UpdateUserDataResult = new UpdateUserDataResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -530,9 +475,8 @@ package com.playfab
         public static function UpdateUserPublisherReadOnlyData(request:UpdateUserDataRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -545,8 +489,6 @@ package com.playfab
                 else
                 {
                     var result:UpdateUserDataResult = new UpdateUserDataResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -559,9 +501,8 @@ package com.playfab
         public static function UpdateUserReadOnlyData(request:UpdateUserDataRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -574,8 +515,6 @@ package com.playfab
                 else
                 {
                     var result:UpdateUserDataResult = new UpdateUserDataResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -588,9 +527,8 @@ package com.playfab
         public static function UpdateUserStatistics(request:UpdateUserStatisticsRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -603,8 +541,6 @@ package com.playfab
                 else
                 {
                     var result:UpdateUserStatisticsResult = new UpdateUserStatisticsResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -617,9 +553,8 @@ package com.playfab
         public static function GetCatalogItems(request:GetCatalogItemsRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -632,8 +567,6 @@ package com.playfab
                 else
                 {
                     var result:GetCatalogItemsResult = new GetCatalogItemsResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -646,9 +579,8 @@ package com.playfab
         public static function GetTitleData(request:GetTitleDataRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -661,8 +593,6 @@ package com.playfab
                 else
                 {
                     var result:GetTitleDataResult = new GetTitleDataResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -675,9 +605,8 @@ package com.playfab
         public static function GetTitleInternalData(request:GetTitleDataRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -690,8 +619,6 @@ package com.playfab
                 else
                 {
                     var result:GetTitleDataResult = new GetTitleDataResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -704,9 +631,8 @@ package com.playfab
         public static function GetTitleNews(request:GetTitleNewsRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -719,8 +645,6 @@ package com.playfab
                 else
                 {
                     var result:GetTitleNewsResult = new GetTitleNewsResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -733,9 +657,8 @@ package com.playfab
         public static function SetTitleData(request:SetTitleDataRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -748,8 +671,6 @@ package com.playfab
                 else
                 {
                     var result:SetTitleDataResult = new SetTitleDataResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -762,9 +683,8 @@ package com.playfab
         public static function SetTitleInternalData(request:SetTitleDataRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -777,8 +697,6 @@ package com.playfab
                 else
                 {
                     var result:SetTitleDataResult = new SetTitleDataResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -791,9 +709,8 @@ package com.playfab
         public static function AddCharacterVirtualCurrency(request:AddCharacterVirtualCurrencyRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -806,8 +723,6 @@ package com.playfab
                 else
                 {
                     var result:ModifyCharacterVirtualCurrencyResult = new ModifyCharacterVirtualCurrencyResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -820,9 +735,8 @@ package com.playfab
         public static function AddUserVirtualCurrency(request:AddUserVirtualCurrencyRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -835,8 +749,6 @@ package com.playfab
                 else
                 {
                     var result:ModifyUserVirtualCurrencyResult = new ModifyUserVirtualCurrencyResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -849,9 +761,8 @@ package com.playfab
         public static function GetCharacterInventory(request:GetCharacterInventoryRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -864,8 +775,6 @@ package com.playfab
                 else
                 {
                     var result:GetCharacterInventoryResult = new GetCharacterInventoryResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -878,9 +787,8 @@ package com.playfab
         public static function GetUserInventory(request:GetUserInventoryRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -893,8 +801,6 @@ package com.playfab
                 else
                 {
                     var result:GetUserInventoryResult = new GetUserInventoryResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -907,9 +813,8 @@ package com.playfab
         public static function GrantItemsToCharacter(request:GrantItemsToCharacterRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -922,8 +827,6 @@ package com.playfab
                 else
                 {
                     var result:GrantItemsToCharacterResult = new GrantItemsToCharacterResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -936,9 +839,8 @@ package com.playfab
         public static function GrantItemsToUser(request:GrantItemsToUserRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -951,8 +853,6 @@ package com.playfab
                 else
                 {
                     var result:GrantItemsToUserResult = new GrantItemsToUserResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -965,9 +865,8 @@ package com.playfab
         public static function GrantItemsToUsers(request:GrantItemsToUsersRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -980,8 +879,6 @@ package com.playfab
                 else
                 {
                     var result:GrantItemsToUsersResult = new GrantItemsToUsersResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -994,9 +891,8 @@ package com.playfab
         public static function ModifyItemUses(request:ModifyItemUsesRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -1009,8 +905,6 @@ package com.playfab
                 else
                 {
                     var result:ModifyItemUsesResult = new ModifyItemUsesResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -1023,9 +917,8 @@ package com.playfab
         public static function MoveItemToCharacterFromCharacter(request:MoveItemToCharacterFromCharacterRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -1038,8 +931,6 @@ package com.playfab
                 else
                 {
                     var result:MoveItemToCharacterFromCharacterResult = new MoveItemToCharacterFromCharacterResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -1052,9 +943,8 @@ package com.playfab
         public static function MoveItemToCharacterFromUser(request:MoveItemToCharacterFromUserRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -1067,8 +957,6 @@ package com.playfab
                 else
                 {
                     var result:MoveItemToCharacterFromUserResult = new MoveItemToCharacterFromUserResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -1081,9 +969,8 @@ package com.playfab
         public static function MoveItemToUserFromCharacter(request:MoveItemToUserFromCharacterRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -1096,8 +983,6 @@ package com.playfab
                 else
                 {
                     var result:MoveItemToUserFromCharacterResult = new MoveItemToUserFromCharacterResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -1110,9 +995,8 @@ package com.playfab
         public static function RedeemCoupon(request:RedeemCouponRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -1125,8 +1009,6 @@ package com.playfab
                 else
                 {
                     var result:RedeemCouponResult = new RedeemCouponResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -1139,9 +1021,8 @@ package com.playfab
         public static function ReportPlayer(request:ReportPlayerServerRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -1154,8 +1035,6 @@ package com.playfab
                 else
                 {
                     var result:ReportPlayerServerResult = new ReportPlayerServerResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -1168,9 +1047,8 @@ package com.playfab
         public static function SubtractCharacterVirtualCurrency(request:SubtractCharacterVirtualCurrencyRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -1183,8 +1061,6 @@ package com.playfab
                 else
                 {
                     var result:ModifyCharacterVirtualCurrencyResult = new ModifyCharacterVirtualCurrencyResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -1197,9 +1073,8 @@ package com.playfab
         public static function SubtractUserVirtualCurrency(request:SubtractUserVirtualCurrencyRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -1212,8 +1087,6 @@ package com.playfab
                 else
                 {
                     var result:ModifyUserVirtualCurrencyResult = new ModifyUserVirtualCurrencyResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -1226,9 +1099,8 @@ package com.playfab
         public static function UpdateUserInventoryItemCustomData(request:UpdateUserInventoryItemDataRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -1241,8 +1113,6 @@ package com.playfab
                 else
                 {
                     var result:UpdateUserInventoryItemDataResult = new UpdateUserInventoryItemDataResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -1255,9 +1125,8 @@ package com.playfab
         public static function NotifyMatchmakerPlayerLeft(request:NotifyMatchmakerPlayerLeftRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -1270,8 +1139,6 @@ package com.playfab
                 else
                 {
                     var result:NotifyMatchmakerPlayerLeftResult = new NotifyMatchmakerPlayerLeftResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -1284,9 +1151,8 @@ package com.playfab
         public static function RedeemMatchmakerTicket(request:RedeemMatchmakerTicketRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -1299,8 +1165,6 @@ package com.playfab
                 else
                 {
                     var result:RedeemMatchmakerTicketResult = new RedeemMatchmakerTicketResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -1313,9 +1177,8 @@ package com.playfab
         public static function AwardSteamAchievement(request:AwardSteamAchievementRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -1328,8 +1191,6 @@ package com.playfab
                 else
                 {
                     var result:AwardSteamAchievementResult = new AwardSteamAchievementResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -1342,9 +1203,8 @@ package com.playfab
         public static function LogEvent(request:LogEventRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -1357,8 +1217,6 @@ package com.playfab
                 else
                 {
                     var result:LogEventResult = new LogEventResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -1371,9 +1229,8 @@ package com.playfab
         public static function AddSharedGroupMembers(request:AddSharedGroupMembersRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -1386,8 +1243,6 @@ package com.playfab
                 else
                 {
                     var result:AddSharedGroupMembersResult = new AddSharedGroupMembersResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -1400,9 +1255,8 @@ package com.playfab
         public static function CreateSharedGroup(request:CreateSharedGroupRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -1415,8 +1269,6 @@ package com.playfab
                 else
                 {
                     var result:CreateSharedGroupResult = new CreateSharedGroupResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -1429,9 +1281,8 @@ package com.playfab
         public static function DeleteSharedGroup(request:DeleteSharedGroupRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -1444,8 +1295,6 @@ package com.playfab
                 else
                 {
                     var result:EmptyResult = new EmptyResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -1458,9 +1307,8 @@ package com.playfab
         public static function GetPublisherData(request:GetPublisherDataRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -1473,8 +1321,6 @@ package com.playfab
                 else
                 {
                     var result:GetPublisherDataResult = new GetPublisherDataResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -1487,9 +1333,8 @@ package com.playfab
         public static function GetSharedGroupData(request:GetSharedGroupDataRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -1502,8 +1347,6 @@ package com.playfab
                 else
                 {
                     var result:GetSharedGroupDataResult = new GetSharedGroupDataResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -1516,9 +1359,8 @@ package com.playfab
         public static function RemoveSharedGroupMembers(request:RemoveSharedGroupMembersRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -1531,8 +1373,6 @@ package com.playfab
                 else
                 {
                     var result:RemoveSharedGroupMembersResult = new RemoveSharedGroupMembersResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -1545,9 +1385,8 @@ package com.playfab
         public static function SetPublisherData(request:SetPublisherDataRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -1560,8 +1399,6 @@ package com.playfab
                 else
                 {
                     var result:SetPublisherDataResult = new SetPublisherDataResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -1574,9 +1411,8 @@ package com.playfab
         public static function UpdateSharedGroupData(request:UpdateSharedGroupDataRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -1589,8 +1425,6 @@ package com.playfab
                 else
                 {
                     var result:UpdateSharedGroupDataResult = new UpdateSharedGroupDataResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -1603,9 +1437,8 @@ package com.playfab
         public static function GetContentDownloadUrl(request:GetContentDownloadUrlRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -1618,8 +1451,6 @@ package com.playfab
                 else
                 {
                     var result:GetContentDownloadUrlResult = new GetContentDownloadUrlResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -1632,9 +1463,8 @@ package com.playfab
         public static function DeleteCharacterFromUser(request:DeleteCharacterFromUserRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -1647,8 +1477,6 @@ package com.playfab
                 else
                 {
                     var result:DeleteCharacterFromUserResult = new DeleteCharacterFromUserResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -1661,9 +1489,8 @@ package com.playfab
         public static function GetAllUsersCharacters(request:ListUsersCharactersRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -1676,8 +1503,6 @@ package com.playfab
                 else
                 {
                     var result:ListUsersCharactersResult = new ListUsersCharactersResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -1690,9 +1515,8 @@ package com.playfab
         public static function GetCharacterLeaderboard(request:GetCharacterLeaderboardRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -1705,8 +1529,6 @@ package com.playfab
                 else
                 {
                     var result:GetCharacterLeaderboardResult = new GetCharacterLeaderboardResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -1719,9 +1541,8 @@ package com.playfab
         public static function GetCharacterStatistics(request:GetCharacterStatisticsRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -1734,8 +1555,6 @@ package com.playfab
                 else
                 {
                     var result:GetCharacterStatisticsResult = new GetCharacterStatisticsResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -1748,9 +1567,8 @@ package com.playfab
         public static function GetLeaderboardAroundCharacter(request:GetLeaderboardAroundCharacterRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -1763,8 +1581,6 @@ package com.playfab
                 else
                 {
                     var result:GetLeaderboardAroundCharacterResult = new GetLeaderboardAroundCharacterResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -1777,9 +1593,8 @@ package com.playfab
         public static function GetLeaderboardForUserCharacters(request:GetLeaderboardForUsersCharactersRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -1792,8 +1607,6 @@ package com.playfab
                 else
                 {
                     var result:GetLeaderboardForUsersCharactersResult = new GetLeaderboardForUsersCharactersResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -1806,9 +1619,8 @@ package com.playfab
         public static function GrantCharacterToUser(request:GrantCharacterToUserRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -1821,8 +1633,6 @@ package com.playfab
                 else
                 {
                     var result:GrantCharacterToUserResult = new GrantCharacterToUserResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -1835,9 +1645,8 @@ package com.playfab
         public static function UpdateCharacterStatistics(request:UpdateCharacterStatisticsRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -1850,8 +1659,6 @@ package com.playfab
                 else
                 {
                     var result:UpdateCharacterStatisticsResult = new UpdateCharacterStatisticsResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -1864,9 +1671,8 @@ package com.playfab
         public static function GetCharacterData(request:GetCharacterDataRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -1879,8 +1685,6 @@ package com.playfab
                 else
                 {
                     var result:GetCharacterDataResult = new GetCharacterDataResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -1893,9 +1697,8 @@ package com.playfab
         public static function GetCharacterInternalData(request:GetCharacterDataRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -1908,8 +1711,6 @@ package com.playfab
                 else
                 {
                     var result:GetCharacterDataResult = new GetCharacterDataResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -1922,9 +1723,8 @@ package com.playfab
         public static function GetCharacterReadOnlyData(request:GetCharacterDataRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -1937,8 +1737,6 @@ package com.playfab
                 else
                 {
                     var result:GetCharacterDataResult = new GetCharacterDataResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -1951,9 +1749,8 @@ package com.playfab
         public static function UpdateCharacterData(request:UpdateCharacterDataRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -1966,8 +1763,6 @@ package com.playfab
                 else
                 {
                     var result:UpdateCharacterDataResult = new UpdateCharacterDataResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -1980,9 +1775,8 @@ package com.playfab
         public static function UpdateCharacterInternalData(request:UpdateCharacterDataRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -1995,8 +1789,6 @@ package com.playfab
                 else
                 {
                     var result:UpdateCharacterDataResult = new UpdateCharacterDataResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -2009,9 +1801,8 @@ package com.playfab
         public static function UpdateCharacterReadOnlyData(request:UpdateCharacterDataRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -2024,8 +1815,6 @@ package com.playfab
                 else
                 {
                     var result:UpdateCharacterDataResult = new UpdateCharacterDataResult(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -2035,7 +1824,5 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/UpdateCharacterReadOnlyData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
-
-        public static var SessionTicket:String = null;
     }
 }
