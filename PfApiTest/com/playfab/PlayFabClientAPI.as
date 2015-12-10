@@ -291,6 +291,35 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LoginWithPlayFab", requetJson, null, null, onPostComplete);
         }
 
+        public static function LoginWithPSN(request:LoginWithPSNRequest, onComplete:Function, onError:Function):void
+        {
+            request.TitleId = PlayFabSettings.TitleId != null ? PlayFabSettings.TitleId : request.TitleId;
+            if(request.TitleId == null) throw new Error ("Must be have PlayFabSettings.TitleId set to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:LoginResult = new LoginResult(resultData);
+                    authKey = result.SessionTicket != null ? result.SessionTicket : authKey;
+                    MultiStepClientLogin(result.SettingsForUser.NeedsAttribution);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LoginWithPSN", requetJson, null, null, onPostComplete);
+        }
+
         public static function LoginWithSteam(request:LoginWithSteamRequest, onComplete:Function, onError:Function):void
         {
             request.TitleId = PlayFabSettings.TitleId != null ? PlayFabSettings.TitleId : request.TitleId;
@@ -318,6 +347,35 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LoginWithSteam", requetJson, null, null, onPostComplete);
+        }
+
+        public static function LoginWithXbox(request:LoginWithXboxRequest, onComplete:Function, onError:Function):void
+        {
+            request.TitleId = PlayFabSettings.TitleId != null ? PlayFabSettings.TitleId : request.TitleId;
+            if(request.TitleId == null) throw new Error ("Must be have PlayFabSettings.TitleId set to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:LoginResult = new LoginResult(resultData);
+                    authKey = result.SessionTicket != null ? result.SessionTicket : authKey;
+                    MultiStepClientLogin(result.SettingsForUser.NeedsAttribution);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LoginWithXbox", requetJson, null, null, onPostComplete);
         }
 
         public static function RegisterPlayFabUser(request:RegisterPlayFabUserRequest, onComplete:Function, onError:Function):void
@@ -477,6 +535,32 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayFabIDsFromGoogleIDs", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function GetPlayFabIDsFromPSNAccountIDs(request:GetPlayFabIDsFromPSNAccountIDsRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:GetPlayFabIDsFromPSNAccountIDsResult = new GetPlayFabIDsFromPSNAccountIDsResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayFabIDsFromPSNAccountIDs", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
         public static function GetPlayFabIDsFromSteamIDs(request:GetPlayFabIDsFromSteamIDsRequest, onComplete:Function, onError:Function):void
@@ -713,6 +797,32 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkKongregate", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
+        public static function LinkPSNAccount(request:LinkPSNAccountRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:LinkPSNAccountResult = new LinkPSNAccountResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkPSNAccount", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
         public static function LinkSteamAccount(request:LinkSteamAccountRequest, onComplete:Function, onError:Function):void
         {
             if (authKey == null) throw new Error("Must be logged in to call this method");
@@ -737,6 +847,32 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkSteamAccount", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function LinkXboxAccount(request:LinkXboxAccountRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:LinkXboxAccountResult = new LinkXboxAccountResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkXboxAccount", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
         public static function SendAccountRecoveryEmail(request:SendAccountRecoveryEmailRequest, onComplete:Function, onError:Function):void
@@ -947,6 +1083,32 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkKongregate", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
+        public static function UnlinkPSNAccount(request:UnlinkPSNAccountRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:UnlinkPSNAccountResult = new UnlinkPSNAccountResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkPSNAccount", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
         public static function UnlinkSteamAccount(request:UnlinkSteamAccountRequest, onComplete:Function, onError:Function):void
         {
             if (authKey == null) throw new Error("Must be logged in to call this method");
@@ -971,6 +1133,32 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkSteamAccount", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function UnlinkXboxAccount(request:UnlinkXboxAccountRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:UnlinkXboxAccountResult = new UnlinkXboxAccountResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkXboxAccount", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
         public static function UpdateUserTitleDisplayName(request:UpdateUserTitleDisplayNameRequest, onComplete:Function, onError:Function):void
@@ -2273,6 +2461,58 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UpdateSharedGroupData", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
+        public static function ConsumePSNEntitlements(request:ConsumePSNEntitlementsRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:ConsumePSNEntitlementsResult = new ConsumePSNEntitlementsResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ConsumePSNEntitlements", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function RefreshPSNAuthToken(request:RefreshPSNAuthTokenRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:EmptyResult = new EmptyResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/RefreshPSNAuthToken", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
         public static function GetCloudScriptUrl(request:GetCloudScriptUrlRequest, onComplete:Function, onError:Function):void
         {
             if (authKey == null) throw new Error("Must be logged in to call this method");
@@ -2560,6 +2800,32 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UpdateCharacterData", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
+        public static function ValidateAmazonIAPReceipt(request:ValidateAmazonReceiptRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:ValidateAmazonReceiptResult = new ValidateAmazonReceiptResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ValidateAmazonIAPReceipt", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
         public static function AcceptTrade(request:AcceptTradeRequest, onComplete:Function, onError:Function):void
         {
             if (authKey == null) throw new Error("Must be logged in to call this method");
@@ -2707,6 +2973,7 @@ package com.playfab
                 else
                 {
                     var result:AttributeInstallResult = new AttributeInstallResult(resultData);
+                    PlayFabSettings.AdvertisingIdType += "_Successful";
 
                     if(onComplete != null)
                         onComplete(result);
@@ -2718,7 +2985,7 @@ package com.playfab
 
         public static function MultiStepClientLogin(needsAttribution:Boolean):void
         {
-            if (needsAttribution && !PlayFabSettings.DisableAdvertising && (PlayFabSettings.AdvertisingIdType as Boolean) && (PlayFabSettings.AdvertisingIdValue as Boolean))
+            if (needsAttribution && !PlayFabSettings.DisableAdvertising && (PlayFabSettings.AdvertisingIdType != null && PlayFabSettings.AdvertisingIdType != "") && (PlayFabSettings.AdvertisingIdValue != null && PlayFabSettings.AdvertisingIdValue != ""))
             {
                 var request:AttributeInstallRequest = new AttributeInstallRequest();
                 if (PlayFabSettings.AdvertisingIdType == PlayFabSettings.AD_TYPE_IDFA)
