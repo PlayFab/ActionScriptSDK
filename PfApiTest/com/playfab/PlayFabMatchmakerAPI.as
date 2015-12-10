@@ -1,4 +1,3 @@
-
 package com.playfab
 {
     import com.playfab.MatchmakerModels.*;
@@ -8,9 +7,8 @@ package com.playfab
         public static function AuthUser(request:AuthUserRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -23,8 +21,6 @@ package com.playfab
                 else
                 {
                     var result:AuthUserResponse = new AuthUserResponse(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -37,9 +33,8 @@ package com.playfab
         public static function PlayerJoined(request:PlayerJoinedRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -52,8 +47,6 @@ package com.playfab
                 else
                 {
                     var result:PlayerJoinedResponse = new PlayerJoinedResponse(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -66,9 +59,8 @@ package com.playfab
         public static function PlayerLeft(request:PlayerLeftRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -81,8 +73,6 @@ package com.playfab
                 else
                 {
                     var result:PlayerLeftResponse = new PlayerLeftResponse(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -95,9 +85,8 @@ package com.playfab
         public static function StartGame(request:StartGameRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -110,8 +99,6 @@ package com.playfab
                 else
                 {
                     var result:StartGameResponse = new StartGameResponse(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -124,9 +111,8 @@ package com.playfab
         public static function UserInfo(request:UserInfoRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-
             var requetJson:String = JSON.stringify( request );
-            
+
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
             {
                 if(error)
@@ -139,8 +125,6 @@ package com.playfab
                 else
                 {
                     var result:UserInfoResponse = new UserInfoResponse(resultData);
-                    
-                    
 
                     if(onComplete != null)
                         onComplete(result);
@@ -150,7 +134,5 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Matchmaker/UserInfo", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
-
-        public static var SessionTicket:String = null;
     }
 }
