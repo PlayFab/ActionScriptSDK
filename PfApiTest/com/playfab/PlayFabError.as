@@ -190,6 +190,10 @@ package com.playfab
         public static const ResettableStatisticVersionRequired:int = 1190;
         public static const NotAuthorizedByTitle:int = 1191;
         public static const NoPartnerEnabled:int = 1192;
+        public static const InvalidPartnerResponse:int = 1193;
+        public static const APINotEnabledForGameServerAccess:int = 1194;
+        public static const StatisticNotFound:int = 1195;
+        public static const StatisticNameConflict:int = 1196;
 
 
         public function PlayFabError(data:Object=null)
