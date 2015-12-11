@@ -2973,6 +2973,7 @@ package com.playfab
                 else
                 {
                     var result:AttributeInstallResult = new AttributeInstallResult(resultData);
+                    // Modify AdvertisingIdType:  Prevents us from sending the id multiple times, and allows automated tests to determine id was sent successfully
                     PlayFabSettings.AdvertisingIdType += "_Successful";
 
                     if(onComplete != null)
