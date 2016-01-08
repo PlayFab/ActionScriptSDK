@@ -4,7 +4,7 @@ package com.playfab.ClientModels
     public class StatisticUpdate
     {
         public var StatisticName:String;
-        public var Version:String;
+        public var Version:*;
         public var Value:int;
 
         public function StatisticUpdate(data:Object=null)

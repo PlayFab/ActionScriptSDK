@@ -4,7 +4,7 @@ package com.playfab.AdminModels
     public class PlayerStatisticDefinition
     {
         public var StatisticName:String;
-        public var CurrentVersion:String;
+        public var CurrentVersion:uint;
         public var VersionChangeInterval:String;
 
         public function PlayerStatisticDefinition(data:Object=null)

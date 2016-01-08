@@ -194,6 +194,8 @@ package com.playfab
         public static const APINotEnabledForGameServerAccess:int = 1194;
         public static const StatisticNotFound:int = 1195;
         public static const StatisticNameConflict:int = 1196;
+        public static const StatisticVersionClosedForWrites:int = 1197;
+        public static const StatisticVersionInvalid:int = 1198;
 
 
         public function PlayFabError(data:Object=null)
