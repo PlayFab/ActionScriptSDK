@@ -1239,6 +1239,32 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetFriendLeaderboardAroundCurrentUser", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
+        public static function GetFriendLeaderboardAroundPlayer(request:GetFriendLeaderboardAroundPlayerRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:GetFriendLeaderboardAroundPlayerResult = new GetFriendLeaderboardAroundPlayerResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetFriendLeaderboardAroundPlayer", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
         public static function GetLeaderboard(request:GetLeaderboardRequest, onComplete:Function, onError:Function):void
         {
             if (authKey == null) throw new Error("Must be logged in to call this method");
@@ -1289,6 +1315,32 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetLeaderboardAroundCurrentUser", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function GetLeaderboardAroundPlayer(request:GetLeaderboardAroundPlayerRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:GetLeaderboardAroundPlayerResult = new GetLeaderboardAroundPlayerResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetLeaderboardAroundPlayer", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
         public static function GetUserData(request:GetUserDataRequest, onComplete:Function, onError:Function):void
