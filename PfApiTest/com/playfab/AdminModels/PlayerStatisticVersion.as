@@ -6,11 +6,13 @@ package com.playfab.AdminModels
     public class PlayerStatisticVersion
     {
         public var StatisticName:String;
-        public var Version:String;
-        public var ScheduledVersionChangeIntervalTime:Date;
-        public var CreatedTime:Date;
+        public var Version:uint;
+        public var ScheduledActivationTime:Date;
+        public var ActivationTime:Date;
+        public var ScheduledDeactivationTime:Date;
+        public var DeactivationTime:Date;
         public var ArchivalStatus:String;
-        public var ResetInterval:String;
+        public var ArchiveDownloadUrl:String;
 
         public function PlayerStatisticVersion(data:Object=null)
         {
@@ -19,10 +21,12 @@ package com.playfab.AdminModels
 
             StatisticName = data.StatisticName;
             Version = data.Version;
-            ScheduledVersionChangeIntervalTime = PlayFabUtil.parseDate(data.ScheduledVersionChangeIntervalTime);
-            CreatedTime = PlayFabUtil.parseDate(data.CreatedTime);
+            ScheduledActivationTime = PlayFabUtil.parseDate(data.ScheduledActivationTime);
+            ActivationTime = PlayFabUtil.parseDate(data.ActivationTime);
+            ScheduledDeactivationTime = PlayFabUtil.parseDate(data.ScheduledDeactivationTime);
+            DeactivationTime = PlayFabUtil.parseDate(data.DeactivationTime);
             ArchivalStatus = data.ArchivalStatus;
-            ResetInterval = data.ResetInterval;
+            ArchiveDownloadUrl = data.ArchiveDownloadUrl;
 
         }
     }

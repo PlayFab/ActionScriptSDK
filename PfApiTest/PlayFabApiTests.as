@@ -53,6 +53,7 @@ package
             TITLE_DATA_FILENAME = titleDataFileName;
 
             AddTest("InvalidLogin", InvalidLogin);
+            AddTest("InvalidRegistration", InvalidRegistration);
             AddTest("LoginOrRegister", LoginOrRegister);
             AddTest("LoginWithAdvertisingId", LoginWithAdvertisingId);
             AddTest("UserDataApi", UserDataApi);
@@ -112,7 +113,6 @@ package
         /// </summary>
         private function InvalidLogin() : void
         {
-            // If the setup failed to log in a user, we need to create one.
             var request:com.playfab.ClientModels.LoginWithEmailAddressRequest = new com.playfab.ClientModels.LoginWithEmailAddressRequest();
             request.TitleId = PlayFabSettings.TitleId;
             request.Email = USER_EMAIL;
@@ -136,6 +136,53 @@ package
         private function Shared_ApiCallFailure(error:com.playfab.PlayFabError) : void
         {
             ASyncAssert.Fail(error.errorMessage);
+        }
+
+        /// <summary>
+        /// CLIENT API
+        /// Try to deliberately register a character with an invalid email and password.
+        ///   Verify that errorDetails are populated correctly.
+        /// </summary>
+        private function InvalidRegistration() : void
+        {
+            var registerRequest:com.playfab.ClientModels.RegisterPlayFabUserRequest = new com.playfab.ClientModels.RegisterPlayFabUserRequest();
+            registerRequest.TitleId = PlayFabSettings.TitleId;
+            registerRequest.Username = USER_NAME; // A username that is already taken
+            registerRequest.Email = "invalidEmail"; // An improperly formatted email
+            registerRequest.Password = "x"; // A password that is too short
+            PlayFabClientAPI.RegisterPlayFabUser(registerRequest, Wrap(InvalidRegistration_Success, "Register"), Wrap(InvalidRegistration_Failure, "RegisterFail"));
+        }
+        private function InvalidRegistration_Success(result:com.playfab.ClientModels.LoginResult) : void
+        {
+            reporter.Debug("InvalidRegistration_Success");
+            ASyncAssert.Fail("Registration unexpectedly succeeded.");
+        }
+        private function InvalidRegistration_Failure(error:com.playfab.PlayFabError) : void
+        {
+            ASyncAssert.AssertNotNull(error.errorMessage);
+            ASyncAssert.AssertNotNull(error.errorDetails); // This is one of the few messages that actually provide errorDetails
+            if(error.errorMessage.toLowerCase().indexOf("invalid input parameters") == -1)
+                ASyncAssert.Fail("Unexpected error result: " + error.errorMessage);
+
+            // Find and verify each expected error detail message
+            var expectedEmailMsg:String = "Email address is not valid.";
+            var expectedPasswordMsg:String = "Password must be between 6 and 30 characters.";
+            var foundEmailMsg:Boolean = false;
+            var foundPasswordMsg:Boolean = false;
+            var allMessages:String = "";
+            for (var key:String in error.errorDetails) {
+                var eachArray:Array = error.errorDetails[key];
+                for (var eachIndex:int in eachArray) {
+                    if(eachArray[eachIndex].indexOf(expectedEmailMsg) >= 0)
+                        foundEmailMsg = true;
+                    if(eachArray[eachIndex].indexOf(expectedPasswordMsg) >= 0)
+                        foundPasswordMsg = true;
+                    allMessages += eachArray[eachIndex];
+                }
+            }
+            ASyncAssert.AssertTrue(foundEmailMsg, "\"" + expectedEmailMsg + "\" not found in: " + allMessages);
+            ASyncAssert.AssertTrue(foundPasswordMsg, "\"" + expectedPasswordMsg + "\" not found in: " + allMessages);
+            FinishTestHandler(new ASyncUnitTestEvent(ASyncUnitTestEvent.FINISH_TEST, ASyncUnitTestEvent.RESULT_PASSED, ""));
         }
 
         /// <summary>
@@ -196,7 +243,7 @@ package
             // Try to login, but if we fail, just fall-back and try to create character
             PlayFabClientAPI.LoginWithEmailAddress(loginRequest, Wrap(LoginWithAdvertisingId_LoginSuccess, "LoginWithAdvertisingId"), Wrap(Shared_ApiCallFailure, "LoginWithAdvertisingId"));
             function RecursiveWrap():void { CheckAdvertIdSuccess(-1); }
-            Wrap(RecursiveWrap, "RecursiveWrap_First")();
+            Wrap(RecursiveWrap, "RecursiveWrap_First")(); // ODD SYNTAX HERE: Wrap returns a function, which we then need to call.  Normally the wrap-return is passed in as a callback, which gets called by the sdk, or a utility.
         }
         private function LoginWithAdvertisingId_LoginSuccess(result:com.playfab.ClientModels.LoginResult) : void
         {
@@ -206,7 +253,7 @@ package
         private function CheckAdvertIdSuccess(count:Number) : void
         {
             TickTestHandler();
-            if (count > 20) // Base case, fail out
+            if (count > 20) // count is the number of attempts to test the successful send of the AdvertisingId.  It needs to be high enough to guarantee regular-case success, but low enough to fail within a reasonable time-limit
             {
                 ASyncAssert.Fail("AdvertisingId not sent properly: " + PlayFabSettings.AdvertisingIdType);
             }
@@ -218,7 +265,7 @@ package
             {
                 function RecursiveWrap():void { CheckAdvertIdSuccess(count + 1); }
 
-                var timer:Timer = new Timer(50, 1);
+                var timer:Timer = new Timer(50, 1); // timer takes a delay, which in this case re-tests the successful send of the AdvertisingId.  It needs to be high enough to guarantee regular-case success, but low enough to fail within a reasonable time-limit
                 timer.addEventListener(TimerEvent.TIMER, Wrap(RecursiveWrap, "RecursiveWrap_" + count));
                 timer.start();
             }
@@ -238,7 +285,7 @@ package
         }
         private function UserDataApi_GetSuccess1(result:com.playfab.ClientModels.GetUserDataResult) : void
         {
-            testIntExpected = int(result.Data[TEST_DATA_KEY].Value);
+            testIntExpected = result.Data.hasOwnProperty(TEST_DATA_KEY) ? int(result.Data[TEST_DATA_KEY].Value) : 1;
             testIntExpected = (testIntExpected + 1) % 100; // This test is about the expected value changing - but not testing more complicated issues like bounds
 
             var updateRequest:com.playfab.ClientModels.UpdateUserDataRequest = new com.playfab.ClientModels.UpdateUserDataRequest();

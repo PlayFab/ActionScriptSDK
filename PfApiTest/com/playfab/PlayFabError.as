@@ -194,6 +194,9 @@ package com.playfab
         public static const APINotEnabledForGameServerAccess:int = 1194;
         public static const StatisticNotFound:int = 1195;
         public static const StatisticNameConflict:int = 1196;
+        public static const StatisticVersionClosedForWrites:int = 1197;
+        public static const StatisticVersionInvalid:int = 1198;
+        public static const APIClientRequestRateLimitExceeded:int = 1199;
 
 
         public function PlayFabError(data:Object=null)
@@ -204,6 +207,7 @@ package com.playfab
             error = data.error;
             errorCode = data.errorCode;
             errorMessage = data.errorMessage;
+            errorDetails = data.errorDetails;
         }
 
         public var httpCode:int; // HTTP return code
@@ -211,5 +215,6 @@ package com.playfab
         public var error:String; // PlayFab error enum-string
         public var errorCode:int; // PlayFab error code
         public var errorMessage:String; // PlayFab specific error message
+        public var errorDetails:Object; // Additional error details: frequently null, but if errorMessage is vague, this may contain more information
     }
 }

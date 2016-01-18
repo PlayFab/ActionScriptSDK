@@ -4,7 +4,7 @@ package com.playfab.ClientModels
     public class GetLeaderboardAroundCurrentUserRequest
     {
         public var StatisticName:String;
-        public var MaxResultsCount:int;
+        public var MaxResultsCount:*;
 
         public function GetLeaderboardAroundCurrentUserRequest(data:Object=null)
         {
