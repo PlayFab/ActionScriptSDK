@@ -5,7 +5,7 @@ package com.playfab.ClientModels
     {
         public var StatisticName:String;
         public var StartPosition:int;
-        public var MaxResultsCount:int;
+        public var MaxResultsCount:*;
         public var IncludeSteamFriends:*;
         public var IncludeFacebookFriends:*;
 

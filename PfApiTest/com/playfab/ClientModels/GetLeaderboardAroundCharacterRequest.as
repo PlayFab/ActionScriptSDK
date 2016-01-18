@@ -6,7 +6,7 @@ package com.playfab.ClientModels
         public var StatisticName:String;
         public var CharacterId:String;
         public var CharacterType:String;
-        public var MaxResultsCount:int;
+        public var MaxResultsCount:*;
 
         public function GetLeaderboardAroundCharacterRequest(data:Object=null)
         {
