@@ -1,14 +1,14 @@
 
 package com.playfab.ClientModels
 {
-    public class ItemPuchaseRequest
+    public class ItemPurchaseRequest
     {
         public var ItemId:String;
         public var Quantity:uint;
         public var Annotation:String;
         public var UpgradeFromItems:Vector.<String>;
 
-        public function ItemPuchaseRequest(data:Object=null)
+        public function ItemPurchaseRequest(data:Object=null)
         {
             if(data == null)
                 return;
