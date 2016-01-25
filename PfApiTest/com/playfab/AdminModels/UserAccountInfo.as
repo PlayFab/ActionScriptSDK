@@ -13,6 +13,13 @@ package com.playfab.AdminModels
         public var FacebookInfo:UserFacebookInfo;
         public var SteamInfo:UserSteamInfo;
         public var GameCenterInfo:UserGameCenterInfo;
+        public var IosDeviceInfo:UserIosDeviceInfo;
+        public var AndroidDeviceInfo:UserAndroidDeviceInfo;
+        public var KongregateInfo:UserKongregateInfo;
+        public var PsnInfo:UserPsnInfo;
+        public var GoogleInfo:UserGoogleInfo;
+        public var XboxInfo:UserXboxInfo;
+        public var CustomIdInfo:UserCustomIdInfo;
 
         public function UserAccountInfo(data:Object=null)
         {
@@ -27,6 +34,13 @@ package com.playfab.AdminModels
             FacebookInfo = new UserFacebookInfo(data.FacebookInfo);
             SteamInfo = new UserSteamInfo(data.SteamInfo);
             GameCenterInfo = new UserGameCenterInfo(data.GameCenterInfo);
+            IosDeviceInfo = new UserIosDeviceInfo(data.IosDeviceInfo);
+            AndroidDeviceInfo = new UserAndroidDeviceInfo(data.AndroidDeviceInfo);
+            KongregateInfo = new UserKongregateInfo(data.KongregateInfo);
+            PsnInfo = new UserPsnInfo(data.PsnInfo);
+            GoogleInfo = new UserGoogleInfo(data.GoogleInfo);
+            XboxInfo = new UserXboxInfo(data.XboxInfo);
+            CustomIdInfo = new UserCustomIdInfo(data.CustomIdInfo);
 
         }
     }

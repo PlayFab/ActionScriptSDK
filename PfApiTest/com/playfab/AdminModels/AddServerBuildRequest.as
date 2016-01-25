@@ -9,6 +9,7 @@ package com.playfab.AdminModels
         public var ActiveRegions:Vector.<String>;
         public var Comment:String;
         public var MaxGamesPerHost:int;
+        public var MinFreeGameSlots:int;
 
         public function AddServerBuildRequest(data:Object=null)
         {
@@ -21,6 +22,7 @@ package com.playfab.AdminModels
             ActiveRegions = data.ActiveRegions ? Vector.<String>(data.ActiveRegions) : null;
             Comment = data.Comment;
             MaxGamesPerHost = data.MaxGamesPerHost;
+            MinFreeGameSlots = data.MinFreeGameSlots;
 
         }
     }

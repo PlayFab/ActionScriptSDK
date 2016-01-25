@@ -8,6 +8,7 @@ package com.playfab.AdminModels
         public var BuildId:String;
         public var ActiveRegions:Vector.<String>;
         public var MaxGamesPerHost:int;
+        public var MinFreeGameSlots:int;
         public var Comment:String;
         public var Timestamp:Date;
         public var TitleId:String;
@@ -22,6 +23,7 @@ package com.playfab.AdminModels
             BuildId = data.BuildId;
             ActiveRegions = data.ActiveRegions ? Vector.<String>(data.ActiveRegions) : null;
             MaxGamesPerHost = data.MaxGamesPerHost;
+            MinFreeGameSlots = data.MinFreeGameSlots;
             Comment = data.Comment;
             Timestamp = PlayFabUtil.parseDate(data.Timestamp);
             TitleId = data.TitleId;
