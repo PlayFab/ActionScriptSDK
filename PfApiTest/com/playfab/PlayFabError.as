@@ -197,6 +197,8 @@ package com.playfab
         public static const StatisticVersionClosedForWrites:int = 1197;
         public static const StatisticVersionInvalid:int = 1198;
         public static const APIClientRequestRateLimitExceeded:int = 1199;
+        public static const InvalidJSONContent:int = 1200;
+        public static const InvalidDropTable:int = 1201;
 
 
         public function PlayFabError(data:Object=null)
