@@ -6,7 +6,7 @@ package com.playfab.AdminModels
     public class ContentInfo
     {
         public var Key:String;
-        public var Size:Number;
+        public var Size:uint;
         public var LastModified:Date;
 
         public function ContentInfo(data:Object=null)
