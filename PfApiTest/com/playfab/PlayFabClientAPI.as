@@ -2828,7 +2828,7 @@ package com.playfab
 
         public static function UpdateCharacterStatistics(request:UpdateCharacterStatisticsRequest, onComplete:Function, onError:Function):void
         {
-
+            if (authKey == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -2849,7 +2849,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UpdateCharacterStatistics", requetJson, null, null, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UpdateCharacterStatistics", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
         public static function GetCharacterData(request:GetCharacterDataRequest, onComplete:Function, onError:Function):void

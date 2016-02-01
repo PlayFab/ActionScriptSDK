@@ -3,8 +3,8 @@ package com.playfab.AdminModels
 {
     public class GetContentListResult
     {
-        public var ItemCount:Number;
-        public var TotalSize:Number;
+        public var ItemCount:int;
+        public var TotalSize:uint;
         public var Contents:Vector.<ContentInfo>;
 
         public function GetContentListResult(data:Object=null)
