@@ -1098,7 +1098,7 @@ package com.playfab
 
         public static function GetServerBuildInfo(request:GetServerBuildInfoRequest, onComplete:Function, onError:Function):void
         {
-
+            if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1119,7 +1119,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Admin/GetServerBuildInfo", requetJson, null, null, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Admin/GetServerBuildInfo", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetServerBuildUploadUrl(request:GetServerBuildUploadURLRequest, onComplete:Function, onError:Function):void
