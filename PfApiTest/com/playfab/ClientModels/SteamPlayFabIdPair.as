@@ -3,7 +3,7 @@ package com.playfab.ClientModels
 {
     public class SteamPlayFabIdPair
     {
-        public var SteamId:uint;
+        public var SteamId:Number;
         public var PlayFabId:String;
 
         public function SteamPlayFabIdPair(data:Object=null)
