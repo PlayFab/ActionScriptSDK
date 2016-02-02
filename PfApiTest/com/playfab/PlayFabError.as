@@ -199,6 +199,9 @@ package com.playfab
         public static const APIClientRequestRateLimitExceeded:int = 1199;
         public static const InvalidJSONContent:int = 1200;
         public static const InvalidDropTable:int = 1201;
+        public static const StatisticVersionAlreadyIncrementedForScheduledInterval:int = 1202;
+        public static const StatisticCountLimitExceeded:int = 1203;
+        public static const StatisticVersionIncrementRateExceeded:int = 1204;
 
 
         public function PlayFabError(data:Object=null)
