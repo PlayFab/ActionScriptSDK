@@ -3,7 +3,7 @@ package com.playfab.AdminModels
 {
     public class CreatePlayerStatisticDefinitionRequest
     {
-        public var Name:String;
+        public var StatisticName:String;
         public var VersionChangeInterval:String;
 
         public function CreatePlayerStatisticDefinitionRequest(data:Object=null)
@@ -11,7 +11,7 @@ package com.playfab.AdminModels
             if(data == null)
                 return;
 
-            Name = data.Name;
+            StatisticName = data.StatisticName;
             VersionChangeInterval = data.VersionChangeInterval;
 
         }
