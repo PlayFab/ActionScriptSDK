@@ -18,6 +18,7 @@ package com.playfab.ClientModels
         public static const GameCenter:String = "GameCenter";
         public static const CustomId:String = "CustomId";
         public static const XboxLive:String = "XboxLive";
+        public static const Parse:String = "Parse";
 
     }
 }
