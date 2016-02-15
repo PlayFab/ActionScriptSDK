@@ -166,7 +166,7 @@ package
 
             // Find and verify each expected error detail message
             var expectedEmailMsg:String = "Email address is not valid.";
-            var expectedPasswordMsg:String = "Password must be between 6 and 30 characters.";
+            var expectedPasswordMsg:String = "Password must be between";
             var foundEmailMsg:Boolean = false;
             var foundPasswordMsg:Boolean = false;
             var allMessages:String = "";
@@ -403,23 +403,22 @@ package
         /// </summary>
         private function LeaderBoard() : void
         {
-            var clientRequest:com.playfab.ClientModels.GetLeaderboardAroundCurrentUserRequest = new com.playfab.ClientModels.GetLeaderboardAroundCurrentUserRequest();
+            var clientRequest:com.playfab.ClientModels.GetLeaderboardRequest = new com.playfab.ClientModels.GetLeaderboardRequest();
             clientRequest.MaxResultsCount = 3;
             clientRequest.StatisticName = TEST_STAT_NAME;
-            PlayFabClientAPI.GetLeaderboardAroundCurrentUser(clientRequest, Wrap(GetClientLbCallback, "ClientLB"), Wrap(Shared_ApiCallFailure, "ClientLB_Fail"));
+            PlayFabClientAPI.GetLeaderboard(clientRequest, Wrap(GetClientLbCallback, "ClientLB"), Wrap(Shared_ApiCallFailure, "ClientLB_Fail"));
         }
-        private function GetClientLbCallback(result:com.playfab.ClientModels.GetLeaderboardAroundCurrentUserResult) : void
+        private function GetClientLbCallback(result:com.playfab.ClientModels.GetLeaderboardResult) : void
         {
             if (result.Leaderboard.length == 0)
                 ASyncAssert.Fail("Client leaderboard results not found");
 
-            var serverRequest:com.playfab.ServerModels.GetLeaderboardAroundUserRequest = new com.playfab.ServerModels.GetLeaderboardAroundUserRequest();
+            var serverRequest:com.playfab.ServerModels.GetLeaderboardRequest = new com.playfab.ServerModels.GetLeaderboardRequest();
             serverRequest.MaxResultsCount = 3;
             serverRequest.StatisticName = TEST_STAT_NAME;
-            serverRequest.PlayFabId = playFabId;
-            PlayFabServerAPI.GetLeaderboardAroundUser(serverRequest, Wrap(GetServerLbCallback, "ServerLB"), Wrap(Shared_ApiCallFailure, "ServerLB_Fail"));
+            PlayFabServerAPI.GetLeaderboard(serverRequest, Wrap(GetServerLbCallback, "ServerLB"), Wrap(Shared_ApiCallFailure, "ServerLB_Fail"));
         }
-        private function GetServerLbCallback(result:com.playfab.ServerModels.GetLeaderboardAroundUserResult) : void
+        private function GetServerLbCallback(result:com.playfab.ServerModels.GetLeaderboardResult) : void
         {
             if (result.Leaderboard.length == 0)
                 ASyncAssert.Fail("Server leaderboard results not found");
