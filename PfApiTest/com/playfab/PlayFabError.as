@@ -203,6 +203,7 @@ package com.playfab
         public static const StatisticCountLimitExceeded:int = 1203;
         public static const StatisticVersionIncrementRateExceeded:int = 1204;
         public static const ContainerKeyInvalid:int = 1205;
+        public static const CloudScriptExecutionTimeLimitExceeded:int = 1206;
 
 
         public function PlayFabError(data:Object=null)
