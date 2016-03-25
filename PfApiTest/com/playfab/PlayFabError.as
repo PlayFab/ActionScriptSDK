@@ -209,6 +209,8 @@ package com.playfab
         public static const CloudScriptAPIRequestCountExceeded:int = 1209;
         public static const CloudScriptAPIRequestError:int = 1210;
         public static const CloudScriptHTTPRequestError:int = 1211;
+        public static const InsufficientGuildRole:int = 1212;
+        public static const GuildNotFound:int = 1213;
 
 
         public function PlayFabError(data:Object=null)

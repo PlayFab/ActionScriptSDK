@@ -1320,7 +1320,7 @@ package com.playfab
                 }
                 else
                 {
-                    var result:UpdateUserInventoryItemDataResult = new UpdateUserInventoryItemDataResult(resultData);
+                    var result:EmptyResult = new EmptyResult(resultData);
 
                     if(onComplete != null)
                         onComplete(result);
