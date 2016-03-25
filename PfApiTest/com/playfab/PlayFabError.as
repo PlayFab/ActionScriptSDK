@@ -211,6 +211,7 @@ package com.playfab
         public static const CloudScriptHTTPRequestError:int = 1211;
         public static const InsufficientGuildRole:int = 1212;
         public static const GuildNotFound:int = 1213;
+        public static const OverLimit:int = 1214;
 
 
         public function PlayFabError(data:Object=null)
