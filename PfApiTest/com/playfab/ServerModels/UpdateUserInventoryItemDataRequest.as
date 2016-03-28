@@ -3,8 +3,8 @@ package com.playfab.ServerModels
 {
     public class UpdateUserInventoryItemDataRequest
     {
-        public var CharacterId:String;
         public var PlayFabId:String;
+        public var CharacterId:String;
         public var ItemInstanceId:String;
         public var Data:Object;
         public var KeysToRemove:Vector.<String>;
@@ -14,8 +14,8 @@ package com.playfab.ServerModels
             if(data == null)
                 return;
 
-            CharacterId = data.CharacterId;
             PlayFabId = data.PlayFabId;
+            CharacterId = data.CharacterId;
             ItemInstanceId = data.ItemInstanceId;
             Data = data.Data;
             KeysToRemove = data.KeysToRemove ? Vector.<String>(data.KeysToRemove) : null;
