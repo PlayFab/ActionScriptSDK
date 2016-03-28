@@ -5,6 +5,7 @@ package com.playfab.AdminModels
     {
         public var StatisticName:String;
         public var VersionChangeInterval:String;
+        public var AggregationMethod:String;
 
         public function UpdatePlayerStatisticDefinitionRequest(data:Object=null)
         {
@@ -13,6 +14,7 @@ package com.playfab.AdminModels
 
             StatisticName = data.StatisticName;
             VersionChangeInterval = data.VersionChangeInterval;
+            AggregationMethod = data.AggregationMethod;
 
         }
     }
