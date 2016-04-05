@@ -680,6 +680,32 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetCatalogItems", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
+        public static function GetPublisherData(request:GetPublisherDataRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:GetPublisherDataResult = new GetPublisherDataResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetPublisherData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+        }
+
         public static function GetTitleData(request:GetTitleDataRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
@@ -756,6 +782,32 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetTitleNews", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+        }
+
+        public static function SetPublisherData(request:SetPublisherDataRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:SetPublisherDataResult = new SetPublisherDataResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/SetPublisherData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function SetTitleData(request:SetTitleDataRequest, onComplete:Function, onError:Function):void
@@ -1512,32 +1564,6 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/DeleteSharedGroup", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
-        public static function GetPublisherData(request:GetPublisherDataRequest, onComplete:Function, onError:Function):void
-        {
-            if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-            var requetJson:String = JSON.stringify( request );
-
-            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
-            {
-                if(error)
-                {
-                    if(onError != null)
-                        onError(error);
-                    if(PlayFabSettings.GlobalErrorHandler != null)
-                        PlayFabSettings.GlobalErrorHandler(error);
-                }
-                else
-                {
-                    var result:GetPublisherDataResult = new GetPublisherDataResult(resultData);
-
-                    if(onComplete != null)
-                        onComplete(result);
-                }
-            }
-
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetPublisherData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
-        }
-
         public static function GetSharedGroupData(request:GetSharedGroupDataRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
@@ -1588,32 +1614,6 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/RemoveSharedGroupMembers", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
-        }
-
-        public static function SetPublisherData(request:SetPublisherDataRequest, onComplete:Function, onError:Function):void
-        {
-            if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-            var requetJson:String = JSON.stringify( request );
-
-            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
-            {
-                if(error)
-                {
-                    if(onError != null)
-                        onError(error);
-                    if(PlayFabSettings.GlobalErrorHandler != null)
-                        PlayFabSettings.GlobalErrorHandler(error);
-                }
-                else
-                {
-                    var result:SetPublisherDataResult = new SetPublisherDataResult(resultData);
-
-                    if(onComplete != null)
-                        onComplete(result);
-                }
-            }
-
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/SetPublisherData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function UpdateSharedGroupData(request:UpdateSharedGroupDataRequest, onComplete:Function, onError:Function):void
