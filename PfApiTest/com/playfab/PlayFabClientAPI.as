@@ -765,6 +765,32 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkSteamAccount", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
+        public static function ReportPlayer(request:ReportPlayerClientRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:ReportPlayerClientResult = new ReportPlayerClientResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ReportPlayer", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
         public static function SendAccountRecoveryEmail(request:SendAccountRecoveryEmailRequest, onComplete:Function, onError:Function):void
         {
 
@@ -1493,6 +1519,32 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetCatalogItems", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
+        public static function GetPublisherData(request:GetPublisherDataRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:GetPublisherDataResult = new GetPublisherDataResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPublisherData", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
         public static function GetStoreItems(request:GetStoreItemsRequest, onComplete:Function, onError:Function):void
         {
             if (authKey == null) throw new Error("Must be logged in to call this method");
@@ -1803,32 +1855,6 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/RedeemCoupon", requetJson, "X-Authorization", authKey, onPostComplete);
-        }
-
-        public static function ReportPlayer(request:ReportPlayerClientRequest, onComplete:Function, onError:Function):void
-        {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
-            var requetJson:String = JSON.stringify( request );
-
-            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
-            {
-                if(error)
-                {
-                    if(onError != null)
-                        onError(error);
-                    if(PlayFabSettings.GlobalErrorHandler != null)
-                        PlayFabSettings.GlobalErrorHandler(error);
-                }
-                else
-                {
-                    var result:ReportPlayerClientResult = new ReportPlayerClientResult(resultData);
-
-                    if(onComplete != null)
-                        onComplete(result);
-                }
-            }
-
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ReportPlayer", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
         public static function StartPurchase(request:StartPurchaseRequest, onComplete:Function, onError:Function):void
@@ -2349,32 +2375,6 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/CreateSharedGroup", requetJson, "X-Authorization", authKey, onPostComplete);
-        }
-
-        public static function GetPublisherData(request:GetPublisherDataRequest, onComplete:Function, onError:Function):void
-        {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
-            var requetJson:String = JSON.stringify( request );
-
-            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
-            {
-                if(error)
-                {
-                    if(onError != null)
-                        onError(error);
-                    if(PlayFabSettings.GlobalErrorHandler != null)
-                        PlayFabSettings.GlobalErrorHandler(error);
-                }
-                else
-                {
-                    var result:GetPublisherDataResult = new GetPublisherDataResult(resultData);
-
-                    if(onComplete != null)
-                        onComplete(result);
-                }
-            }
-
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPublisherData", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
         public static function GetSharedGroupData(request:GetSharedGroupDataRequest, onComplete:Function, onError:Function):void
