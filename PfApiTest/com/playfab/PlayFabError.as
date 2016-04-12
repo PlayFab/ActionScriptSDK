@@ -215,6 +215,7 @@ package com.playfab
         public static const EventNotFound:int = 1215;
         public static const InvalidEventEntity:int = 1216;
         public static const InvalidEventName:int = 1217;
+        public static const CatalogNotConfigured:int = 1218;
 
 
         public function PlayFabError(data:Object=null)
