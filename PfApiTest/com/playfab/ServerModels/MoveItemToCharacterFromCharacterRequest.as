@@ -12,7 +12,6 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
-
             PlayFabId = data.PlayFabId;
             GivingCharacterId = data.GivingCharacterId;
             ReceivingCharacterId = data.ReceivingCharacterId;

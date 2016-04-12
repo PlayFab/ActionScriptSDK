@@ -10,7 +10,6 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
-
             SharedGroupId = data.SharedGroupId;
             PlayFabIds = data.PlayFabIds ? Vector.<String>(data.PlayFabIds) : null;
 

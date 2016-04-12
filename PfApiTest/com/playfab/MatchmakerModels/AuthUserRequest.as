@@ -9,7 +9,6 @@ package com.playfab.MatchmakerModels
         {
             if(data == null)
                 return;
-
             AuthorizationTicket = data.AuthorizationTicket;
 
         }

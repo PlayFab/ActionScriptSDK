@@ -10,7 +10,6 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
-
             PlayFabIds = data.PlayFabIds ? Vector.<String>(data.PlayFabIds) : null;
             TitleId = data.TitleId;
 

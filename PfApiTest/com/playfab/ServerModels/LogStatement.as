@@ -11,7 +11,6 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
-
             Level = data.Level;
             Message = data.Message;
             Data = data.Data;

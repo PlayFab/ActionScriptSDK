@@ -10,7 +10,6 @@ package com.playfab.AdminModels
         {
             if(data == null)
                 return;
-
             KongregateId = data.KongregateId;
             KongregateName = data.KongregateName;
 

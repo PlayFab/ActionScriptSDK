@@ -10,7 +10,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             VirtualCurrency = data.VirtualCurrency;
             Amount = data.Amount;
 

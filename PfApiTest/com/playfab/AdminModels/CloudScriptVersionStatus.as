@@ -11,7 +11,6 @@ package com.playfab.AdminModels
         {
             if(data == null)
                 return;
-
             Version = data.Version;
             PublishedRevision = data.PublishedRevision;
             LatestRevision = data.LatestRevision;

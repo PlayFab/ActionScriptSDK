@@ -15,7 +15,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             LobbyID = data.LobbyID;
             ServerHostname = data.ServerHostname;
             ServerPort = data.ServerPort;

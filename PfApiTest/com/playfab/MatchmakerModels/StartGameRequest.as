@@ -13,7 +13,6 @@ package com.playfab.MatchmakerModels
         {
             if(data == null)
                 return;
-
             Build = data.Build;
             Region = data.Region;
             GameMode = data.GameMode;

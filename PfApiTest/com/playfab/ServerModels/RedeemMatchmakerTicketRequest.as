@@ -10,7 +10,6 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
-
             Ticket = data.Ticket;
             LobbyId = data.LobbyId;
 

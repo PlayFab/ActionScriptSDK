@@ -9,7 +9,6 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
-
             if(data.Achievements) { Achievements = new Vector.<AwardSteamAchievementItem>(); for(var Achievements_iter:int = 0; Achievements_iter < data.Achievements.length; Achievements_iter++) { Achievements[Achievements_iter] = new AwardSteamAchievementItem(data.Achievements[Achievements_iter]); }}
 
         }

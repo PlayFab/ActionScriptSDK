@@ -13,7 +13,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             FunctionName = data.FunctionName;
             FunctionParameter = data.FunctionParameter;
             RevisionSelection = data.RevisionSelection;

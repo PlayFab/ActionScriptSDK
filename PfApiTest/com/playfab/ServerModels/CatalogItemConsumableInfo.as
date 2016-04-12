@@ -11,7 +11,6 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
-
             UsageCount = data.UsageCount;
             UsagePeriod = data.UsagePeriod;
             UsagePeriodGroup = data.UsagePeriodGroup;

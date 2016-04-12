@@ -13,7 +13,6 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
-
             CharacterId = data.CharacterId;
             CharacterType = data.CharacterType;
             StatisticName = data.StatisticName;

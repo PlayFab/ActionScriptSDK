@@ -10,7 +10,6 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
-
             PlayFabId = data.PlayFabId;
             UserStatistics = data.UserStatistics;
 

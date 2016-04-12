@@ -12,7 +12,6 @@ package com.playfab.AdminModels
         {
             if(data == null)
                 return;
-
             PlayFabId = data.PlayFabId;
             Data = data.Data;
             KeysToRemove = data.KeysToRemove ? Vector.<String>(data.KeysToRemove) : null;

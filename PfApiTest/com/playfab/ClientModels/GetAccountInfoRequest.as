@@ -12,7 +12,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             PlayFabId = data.PlayFabId;
             Username = data.Username;
             Email = data.Email;

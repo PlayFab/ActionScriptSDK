@@ -10,7 +10,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             FacebookId = data.FacebookId;
             PlayFabId = data.PlayFabId;
 

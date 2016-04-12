@@ -10,7 +10,6 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
-
             KongregateId = data.KongregateId;
             KongregateName = data.KongregateName;
 

@@ -17,7 +17,6 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
-
             PlayFabId = data.PlayFabId;
             EntityId = data.EntityId;
             EntityType = data.EntityType;

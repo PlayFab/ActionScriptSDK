@@ -20,7 +20,6 @@ package com.playfab.AdminModels
         {
             if(data == null)
                 return;
-
             LobbyId = data.LobbyId;
             TitleId = data.TitleId;
             StartTime = PlayFabUtil.parseDate(data.StartTime);

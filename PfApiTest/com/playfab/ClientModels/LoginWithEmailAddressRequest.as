@@ -11,7 +11,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             TitleId = data.TitleId;
             Email = data.Email;
             Password = data.Password;

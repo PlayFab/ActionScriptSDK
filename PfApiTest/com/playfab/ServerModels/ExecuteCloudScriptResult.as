@@ -17,7 +17,6 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
-
             FunctionName = data.FunctionName;
             Revision = data.Revision;
             FunctionResult = data.FunctionResult;

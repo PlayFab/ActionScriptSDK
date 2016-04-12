@@ -12,7 +12,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             OrderId = data.OrderId;
             ProviderName = data.ProviderName;
             Currency = data.Currency;

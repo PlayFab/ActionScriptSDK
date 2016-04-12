@@ -18,7 +18,6 @@ package com.playfab.AdminModels
         {
             if(data == null)
                 return;
-
             BuildId = data.BuildId;
             Timestamp = PlayFabUtil.parseDate(data.Timestamp);
             ActiveRegions = data.ActiveRegions ? Vector.<String>(data.ActiveRegions) : null;

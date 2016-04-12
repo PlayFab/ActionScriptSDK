@@ -9,7 +9,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             Keys = data.Keys ? Vector.<String>(data.Keys) : null;
 
         }

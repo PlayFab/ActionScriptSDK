@@ -12,7 +12,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             ItemId = data.ItemId;
             Quantity = data.Quantity;
             Annotation = data.Annotation;

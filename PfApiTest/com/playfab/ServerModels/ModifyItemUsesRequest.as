@@ -11,7 +11,6 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
-
             PlayFabId = data.PlayFabId;
             ItemInstanceId = data.ItemInstanceId;
             UsesToAdd = data.UsesToAdd;

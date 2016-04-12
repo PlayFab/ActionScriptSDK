@@ -11,7 +11,6 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
-
             PlayFabId = data.PlayFabId;
             Keys = data.Keys ? Vector.<String>(data.Keys) : null;
             IfChangedFromDataVersion = data.IfChangedFromDataVersion;

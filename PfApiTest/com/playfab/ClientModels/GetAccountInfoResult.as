@@ -9,7 +9,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             AccountInfo = new UserAccountInfo(data.AccountInfo);
 
         }

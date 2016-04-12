@@ -12,7 +12,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             TitleId = data.TitleId;
             AccessToken = data.AccessToken;
             CreateAccount = data.CreateAccount;

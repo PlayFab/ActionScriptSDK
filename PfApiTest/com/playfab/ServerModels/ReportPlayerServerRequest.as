@@ -12,7 +12,6 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
-
             ReporterId = data.ReporterId;
             ReporteeId = data.ReporteeId;
             TitleId = data.TitleId;

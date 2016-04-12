@@ -10,7 +10,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             PsnAccountId = data.PsnAccountId;
             PsnOnlineId = data.PsnOnlineId;
 

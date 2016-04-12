@@ -11,7 +11,6 @@ package com.playfab.AdminModels
         {
             if(data == null)
                 return;
-
             ItemCount = data.ItemCount;
             TotalSize = data.TotalSize;
             if(data.Contents) { Contents = new Vector.<ContentInfo>(); for(var Contents_iter:int = 0; Contents_iter < data.Contents.length; Contents_iter++) { Contents[Contents_iter] = new ContentInfo(data.Contents[Contents_iter]); }}

@@ -19,7 +19,6 @@ package com.playfab.AdminModels
         {
             if(data == null)
                 return;
-
             BuildId = data.BuildId;
             ActiveRegions = data.ActiveRegions ? Vector.<String>(data.ActiveRegions) : null;
             MaxGamesPerHost = data.MaxGamesPerHost;

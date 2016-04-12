@@ -11,7 +11,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             Error = data.Error;
             Message = data.Message;
             StackTrace = data.StackTrace;

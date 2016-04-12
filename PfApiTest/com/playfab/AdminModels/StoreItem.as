@@ -11,7 +11,6 @@ package com.playfab.AdminModels
         {
             if(data == null)
                 return;
-
             ItemId = data.ItemId;
             VirtualCurrencyPrices = data.VirtualCurrencyPrices;
             RealCurrencyPrices = data.RealCurrencyPrices;

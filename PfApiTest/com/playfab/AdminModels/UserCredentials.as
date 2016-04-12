@@ -10,7 +10,6 @@ package com.playfab.AdminModels
         {
             if(data == null)
                 return;
-
             Username = data.Username;
             Password = data.Password;
 

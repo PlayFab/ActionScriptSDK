@@ -11,7 +11,6 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
-
             StatisticName = data.StatisticName;
             Value = data.Value;
             Version = data.Version;

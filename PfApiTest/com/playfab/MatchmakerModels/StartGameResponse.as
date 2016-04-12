@@ -11,7 +11,6 @@ package com.playfab.MatchmakerModels
         {
             if(data == null)
                 return;
-
             GameID = data.GameID;
             ServerHostname = data.ServerHostname;
             ServerPort = data.ServerPort;

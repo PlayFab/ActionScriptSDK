@@ -11,7 +11,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             StatisticName = data.StatisticName;
             Version = data.Version;
             Value = data.Value;

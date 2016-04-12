@@ -9,7 +9,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             KongregateIDs = data.KongregateIDs ? Vector.<String>(data.KongregateIDs) : null;
 
         }

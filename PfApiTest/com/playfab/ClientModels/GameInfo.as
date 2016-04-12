@@ -17,7 +17,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             Region = data.Region;
             LobbyID = data.LobbyID;
             BuildVersion = data.BuildVersion;
