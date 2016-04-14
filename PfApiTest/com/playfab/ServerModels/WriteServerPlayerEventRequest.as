@@ -8,6 +8,7 @@ package com.playfab.ServerModels
         public var PlayFabId:String;
         public var EventName:String;
         public var Timestamp:Date;
+        public var Body:Object;
 
         public function WriteServerPlayerEventRequest(data:Object=null)
         {
@@ -16,6 +17,7 @@ package com.playfab.ServerModels
             PlayFabId = data.PlayFabId;
             EventName = data.EventName;
             Timestamp = PlayFabUtil.parseDate(data.Timestamp);
+            Body = data.Body;
 
         }
     }

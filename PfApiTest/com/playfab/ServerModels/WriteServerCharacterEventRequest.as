@@ -9,6 +9,7 @@ package com.playfab.ServerModels
         public var CharacterId:String;
         public var EventName:String;
         public var Timestamp:Date;
+        public var Body:Object;
 
         public function WriteServerCharacterEventRequest(data:Object=null)
         {
@@ -18,6 +19,7 @@ package com.playfab.ServerModels
             CharacterId = data.CharacterId;
             EventName = data.EventName;
             Timestamp = PlayFabUtil.parseDate(data.Timestamp);
+            Body = data.Body;
 
         }
     }

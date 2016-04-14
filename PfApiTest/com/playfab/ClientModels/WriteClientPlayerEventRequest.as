@@ -7,6 +7,7 @@ package com.playfab.ClientModels
     {
         public var EventName:String;
         public var Timestamp:Date;
+        public var Body:Object;
 
         public function WriteClientPlayerEventRequest(data:Object=null)
         {
@@ -14,6 +15,7 @@ package com.playfab.ClientModels
                 return;
             EventName = data.EventName;
             Timestamp = PlayFabUtil.parseDate(data.Timestamp);
+            Body = data.Body;
 
         }
     }

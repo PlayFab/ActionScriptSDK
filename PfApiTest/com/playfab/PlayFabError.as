@@ -213,7 +213,7 @@ package com.playfab
         public static const GuildNotFound:int = 1213;
         public static const OverLimit:int = 1214;
         public static const EventNotFound:int = 1215;
-        public static const InvalidEventEntity:int = 1216;
+        public static const InvalidEventField:int = 1216;
         public static const InvalidEventName:int = 1217;
         public static const CatalogNotConfigured:int = 1218;
 
