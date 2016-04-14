@@ -10,7 +10,6 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
-
             VirtualCurrency = data.VirtualCurrency;
             Balance = data.Balance;
 

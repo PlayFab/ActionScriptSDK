@@ -12,7 +12,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             FriendPlayFabId = data.FriendPlayFabId;
             FriendUsername = data.FriendUsername;
             FriendEmail = data.FriendEmail;

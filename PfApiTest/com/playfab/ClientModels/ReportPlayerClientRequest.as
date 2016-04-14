@@ -10,7 +10,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             ReporteeId = data.ReporteeId;
             Comment = data.Comment;
 

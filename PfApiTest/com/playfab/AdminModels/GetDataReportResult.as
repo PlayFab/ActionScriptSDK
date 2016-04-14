@@ -9,7 +9,6 @@ package com.playfab.AdminModels
         {
             if(data == null)
                 return;
-
             DownloadUrl = data.DownloadUrl;
 
         }

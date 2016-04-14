@@ -9,7 +9,6 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
-
             AndroidDeviceId = data.AndroidDeviceId;
 
         }

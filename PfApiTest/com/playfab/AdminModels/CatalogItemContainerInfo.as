@@ -12,7 +12,6 @@ package com.playfab.AdminModels
         {
             if(data == null)
                 return;
-
             KeyItemId = data.KeyItemId;
             ItemContents = data.ItemContents ? Vector.<String>(data.ItemContents) : null;
             ResultTableContents = data.ResultTableContents ? Vector.<String>(data.ResultTableContents) : null;

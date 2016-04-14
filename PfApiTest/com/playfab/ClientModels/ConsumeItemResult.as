@@ -10,7 +10,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             ItemInstanceId = data.ItemInstanceId;
             RemainingUses = data.RemainingUses;
 

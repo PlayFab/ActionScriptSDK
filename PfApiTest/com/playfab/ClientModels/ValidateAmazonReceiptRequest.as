@@ -13,7 +13,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             ReceiptId = data.ReceiptId;
             UserId = data.UserId;
             CatalogVersion = data.CatalogVersion;

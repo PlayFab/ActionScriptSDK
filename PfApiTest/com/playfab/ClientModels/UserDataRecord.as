@@ -13,7 +13,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             Value = data.Value;
             LastUpdated = PlayFabUtil.parseDate(data.LastUpdated);
             Permission = data.Permission;

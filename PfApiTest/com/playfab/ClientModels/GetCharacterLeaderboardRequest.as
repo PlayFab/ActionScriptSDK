@@ -12,7 +12,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             CharacterType = data.CharacterType;
             StatisticName = data.StatisticName;
             StartPosition = data.StartPosition;

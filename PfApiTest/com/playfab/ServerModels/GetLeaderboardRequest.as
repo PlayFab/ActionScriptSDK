@@ -11,7 +11,6 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
-
             StatisticName = data.StatisticName;
             StartPosition = data.StartPosition;
             MaxResultsCount = data.MaxResultsCount;

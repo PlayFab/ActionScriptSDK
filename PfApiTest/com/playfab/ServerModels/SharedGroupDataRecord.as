@@ -14,7 +14,6 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
-
             Value = data.Value;
             LastUpdatedBy = data.LastUpdatedBy;
             LastUpdated = PlayFabUtil.parseDate(data.LastUpdated);

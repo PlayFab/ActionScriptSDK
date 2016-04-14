@@ -12,7 +12,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             PlayFabId = data.PlayFabId;
             VirtualCurrency = data.VirtualCurrency;
             BalanceChange = data.BalanceChange;

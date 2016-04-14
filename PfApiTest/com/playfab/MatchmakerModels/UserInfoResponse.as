@@ -16,7 +16,6 @@ package com.playfab.MatchmakerModels
         {
             if(data == null)
                 return;
-
             PlayFabId = data.PlayFabId;
             Username = data.Username;
             TitleDisplayName = data.TitleDisplayName;

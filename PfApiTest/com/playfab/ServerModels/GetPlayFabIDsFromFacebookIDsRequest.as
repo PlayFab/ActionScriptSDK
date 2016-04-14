@@ -9,7 +9,6 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
-
             FacebookIDs = data.FacebookIDs ? Vector.<String>(data.FacebookIDs) : null;
 
         }

@@ -11,7 +11,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             AndroidDeviceId = data.AndroidDeviceId;
             OS = data.OS;
             AndroidDevice = data.AndroidDevice;

@@ -13,7 +13,6 @@ package com.playfab.AdminModels
         {
             if(data == null)
                 return;
-
             Timestamp = PlayFabUtil.parseDate(data.Timestamp);
             Title = data.Title;
             Body = data.Body;

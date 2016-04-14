@@ -11,7 +11,6 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
-
             CouponCode = data.CouponCode;
             PlayFabId = data.PlayFabId;
             CatalogVersion = data.CatalogVersion;

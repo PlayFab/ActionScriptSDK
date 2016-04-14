@@ -10,7 +10,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             Version = data.Version;
             Testing = data.Testing;
 

@@ -14,7 +14,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             ItemId = data.ItemId;
             VirtualCurrency = data.VirtualCurrency;
             Price = data.Price;

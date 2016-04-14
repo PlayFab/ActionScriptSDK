@@ -12,7 +12,6 @@ package com.playfab.AdminModels
         {
             if(data == null)
                 return;
-
             StatisticName = data.StatisticName;
             CurrentVersion = data.CurrentVersion;
             VersionChangeInterval = data.VersionChangeInterval;

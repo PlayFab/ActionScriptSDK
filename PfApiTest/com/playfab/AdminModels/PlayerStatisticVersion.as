@@ -18,7 +18,6 @@ package com.playfab.AdminModels
         {
             if(data == null)
                 return;
-
             StatisticName = data.StatisticName;
             Version = data.Version;
             ScheduledActivationTime = PlayFabUtil.parseDate(data.ScheduledActivationTime);

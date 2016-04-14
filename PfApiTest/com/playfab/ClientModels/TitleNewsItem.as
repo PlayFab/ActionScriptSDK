@@ -14,7 +14,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             Timestamp = PlayFabUtil.parseDate(data.Timestamp);
             NewsId = data.NewsId;
             Title = data.Title;

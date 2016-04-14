@@ -10,7 +10,6 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
-
             FacebookId = data.FacebookId;
             FullName = data.FullName;
 

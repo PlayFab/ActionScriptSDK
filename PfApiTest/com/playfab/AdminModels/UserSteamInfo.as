@@ -12,7 +12,6 @@ package com.playfab.AdminModels
         {
             if(data == null)
                 return;
-
             SteamId = data.SteamId;
             SteamCountry = data.SteamCountry;
             SteamCurrency = data.SteamCurrency;

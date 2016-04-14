@@ -13,7 +13,6 @@ package com.playfab.AdminModels
         {
             if(data == null)
                 return;
-
             Key = data.Key;
             Size = data.Size;
             LastModified = PlayFabUtil.parseDate(data.LastModified);

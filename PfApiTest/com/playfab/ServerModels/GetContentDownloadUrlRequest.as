@@ -11,7 +11,6 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
-
             Key = data.Key;
             HttpMethod = data.HttpMethod;
             ThruCDN = data.ThruCDN;

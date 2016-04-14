@@ -10,7 +10,6 @@ package com.playfab.AdminModels
         {
             if(data == null)
                 return;
-
             CatalogVersion = data.CatalogVersion;
             StoreId = data.StoreId;
 

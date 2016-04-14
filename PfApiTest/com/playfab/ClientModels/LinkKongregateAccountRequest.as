@@ -10,7 +10,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             KongregateId = data.KongregateId;
             AuthTicket = data.AuthTicket;
 

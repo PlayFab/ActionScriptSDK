@@ -13,7 +13,6 @@ package com.playfab.MatchmakerModels
         {
             if(data == null)
                 return;
-
             SecondsToRecharge = data.SecondsToRecharge;
             RechargeTime = PlayFabUtil.parseDate(data.RechargeTime);
             RechargeMax = data.RechargeMax;

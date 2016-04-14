@@ -17,7 +17,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             OrderId = data.OrderId;
             Status = data.Status;
             VCAmount = data.VCAmount;

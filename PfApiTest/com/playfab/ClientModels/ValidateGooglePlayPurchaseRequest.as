@@ -12,7 +12,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             ReceiptJson = data.ReceiptJson;
             Signature = data.Signature;
             CurrencyCode = data.CurrencyCode;

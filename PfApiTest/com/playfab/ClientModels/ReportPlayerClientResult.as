@@ -10,7 +10,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             Updated = data.Updated;
             SubmissionsRemaining = data.SubmissionsRemaining;
 

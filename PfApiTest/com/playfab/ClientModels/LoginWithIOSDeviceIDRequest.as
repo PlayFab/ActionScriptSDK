@@ -13,7 +13,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             TitleId = data.TitleId;
             DeviceId = data.DeviceId;
             OS = data.OS;

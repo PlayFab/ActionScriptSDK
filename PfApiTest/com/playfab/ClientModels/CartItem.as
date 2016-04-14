@@ -16,7 +16,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             ItemId = data.ItemId;
             ItemClass = data.ItemClass;
             ItemInstanceId = data.ItemInstanceId;

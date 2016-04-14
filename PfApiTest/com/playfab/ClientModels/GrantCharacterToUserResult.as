@@ -11,7 +11,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             CharacterId = data.CharacterId;
             CharacterType = data.CharacterType;
             Result = data.Result;

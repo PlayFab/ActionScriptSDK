@@ -11,7 +11,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             SharedGroupId = data.SharedGroupId;
             Keys = data.Keys ? Vector.<String>(data.Keys) : null;
             GetMembers = data.GetMembers;

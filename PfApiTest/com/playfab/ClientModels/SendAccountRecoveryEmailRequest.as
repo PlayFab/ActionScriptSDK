@@ -11,7 +11,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             Email = data.Email;
             TitleId = data.TitleId;
             PublisherId = data.PublisherId;

@@ -11,7 +11,6 @@ package com.playfab.AdminModels
         {
             if(data == null)
                 return;
-
             Gamemode = data.Gamemode;
             MinPlayerCount = data.MinPlayerCount;
             MaxPlayerCount = data.MaxPlayerCount;

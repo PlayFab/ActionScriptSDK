@@ -11,7 +11,6 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
-
             PlayFabId = data.PlayFabId;
             CharacterId = data.CharacterId;
             SaveCharacterInventory = data.SaveCharacterInventory;

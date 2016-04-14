@@ -11,7 +11,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             Data = data.Data;
             KeysToRemove = data.KeysToRemove ? Vector.<String>(data.KeysToRemove) : null;
             Permission = data.Permission;

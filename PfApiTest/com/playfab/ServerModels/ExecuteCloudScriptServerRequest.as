@@ -14,7 +14,6 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
-
             PlayFabId = data.PlayFabId;
             FunctionName = data.FunctionName;
             FunctionParameter = data.FunctionParameter;

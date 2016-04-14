@@ -12,7 +12,6 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
-
             CatalogVersion = data.CatalogVersion;
             PlayFabId = data.PlayFabId;
             Annotation = data.Annotation;

@@ -11,7 +11,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             DeviceToken = data.DeviceToken;
             SendPushNotificationConfirmation = data.SendPushNotificationConfirmation;
             ConfirmationMessege = data.ConfirmationMessege;

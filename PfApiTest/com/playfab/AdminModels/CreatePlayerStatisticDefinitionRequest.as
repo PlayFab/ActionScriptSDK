@@ -11,7 +11,6 @@ package com.playfab.AdminModels
         {
             if(data == null)
                 return;
-
             StatisticName = data.StatisticName;
             VersionChangeInterval = data.VersionChangeInterval;
             AggregationMethod = data.AggregationMethod;

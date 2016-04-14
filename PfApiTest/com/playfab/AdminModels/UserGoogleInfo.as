@@ -12,7 +12,6 @@ package com.playfab.AdminModels
         {
             if(data == null)
                 return;
-
             GoogleId = data.GoogleId;
             GoogleEmail = data.GoogleEmail;
             GoogleLocale = data.GoogleLocale;

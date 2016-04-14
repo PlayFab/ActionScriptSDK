@@ -12,7 +12,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             SharedGroupId = data.SharedGroupId;
             Data = data.Data;
             KeysToRemove = data.KeysToRemove ? Vector.<String>(data.KeysToRemove) : null;
