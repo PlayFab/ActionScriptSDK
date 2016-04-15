@@ -10,7 +10,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             CharacterId = data.CharacterId;
             CharacterStatistics = data.CharacterStatistics;
 

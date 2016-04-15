@@ -10,7 +10,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             AccessToken = data.AccessToken;
             ForceLink = data.ForceLink;
 

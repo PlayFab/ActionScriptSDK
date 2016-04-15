@@ -13,7 +13,6 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
-
             CatalogVersion = data.CatalogVersion;
             CharacterId = data.CharacterId;
             PlayFabId = data.PlayFabId;

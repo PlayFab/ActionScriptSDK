@@ -9,7 +9,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             CatalogVersion = data.CatalogVersion;
 
         }

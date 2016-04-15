@@ -15,7 +15,6 @@ package com.playfab.AdminModels
         {
             if(data == null)
                 return;
-
             Version = data.Version;
             Revision = data.Revision;
             CreatedAt = PlayFabUtil.parseDate(data.CreatedAt);

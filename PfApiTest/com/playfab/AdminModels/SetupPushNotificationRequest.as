@@ -13,7 +13,6 @@ package com.playfab.AdminModels
         {
             if(data == null)
                 return;
-
             Name = data.Name;
             Platform = data.Platform;
             Key = data.Key;

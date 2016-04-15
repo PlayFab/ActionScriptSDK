@@ -12,7 +12,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             Region = data.Region;
             Name = data.Name;
             Available = data.Available;

@@ -11,7 +11,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             PlayFabId = data.PlayFabId;
             StatisticName = data.StatisticName;
             MaxResultsCount = data.MaxResultsCount;

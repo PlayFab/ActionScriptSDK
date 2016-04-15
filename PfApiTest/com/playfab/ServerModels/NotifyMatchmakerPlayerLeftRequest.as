@@ -10,7 +10,6 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
-
             LobbyId = data.LobbyId;
             PlayFabId = data.PlayFabId;
 

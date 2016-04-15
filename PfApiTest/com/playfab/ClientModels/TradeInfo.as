@@ -23,7 +23,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             Status = data.Status;
             TradeId = data.TradeId;
             OfferingPlayerId = data.OfferingPlayerId;

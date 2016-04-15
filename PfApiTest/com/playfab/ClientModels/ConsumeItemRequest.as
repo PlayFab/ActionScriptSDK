@@ -11,7 +11,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             ItemInstanceId = data.ItemInstanceId;
             ConsumeCount = data.ConsumeCount;
             CharacterId = data.CharacterId;

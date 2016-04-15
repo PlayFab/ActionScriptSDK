@@ -10,7 +10,6 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
-
             Key = data.Key;
             Value = data.Value;
 

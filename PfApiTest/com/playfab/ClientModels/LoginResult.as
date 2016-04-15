@@ -15,7 +15,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             SessionTicket = data.SessionTicket;
             PlayFabId = data.PlayFabId;
             NewlyCreated = data.NewlyCreated;

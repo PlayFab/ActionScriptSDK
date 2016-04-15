@@ -15,7 +15,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             PlayFabId = data.PlayFabId;
             CharacterId = data.CharacterId;
             CharacterName = data.CharacterName;

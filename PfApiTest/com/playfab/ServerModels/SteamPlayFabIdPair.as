@@ -11,7 +11,6 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
-
             SteamId = data.SteamId;
             SteamStringId = data.SteamStringId;
             PlayFabId = data.PlayFabId;

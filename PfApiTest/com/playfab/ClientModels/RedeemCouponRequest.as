@@ -10,7 +10,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             CouponCode = data.CouponCode;
             CatalogVersion = data.CatalogVersion;
 

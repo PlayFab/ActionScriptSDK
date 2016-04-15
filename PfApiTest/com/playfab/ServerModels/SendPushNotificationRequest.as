@@ -11,7 +11,6 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
-
             Recipient = data.Recipient;
             Message = data.Message;
             Subject = data.Subject;

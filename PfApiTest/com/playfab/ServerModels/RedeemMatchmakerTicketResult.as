@@ -11,7 +11,6 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
-
             TicketIsValid = data.TicketIsValid;
             Error = data.Error;
             UserInfo = new UserAccountInfo(data.UserInfo);

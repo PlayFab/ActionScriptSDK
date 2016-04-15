@@ -11,7 +11,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             BundledItems = data.BundledItems ? Vector.<String>(data.BundledItems) : null;
             BundledResultTables = data.BundledResultTables ? Vector.<String>(data.BundledResultTables) : null;
             BundledVirtualCurrencies = data.BundledVirtualCurrencies;

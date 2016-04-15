@@ -25,7 +25,6 @@ package com.playfab.AdminModels
         {
             if(data == null)
                 return;
-
             ItemId = data.ItemId;
             ItemInstanceId = data.ItemInstanceId;
             ItemClass = data.ItemClass;

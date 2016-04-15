@@ -12,7 +12,6 @@ package com.playfab.AdminModels
         {
             if(data == null)
                 return;
-
             PlayFabId = data.PlayFabId;
             VirtualCurrency = data.VirtualCurrency;
             BalanceChange = data.BalanceChange;

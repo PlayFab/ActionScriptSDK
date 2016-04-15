@@ -12,7 +12,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             CharacterId = data.CharacterId;
             ContainerItemInstanceId = data.ContainerItemInstanceId;
             KeyItemInstanceId = data.KeyItemInstanceId;

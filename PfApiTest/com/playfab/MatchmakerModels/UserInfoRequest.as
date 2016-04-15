@@ -10,7 +10,6 @@ package com.playfab.MatchmakerModels
         {
             if(data == null)
                 return;
-
             PlayFabId = data.PlayFabId;
             MinCatalogVersion = data.MinCatalogVersion;
 

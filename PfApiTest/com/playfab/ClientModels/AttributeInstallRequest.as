@@ -10,7 +10,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             Idfa = data.Idfa;
             Android_Id = data.Android_Id;
 

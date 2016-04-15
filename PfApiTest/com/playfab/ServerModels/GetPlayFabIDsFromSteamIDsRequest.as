@@ -10,7 +10,6 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
-
             SteamIDs = data.SteamIDs ? Vector.<Number>(data.SteamIDs) : null;
             SteamStringIDs = data.SteamStringIDs ? Vector.<String>(data.SteamStringIDs) : null;
 

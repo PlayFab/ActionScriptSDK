@@ -10,7 +10,6 @@ package com.playfab.AdminModels
         {
             if(data == null)
                 return;
-
             PlayFabId = data.PlayFabId;
             CharacterId = data.CharacterId;
 

@@ -10,7 +10,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             OfferingPlayerId = data.OfferingPlayerId;
             TradeId = data.TradeId;
 

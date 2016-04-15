@@ -10,7 +10,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             FriendPlayFabId = data.FriendPlayFabId;
             Tags = data.Tags ? Vector.<String>(data.Tags) : null;
 

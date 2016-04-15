@@ -12,7 +12,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             StatisticName = data.StatisticName;
             MaxResultsCount = data.MaxResultsCount;
             IncludeSteamFriends = data.IncludeSteamFriends;

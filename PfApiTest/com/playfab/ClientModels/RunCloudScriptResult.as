@@ -15,7 +15,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             ActionId = data.ActionId;
             Version = data.Version;
             Revision = data.Revision;

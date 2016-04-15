@@ -12,7 +12,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             PlayFabId = data.PlayFabId;
             CharacterId = data.CharacterId;
             Keys = data.Keys ? Vector.<String>(data.Keys) : null;

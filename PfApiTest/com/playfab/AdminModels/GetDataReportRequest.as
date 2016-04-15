@@ -12,7 +12,6 @@ package com.playfab.AdminModels
         {
             if(data == null)
                 return;
-
             ReportName = data.ReportName;
             Year = data.Year;
             Month = data.Month;

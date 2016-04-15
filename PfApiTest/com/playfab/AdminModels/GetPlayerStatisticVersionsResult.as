@@ -9,7 +9,6 @@ package com.playfab.AdminModels
         {
             if(data == null)
                 return;
-
             if(data.StatisticVersions) { StatisticVersions = new Vector.<PlayerStatisticVersion>(); for(var StatisticVersions_iter:int = 0; StatisticVersions_iter < data.StatisticVersions.length; StatisticVersions_iter++) { StatisticVersions[StatisticVersions_iter] = new PlayerStatisticVersion(data.StatisticVersions[StatisticVersions_iter]); }}
 
         }

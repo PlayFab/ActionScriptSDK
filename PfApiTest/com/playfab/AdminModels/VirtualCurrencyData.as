@@ -13,7 +13,6 @@ package com.playfab.AdminModels
         {
             if(data == null)
                 return;
-
             CurrencyCode = data.CurrencyCode;
             DisplayName = data.DisplayName;
             InitialDeposit = data.InitialDeposit;

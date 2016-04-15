@@ -16,7 +16,6 @@ package com.playfab.AdminModels
         {
             if(data == null)
                 return;
-
             DisplayName = data.DisplayName;
             Origination = data.Origination;
             Created = PlayFabUtil.parseDate(data.Created);

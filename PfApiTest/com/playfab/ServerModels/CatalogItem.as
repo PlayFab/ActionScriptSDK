@@ -24,7 +24,6 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
-
             ItemId = data.ItemId;
             ItemClass = data.ItemClass;
             CatalogVersion = data.CatalogVersion;

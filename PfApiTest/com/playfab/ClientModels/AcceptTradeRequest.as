@@ -11,7 +11,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             OfferingPlayerId = data.OfferingPlayerId;
             TradeId = data.TradeId;
             AcceptedInventoryInstanceIds = data.AcceptedInventoryInstanceIds ? Vector.<String>(data.AcceptedInventoryInstanceIds) : null;

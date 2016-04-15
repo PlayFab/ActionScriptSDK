@@ -10,7 +10,6 @@ package com.playfab.MatchmakerModels
         {
             if(data == null)
                 return;
-
             Authorized = data.Authorized;
             PlayFabId = data.PlayFabId;
 

@@ -25,7 +25,6 @@ package com.playfab.AdminModels
         {
             if(data == null)
                 return;
-
             PlayFabId = data.PlayFabId;
             Created = PlayFabUtil.parseDate(data.Created);
             Username = data.Username;

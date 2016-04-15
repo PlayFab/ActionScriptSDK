@@ -11,7 +11,6 @@ package com.playfab.AdminModels
         {
             if(data == null)
                 return;
-
             ResultItemType = data.ResultItemType;
             ResultItem = data.ResultItem;
             Weight = data.Weight;

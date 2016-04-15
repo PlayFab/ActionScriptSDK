@@ -14,7 +14,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             Timestamp = PlayFabUtil.parseDate(data.Timestamp);
             EventName = data.EventName;
             Body = data.Body;

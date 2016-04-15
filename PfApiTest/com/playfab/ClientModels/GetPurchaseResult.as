@@ -16,7 +16,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             OrderId = data.OrderId;
             PaymentProvider = data.PaymentProvider;
             TransactionId = data.TransactionId;

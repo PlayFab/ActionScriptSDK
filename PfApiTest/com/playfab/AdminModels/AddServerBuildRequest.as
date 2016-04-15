@@ -15,7 +15,6 @@ package com.playfab.AdminModels
         {
             if(data == null)
                 return;
-
             BuildId = data.BuildId;
             CommandLineTemplate = data.CommandLineTemplate;
             ExecutablePath = data.ExecutablePath;

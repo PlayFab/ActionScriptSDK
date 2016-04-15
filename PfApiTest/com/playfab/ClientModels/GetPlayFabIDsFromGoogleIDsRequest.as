@@ -9,7 +9,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-
             GoogleIDs = data.GoogleIDs ? Vector.<String>(data.GoogleIDs) : null;
 
         }

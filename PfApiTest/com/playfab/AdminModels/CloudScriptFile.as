@@ -10,7 +10,6 @@ package com.playfab.AdminModels
         {
             if(data == null)
                 return;
-
             Filename = data.Filename;
             FileContents = data.FileContents;
 
