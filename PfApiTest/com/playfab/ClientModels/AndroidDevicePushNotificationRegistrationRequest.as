@@ -6,6 +6,7 @@ package com.playfab.ClientModels
         public var DeviceToken:String;
         public var SendPushNotificationConfirmation:*;
         public var ConfirmationMessege:String;
+        public var ConfirmationMessage:String;
 
         public function AndroidDevicePushNotificationRegistrationRequest(data:Object=null)
         {
@@ -14,6 +15,7 @@ package com.playfab.ClientModels
             DeviceToken = data.DeviceToken;
             SendPushNotificationConfirmation = data.SendPushNotificationConfirmation;
             ConfirmationMessege = data.ConfirmationMessege;
+            ConfirmationMessage = data.ConfirmationMessage;
 
         }
     }
