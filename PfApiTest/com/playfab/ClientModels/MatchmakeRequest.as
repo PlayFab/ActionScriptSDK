@@ -9,6 +9,7 @@ package com.playfab.ClientModels
         public var LobbyId:String;
         public var StatisticName:String;
         public var CharacterId:String;
+        public var StartNewIfNoneFound:*;
         public var EnableQueue:*;
 
         public function MatchmakeRequest(data:Object=null)
@@ -21,6 +22,7 @@ package com.playfab.ClientModels
             LobbyId = data.LobbyId;
             StatisticName = data.StatisticName;
             CharacterId = data.CharacterId;
+            StartNewIfNoneFound = data.StartNewIfNoneFound;
             EnableQueue = data.EnableQueue;
 
         }
