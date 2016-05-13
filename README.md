@@ -47,7 +47,7 @@ The PfApiTest example project can be entirely built and tested with free tools. 
 4. testTitleData.json file required for example unit-test-project
 ----
 
-This file provides your secret title information to the unit-test project, so it can execute tests in your own PlayFab title
+This sdk includes an optional example project that is used by PlayFab to verify sdk features are fully functional.  The testTitleData.json file provides your secret title information to the unit-test project, so it can execute tests in your own PlayFab title.
 
 The format is as follows:
 
