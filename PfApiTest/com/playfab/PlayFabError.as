@@ -219,6 +219,7 @@ package com.playfab
         public static const OperationNotSupportedForPlatform:int = 1219;
         public static const SegmentNotFound:int = 1220;
         public static const StoreNotFound:int = 1221;
+        public static const InvalidStatisticName:int = 1222;
 
 
         public function PlayFabError(data:Object=null)

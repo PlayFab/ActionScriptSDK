@@ -6,6 +6,7 @@ package com.playfab.AdminModels
         public var Gamemode:String;
         public var MinPlayerCount:uint;
         public var MaxPlayerCount:uint;
+        public var StartOpen:*;
 
         public function GameModeInfo(data:Object=null)
         {
@@ -14,6 +15,7 @@ package com.playfab.AdminModels
             Gamemode = data.Gamemode;
             MinPlayerCount = data.MinPlayerCount;
             MaxPlayerCount = data.MaxPlayerCount;
+            StartOpen = data.StartOpen;
 
         }
     }
