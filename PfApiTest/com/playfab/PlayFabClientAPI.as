@@ -291,6 +291,35 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LoginWithPlayFab", requetJson, null, null, onPostComplete);
         }
 
+        public static function LoginWithPSN(request:LoginWithPSNRequest, onComplete:Function, onError:Function):void
+        {
+            request.TitleId = PlayFabSettings.TitleId != null ? PlayFabSettings.TitleId : request.TitleId;
+            if(request.TitleId == null) throw new Error ("Must be have PlayFabSettings.TitleId set to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:LoginResult = new LoginResult(resultData);
+                    authKey = result.SessionTicket != null ? result.SessionTicket : authKey;
+                    MultiStepClientLogin(result.SettingsForUser.NeedsAttribution);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LoginWithPSN", requetJson, null, null, onPostComplete);
+        }
+
         public static function LoginWithSteam(request:LoginWithSteamRequest, onComplete:Function, onError:Function):void
         {
             request.TitleId = PlayFabSettings.TitleId != null ? PlayFabSettings.TitleId : request.TitleId;
@@ -318,6 +347,35 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LoginWithSteam", requetJson, null, null, onPostComplete);
+        }
+
+        public static function LoginWithXbox(request:LoginWithXboxRequest, onComplete:Function, onError:Function):void
+        {
+            request.TitleId = PlayFabSettings.TitleId != null ? PlayFabSettings.TitleId : request.TitleId;
+            if(request.TitleId == null) throw new Error ("Must be have PlayFabSettings.TitleId set to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:LoginResult = new LoginResult(resultData);
+                    authKey = result.SessionTicket != null ? result.SessionTicket : authKey;
+                    MultiStepClientLogin(result.SettingsForUser.NeedsAttribution);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LoginWithXbox", requetJson, null, null, onPostComplete);
         }
 
         public static function RegisterPlayFabUser(request:RegisterPlayFabUserRequest, onComplete:Function, onError:Function):void
@@ -503,6 +561,32 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayFabIDsFromKongregateIDs", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function GetPlayFabIDsFromPSNAccountIDs(request:GetPlayFabIDsFromPSNAccountIDsRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:GetPlayFabIDsFromPSNAccountIDsResult = new GetPlayFabIDsFromPSNAccountIDsResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayFabIDsFromPSNAccountIDs", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
         public static function GetPlayFabIDsFromSteamIDs(request:GetPlayFabIDsFromSteamIDsRequest, onComplete:Function, onError:Function):void
@@ -739,6 +823,32 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkKongregate", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
+        public static function LinkPSNAccount(request:LinkPSNAccountRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:LinkPSNAccountResult = new LinkPSNAccountResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkPSNAccount", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
         public static function LinkSteamAccount(request:LinkSteamAccountRequest, onComplete:Function, onError:Function):void
         {
             if (authKey == null) throw new Error("Must be logged in to call this method");
@@ -763,6 +873,32 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkSteamAccount", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function LinkXboxAccount(request:LinkXboxAccountRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:LinkXboxAccountResult = new LinkXboxAccountResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkXboxAccount", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
         public static function ReportPlayer(request:ReportPlayerClientRequest, onComplete:Function, onError:Function):void
@@ -999,6 +1135,32 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkKongregate", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
+        public static function UnlinkPSNAccount(request:UnlinkPSNAccountRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:UnlinkPSNAccountResult = new UnlinkPSNAccountResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkPSNAccount", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
         public static function UnlinkSteamAccount(request:UnlinkSteamAccountRequest, onComplete:Function, onError:Function):void
         {
             if (authKey == null) throw new Error("Must be logged in to call this method");
@@ -1023,6 +1185,32 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkSteamAccount", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function UnlinkXboxAccount(request:UnlinkXboxAccountRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:UnlinkXboxAccountResult = new UnlinkXboxAccountResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkXboxAccount", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
         public static function UpdateUserTitleDisplayName(request:UpdateUserTitleDisplayNameRequest, onComplete:Function, onError:Function):void
@@ -2533,6 +2721,58 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UpdateSharedGroupData", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
+        public static function ConsumePSNEntitlements(request:ConsumePSNEntitlementsRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:ConsumePSNEntitlementsResult = new ConsumePSNEntitlementsResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ConsumePSNEntitlements", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function RefreshPSNAuthToken(request:RefreshPSNAuthTokenRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:EmptyResult = new EmptyResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/RefreshPSNAuthToken", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
         public static function ExecuteCloudScript(request:ExecuteCloudScriptRequest, onComplete:Function, onError:Function):void
         {
             if (authKey == null) throw new Error("Must be logged in to call this method");
@@ -3080,6 +3320,552 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/AttributeInstall", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function ApproveGuildRoleChange(request:ApproveGuildRoleChangeRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:ApproveGuildRoleChangeResult = new ApproveGuildRoleChangeResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ApproveGuildRoleChange", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function ChangeGuildMemberRole(request:ChangeGuildMemberRoleRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:ChangeGuildMemberRoleResult = new ChangeGuildMemberRoleResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ChangeGuildMemberRole", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function CreateGuild(request:CreateGuildRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:CreateGuildResult = new CreateGuildResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/CreateGuild", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function DeleteGuild(request:DeleteGuildRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:DeleteGuildResult = new DeleteGuildResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/DeleteGuild", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function DenyGuildRoleChange(request:DenyGuildRoleChangeRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:DenyGuildRoleChangeResult = new DenyGuildRoleChangeResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/DenyGuildRoleChange", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function GetGuildData(request:GetGuildDataRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:GetGuildDataResult = new GetGuildDataResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetGuildData", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function GetGuildInventory(request:GetGuildInventoryRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:GetGuildInventoryResult = new GetGuildInventoryResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetGuildInventory", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function GetGuildMembershipLeaderboard(request:GetGuildMembershipLeaderboardRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:GetGuildMembershipLeaderboardResult = new GetGuildMembershipLeaderboardResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetGuildMembershipLeaderboard", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function GetGuildReadOnlyData(request:GetGuildDataRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:GetGuildDataResult = new GetGuildDataResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetGuildReadOnlyData", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function GetGuildsLeaderboard(request:GetGuildsLeaderboardRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:GetGuildsLeaderboardResult = new GetGuildsLeaderboardResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetGuildsLeaderboard", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function GetGuildsLeaderboardAroundGuild(request:GetGuildsLeaderboardAroundGuildRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:GetGuildsLeaderboardAroundGuildResult = new GetGuildsLeaderboardAroundGuildResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetGuildsLeaderboardAroundGuild", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function GetGuildStatistics(request:GetGuildStatisticsRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:GetGuildStatisticsResult = new GetGuildStatisticsResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetGuildStatistics", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function GetLeaderboardOfPlayersGuilds(request:GetLeaderboardOfPlayersGuildsRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:GetLeaderboardOfPlayersGuildsResult = new GetLeaderboardOfPlayersGuildsResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetLeaderboardOfPlayersGuilds", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function LeaveGuild(request:LeaveGuildRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:LeaveGuildResult = new LeaveGuildResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LeaveGuild", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function ListGuildMembers(request:ListGuildMembersRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:ListGuildMembersResult = new ListGuildMembersResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ListGuildMembers", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function ListPendingGuildRoleChangeRequests(request:ListPendingGuildRoleChangeRequestsRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:ListPendingGuildRoleChangeRequestsResult = new ListPendingGuildRoleChangeRequestsResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ListPendingGuildRoleChangeRequests", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function ListPlayerGuildMemberships(request:ListPlayerGuildMembershipsRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:ListPlayerGuildMembershipsResult = new ListPlayerGuildMembershipsResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ListPlayerGuildMemberships", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function RemoveGuildMember(request:RemoveGuildMemberRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:RemoveGuildMemberResult = new RemoveGuildMemberResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/RemoveGuildMember", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function RequestGuildRoleChange(request:RequestGuildRoleChangeRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:RequestGuildRoleChangeResult = new RequestGuildRoleChangeResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/RequestGuildRoleChange", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function UpdateGuildData(request:UpdateGuildDataRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:UpdateGuildDataResult = new UpdateGuildDataResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UpdateGuildData", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function UpdateGuildStatistics(request:UpdateGuildStatisticsRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:UpdateGuildStatisticsResult = new UpdateGuildStatisticsResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UpdateGuildStatistics", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
         public static function MultiStepClientLogin(needsAttribution:Boolean):void
