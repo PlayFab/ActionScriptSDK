@@ -220,6 +220,9 @@ package com.playfab
         public static const SegmentNotFound:int = 1220;
         public static const StoreNotFound:int = 1221;
         public static const InvalidStatisticName:int = 1222;
+        public static const TitleNotQualifiedForLimit:int = 1223;
+        public static const InvalidServiceLimitLevel:int = 1224;
+        public static const ServiceLimitLevelInTransition:int = 1225;
 
 
         public function PlayFabError(data:Object=null)
