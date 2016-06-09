@@ -6,7 +6,7 @@ package com.playfab
         public static var TitleId:String = null; // You must set this value for PlayFabSdk to work properly (Found in the Game Manager for your title, at the PlayFab Website)
         public static var GlobalErrorHandler:Function;
         public static var DeveloperSecretKey:String = null; // You must set this value for PlayFabSdk to work properly (Found in the Game Manager for your title, at the PlayFab Website)
-        public static var LogicServerURL:String = null; // Assigned by GetCloudScriptUrl, used by RunCloudScript
+        public static var LogicServerURL:String = null; // Deprecated
         public static var AdvertisingIdType:String = null; // Set this to the appropriate AD_TYPE_X constant below
         public static var AdvertisingIdValue:String = null; // Set this to corresponding device value
 
