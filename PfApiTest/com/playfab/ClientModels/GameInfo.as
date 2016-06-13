@@ -12,6 +12,7 @@ package com.playfab.ClientModels
         public var PlayerUserIds:Vector.<String>;
         public var RunTime:uint;
         public var GameServerState:String;
+        public var GameServerData:String;
 
         public function GameInfo(data:Object=null)
         {
@@ -26,6 +27,7 @@ package com.playfab.ClientModels
             PlayerUserIds = data.PlayerUserIds ? Vector.<String>(data.PlayerUserIds) : null;
             RunTime = data.RunTime;
             GameServerState = data.GameServerState;
+            GameServerData = data.GameServerData;
 
         }
     }
