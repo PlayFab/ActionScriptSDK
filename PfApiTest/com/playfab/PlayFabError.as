@@ -223,6 +223,7 @@ package com.playfab
         public static const TitleNotQualifiedForLimit:int = 1223;
         public static const InvalidServiceLimitLevel:int = 1224;
         public static const ServiceLimitLevelInTransition:int = 1225;
+        public static const CouponAlreadyRedeemed:int = 1226;
 
 
         public function PlayFabError(data:Object=null)
