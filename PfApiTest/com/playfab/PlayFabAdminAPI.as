@@ -810,6 +810,32 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Admin/GetTitleData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
+        public static function GetTitleInternalData(request:GetTitleDataRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:GetTitleDataResult = new GetTitleDataResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Admin/GetTitleInternalData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+        }
+
         public static function ListVirtualCurrencyTypes(request:ListVirtualCurrencyTypesRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
@@ -912,6 +938,32 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Admin/SetTitleData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+        }
+
+        public static function SetTitleInternalData(request:SetTitleDataRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:SetTitleDataResult = new SetTitleDataResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Admin/SetTitleInternalData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function SetupPushNotification(request:SetupPushNotificationRequest, onComplete:Function, onError:Function):void
