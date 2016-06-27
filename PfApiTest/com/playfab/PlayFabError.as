@@ -223,6 +223,12 @@ package com.playfab
         public static const TitleNotQualifiedForLimit:int = 1223;
         public static const InvalidServiceLimitLevel:int = 1224;
         public static const ServiceLimitLevelInTransition:int = 1225;
+        public static const CouponAlreadyRedeemed:int = 1226;
+        public static const GameServerBuildSizeLimitExceeded:int = 1227;
+        public static const GameServerBuildCountLimitExceeded:int = 1228;
+        public static const VirtualCurrencyCountLimitExceeded:int = 1229;
+        public static const VirtualCurrencyCodeExists:int = 1230;
+        public static const TitleNewsItemCountLimitExceeded:int = 1231;
 
 
         public function PlayFabError(data:Object=null)

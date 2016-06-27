@@ -149,7 +149,7 @@ package
 
         /// <summary>
         /// CLIENT API
-        /// Try to deliberately register a character with an invalid email and password.
+        /// Try to deliberately register a user with an invalid email and password
         ///   Verify that errorDetails are populated correctly.
         /// </summary>
         private function InvalidRegistration() : void
@@ -207,7 +207,6 @@ package
             loginRequest.TitleId = PlayFabSettings.TitleId;
             loginRequest.CustomId = PlayFabVersion.BuildIdentifier;
             loginRequest.CreateAccount = true;
-            // Try to login, but if we fail, just fall-back and try to create character
             PlayFabClientAPI.LoginWithCustomID(loginRequest, Wrap(OnLoginOrRegisterSuccess, "LoginOrRegister"), Wrap(Shared_ApiCallFailure, "LoginOrRegister"));
         }
         private function OnLoginOrRegisterSuccess(result:com.playfab.ClientModels.LoginResult) : void
