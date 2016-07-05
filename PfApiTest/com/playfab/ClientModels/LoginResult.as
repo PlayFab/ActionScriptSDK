@@ -10,6 +10,7 @@ package com.playfab.ClientModels
         public var NewlyCreated:Boolean;
         public var SettingsForUser:UserSettings;
         public var LastLoginTime:Date;
+        public var InfoResultPayload:GetPlayerCombinedInfoResultPayload;
 
         public function LoginResult(data:Object=null)
         {
@@ -20,6 +21,7 @@ package com.playfab.ClientModels
             NewlyCreated = data.NewlyCreated;
             SettingsForUser = new UserSettings(data.SettingsForUser);
             LastLoginTime = PlayFabUtil.parseDate(data.LastLoginTime);
+            InfoResultPayload = new GetPlayerCombinedInfoResultPayload(data.InfoResultPayload);
 
         }
     }
