@@ -6,6 +6,7 @@ package com.playfab.ClientModels
         public var TitleId:String;
         public var SteamTicket:String;
         public var CreateAccount:*;
+        public var InfoRequestParameters:GetPlayerCombinedInfoRequestParams;
 
         public function LoginWithSteamRequest(data:Object=null)
         {
@@ -14,6 +15,7 @@ package com.playfab.ClientModels
             TitleId = data.TitleId;
             SteamTicket = data.SteamTicket;
             CreateAccount = data.CreateAccount;
+            InfoRequestParameters = new GetPlayerCombinedInfoRequestParams(data.InfoRequestParameters);
 
         }
     }

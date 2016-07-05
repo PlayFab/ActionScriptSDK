@@ -7,6 +7,7 @@ package com.playfab.ClientModels
         public var DeviceId:String;
         public var OS:String;
         public var DeviceModel:String;
+        public var InfoRequestParameters:GetPlayerCombinedInfoRequestParams;
         public var CreateAccount:*;
 
         public function LoginWithIOSDeviceIDRequest(data:Object=null)
@@ -17,6 +18,7 @@ package com.playfab.ClientModels
             DeviceId = data.DeviceId;
             OS = data.OS;
             DeviceModel = data.DeviceModel;
+            InfoRequestParameters = new GetPlayerCombinedInfoRequestParams(data.InfoRequestParameters);
             CreateAccount = data.CreateAccount;
 
         }
