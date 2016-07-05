@@ -7,6 +7,7 @@ package com.playfab.ClientModels
         public var KongregateId:String;
         public var AuthTicket:String;
         public var CreateAccount:*;
+        public var InfoRequestParameters:GetPlayerCombinedInfoRequestParams;
 
         public function LoginWithKongregateRequest(data:Object=null)
         {
@@ -16,6 +17,7 @@ package com.playfab.ClientModels
             KongregateId = data.KongregateId;
             AuthTicket = data.AuthTicket;
             CreateAccount = data.CreateAccount;
+            InfoRequestParameters = new GetPlayerCombinedInfoRequestParams(data.InfoRequestParameters);
 
         }
     }

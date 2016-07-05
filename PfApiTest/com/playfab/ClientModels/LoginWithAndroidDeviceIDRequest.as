@@ -8,6 +8,7 @@ package com.playfab.ClientModels
         public var OS:String;
         public var AndroidDevice:String;
         public var CreateAccount:*;
+        public var InfoRequestParameters:GetPlayerCombinedInfoRequestParams;
 
         public function LoginWithAndroidDeviceIDRequest(data:Object=null)
         {
@@ -18,6 +19,7 @@ package com.playfab.ClientModels
             OS = data.OS;
             AndroidDevice = data.AndroidDevice;
             CreateAccount = data.CreateAccount;
+            InfoRequestParameters = new GetPlayerCombinedInfoRequestParams(data.InfoRequestParameters);
 
         }
     }
