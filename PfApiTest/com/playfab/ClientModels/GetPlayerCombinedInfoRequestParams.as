@@ -3,6 +3,7 @@ package com.playfab.ClientModels
 {
     public class GetPlayerCombinedInfoRequestParams
     {
+        public var GetUserAccountInfo:Boolean;
         public var GetUserInventory:Boolean;
         public var GetUserVirtualCurrency:Boolean;
         public var GetUserData:Boolean;
@@ -20,6 +21,7 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
+            GetUserAccountInfo = data.GetUserAccountInfo;
             GetUserInventory = data.GetUserInventory;
             GetUserVirtualCurrency = data.GetUserVirtualCurrency;
             GetUserData = data.GetUserData;

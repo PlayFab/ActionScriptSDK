@@ -6,7 +6,6 @@ package com.playfab.ClientModels
         public var DeviceToken:String;
         public var SendPushNotificationConfirmation:*;
         public var ConfirmationMessage:String;
-        public var InfoRequestParameters:GetPlayerCombinedInfoRequestParams;
 
         public function AndroidDevicePushNotificationRegistrationRequest(data:Object=null)
         {
@@ -15,7 +14,6 @@ package com.playfab.ClientModels
             DeviceToken = data.DeviceToken;
             SendPushNotificationConfirmation = data.SendPushNotificationConfirmation;
             ConfirmationMessage = data.ConfirmationMessage;
-            InfoRequestParameters = new GetPlayerCombinedInfoRequestParams(data.InfoRequestParameters);
 
         }
     }
