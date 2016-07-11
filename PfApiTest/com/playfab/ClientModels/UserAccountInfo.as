@@ -16,6 +16,7 @@ package com.playfab.ClientModels
         public var IosDeviceInfo:UserIosDeviceInfo;
         public var AndroidDeviceInfo:UserAndroidDeviceInfo;
         public var KongregateInfo:UserKongregateInfo;
+        public var TwitchInfo:UserTwitchInfo;
         public var PsnInfo:UserPsnInfo;
         public var GoogleInfo:UserGoogleInfo;
         public var XboxInfo:UserXboxInfo;
@@ -36,6 +37,7 @@ package com.playfab.ClientModels
             IosDeviceInfo = new UserIosDeviceInfo(data.IosDeviceInfo);
             AndroidDeviceInfo = new UserAndroidDeviceInfo(data.AndroidDeviceInfo);
             KongregateInfo = new UserKongregateInfo(data.KongregateInfo);
+            TwitchInfo = new UserTwitchInfo(data.TwitchInfo);
             PsnInfo = new UserPsnInfo(data.PsnInfo);
             GoogleInfo = new UserGoogleInfo(data.GoogleInfo);
             XboxInfo = new UserXboxInfo(data.XboxInfo);

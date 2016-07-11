@@ -19,6 +19,7 @@ package com.playfab.ClientModels
         public static const CustomId:String = "CustomId";
         public static const XboxLive:String = "XboxLive";
         public static const Parse:String = "Parse";
+        public static const Twitch:String = "Twitch";
 
     }
 }
