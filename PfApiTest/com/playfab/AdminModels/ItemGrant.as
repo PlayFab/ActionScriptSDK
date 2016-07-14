@@ -7,6 +7,8 @@ package com.playfab.AdminModels
         public var ItemId:String;
         public var Annotation:String;
         public var CharacterId:String;
+        public var Data:Object;
+        public var KeysToRemove:Vector.<String>;
 
         public function ItemGrant(data:Object=null)
         {
@@ -16,6 +18,8 @@ package com.playfab.AdminModels
             ItemId = data.ItemId;
             Annotation = data.Annotation;
             CharacterId = data.CharacterId;
+            Data = data.Data;
+            KeysToRemove = data.KeysToRemove ? Vector.<String>(data.KeysToRemove) : null;
 
         }
     }

@@ -229,6 +229,8 @@ package com.playfab
         public static const VirtualCurrencyCountLimitExceeded:int = 1229;
         public static const VirtualCurrencyCodeExists:int = 1230;
         public static const TitleNewsItemCountLimitExceeded:int = 1231;
+        public static const InvalidTwitchToken:int = 1232;
+        public static const TwitchResponseError:int = 1233;
 
 
         public function PlayFabError(data:Object=null)
