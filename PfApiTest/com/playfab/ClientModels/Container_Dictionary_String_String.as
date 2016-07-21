@@ -1,11 +1,11 @@
 
 package com.playfab.ClientModels
 {
-    public class Container`1
+    public class Container_Dictionary_String_String
     {
         public var Data:Object;
 
-        public function Container`1(data:Object=null)
+        public function Container_Dictionary_String_String(data:Object=null)
         {
             if(data == null)
                 return;
