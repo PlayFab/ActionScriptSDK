@@ -10,6 +10,7 @@ package com.playfab.ClientModels
         public var StatisticName:String;
         public var CharacterId:String;
         public var StartNewIfNoneFound:*;
+        public var TagFilter:CollectionFilter;
         public var EnableQueue:*;
 
         public function MatchmakeRequest(data:Object=null)
@@ -23,6 +24,7 @@ package com.playfab.ClientModels
             StatisticName = data.StatisticName;
             CharacterId = data.CharacterId;
             StartNewIfNoneFound = data.StartNewIfNoneFound;
+            TagFilter = new CollectionFilter(data.TagFilter);
             EnableQueue = data.EnableQueue;
 
         }
