@@ -111,7 +111,6 @@ package com.playfab
         public static const InvalidReportDate:int = 1111;
         public static const ReportNotAvailable:int = 1112;
         public static const DatabaseThroughputExceeded:int = 1113;
-        public static const InvalidLobbyId:int = 1114;
         public static const InvalidGameTicket:int = 1115;
         public static const ExpiredGameTicket:int = 1116;
         public static const GameTicketDoesNotMatchLobby:int = 1117;
@@ -231,6 +230,8 @@ package com.playfab
         public static const TitleNewsItemCountLimitExceeded:int = 1231;
         public static const InvalidTwitchToken:int = 1232;
         public static const TwitchResponseError:int = 1233;
+        public static const ProfaneDisplayName:int = 1234;
+        public static const UserAlreadyAdded:int = 1235;
 
 
         public function PlayFabError(data:Object=null)
