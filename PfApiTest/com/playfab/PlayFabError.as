@@ -232,6 +232,8 @@ package com.playfab
         public static const TwitchResponseError:int = 1233;
         public static const ProfaneDisplayName:int = 1234;
         public static const UserAlreadyAdded:int = 1235;
+        public static const InvalidVirtualCurrencyCode:int = 1236;
+        public static const VirtualCurrencyCannotBeDeleted:int = 1237;
 
 
         public function PlayFabError(data:Object=null)
