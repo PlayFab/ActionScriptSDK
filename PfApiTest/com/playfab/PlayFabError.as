@@ -234,6 +234,8 @@ package com.playfab
         public static const UserAlreadyAdded:int = 1235;
         public static const InvalidVirtualCurrencyCode:int = 1236;
         public static const VirtualCurrencyCannotBeDeleted:int = 1237;
+        public static const IdentifierAlreadyClaimed:int = 1238;
+        public static const IdentifierNotLinked:int = 1239;
 
 
         public function PlayFabError(data:Object=null)
