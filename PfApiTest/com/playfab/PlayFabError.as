@@ -236,6 +236,9 @@ package com.playfab
         public static const VirtualCurrencyCannotBeDeleted:int = 1237;
         public static const IdentifierAlreadyClaimed:int = 1238;
         public static const IdentifierNotLinked:int = 1239;
+        public static const InvalidContinuationToken:int = 1240;
+        public static const ExpiredContinuationToken:int = 1241;
+        public static const InvalidSegment:int = 1242;
 
 
         public function PlayFabError(data:Object=null)
