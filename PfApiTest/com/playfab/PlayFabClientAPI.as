@@ -3295,7 +3295,7 @@ package com.playfab
 
         public static function GetPlayerSegments(request:GetPlayerSegmentsRequest, onComplete:Function, onError:Function):void
         {
-            if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
+            if (authKey == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -3316,7 +3316,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayerSegments", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayerSegments", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
         public static function MultiStepClientLogin(needsAttribution:Boolean):void
