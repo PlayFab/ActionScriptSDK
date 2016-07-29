@@ -239,6 +239,8 @@ package com.playfab
         public static const InvalidContinuationToken:int = 1240;
         public static const ExpiredContinuationToken:int = 1241;
         public static const InvalidSegment:int = 1242;
+        public static const InvalidSessionId:int = 1243;
+        public static const SessionLogNotFound:int = 1244;
 
 
         public function PlayFabError(data:Object=null)
