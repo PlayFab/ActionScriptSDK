@@ -212,6 +212,32 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetLeaderboardAroundUser", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
+        public static function GetPlayerCombinedInfo(request:GetPlayerCombinedInfoRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:GetPlayerCombinedInfoResult = new GetPlayerCombinedInfoResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetPlayerCombinedInfo", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+        }
+
         public static function GetPlayerStatistics(request:GetPlayerStatisticsRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
@@ -2212,6 +2238,84 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/UpdateCharacterReadOnlyData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+        }
+
+        public static function GetAllSegments(request:GetAllSegmentsRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:GetAllSegmentsResult = new GetAllSegmentsResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetAllSegments", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+        }
+
+        public static function GetPlayerSegments(request:GetPlayersSegmentsRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:GetPlayerSegmentsResult = new GetPlayerSegmentsResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetPlayerSegments", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+        }
+
+        public static function GetPlayersInSegment(request:GetPlayersInSegmentRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:GetPlayersInSegmentResult = new GetPlayersInSegmentResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetPlayersInSegment", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
     }

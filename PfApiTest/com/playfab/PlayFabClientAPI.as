@@ -378,6 +378,32 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/RegisterPlayFabUser", requetJson, null, null, onPostComplete);
         }
 
+        public static function AddGenericID(request:AddGenericIDRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:AddGenericIDResult = new AddGenericIDResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/AddGenericID", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
         public static function AddUsernamePassword(request:AddUsernamePasswordRequest, onComplete:Function, onError:Function):void
         {
             if (authKey == null) throw new Error("Must be logged in to call this method");
@@ -506,6 +532,32 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayFabIDsFromGameCenterIDs", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function GetPlayFabIDsFromGenericIDs(request:GetPlayFabIDsFromGenericIDsRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:GetPlayFabIDsFromGenericIDsResult = new GetPlayFabIDsFromGenericIDsResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayFabIDsFromGenericIDs", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
         public static function GetPlayFabIDsFromGoogleIDs(request:GetPlayFabIDsFromGoogleIDsRequest, onComplete:Function, onError:Function):void
@@ -870,6 +922,32 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkTwitch", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function RemoveGenericID(request:RemoveGenericIDRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:RemoveGenericIDResult = new RemoveGenericIDResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/RemoveGenericID", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
         public static function ReportPlayer(request:ReportPlayerClientRequest, onComplete:Function, onError:Function):void
@@ -3213,6 +3291,32 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/AttributeInstall", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function GetPlayerSegments(request:GetPlayerSegmentsRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:GetPlayerSegmentsResult = new GetPlayerSegmentsResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayerSegments", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
         public static function MultiStepClientLogin(needsAttribution:Boolean):void

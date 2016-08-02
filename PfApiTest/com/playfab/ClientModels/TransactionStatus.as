@@ -1,7 +1,7 @@
 
 package com.playfab.ClientModels
 {
-    public class TransactionStatus
+    public class 
     {
         public static const CreateCart:String = "CreateCart";
         public static const Init:String = "Init";

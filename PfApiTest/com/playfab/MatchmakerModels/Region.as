@@ -1,7 +1,7 @@
 
 package com.playfab.MatchmakerModels
 {
-    public class Region
+    public class 
     {
         public static const USCentral:String = "USCentral";
         public static const USEast:String = "USEast";

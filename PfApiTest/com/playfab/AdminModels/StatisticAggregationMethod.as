@@ -1,7 +1,7 @@
 
 package com.playfab.AdminModels
 {
-    public class StatisticAggregationMethod
+    public class 
     {
         public static const Last:String = "Last";
         public static const Min:String = "Min";

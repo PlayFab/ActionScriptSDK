@@ -1,7 +1,7 @@
 
 package com.playfab.ServerModels
 {
-    public class PlayerConnectionState
+    public class 
     {
         public static const Unassigned:String = "Unassigned";
         public static const Connecting:String = "Connecting";

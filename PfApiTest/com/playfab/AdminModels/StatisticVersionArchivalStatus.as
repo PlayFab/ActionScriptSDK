@@ -1,7 +1,7 @@
 
 package com.playfab.AdminModels
 {
-    public class StatisticVersionArchivalStatus
+    public class 
     {
         public static const NotScheduled:String = "NotScheduled";
         public static const Scheduled:String = "Scheduled";

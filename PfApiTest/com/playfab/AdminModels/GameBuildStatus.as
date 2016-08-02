@@ -1,7 +1,7 @@
 
 package com.playfab.AdminModels
 {
-    public class GameBuildStatus
+    public class 
     {
         public static const Available:String = "Available";
         public static const Validating:String = "Validating";

@@ -1,7 +1,7 @@
 
 package com.playfab.ClientModels
 {
-    public class MatchmakeStatus
+    public class 
     {
         public static const Complete:String = "Complete";
         public static const Waiting:String = "Waiting";

@@ -1,7 +1,7 @@
 
 package com.playfab.ClientModels
 {
-    public class TradeStatus
+    public class 
     {
         public static const Invalid:String = "Invalid";
         public static const Opening:String = "Opening";
