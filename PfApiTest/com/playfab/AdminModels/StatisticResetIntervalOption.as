@@ -1,7 +1,7 @@
 
 package com.playfab.AdminModels
 {
-    public class StatisticResetIntervalOption
+    public class 
     {
         public static const Never:String = "Never";
         public static const Hour:String = "Hour";

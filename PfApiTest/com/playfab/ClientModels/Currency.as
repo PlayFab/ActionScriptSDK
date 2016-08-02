@@ -1,7 +1,7 @@
 
 package com.playfab.ClientModels
 {
-    public class Currency
+    public class 
     {
         public static const AED:String = "AED";
         public static const AFN:String = "AFN";
