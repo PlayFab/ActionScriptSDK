@@ -1,7 +1,7 @@
 
 package com.playfab.ClientModels
 {
-    public class UserOrigination
+    public class 
     {
         public static const Organic:String = "Organic";
         public static const Steam:String = "Steam";

@@ -1,7 +1,7 @@
 
 package com.playfab.ServerModels
 {
-    public class TitleActivationStatus
+    public class 
     {
         public static const None:String = "None";
         public static const ActivatedTitleKey:String = "ActivatedTitleKey";

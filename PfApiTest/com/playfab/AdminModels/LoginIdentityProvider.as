@@ -1,7 +1,7 @@
 
 package com.playfab.AdminModels
 {
-    public class LoginIdentityProvider
+    public class 
     {
         public static const Unknown:String = "Unknown";
         public static const PlayFab:String = "PlayFab";
