@@ -13,6 +13,7 @@ package com.playfab.ServerModels
         public var LastLogin:Date;
         public var BannedUntil:Date;
         public var Statistics:Object;
+        public var ValuesToDate:Object;
         public var VirtualCurrencyBalances:Object;
         public var AdCampaignAttributions:Vector.<AdCampaignAttribution>;
         public var PushNotificationRegistrations:Vector.<PushNotificationRegistration>;
@@ -31,6 +32,7 @@ package com.playfab.ServerModels
             LastLogin = PlayFabUtil.parseDate(data.LastLogin);
             BannedUntil = PlayFabUtil.parseDate(data.BannedUntil);
             Statistics = data.Statistics;
+            ValuesToDate = data.ValuesToDate;
             VirtualCurrencyBalances = data.VirtualCurrencyBalances;
             if(data.AdCampaignAttributions) { AdCampaignAttributions = new Vector.<AdCampaignAttribution>(); for(var AdCampaignAttributions_iter:int = 0; AdCampaignAttributions_iter < data.AdCampaignAttributions.length; AdCampaignAttributions_iter++) { AdCampaignAttributions[AdCampaignAttributions_iter] = new AdCampaignAttribution(data.AdCampaignAttributions[AdCampaignAttributions_iter]); }}
             if(data.PushNotificationRegistrations) { PushNotificationRegistrations = new Vector.<PushNotificationRegistration>(); for(var PushNotificationRegistrations_iter:int = 0; PushNotificationRegistrations_iter < data.PushNotificationRegistrations.length; PushNotificationRegistrations_iter++) { PushNotificationRegistrations[PushNotificationRegistrations_iter] = new PushNotificationRegistration(data.PushNotificationRegistrations[PushNotificationRegistrations_iter]); }}
