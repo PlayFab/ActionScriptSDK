@@ -241,6 +241,7 @@ package com.playfab
         public static const InvalidSegment:int = 1242;
         public static const InvalidSessionId:int = 1243;
         public static const SessionLogNotFound:int = 1244;
+        public static const InvalidSearchTerm:int = 1245;
 
 
         public function PlayFabError(data:Object=null)
