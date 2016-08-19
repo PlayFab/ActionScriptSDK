@@ -101,17 +101,11 @@
          <name>string</name>
       </keep-as3-metadata>
       -->
-      <!-- compiler.keep-generated-actionscript: save temporary source files generated during MXML compilation-->
-      <keep-generated-actionscript>false</keep-generated-actionscript>
       <!-- compiler.library-path: list of SWC files or directories that contain SWC files-->
       <library-path>
          <path-element>C:/dev/flex_sdk_4.6/frameworks/libs</path-element>
          <path-element>C:/dev/flex_sdk_4.6/frameworks/locale/{locale}</path-element>
       </library-path>
-      <!-- compiler.locale: specifies the locale for internationalization-->
-      <locale>
-         <locale-element>en_US</locale-element>
-      </locale>
       <!-- compiler.minimum-supported-version usage:
       <minimum-supported-version>string</minimum-supported-version>
       -->
@@ -166,8 +160,6 @@
       <!-- compiler.show-invalid-css-property-warnings usage:
       <show-invalid-css-property-warnings>boolean</show-invalid-css-property-warnings>
       -->
-      <!-- compiler.show-shadowed-device-font-warnings: toggles whether warnings are displayed when an embedded font name shadows a device font name-->
-      <show-shadowed-device-font-warnings>true</show-shadowed-device-font-warnings>
       <!-- compiler.show-unused-type-selector-warnings: toggle whether warnings generated from unused CSS type selectors are displayed-->
       <!-- compiler.show-unused-type-selector-warnings usage:
       <show-unused-type-selector-warnings>boolean</show-unused-type-selector-warnings>
@@ -182,11 +174,6 @@
       <!-- compiler.strict: runs the AS3 compiler in strict error checking mode.-->
       <strict>true</strict>
       <!-- compiler.theme: list of CSS or SWC files to apply as a theme-->
-      <theme>
-         <filename>C:/dev/flex_sdk_4.6/frameworks/themes/Spark/spark.css</filename>
-      </theme>
-      <!-- compiler.use-resource-bundle-metadata: determines whether resources bundles are included in the application.-->
-      <use-resource-bundle-metadata>true</use-resource-bundle-metadata>
       <!-- compiler.verbose-stacktraces: save callstack information to the SWF for debugging-->
       <verbose-stacktraces>false</verbose-stacktraces>
       <!-- compiler.warn-array-tostring-changes: Array.toString() format has changed.-->
@@ -344,7 +331,6 @@
       </frame>
       -->
    </frames>
-   <framework>halo</framework>
    <!-- include-inheritance-dependencies-only: only include inheritance dependencies of classes specified with include-classes -->
    <!-- include-inheritance-dependencies-only usage:
    <include-inheritance-dependencies-only>boolean</include-inheritance-dependencies-only>
