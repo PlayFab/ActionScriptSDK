@@ -1,6 +1,7 @@
 
 package com.playfab.ServerModels
 {
+    // Deprecated
     public class UpdateUserStatisticsRequest
     {
         public var PlayFabId:String;

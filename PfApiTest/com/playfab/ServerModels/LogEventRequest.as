@@ -3,6 +3,7 @@ package com.playfab.ServerModels
 {
     import com.playfab.PlayFabUtil;
 
+    // Deprecated
     public class LogEventRequest
     {
         public var PlayFabId:String;

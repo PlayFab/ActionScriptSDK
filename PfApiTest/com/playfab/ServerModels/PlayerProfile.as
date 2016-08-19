@@ -8,6 +8,7 @@ package com.playfab.ServerModels
         public var PlayerId:String;
         public var TitleId:String;
         public var DisplayName:String;
+        public var PublisherId:String;
         public var Origination:String;
         public var Created:Date;
         public var LastLogin:Date;
@@ -27,6 +28,7 @@ package com.playfab.ServerModels
             PlayerId = data.PlayerId;
             TitleId = data.TitleId;
             DisplayName = data.DisplayName;
+            PublisherId = data.PublisherId;
             Origination = data.Origination;
             Created = PlayFabUtil.parseDate(data.Created);
             LastLogin = PlayFabUtil.parseDate(data.LastLogin);
