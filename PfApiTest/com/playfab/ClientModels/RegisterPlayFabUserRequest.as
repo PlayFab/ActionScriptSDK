@@ -9,6 +9,7 @@ package com.playfab.ClientModels
         public var Password:String;
         public var RequireBothUsernameAndEmail:*;
         public var DisplayName:String;
+        // Deprecated
         public var Origination:String;
 
         public function RegisterPlayFabUserRequest(data:Object=null)

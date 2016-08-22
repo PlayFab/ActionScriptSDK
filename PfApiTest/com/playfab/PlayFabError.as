@@ -242,6 +242,8 @@ package com.playfab
         public static const InvalidSessionId:int = 1243;
         public static const SessionLogNotFound:int = 1244;
         public static const InvalidSearchTerm:int = 1245;
+        public static const TwoFactorAuthenticationTokenRequired:int = 1246;
+        public static const GameServerHostCountLimitExceeded:int = 1247;
 
 
         public function PlayFabError(data:Object=null)

@@ -664,6 +664,7 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayFabIDsFromTwitchIDs", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
+        [Deprecated(message="The GetUserCombinedInfo API and its associated datatypes are scheduled for deprecation. Use GetPlayerCombinedInfo instead.", replacement="GetPlayerCombinedInfo")]
         public static function GetUserCombinedInfo(request:GetUserCombinedInfoRequest, onComplete:Function, onError:Function):void
         {
             if (authKey == null) throw new Error("Must be logged in to call this method");
@@ -1288,6 +1289,7 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetFriendLeaderboard", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
+        [Deprecated(message="The GetFriendLeaderboardAroundCurrentUser API and its associated datatypes are scheduled for deprecation. Use GetFriendLeaderboardAroundPlayer instead.", replacement="GetFriendLeaderboardAroundPlayer")]
         public static function GetFriendLeaderboardAroundCurrentUser(request:GetFriendLeaderboardAroundCurrentUserRequest, onComplete:Function, onError:Function):void
         {
             if (authKey == null) throw new Error("Must be logged in to call this method");
@@ -1366,6 +1368,7 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetLeaderboard", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
+        [Deprecated(message="The GetLeaderboardAroundCurrentUser API and its associated datatypes are scheduled for deprecation. Use GetLeaderboardAroundPlayer instead.", replacement="GetLeaderboardAroundPlayer")]
         public static function GetLeaderboardAroundCurrentUser(request:GetLeaderboardAroundCurrentUserRequest, onComplete:Function, onError:Function):void
         {
             if (authKey == null) throw new Error("Must be logged in to call this method");
@@ -1574,6 +1577,7 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetUserReadOnlyData", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
+        [Deprecated(message="The GetUserStatistics API and its associated datatypes are scheduled for deprecation. Use GetPlayerStatistics instead.", replacement="GetPlayerStatistics")]
         public static function GetUserStatistics(request:GetUserStatisticsRequest, onComplete:Function, onError:Function):void
         {
             if (authKey == null) throw new Error("Must be logged in to call this method");
@@ -1678,6 +1682,7 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UpdateUserPublisherData", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
+        [Deprecated(message="The UpdateUserStatistics API and its associated datatypes are scheduled for deprecation. Use UpdatePlayerStatistics instead.", replacement="UpdatePlayerStatistics")]
         public static function UpdateUserStatistics(request:UpdateUserStatisticsRequest, onComplete:Function, onError:Function):void
         {
             if (authKey == null) throw new Error("Must be logged in to call this method");
@@ -2510,6 +2515,7 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ValidateGooglePlayPurchase", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
+        [Deprecated(message="The LogEvent API and its associated datatypes are scheduled for deprecation. Use WritePlayerEvent instead.", replacement="WritePlayerEvent")]
         public static function LogEvent(request:LogEventRequest, onComplete:Function, onError:Function):void
         {
             if (authKey == null) throw new Error("Must be logged in to call this method");
@@ -2770,6 +2776,7 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ExecuteCloudScript", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
+        [Deprecated(message="The GetCloudScriptUrl API and its associated datatypes are scheduled for deprecation. Use ExecuteCloudScript instead.", replacement="ExecuteCloudScript")]
         public static function GetCloudScriptUrl(request:GetCloudScriptUrlRequest, onComplete:Function, onError:Function):void
         {
             if (authKey == null) throw new Error("Must be logged in to call this method");
@@ -2797,6 +2804,7 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetCloudScriptUrl", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
+        [Deprecated(message="The RunCloudScript API and its associated datatypes are scheduled for deprecation. Use ExecuteCloudScript instead.", replacement="ExecuteCloudScript")]
         public static function RunCloudScript(request:RunCloudScriptRequest, onComplete:Function, onError:Function):void
         {
             if (authKey == null) throw new Error("Must be logged in to call this method");

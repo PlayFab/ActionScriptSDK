@@ -1,6 +1,7 @@
 
 package com.playfab.ClientModels
 {
+    // Deprecated
     public class GetUserCombinedInfoResult
     {
         public var PlayFabId:String;

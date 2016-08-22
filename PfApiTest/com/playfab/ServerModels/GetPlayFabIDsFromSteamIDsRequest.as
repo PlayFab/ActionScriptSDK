@@ -3,6 +3,7 @@ package com.playfab.ServerModels
 {
     public class GetPlayFabIDsFromSteamIDsRequest
     {
+        // Deprecated, please use SteamStringIDs
         public var SteamIDs:Vector.<Number>;
         public var SteamStringIDs:Vector.<String>;
 

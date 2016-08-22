@@ -3,6 +3,7 @@ package com.playfab.ClientModels
 {
     public class SteamPlayFabIdPair
     {
+        // Deprecated, please use SteamStringId
         public var SteamId:Number;
         public var SteamStringId:String;
         public var PlayFabId:String;
