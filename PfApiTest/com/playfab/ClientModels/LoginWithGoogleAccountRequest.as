@@ -6,6 +6,7 @@ package com.playfab.ClientModels
         public var TitleId:String;
         public var AccessToken:String;
         public var CreateAccount:*;
+        // Deprecated
         public var PublisherId:String;
         public var InfoRequestParameters:GetPlayerCombinedInfoRequestParams;
 

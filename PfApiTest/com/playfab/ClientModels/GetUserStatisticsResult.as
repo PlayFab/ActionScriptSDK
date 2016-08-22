@@ -1,6 +1,7 @@
 
 package com.playfab.ClientModels
 {
+    // Deprecated
     public class GetUserStatisticsResult
     {
         public var UserStatistics:Object;

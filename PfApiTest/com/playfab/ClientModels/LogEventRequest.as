@@ -3,6 +3,7 @@ package com.playfab.ClientModels
 {
     import com.playfab.PlayFabUtil;
 
+    // Deprecated
     public class LogEventRequest
     {
         public var Timestamp:Date;

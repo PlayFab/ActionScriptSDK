@@ -1,6 +1,7 @@
 
 package com.playfab.ClientModels
 {
+    // Deprecated
     public class RunCloudScriptRequest
     {
         public var ActionId:String;

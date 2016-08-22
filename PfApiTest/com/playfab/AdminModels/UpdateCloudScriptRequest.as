@@ -3,6 +3,7 @@ package com.playfab.AdminModels
 {
     public class UpdateCloudScriptRequest
     {
+        // Deprecated
         public var Version:*;
         public var Files:Vector.<CloudScriptFile>;
         public var Publish:Boolean;

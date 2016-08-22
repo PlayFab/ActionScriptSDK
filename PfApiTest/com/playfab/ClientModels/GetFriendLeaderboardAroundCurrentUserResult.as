@@ -1,6 +1,7 @@
 
 package com.playfab.ClientModels
 {
+    // Deprecated
     public class GetFriendLeaderboardAroundCurrentUserResult
     {
         public var Leaderboard:Vector.<PlayerLeaderboardEntry>;
