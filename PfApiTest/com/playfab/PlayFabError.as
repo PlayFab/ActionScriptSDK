@@ -244,6 +244,8 @@ package com.playfab
         public static const InvalidSearchTerm:int = 1245;
         public static const TwoFactorAuthenticationTokenRequired:int = 1246;
         public static const GameServerHostCountLimitExceeded:int = 1247;
+        public static const PlayerTagCountLimitExceeded:int = 1248;
+        public static const RequestAlreadyRunning:int = 1249;
 
 
         public function PlayFabError(data:Object=null)

@@ -19,6 +19,7 @@ package com.playfab.AdminModels
         public var IsStackable:Boolean;
         public var IsTradable:Boolean;
         public var ItemImageUrl:String;
+        public var IsLimitedEdition:Boolean;
 
         public function CatalogItem(data:Object=null)
         {
@@ -40,6 +41,7 @@ package com.playfab.AdminModels
             IsStackable = data.IsStackable;
             IsTradable = data.IsTradable;
             ItemImageUrl = data.ItemImageUrl;
+            IsLimitedEdition = data.IsLimitedEdition;
 
         }
     }
