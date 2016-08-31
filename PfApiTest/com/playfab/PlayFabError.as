@@ -246,6 +246,7 @@ package com.playfab
         public static const GameServerHostCountLimitExceeded:int = 1247;
         public static const PlayerTagCountLimitExceeded:int = 1248;
         public static const RequestAlreadyRunning:int = 1249;
+        public static const ActionGroupNotFound:int = 1250;
 
 
         public function PlayFabError(data:Object=null)
