@@ -20,6 +20,7 @@ package com.playfab.ClientModels
         public var IsTradable:Boolean;
         public var ItemImageUrl:String;
         public var IsLimitedEdition:Boolean;
+        public var InitialLimitedEditionCount:int;
 
         public function CatalogItem(data:Object=null)
         {
@@ -42,6 +43,7 @@ package com.playfab.ClientModels
             IsTradable = data.IsTradable;
             ItemImageUrl = data.ItemImageUrl;
             IsLimitedEdition = data.IsLimitedEdition;
+            InitialLimitedEditionCount = data.InitialLimitedEditionCount;
 
         }
     }
