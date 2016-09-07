@@ -247,6 +247,8 @@ package com.playfab
         public static const PlayerTagCountLimitExceeded:int = 1248;
         public static const RequestAlreadyRunning:int = 1249;
         public static const ActionGroupNotFound:int = 1250;
+        public static const MaximumSegmentBulkActionJobsRunning:int = 1251;
+        public static const NoActionsOnPlayersInSegmentJob:int = 1252;
 
 
         public function PlayFabError(data:Object=null)

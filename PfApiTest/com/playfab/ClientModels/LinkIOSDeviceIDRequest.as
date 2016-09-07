@@ -6,6 +6,7 @@ package com.playfab.ClientModels
         public var DeviceId:String;
         public var OS:String;
         public var DeviceModel:String;
+        public var ForceLink:*;
 
         public function LinkIOSDeviceIDRequest(data:Object=null)
         {
@@ -14,6 +15,7 @@ package com.playfab.ClientModels
             DeviceId = data.DeviceId;
             OS = data.OS;
             DeviceModel = data.DeviceModel;
+            ForceLink = data.ForceLink;
 
         }
     }
