@@ -14,6 +14,7 @@ package com.playfab.AdminModels
         public var LastLogin:Date;
         public var BannedUntil:Date;
         public var Statistics:Object;
+        public var TotalValueToDateInUSD:*;
         public var ValuesToDate:Object;
         public var Tags:Vector.<String>;
         public var VirtualCurrencyBalances:Object;
@@ -35,6 +36,7 @@ package com.playfab.AdminModels
             LastLogin = PlayFabUtil.parseDate(data.LastLogin);
             BannedUntil = PlayFabUtil.parseDate(data.BannedUntil);
             Statistics = data.Statistics;
+            TotalValueToDateInUSD = data.TotalValueToDateInUSD;
             ValuesToDate = data.ValuesToDate;
             Tags = data.Tags ? Vector.<String>(data.Tags) : null;
             VirtualCurrencyBalances = data.VirtualCurrencyBalances;
