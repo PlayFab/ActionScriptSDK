@@ -8,6 +8,7 @@ package com.playfab.ServerModels
         public var FunctionResult:Object;
         public var Logs:Vector.<LogStatement>;
         public var ExecutionTimeSeconds:Number;
+        public var ProcessorTimeSeconds:Number;
         public var MemoryConsumedBytes:uint;
         public var APIRequestsIssued:int;
         public var HttpRequestsIssued:int;
@@ -22,6 +23,7 @@ package com.playfab.ServerModels
             FunctionResult = data.FunctionResult;
             if(data.Logs) { Logs = new Vector.<LogStatement>(); for(var Logs_iter:int = 0; Logs_iter < data.Logs.length; Logs_iter++) { Logs[Logs_iter] = new LogStatement(data.Logs[Logs_iter]); }}
             ExecutionTimeSeconds = data.ExecutionTimeSeconds;
+            ProcessorTimeSeconds = data.ProcessorTimeSeconds;
             MemoryConsumedBytes = data.MemoryConsumedBytes;
             APIRequestsIssued = data.APIRequestsIssued;
             HttpRequestsIssued = data.HttpRequestsIssued;

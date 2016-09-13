@@ -5,6 +5,7 @@ package com.playfab.ClientModels
     {
         public var KongregateId:String;
         public var AuthTicket:String;
+        public var ForceLink:*;
 
         public function LinkKongregateAccountRequest(data:Object=null)
         {
@@ -12,6 +13,7 @@ package com.playfab.ClientModels
                 return;
             KongregateId = data.KongregateId;
             AuthTicket = data.AuthTicket;
+            ForceLink = data.ForceLink;
 
         }
     }
