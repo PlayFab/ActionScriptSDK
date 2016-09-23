@@ -8,7 +8,6 @@ package com.playfab.AdminModels
         public static const GameClient:String = "GameClient";
         public static const GameServer:String = "GameServer";
         public static const Partner:String = "Partner";
-        public static const Stream:String = "Stream";
 
     }
 }
