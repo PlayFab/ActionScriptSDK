@@ -12,6 +12,7 @@ package com.playfab.ClientModels
         public var ProviderData:String;
         public var PurchaseConfirmationPageURL:String;
         public var VirtualCurrency:Object;
+        public var ProviderToken:String;
 
         public function PayForPurchaseResult(data:Object=null)
         {
@@ -26,6 +27,7 @@ package com.playfab.ClientModels
             ProviderData = data.ProviderData;
             PurchaseConfirmationPageURL = data.PurchaseConfirmationPageURL;
             VirtualCurrency = data.VirtualCurrency;
+            ProviderToken = data.ProviderToken;
 
         }
     }

@@ -249,6 +249,11 @@ package com.playfab
         public static const ActionGroupNotFound:int = 1250;
         public static const MaximumSegmentBulkActionJobsRunning:int = 1251;
         public static const NoActionsOnPlayersInSegmentJob:int = 1252;
+        public static const DuplicateStatisticName:int = 1253;
+        public static const CronNameConflict:int = 1254;
+        public static const CronCreateConflict:int = 1255;
+        public static const InvalidCronName:int = 1256;
+        public static const InvalidCronSchedule:int = 1257;
 
 
         public function PlayFabError(data:Object=null)
