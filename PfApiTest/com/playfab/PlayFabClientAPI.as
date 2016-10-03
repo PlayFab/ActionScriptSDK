@@ -1787,6 +1787,32 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetStoreItems", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
+        public static function GetTime(request:GetTimeRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:GetTimeResult = new GetTimeResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetTime", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
         public static function GetTitleData(request:GetTitleDataRequest, onComplete:Function, onError:Function):void
         {
             if (authKey == null) throw new Error("Must be logged in to call this method");
