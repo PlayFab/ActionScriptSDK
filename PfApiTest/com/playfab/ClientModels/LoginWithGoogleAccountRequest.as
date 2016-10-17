@@ -6,8 +6,6 @@ package com.playfab.ClientModels
         public var TitleId:String;
         public var AccessToken:String;
         public var CreateAccount:*;
-        // Deprecated
-        public var PublisherId:String;
         public var InfoRequestParameters:GetPlayerCombinedInfoRequestParams;
 
         public function LoginWithGoogleAccountRequest(data:Object=null)
@@ -17,7 +15,6 @@ package com.playfab.ClientModels
             TitleId = data.TitleId;
             AccessToken = data.AccessToken;
             CreateAccount = data.CreateAccount;
-            PublisherId = data.PublisherId;
             InfoRequestParameters = new GetPlayerCombinedInfoRequestParams(data.InfoRequestParameters);
 
         }

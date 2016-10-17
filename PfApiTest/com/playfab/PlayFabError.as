@@ -254,6 +254,7 @@ package com.playfab
         public static const ScheduledTaskCreateConflict:int = 1255;
         public static const InvalidScheduledTaskName:int = 1256;
         public static const InvalidTaskSchedule:int = 1257;
+        public static const SteamNotEnabledForTitle:int = 1258;
 
 
         public function PlayFabError(data:Object=null)
