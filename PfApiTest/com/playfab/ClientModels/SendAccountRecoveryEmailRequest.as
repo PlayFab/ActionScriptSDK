@@ -5,8 +5,6 @@ package com.playfab.ClientModels
     {
         public var Email:String;
         public var TitleId:String;
-        // Deprecated
-        public var PublisherId:String;
 
         public function SendAccountRecoveryEmailRequest(data:Object=null)
         {
@@ -14,7 +12,6 @@ package com.playfab.ClientModels
                 return;
             Email = data.Email;
             TitleId = data.TitleId;
-            PublisherId = data.PublisherId;
 
         }
     }

@@ -1289,33 +1289,6 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetFriendLeaderboard", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
-        [Deprecated(message="The GetFriendLeaderboardAroundCurrentUser API and its associated datatypes are scheduled for deprecation. Use GetFriendLeaderboardAroundPlayer instead.", replacement="GetFriendLeaderboardAroundPlayer")]
-        public static function GetFriendLeaderboardAroundCurrentUser(request:GetFriendLeaderboardAroundCurrentUserRequest, onComplete:Function, onError:Function):void
-        {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
-            var requetJson:String = JSON.stringify( request );
-
-            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
-            {
-                if(error)
-                {
-                    if(onError != null)
-                        onError(error);
-                    if(PlayFabSettings.GlobalErrorHandler != null)
-                        PlayFabSettings.GlobalErrorHandler(error);
-                }
-                else
-                {
-                    var result:GetFriendLeaderboardAroundCurrentUserResult = new GetFriendLeaderboardAroundCurrentUserResult(resultData);
-
-                    if(onComplete != null)
-                        onComplete(result);
-                }
-            }
-
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetFriendLeaderboardAroundCurrentUser", requetJson, "X-Authorization", authKey, onPostComplete);
-        }
-
         public static function GetFriendLeaderboardAroundPlayer(request:GetFriendLeaderboardAroundPlayerRequest, onComplete:Function, onError:Function):void
         {
             if (authKey == null) throw new Error("Must be logged in to call this method");
@@ -1366,33 +1339,6 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetLeaderboard", requetJson, "X-Authorization", authKey, onPostComplete);
-        }
-
-        [Deprecated(message="The GetLeaderboardAroundCurrentUser API and its associated datatypes are scheduled for deprecation. Use GetLeaderboardAroundPlayer instead.", replacement="GetLeaderboardAroundPlayer")]
-        public static function GetLeaderboardAroundCurrentUser(request:GetLeaderboardAroundCurrentUserRequest, onComplete:Function, onError:Function):void
-        {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
-            var requetJson:String = JSON.stringify( request );
-
-            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
-            {
-                if(error)
-                {
-                    if(onError != null)
-                        onError(error);
-                    if(PlayFabSettings.GlobalErrorHandler != null)
-                        PlayFabSettings.GlobalErrorHandler(error);
-                }
-                else
-                {
-                    var result:GetLeaderboardAroundCurrentUserResult = new GetLeaderboardAroundCurrentUserResult(resultData);
-
-                    if(onComplete != null)
-                        onComplete(result);
-                }
-            }
-
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetLeaderboardAroundCurrentUser", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
         public static function GetLeaderboardAroundPlayer(request:GetLeaderboardAroundPlayerRequest, onComplete:Function, onError:Function):void
@@ -1577,33 +1523,6 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetUserReadOnlyData", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
-        [Deprecated(message="The GetUserStatistics API and its associated datatypes are scheduled for deprecation. Use GetPlayerStatistics instead.", replacement="GetPlayerStatistics")]
-        public static function GetUserStatistics(request:GetUserStatisticsRequest, onComplete:Function, onError:Function):void
-        {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
-            var requetJson:String = JSON.stringify( request );
-
-            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
-            {
-                if(error)
-                {
-                    if(onError != null)
-                        onError(error);
-                    if(PlayFabSettings.GlobalErrorHandler != null)
-                        PlayFabSettings.GlobalErrorHandler(error);
-                }
-                else
-                {
-                    var result:GetUserStatisticsResult = new GetUserStatisticsResult(resultData);
-
-                    if(onComplete != null)
-                        onComplete(result);
-                }
-            }
-
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetUserStatistics", requetJson, "X-Authorization", authKey, onPostComplete);
-        }
-
         public static function UpdatePlayerStatistics(request:UpdatePlayerStatisticsRequest, onComplete:Function, onError:Function):void
         {
             if (authKey == null) throw new Error("Must be logged in to call this method");
@@ -1680,33 +1599,6 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UpdateUserPublisherData", requetJson, "X-Authorization", authKey, onPostComplete);
-        }
-
-        [Deprecated(message="The UpdateUserStatistics API and its associated datatypes are scheduled for deprecation. Use UpdatePlayerStatistics instead.", replacement="UpdatePlayerStatistics")]
-        public static function UpdateUserStatistics(request:UpdateUserStatisticsRequest, onComplete:Function, onError:Function):void
-        {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
-            var requetJson:String = JSON.stringify( request );
-
-            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
-            {
-                if(error)
-                {
-                    if(onError != null)
-                        onError(error);
-                    if(PlayFabSettings.GlobalErrorHandler != null)
-                        PlayFabSettings.GlobalErrorHandler(error);
-                }
-                else
-                {
-                    var result:UpdateUserStatisticsResult = new UpdateUserStatisticsResult(resultData);
-
-                    if(onComplete != null)
-                        onComplete(result);
-                }
-            }
-
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UpdateUserStatistics", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
         public static function GetCatalogItems(request:GetCatalogItemsRequest, onComplete:Function, onError:Function):void
@@ -2541,33 +2433,6 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ValidateGooglePlayPurchase", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
-        [Deprecated(message="The LogEvent API and its associated datatypes are scheduled for deprecation. Use WritePlayerEvent instead.", replacement="WritePlayerEvent")]
-        public static function LogEvent(request:LogEventRequest, onComplete:Function, onError:Function):void
-        {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
-            var requetJson:String = JSON.stringify( request );
-
-            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
-            {
-                if(error)
-                {
-                    if(onError != null)
-                        onError(error);
-                    if(PlayFabSettings.GlobalErrorHandler != null)
-                        PlayFabSettings.GlobalErrorHandler(error);
-                }
-                else
-                {
-                    var result:LogEventResult = new LogEventResult(resultData);
-
-                    if(onComplete != null)
-                        onComplete(result);
-                }
-            }
-
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LogEvent", requetJson, "X-Authorization", authKey, onPostComplete);
-        }
-
         public static function WriteCharacterEvent(request:WriteClientCharacterEventRequest, onComplete:Function, onError:Function):void
         {
             if (authKey == null) throw new Error("Must be logged in to call this method");
@@ -2800,61 +2665,6 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ExecuteCloudScript", requetJson, "X-Authorization", authKey, onPostComplete);
-        }
-
-        [Deprecated(message="The GetCloudScriptUrl API and its associated datatypes are scheduled for deprecation. Use ExecuteCloudScript instead.", replacement="ExecuteCloudScript")]
-        public static function GetCloudScriptUrl(request:GetCloudScriptUrlRequest, onComplete:Function, onError:Function):void
-        {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
-            var requetJson:String = JSON.stringify( request );
-
-            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
-            {
-                if(error)
-                {
-                    if(onError != null)
-                        onError(error);
-                    if(PlayFabSettings.GlobalErrorHandler != null)
-                        PlayFabSettings.GlobalErrorHandler(error);
-                }
-                else
-                {
-                    var result:GetCloudScriptUrlResult = new GetCloudScriptUrlResult(resultData);
-                    PlayFabSettings.LogicServerURL = result.Url;
-
-                    if(onComplete != null)
-                        onComplete(result);
-                }
-            }
-
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetCloudScriptUrl", requetJson, "X-Authorization", authKey, onPostComplete);
-        }
-
-        [Deprecated(message="The RunCloudScript API and its associated datatypes are scheduled for deprecation. Use ExecuteCloudScript instead.", replacement="ExecuteCloudScript")]
-        public static function RunCloudScript(request:RunCloudScriptRequest, onComplete:Function, onError:Function):void
-        {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
-            var requetJson:String = JSON.stringify( request );
-
-            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
-            {
-                if(error)
-                {
-                    if(onError != null)
-                        onError(error);
-                    if(PlayFabSettings.GlobalErrorHandler != null)
-                        PlayFabSettings.GlobalErrorHandler(error);
-                }
-                else
-                {
-                    var result:RunCloudScriptResult = new RunCloudScriptResult(resultData);
-
-                    if(onComplete != null)
-                        onComplete(result);
-                }
-            }
-
-            PlayFabHTTP.post(PlayFabSettings.GetLogicURL()+"/Client/RunCloudScript", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
         public static function GetContentDownloadUrl(request:GetContentDownloadUrlRequest, onComplete:Function, onError:Function):void
@@ -3387,7 +3197,7 @@ package com.playfab
                 if (PlayFabSettings.AdvertisingIdType == PlayFabSettings.AD_TYPE_IDFA)
                     request.Idfa = PlayFabSettings.AdvertisingIdValue;
                 else if (PlayFabSettings.AdvertisingIdType == PlayFabSettings.AD_TYPE_ANDROID_ID)
-                    request.Android_Id = PlayFabSettings.AdvertisingIdValue;
+                    request.Adid = PlayFabSettings.AdvertisingIdValue;
                 else
                     return;
                 AttributeInstall(request, null, null);

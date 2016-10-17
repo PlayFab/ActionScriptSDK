@@ -11,8 +11,6 @@ package com.playfab.ClientModels
         public var CharacterId:String;
         public var StartNewIfNoneFound:*;
         public var TagFilter:CollectionFilter;
-        // Deprecated
-        public var EnableQueue:*;
 
         public function MatchmakeRequest(data:Object=null)
         {
@@ -26,7 +24,6 @@ package com.playfab.ClientModels
             CharacterId = data.CharacterId;
             StartNewIfNoneFound = data.StartNewIfNoneFound;
             TagFilter = new CollectionFilter(data.TagFilter);
-            EnableQueue = data.EnableQueue;
 
         }
     }

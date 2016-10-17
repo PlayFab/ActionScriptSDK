@@ -3,8 +3,6 @@ package com.playfab.ServerModels
 {
     public class SteamPlayFabIdPair
     {
-        // Deprecated, please use SteamStringId
-        public var SteamId:Number;
         public var SteamStringId:String;
         public var PlayFabId:String;
 
@@ -12,7 +10,6 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
-            SteamId = data.SteamId;
             SteamStringId = data.SteamStringId;
             PlayFabId = data.PlayFabId;
 

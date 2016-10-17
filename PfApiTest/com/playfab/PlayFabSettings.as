@@ -6,7 +6,6 @@ package com.playfab
         public static var TitleId:String = null; // You must set this value for PlayFabSdk to work properly (Found in the Game Manager for your title, at the PlayFab Website)
         public static var GlobalErrorHandler:Function;
         public static var DeveloperSecretKey:String = null; // You must set this value for PlayFabSdk to work properly (Found in the Game Manager for your title, at the PlayFab Website)
-        public static var LogicServerURL:String = null; // Deprecated
         public static var AdvertisingIdType:String = null; // Set this to the appropriate AD_TYPE_X constant below
         public static var AdvertisingIdValue:String = null; // Set this to corresponding device value
 
@@ -14,12 +13,7 @@ package com.playfab
         // Disabling this may prevent your advertising-related PlayFab marketplace partners from working correctly
         public static var DisableAdvertising:Boolean = false;
         public static const AD_TYPE_IDFA:String = "Idfa";
-        public static const AD_TYPE_ANDROID_ID:String = "Android_Id";
-
-        public static function GetLogicURL():String
-        {
-            return LogicServerURL;
-        }
+        public static const AD_TYPE_ANDROID_ID:String = "Adid";
 
         public static function GetURL():String
         {
