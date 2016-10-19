@@ -2,16 +2,20 @@ MS Windows 10
 
 Install the Adobe Air SDK
 http://www.adobe.com/devnet/air/air-sdk-download.html
-I installed Air 22, to C:/dev/AirSdk
-Add the air-bin path to your path environment variable:
-C:/dev/AirSdk/bin (in my case)
+I installed Air 22, to C:/dev/AirSdk {AirSdkLocation}
 
 Install the Adobe Flex SDK
 http://www.adobe.com/devnet/flex/flex-sdk-download.html
-I installed Flex 4.6, to C:/dev/flex_sdk_4.6
+I installed Flex 4.6, to C:/dev/flex_sdk_4.6 {FlexSdkLocation}
 Create a new environment variable: FLEX_HOME=C:/dev/flex_sdk_4.6 (in my case)
-Add the flex-bin path to your path environment variable:
+Add the {FlexSdkLocation}/bin to your path environment variable:
 C:/dev/flex_sdk_4.6/bin (in my case)
+
+Copy/Paste the contents of {AirSdkLocation} over-top of {FlexSdkLocation}
+Open two Explorer windows: {AirSdkLocation} and {FlexSdkLocation}
+Select all in {AirSdkLocation} folder
+Paste into the {FlexSdkLocation} folder
+This will replace some existing files, and that's correct
 
 Creating the Example Project, starting with the most useful help page:
 
@@ -25,7 +29,7 @@ With:
 
     <application xmlns="http://ns.adobe.com/air/application/22.0">
 
-Presumably this should match the version of AirSDK that you have installed above.  This document is already out of date, as the AirSDK link at the top is now version 19.0
+Presumably this should match the version of AirSDK that you have installed above.  This document is already out of date, as the AirSDK link at the top is now version 23
 
 Create flexcfg.xml:
 
@@ -36,13 +40,13 @@ This will throw compiler errors, ignore them.  There will be many problems with 
     <path-element>libs</path-element>
 
 (and others, all starting with < path-element >)
-These will reference files from your AirSDK, but it will not reference them correctly.
-I put the full path to my local AirSDK:
+These will reference files from your FlexSDK, but it will not reference them correctly.
+I put the full path to my local FlexSDK:
 
-    <path-element>C:/dev/AirSdk/frameworks/libs</path-element>
+    <path-element>C:/dev/flex_sdk_4.6/frameworks/libs</path-element>
 
-This path will be unique to your installation of the AirSDK.  Once again, there will be several of these, fix all of them, scattered in the file.
-UPDATE: With Air 22, there's a lot more of these paths, and they all need full paths to either a file in the flex SDK, or the air SDK.
+This path will be unique to your installation of the FlexSDK.  Once again, there will be several of these, fix all of them, scattered in the file.
+UPDATE: With Air 22, there's a lot more of these paths, and they all need full paths to a file in the flexSDK.
 
 --------
 
@@ -56,7 +60,7 @@ Specifically, once again in your flexcfg.xml file, you need to find this line:
 
 And add another line below it:
 
-    <path-element>C:/dev/AirSdk/frameworks/libs/air/airglobal.swc</path-element>
+    <path-element>C:/dev/flex_sdk_4.6/frameworks/libs/air/airglobal.swc</path-element>
 
 (once again, your AirSdk may be installed in another directory)
 
@@ -92,15 +96,15 @@ The final version of HelloWorld.as looks like this:
 flexcfg.xml is MOSTLY generated automatically.  It's a long file, I won't share it all, but I will share some relevant lines:
 
     <external-library-path>
-        <path-element>C:/dev/AirSdk/frameworks/libs/player/{targetPlayerMajorVersion}.{targetPlayerMinorVersion}/playerglobal.swc</path-element>
-        <path-element>C:/dev/AirSdk/frameworks/libs/air/airglobal.swc</path-element>
+        <path-element>C:/dev/flex_sdk_4.6/frameworks/libs/player/{targetPlayerMajorVersion}.{targetPlayerMinorVersion}/playerglobal.swc</path-element>
+        <path-element>C:/dev/flex_sdk_4.6/frameworks/libs/air/airglobal.swc</path-element>
     </external-library-path>
 
 and later in the same file:
 
     <library-path>
-        <path-element>C:/dev/AirSdk/frameworks/libs</path-element>
-        <path-element>C:/dev/AirSdk/frameworks/locale/{locale}</path-element>
+        <path-element>C:/dev/flex_sdk_4.6/frameworks/libs</path-element>
+        <path-element>C:/dev/flex_sdk_4.6/frameworks/locale/{locale}</path-element>
     </library-path>
 
 HelloWorld.xml is almost copy paste of the one from help.adobe.com, but here it is:
