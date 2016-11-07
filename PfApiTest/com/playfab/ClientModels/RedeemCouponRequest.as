@@ -5,6 +5,7 @@ package com.playfab.ClientModels
     {
         public var CouponCode:String;
         public var CatalogVersion:String;
+        public var CharacterId:String;
 
         public function RedeemCouponRequest(data:Object=null)
         {
@@ -12,6 +13,7 @@ package com.playfab.ClientModels
                 return;
             CouponCode = data.CouponCode;
             CatalogVersion = data.CatalogVersion;
+            CharacterId = data.CharacterId;
 
         }
     }
