@@ -17,6 +17,8 @@ package com.playfab.ClientModels
         public var GameServerData:String;
         public var Tags:Object;
         public var LastHeartbeat:Date;
+        public var ServerHostname:String;
+        public var ServerPort:*;
 
         public function GameInfo(data:Object=null)
         {
@@ -34,6 +36,8 @@ package com.playfab.ClientModels
             GameServerData = data.GameServerData;
             Tags = data.Tags;
             LastHeartbeat = PlayFabUtil.parseDate(data.LastHeartbeat);
+            ServerHostname = data.ServerHostname;
+            ServerPort = data.ServerPort;
 
         }
     }

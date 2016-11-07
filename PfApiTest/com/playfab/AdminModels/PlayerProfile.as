@@ -17,6 +17,7 @@ package com.playfab.AdminModels
         public var TotalValueToDateInUSD:*;
         public var ValuesToDate:Object;
         public var Tags:Vector.<String>;
+        public var Locations:Object;
         public var VirtualCurrencyBalances:Object;
         public var AdCampaignAttributions:Vector.<AdCampaignAttribution>;
         public var PushNotificationRegistrations:Vector.<PushNotificationRegistration>;
@@ -39,6 +40,7 @@ package com.playfab.AdminModels
             TotalValueToDateInUSD = data.TotalValueToDateInUSD;
             ValuesToDate = data.ValuesToDate;
             Tags = data.Tags ? Vector.<String>(data.Tags) : null;
+            if(data.Locations) { Locations = {}; for(var Locations_iter:String in data.Locations) { Locations[Locations_iter] = new PlayerLocation(data.Locations[Locations_iter]); }}
             VirtualCurrencyBalances = data.VirtualCurrencyBalances;
             if(data.AdCampaignAttributions) { AdCampaignAttributions = new Vector.<AdCampaignAttribution>(); for(var AdCampaignAttributions_iter:int = 0; AdCampaignAttributions_iter < data.AdCampaignAttributions.length; AdCampaignAttributions_iter++) { AdCampaignAttributions[AdCampaignAttributions_iter] = new AdCampaignAttribution(data.AdCampaignAttributions[AdCampaignAttributions_iter]); }}
             if(data.PushNotificationRegistrations) { PushNotificationRegistrations = new Vector.<PushNotificationRegistration>(); for(var PushNotificationRegistrations_iter:int = 0; PushNotificationRegistrations_iter < data.PushNotificationRegistrations.length; PushNotificationRegistrations_iter++) { PushNotificationRegistrations[PushNotificationRegistrations_iter] = new PushNotificationRegistration(data.PushNotificationRegistrations[PushNotificationRegistrations_iter]); }}

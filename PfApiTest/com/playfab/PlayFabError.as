@@ -255,6 +255,10 @@ package com.playfab
         public static const InvalidScheduledTaskName:int = 1256;
         public static const InvalidTaskSchedule:int = 1257;
         public static const SteamNotEnabledForTitle:int = 1258;
+        public static const LimitNotAnUpgradeOption:int = 1259;
+        public static const NoSecretKeyEnabledForCloudScript:int = 1260;
+        public static const TaskNotFound:int = 1261;
+        public static const TaskInstanceNotFound:int = 1262;
 
 
         public function PlayFabError(data:Object=null)
