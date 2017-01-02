@@ -664,33 +664,6 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayFabIDsFromTwitchIDs", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
-        [Deprecated(message="The GetUserCombinedInfo API and its associated datatypes are scheduled for deprecation. Use GetPlayerCombinedInfo instead.", replacement="GetPlayerCombinedInfo")]
-        public static function GetUserCombinedInfo(request:GetUserCombinedInfoRequest, onComplete:Function, onError:Function):void
-        {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
-            var requetJson:String = JSON.stringify( request );
-
-            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
-            {
-                if(error)
-                {
-                    if(onError != null)
-                        onError(error);
-                    if(PlayFabSettings.GlobalErrorHandler != null)
-                        PlayFabSettings.GlobalErrorHandler(error);
-                }
-                else
-                {
-                    var result:GetUserCombinedInfoResult = new GetUserCombinedInfoResult(resultData);
-
-                    if(onComplete != null)
-                        onComplete(result);
-                }
-            }
-
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetUserCombinedInfo", requetJson, "X-Authorization", authKey, onPostComplete);
-        }
-
         public static function LinkAndroidDeviceID(request:LinkAndroidDeviceIDRequest, onComplete:Function, onError:Function):void
         {
             if (authKey == null) throw new Error("Must be logged in to call this method");

@@ -259,6 +259,9 @@ package com.playfab
         public static const NoSecretKeyEnabledForCloudScript:int = 1260;
         public static const TaskNotFound:int = 1261;
         public static const TaskInstanceNotFound:int = 1262;
+        public static const InvalidIdentityProviderId:int = 1263;
+        public static const MisconfiguredIdentityProvider:int = 1264;
+        public static const InvalidScheduledTaskType:int = 1265;
 
 
         public function PlayFabError(data:Object=null)
