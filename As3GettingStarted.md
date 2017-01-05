@@ -44,7 +44,7 @@ ActionScript3 Project Setup
   * Create the flexcfg.xml file
     * Open a command window in your project folder
       * Hold shift and right click in the empty-white-space of the Explorer window
-      * ![As3 image](/SdkQuickStart/images/As3/CmdExe.png)
+      * ![As3 image](/images/As3/CmdExe.png)
       * In the new console window enter this command:
         * mxmlc -dump-config flexcfg.xml
       * This should create a new text file called flexcfg.xml
@@ -173,7 +173,7 @@ Finish and Execute
 * In Windows explorer, double click buildAndRun.bat
   * After running, note the new file GettingStarted.swf - This our compiled project
 * This will open two new windows, which collectively should look like this:
-  * ![As3 image](/SdkQuickStart/images/As3/ExecSuccess.png)
+  * ![As3 image](/images/As3/ExecSuccess.png)
 * At this point, you can start making other api calls, and building your game
 * For a list of all available client API calls, see our documentation:
   * https://api.playfab.com/
