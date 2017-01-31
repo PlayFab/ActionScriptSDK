@@ -262,6 +262,12 @@ package com.playfab
         public static const InvalidIdentityProviderId:int = 1263;
         public static const MisconfiguredIdentityProvider:int = 1264;
         public static const InvalidScheduledTaskType:int = 1265;
+        public static const BillingInformationRequired:int = 1266;
+        public static const LimitedEditionItemUnavailable:int = 1267;
+        public static const InvalidAdPlacementAndReward:int = 1268;
+        public static const AllAdPlacementViewsAlreadyConsumed:int = 1269;
+        public static const GoogleOAuthNotConfiguredForTitle:int = 1270;
+        public static const GoogleOAuthError:int = 1271;
 
 
         public function PlayFabError(data:Object=null)
