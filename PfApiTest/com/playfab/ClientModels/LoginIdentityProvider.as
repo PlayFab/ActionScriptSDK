@@ -1,5 +1,5 @@
 
-package com.playfab.AdminModels
+package com.playfab.ClientModels
 {
     public class 
     {

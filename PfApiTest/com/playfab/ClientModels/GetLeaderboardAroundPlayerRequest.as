@@ -6,6 +6,8 @@ package com.playfab.ClientModels
         public var PlayFabId:String;
         public var StatisticName:String;
         public var MaxResultsCount:*;
+        public var Version:int;
+        public var UseSpecificVersion:Boolean;
 
         public function GetLeaderboardAroundPlayerRequest(data:Object=null)
         {
@@ -14,6 +16,8 @@ package com.playfab.ClientModels
             PlayFabId = data.PlayFabId;
             StatisticName = data.StatisticName;
             MaxResultsCount = data.MaxResultsCount;
+            Version = data.Version;
+            UseSpecificVersion = data.UseSpecificVersion;
 
         }
     }

@@ -11,6 +11,7 @@ package com.playfab.ServerModels
         public var LastLogin:Date;
         public var FirstLogin:Date;
         public var isBanned:*;
+        public var AvatarUrl:String;
 
         public function UserTitleInfo(data:Object=null)
         {
@@ -22,6 +23,7 @@ package com.playfab.ServerModels
             LastLogin = PlayFabUtil.parseDate(data.LastLogin);
             FirstLogin = PlayFabUtil.parseDate(data.FirstLogin);
             isBanned = data.isBanned;
+            AvatarUrl = data.AvatarUrl;
 
         }
     }

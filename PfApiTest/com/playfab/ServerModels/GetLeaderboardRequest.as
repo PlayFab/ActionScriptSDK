@@ -6,6 +6,9 @@ package com.playfab.ServerModels
         public var StatisticName:String;
         public var StartPosition:int;
         public var MaxResultsCount:int;
+        public var ProfileConstraints:PlayerProfileViewConstraints;
+        public var Version:int;
+        public var UseSpecificVersion:Boolean;
 
         public function GetLeaderboardRequest(data:Object=null)
         {
@@ -14,6 +17,9 @@ package com.playfab.ServerModels
             StatisticName = data.StatisticName;
             StartPosition = data.StartPosition;
             MaxResultsCount = data.MaxResultsCount;
+            ProfileConstraints = new PlayerProfileViewConstraints(data.ProfileConstraints);
+            Version = data.Version;
+            UseSpecificVersion = data.UseSpecificVersion;
 
         }
     }
