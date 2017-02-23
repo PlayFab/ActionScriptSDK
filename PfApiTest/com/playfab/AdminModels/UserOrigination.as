@@ -20,6 +20,7 @@ package com.playfab.AdminModels
         public static const XboxLive:String = "XboxLive";
         public static const Parse:String = "Parse";
         public static const Twitch:String = "Twitch";
+        public static const WindowsHello:String = "WindowsHello";
 
     }
 }

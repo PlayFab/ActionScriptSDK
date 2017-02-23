@@ -16,6 +16,7 @@ package com.playfab.ServerModels
         public static const IOSDevice:String = "IOSDevice";
         public static const AndroidDevice:String = "AndroidDevice";
         public static const Twitch:String = "Twitch";
+        public static const WindowsHello:String = "WindowsHello";
 
     }
 }

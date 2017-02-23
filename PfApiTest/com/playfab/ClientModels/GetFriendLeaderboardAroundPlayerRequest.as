@@ -8,6 +8,8 @@ package com.playfab.ClientModels
         public var PlayFabId:String;
         public var IncludeSteamFriends:*;
         public var IncludeFacebookFriends:*;
+        public var Version:int;
+        public var UseSpecificVersion:Boolean;
 
         public function GetFriendLeaderboardAroundPlayerRequest(data:Object=null)
         {
@@ -18,6 +20,8 @@ package com.playfab.ClientModels
             PlayFabId = data.PlayFabId;
             IncludeSteamFriends = data.IncludeSteamFriends;
             IncludeFacebookFriends = data.IncludeFacebookFriends;
+            Version = data.Version;
+            UseSpecificVersion = data.UseSpecificVersion;
 
         }
     }

@@ -13,6 +13,7 @@ package com.playfab.ServerModels
         public var Created:Date;
         public var LastLogin:Date;
         public var BannedUntil:Date;
+        public var AvatarUrl:String;
         public var Statistics:Object;
         public var TotalValueToDateInUSD:*;
         public var ValuesToDate:Object;
@@ -36,6 +37,7 @@ package com.playfab.ServerModels
             Created = PlayFabUtil.parseDate(data.Created);
             LastLogin = PlayFabUtil.parseDate(data.LastLogin);
             BannedUntil = PlayFabUtil.parseDate(data.BannedUntil);
+            AvatarUrl = data.AvatarUrl;
             Statistics = data.Statistics;
             TotalValueToDateInUSD = data.TotalValueToDateInUSD;
             ValuesToDate = data.ValuesToDate;

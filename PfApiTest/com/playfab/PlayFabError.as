@@ -268,6 +268,10 @@ package com.playfab
         public static const AllAdPlacementViewsAlreadyConsumed:int = 1269;
         public static const GoogleOAuthNotConfiguredForTitle:int = 1270;
         public static const GoogleOAuthError:int = 1271;
+        public static const UserNotFriend:int = 1272;
+        public static const InvalidSignature:int = 1273;
+        public static const InvalidPublicKey:int = 1274;
+        public static const GoogleOAuthNoIdTokenIncludedInResponse:int = 1275;
 
 
         public function PlayFabError(data:Object=null)

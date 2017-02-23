@@ -6,6 +6,8 @@ package com.playfab.ClientModels
         public var StatisticName:String;
         public var StartPosition:int;
         public var MaxResultsCount:*;
+        public var Version:int;
+        public var UseSpecificVersion:Boolean;
 
         public function GetLeaderboardRequest(data:Object=null)
         {
@@ -14,6 +16,8 @@ package com.playfab.ClientModels
             StatisticName = data.StatisticName;
             StartPosition = data.StartPosition;
             MaxResultsCount = data.MaxResultsCount;
+            Version = data.Version;
+            UseSpecificVersion = data.UseSpecificVersion;
 
         }
     }

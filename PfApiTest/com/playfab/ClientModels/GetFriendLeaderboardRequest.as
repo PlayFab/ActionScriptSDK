@@ -8,6 +8,8 @@ package com.playfab.ClientModels
         public var MaxResultsCount:*;
         public var IncludeSteamFriends:*;
         public var IncludeFacebookFriends:*;
+        public var Version:int;
+        public var UseSpecificVersion:Boolean;
 
         public function GetFriendLeaderboardRequest(data:Object=null)
         {
@@ -18,6 +20,8 @@ package com.playfab.ClientModels
             MaxResultsCount = data.MaxResultsCount;
             IncludeSteamFriends = data.IncludeSteamFriends;
             IncludeFacebookFriends = data.IncludeFacebookFriends;
+            Version = data.Version;
+            UseSpecificVersion = data.UseSpecificVersion;
 
         }
     }
