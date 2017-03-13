@@ -272,6 +272,16 @@ package com.playfab
         public static const InvalidSignature:int = 1273;
         public static const InvalidPublicKey:int = 1274;
         public static const GoogleOAuthNoIdTokenIncludedInResponse:int = 1275;
+        public static const StatisticUpdateInProgress:int = 1276;
+        public static const LeaderboardVersionNotAvailable:int = 1277;
+        public static const StatisticAlreadyHasPrizeTable:int = 1279;
+        public static const PrizeTableHasOverlappingRanks:int = 1280;
+        public static const PrizeTableHasMissingRanks:int = 1281;
+        public static const PrizeTableRankStartsAtZero:int = 1282;
+        public static const InvalidStatistic:int = 1283;
+        public static const ExpressionParseFailure:int = 1284;
+        public static const ExpressionInvokeFailure:int = 1285;
+        public static const ExpressionTooLong:int = 1286;
 
 
         public function PlayFabError(data:Object=null)

@@ -1,14 +1,14 @@
 
 package com.playfab.ClientModels
 {
-    public class PlayerLinkedAccount
+    public class LinkedPlatformAccountModel
     {
         public var Platform:String;
         public var PlatformUserId:String;
         public var Username:String;
         public var Email:String;
 
-        public function PlayerLinkedAccount(data:Object=null)
+        public function LinkedPlatformAccountModel(data:Object=null)
         {
             if(data == null)
                 return;

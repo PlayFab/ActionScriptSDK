@@ -11,7 +11,9 @@ package com.playfab.AdminModels
         public var ActivationTime:Date;
         public var ScheduledDeactivationTime:Date;
         public var DeactivationTime:Date;
+        // Deprecated, please use Status
         public var ArchivalStatus:String;
+        public var Status:String;
         public var ArchiveDownloadUrl:String;
 
         public function PlayerStatisticVersion(data:Object=null)
@@ -25,6 +27,7 @@ package com.playfab.AdminModels
             ScheduledDeactivationTime = PlayFabUtil.parseDate(data.ScheduledDeactivationTime);
             DeactivationTime = PlayFabUtil.parseDate(data.DeactivationTime);
             ArchivalStatus = data.ArchivalStatus;
+            Status = data.Status;
             ArchiveDownloadUrl = data.ArchiveDownloadUrl;
 
         }

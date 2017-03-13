@@ -7,7 +7,7 @@ package com.playfab.ClientModels
         public var DisplayName:String;
         public var StatValue:int;
         public var Position:int;
-        public var Profile:PlayerProfile;
+        public var Profile:PlayerProfileModel;
 
         public function PlayerLeaderboardEntry(data:Object=null)
         {
@@ -17,7 +17,7 @@ package com.playfab.ClientModels
             DisplayName = data.DisplayName;
             StatValue = data.StatValue;
             Position = data.Position;
-            Profile = new PlayerProfile(data.Profile);
+            Profile = new PlayerProfileModel(data.Profile);
 
         }
     }

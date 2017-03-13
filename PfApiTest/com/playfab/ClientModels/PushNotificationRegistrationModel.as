@@ -1,12 +1,12 @@
 
 package com.playfab.ClientModels
 {
-    public class PushNotificationRegistration
+    public class PushNotificationRegistrationModel
     {
         public var Platform:String;
         public var NotificationEndpointARN:String;
 
-        public function PushNotificationRegistration(data:Object=null)
+        public function PushNotificationRegistrationModel(data:Object=null)
         {
             if(data == null)
                 return;
