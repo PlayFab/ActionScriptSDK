@@ -1,7 +1,7 @@
 
 package com.playfab.ClientModels
 {
-    public class PlayerLocation
+    public class LocationModel
     {
         public var ContinentCode:String;
         public var CountryCode:String;
@@ -9,7 +9,7 @@ package com.playfab.ClientModels
         public var Latitude:*;
         public var Longitude:*;
 
-        public function PlayerLocation(data:Object=null)
+        public function LocationModel(data:Object=null)
         {
             if(data == null)
                 return;

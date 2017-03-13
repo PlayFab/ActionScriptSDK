@@ -20,9 +20,9 @@ ActionScript3 Project Setup
     * Install the Adobe Flex SDK
       * http://www.adobe.com/devnet/flex/flex-sdk-download.html
       * Remember your installation path {FlexSdkLocation}, and modify your system environment variables: 
-        * Add {FlexSdkLocation}/bin to your PATH environment variable
-          * For example, if you install to C:/dev/flex_sdk_4.6, then set FLEX_HOME=C:/dev/flex_sdk_4.6
         * Add a FLEX_HOME system environment variable, and set it to {FlexSdkLocation}
+          * For example, if you install to C:/dev/flex_sdk_4.6, then set FLEX_HOME=C:/dev/flex_sdk_4.6
+        * Add {FlexSdkLocation}/bin to your PATH environment variable
           * For example, if you install to C:/dev/flex_sdk_4.6, then add C:/dev/flex_sdk_4.6/bin to your PATH
     * Copy/Paste the contents of {AirSdkLocation} over-top of {FlexSdkLocation}
       * Open two Explorer windows: {AirSdkLocation} and {FlexSdkLocation}

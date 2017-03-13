@@ -1,15 +1,15 @@
 
-package com.playfab.ClientModels
+package com.playfab.ServerModels
 {
     import com.playfab.PlayFabUtil;
 
-    public class AdCampaignAttribution
+    public class AdCampaignAttributionModel
     {
         public var Platform:String;
         public var CampaignId:String;
         public var AttributedAt:Date;
 
-        public function AdCampaignAttribution(data:Object=null)
+        public function AdCampaignAttributionModel(data:Object=null)
         {
             if(data == null)
                 return;

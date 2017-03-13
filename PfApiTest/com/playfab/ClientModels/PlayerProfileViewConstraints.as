@@ -1,5 +1,5 @@
 
-package com.playfab.ServerModels
+package com.playfab.ClientModels
 {
     public class PlayerProfileViewConstraints
     {
