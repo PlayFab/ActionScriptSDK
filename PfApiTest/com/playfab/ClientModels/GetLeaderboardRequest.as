@@ -6,8 +6,8 @@ package com.playfab.ClientModels
         public var StatisticName:String;
         public var StartPosition:int;
         public var MaxResultsCount:*;
-        public var Version:int;
-        public var UseSpecificVersion:Boolean;
+        public var Version:*;
+        public var UseSpecificVersion:*;
         public var ProfileConstraints:PlayerProfileViewConstraints;
 
         public function GetLeaderboardRequest(data:Object=null)

@@ -282,6 +282,16 @@ package com.playfab
         public static const ExpressionParseFailure:int = 1284;
         public static const ExpressionInvokeFailure:int = 1285;
         public static const ExpressionTooLong:int = 1286;
+        public static const DataUpdateRateExceeded:int = 1287;
+        public static const RestrictedEmailDomain:int = 1288;
+        public static const EncryptionKeyDisabled:int = 1289;
+        public static const EncryptionKeyMissing:int = 1290;
+        public static const EncryptionKeyBroken:int = 1291;
+        public static const NoSharedSecretKeyConfigured:int = 1292;
+        public static const SecretKeyNotFound:int = 1293;
+        public static const PlayerSecretAlreadyConfigured:int = 1294;
+        public static const APIRequestsDisabledForTitle:int = 1295;
+        public static const InvalidSharedSecretKey:int = 1296;
 
 
         public function PlayFabError(data:Object=null)
