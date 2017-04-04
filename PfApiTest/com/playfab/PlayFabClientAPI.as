@@ -56,32 +56,6 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetWindowsHelloChallenge", requetJson, null, null, onPostComplete);
         }
 
-        public static function LinkWindowsHello(request:LinkWindowsHelloAccountRequest, onComplete:Function, onError:Function):void
-        {
-
-            var requetJson:String = JSON.stringify( request );
-
-            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
-            {
-                if(error)
-                {
-                    if(onError != null)
-                        onError(error);
-                    if(PlayFabSettings.GlobalErrorHandler != null)
-                        PlayFabSettings.GlobalErrorHandler(error);
-                }
-                else
-                {
-                    var result:LinkWindowsHelloAccountResponse = new LinkWindowsHelloAccountResponse(resultData);
-
-                    if(onComplete != null)
-                        onComplete(result);
-                }
-            }
-
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkWindowsHello", requetJson, null, null, onPostComplete);
-        }
-
         public static function LoginWithAndroidDeviceID(request:LoginWithAndroidDeviceIDRequest, onComplete:Function, onError:Function):void
         {
             request.TitleId = PlayFabSettings.TitleId != null ? PlayFabSettings.TitleId : request.TitleId;
@@ -486,32 +460,6 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/RegisterWithWindowsHello", requetJson, null, null, onPostComplete);
-        }
-
-        public static function UnlinkWindowsHello(request:UnlinkWindowsHelloAccountRequest, onComplete:Function, onError:Function):void
-        {
-
-            var requetJson:String = JSON.stringify( request );
-
-            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
-            {
-                if(error)
-                {
-                    if(onError != null)
-                        onError(error);
-                    if(PlayFabSettings.GlobalErrorHandler != null)
-                        PlayFabSettings.GlobalErrorHandler(error);
-                }
-                else
-                {
-                    var result:UnlinkWindowsHelloAccountResponse = new UnlinkWindowsHelloAccountResponse(resultData);
-
-                    if(onComplete != null)
-                        onComplete(result);
-                }
-            }
-
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkWindowsHello", requetJson, null, null, onPostComplete);
         }
 
         public static function AddGenericID(request:AddGenericIDRequest, onComplete:Function, onError:Function):void
@@ -1034,6 +982,32 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkTwitch", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
+        public static function LinkWindowsHello(request:LinkWindowsHelloAccountRequest, onComplete:Function, onError:Function):void
+        {
+
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:LinkWindowsHelloAccountResponse = new LinkWindowsHelloAccountResponse(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkWindowsHello", requetJson, null, null, onPostComplete);
+        }
+
         public static function RemoveGenericID(request:RemoveGenericIDRequest, onComplete:Function, onError:Function):void
         {
             if (authKey == null) throw new Error("Must be logged in to call this method");
@@ -1344,6 +1318,32 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkTwitch", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function UnlinkWindowsHello(request:UnlinkWindowsHelloAccountRequest, onComplete:Function, onError:Function):void
+        {
+
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:UnlinkWindowsHelloAccountResponse = new UnlinkWindowsHelloAccountResponse(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkWindowsHello", requetJson, null, null, onPostComplete);
         }
 
         public static function UpdateAvatarUrl(request:UpdateAvatarUrlRequest, onComplete:Function, onError:Function):void

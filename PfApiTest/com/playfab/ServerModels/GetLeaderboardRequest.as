@@ -7,8 +7,8 @@ package com.playfab.ServerModels
         public var StartPosition:int;
         public var MaxResultsCount:int;
         public var ProfileConstraints:PlayerProfileViewConstraints;
-        public var Version:int;
-        public var UseSpecificVersion:Boolean;
+        public var Version:*;
+        public var UseSpecificVersion:*;
 
         public function GetLeaderboardRequest(data:Object=null)
         {

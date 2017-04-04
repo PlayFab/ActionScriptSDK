@@ -8,8 +8,8 @@ package com.playfab.ClientModels
         public var PlayFabId:String;
         public var IncludeSteamFriends:*;
         public var IncludeFacebookFriends:*;
-        public var Version:int;
-        public var UseSpecificVersion:Boolean;
+        public var Version:*;
+        public var UseSpecificVersion:*;
         public var ProfileConstraints:PlayerProfileViewConstraints;
 
         public function GetFriendLeaderboardAroundPlayerRequest(data:Object=null)

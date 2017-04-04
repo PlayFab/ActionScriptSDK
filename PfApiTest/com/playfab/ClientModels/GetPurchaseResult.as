@@ -10,6 +10,7 @@ package com.playfab.ClientModels
         public var TransactionId:String;
         public var TransactionStatus:String;
         public var PurchaseDate:Date;
+        // Deprecated, please use 
         public var Items:Vector.<ItemInstance>;
 
         public function GetPurchaseResult(data:Object=null)

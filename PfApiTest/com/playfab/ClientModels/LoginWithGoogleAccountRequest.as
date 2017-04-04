@@ -5,8 +5,6 @@ package com.playfab.ClientModels
     {
         public var TitleId:String;
         public var ServerAuthCode:String;
-        // Deprecated, please use ServerAuthCode
-        public var AccessToken:String;
         public var CreateAccount:*;
         public var InfoRequestParameters:GetPlayerCombinedInfoRequestParams;
 
@@ -16,7 +14,6 @@ package com.playfab.ClientModels
                 return;
             TitleId = data.TitleId;
             ServerAuthCode = data.ServerAuthCode;
-            AccessToken = data.AccessToken;
             CreateAccount = data.CreateAccount;
             InfoRequestParameters = new GetPlayerCombinedInfoRequestParams(data.InfoRequestParameters);
 
