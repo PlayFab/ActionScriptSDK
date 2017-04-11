@@ -8,6 +8,7 @@ package com.playfab.AdminModels
         public var Effect:String;
         public var Principal:String;
         public var Comment:String;
+        public var ApiConditions:ApiCondition;
 
         public function PermissionStatement(data:Object=null)
         {
@@ -18,6 +19,7 @@ package com.playfab.AdminModels
             Effect = data.Effect;
             Principal = data.Principal;
             Comment = data.Comment;
+            ApiConditions = new ApiCondition(data.ApiConditions);
 
         }
     }

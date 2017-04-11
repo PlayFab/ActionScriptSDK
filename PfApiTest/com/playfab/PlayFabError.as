@@ -292,6 +292,7 @@ package com.playfab
         public static const PlayerSecretAlreadyConfigured:int = 1294;
         public static const APIRequestsDisabledForTitle:int = 1295;
         public static const InvalidSharedSecretKey:int = 1296;
+        public static const PrizeTableHasNoRanks:int = 1297;
 
 
         public function PlayFabError(data:Object=null)
