@@ -293,6 +293,12 @@ package com.playfab
         public static const APIRequestsDisabledForTitle:int = 1295;
         public static const InvalidSharedSecretKey:int = 1296;
         public static const PrizeTableHasNoRanks:int = 1297;
+        public static const ProfileDoesNotExist:int = 1298;
+        public static const ContentS3OriginBucketNotConfigured:int = 1299;
+        public static const InvalidEnvironmentForReceipt:int = 1300;
+        public static const EncryptedRequestNotAllowed:int = 1301;
+        public static const SignedRequestNotAllowed:int = 1302;
+        public static const RequestViewConstraintParamsNotAllowed:int = 1303;
 
 
         public function PlayFabError(data:Object=null)
