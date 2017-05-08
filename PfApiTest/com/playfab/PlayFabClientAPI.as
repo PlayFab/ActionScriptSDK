@@ -984,7 +984,7 @@ package com.playfab
 
         public static function LinkWindowsHello(request:LinkWindowsHelloAccountRequest, onComplete:Function, onError:Function):void
         {
-
+            if (authKey == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1005,7 +1005,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkWindowsHello", requetJson, null, null, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkWindowsHello", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
         public static function RemoveGenericID(request:RemoveGenericIDRequest, onComplete:Function, onError:Function):void
@@ -1322,7 +1322,7 @@ package com.playfab
 
         public static function UnlinkWindowsHello(request:UnlinkWindowsHelloAccountRequest, onComplete:Function, onError:Function):void
         {
-
+            if (authKey == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1343,7 +1343,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkWindowsHello", requetJson, null, null, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkWindowsHello", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
         public static function UpdateAvatarUrl(request:UpdateAvatarUrlRequest, onComplete:Function, onError:Function):void
@@ -3326,7 +3326,7 @@ package com.playfab
 
         public static function ValidateWindowsStoreReceipt(request:ValidateWindowsReceiptRequest, onComplete:Function, onError:Function):void
         {
-
+            if (authKey == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -3347,7 +3347,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ValidateWindowsStoreReceipt", requetJson, null, null, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ValidateWindowsStoreReceipt", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
         public static function MultiStepClientLogin(needsAttribution:Boolean):void
