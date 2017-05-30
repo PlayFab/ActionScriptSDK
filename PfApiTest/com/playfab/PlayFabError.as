@@ -299,6 +299,9 @@ package com.playfab
         public static const EncryptedRequestNotAllowed:int = 1301;
         public static const SignedRequestNotAllowed:int = 1302;
         public static const RequestViewConstraintParamsNotAllowed:int = 1303;
+        public static const BadPartnerConfiguration:int = 1304;
+        public static const XboxBPCertificateFailure:int = 1305;
+        public static const XboxXASSExchangeFailure:int = 1306;
 
 
         public function PlayFabError(data:Object=null)

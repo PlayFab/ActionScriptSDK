@@ -1,12 +1,13 @@
-ActionScriptSDK README
-========
-1. Overview:
-----
+# ActionScriptSDK README
+
+
+## 1. Overview:
+
 ActionScript3 SDK for use in Adobe Flash and AIR.
 
 
-2. Prerequisites:
-----
+## 2. Prerequisites:
+
 * Users should be very familiar with the topics covered in our [getting started guide](https://playfab.com/docs/getting-started-with-playfab/).
 
 To connect to the PlayFab service, your machine must be running TLS v1.2 or better.
@@ -15,8 +16,7 @@ To connect to the PlayFab service, your machine must be running TLS v1.2 or bett
 * [Support for SSL/TLS protocols on Windows](http://blogs.msdn.com/b/kaushal/archive/2011/10/02/support-for-ssl-tls-protocols-on-windows.aspx)
 
 
-3. Installation & Configuration Instructions:
-----
+## 3. Installation & Configuration Instructions:
 
 The playfab API source code is located within:
 
@@ -25,8 +25,7 @@ The playfab API source code is located within:
 To create a new project using PlayFab, copy the indicated com directory into the source directory for your project.
 
 
-3b. Using the example project:
-----
+## 3b. Using the example project:
 
 The PfApiTest example project can be entirely built and tested with free tools.  These instructions assume Windows operating system.
 
@@ -44,8 +43,7 @@ The PfApiTest example project can be entirely built and tested with free tools. 
  * Detailed info about tests run and success/failure will be in {ActionScriptSDK-Location}/PfApiTest/testOutput.txt
 
 
-4. testTitleData.json file required for example unit-test-project
-----
+## 4. testTitleData.json file required for example unit-test-project
 
 This sdk includes an optional example project that is used by PlayFab to verify sdk features are fully functional.  The testTitleData.json file provides your secret title information to the unit-test project, so it can execute tests in your own PlayFab title.
 
@@ -62,8 +60,8 @@ The format is as follows:
     }
 
 
-5. Troubleshooting:
-----
+## 5. Troubleshooting:
+
 For a complete list of available APIs, check out the [online documentation](http://api.playfab.com/Documentation/).
 
 #### Contact Us
@@ -75,8 +73,8 @@ Our Developer Success Team can assist with answering any questions as well as pr
 [Forums, Support and Knowledge Base](https://community.playfab.com/index.html)
 
 
-6. Copyright and Licensing Information:
-----
+## 6. Copyright and Licensing Information:
+
   Apache License --
   Version 2.0, January 2004
   http://www.apache.org/licenses/
