@@ -3,7 +3,8 @@ package com.playfab.ServerModels
 {
     public class ReportPlayerServerResult
     {
-        public var Updated:Boolean;
+        // Deprecated
+        public var Updated:*;
         public var SubmissionsRemaining:int;
 
         public function ReportPlayerServerResult(data:Object=null)

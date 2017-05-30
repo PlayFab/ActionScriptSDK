@@ -10,8 +10,6 @@ package com.playfab.ClientModels
         public var TransactionId:String;
         public var TransactionStatus:String;
         public var PurchaseDate:Date;
-        // Deprecated, please use 
-        public var Items:Vector.<ItemInstance>;
 
         public function GetPurchaseResult(data:Object=null)
         {
@@ -22,7 +20,6 @@ package com.playfab.ClientModels
             TransactionId = data.TransactionId;
             TransactionStatus = data.TransactionStatus;
             PurchaseDate = PlayFabUtil.parseDate(data.PurchaseDate);
-            if(data.Items) { Items = new Vector.<ItemInstance>(); for(var Items_iter:int = 0; Items_iter < data.Items.length; Items_iter++) { Items[Items_iter] = new ItemInstance(data.Items[Items_iter]); }}
 
         }
     }

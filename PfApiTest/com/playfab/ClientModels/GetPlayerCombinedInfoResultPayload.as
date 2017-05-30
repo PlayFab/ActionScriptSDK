@@ -15,6 +15,7 @@ package com.playfab.ClientModels
         public var CharacterInventories:Vector.<CharacterInventory>;
         public var TitleData:Object;
         public var PlayerStatistics:Vector.<StatisticValue>;
+        public var PlayerProfile:PlayerProfileModel;
 
         public function GetPlayerCombinedInfoResultPayload(data:Object=null)
         {
@@ -32,6 +33,7 @@ package com.playfab.ClientModels
             if(data.CharacterInventories) { CharacterInventories = new Vector.<CharacterInventory>(); for(var CharacterInventories_iter:int = 0; CharacterInventories_iter < data.CharacterInventories.length; CharacterInventories_iter++) { CharacterInventories[CharacterInventories_iter] = new CharacterInventory(data.CharacterInventories[CharacterInventories_iter]); }}
             TitleData = data.TitleData;
             if(data.PlayerStatistics) { PlayerStatistics = new Vector.<StatisticValue>(); for(var PlayerStatistics_iter:int = 0; PlayerStatistics_iter < data.PlayerStatistics.length; PlayerStatistics_iter++) { PlayerStatistics[PlayerStatistics_iter] = new StatisticValue(data.PlayerStatistics[PlayerStatistics_iter]); }}
+            PlayerProfile = new PlayerProfileModel(data.PlayerProfile);
 
         }
     }

@@ -3,7 +3,8 @@ package com.playfab.ClientModels
 {
     public class ReportPlayerClientResult
     {
-        public var Updated:Boolean;
+        // Deprecated
+        public var Updated:*;
         public var SubmissionsRemaining:int;
 
         public function ReportPlayerClientResult(data:Object=null)
