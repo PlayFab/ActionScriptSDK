@@ -2360,84 +2360,6 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/SetFriendTags", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
-        public static function RegisterForIOSPushNotification(request:RegisterForIOSPushNotificationRequest, onComplete:Function, onError:Function):void
-        {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
-            var requetJson:String = JSON.stringify( request );
-
-            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
-            {
-                if(error)
-                {
-                    if(onError != null)
-                        onError(error);
-                    if(PlayFabSettings.GlobalErrorHandler != null)
-                        PlayFabSettings.GlobalErrorHandler(error);
-                }
-                else
-                {
-                    var result:RegisterForIOSPushNotificationResult = new RegisterForIOSPushNotificationResult(resultData);
-
-                    if(onComplete != null)
-                        onComplete(result);
-                }
-            }
-
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/RegisterForIOSPushNotification", requetJson, "X-Authorization", authKey, onPostComplete);
-        }
-
-        public static function RestoreIOSPurchases(request:RestoreIOSPurchasesRequest, onComplete:Function, onError:Function):void
-        {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
-            var requetJson:String = JSON.stringify( request );
-
-            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
-            {
-                if(error)
-                {
-                    if(onError != null)
-                        onError(error);
-                    if(PlayFabSettings.GlobalErrorHandler != null)
-                        PlayFabSettings.GlobalErrorHandler(error);
-                }
-                else
-                {
-                    var result:RestoreIOSPurchasesResult = new RestoreIOSPurchasesResult(resultData);
-
-                    if(onComplete != null)
-                        onComplete(result);
-                }
-            }
-
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/RestoreIOSPurchases", requetJson, "X-Authorization", authKey, onPostComplete);
-        }
-
-        public static function ValidateIOSReceipt(request:ValidateIOSReceiptRequest, onComplete:Function, onError:Function):void
-        {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
-            var requetJson:String = JSON.stringify( request );
-
-            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
-            {
-                if(error)
-                {
-                    if(onError != null)
-                        onError(error);
-                    if(PlayFabSettings.GlobalErrorHandler != null)
-                        PlayFabSettings.GlobalErrorHandler(error);
-                }
-                else
-                {
-                    var result:ValidateIOSReceiptResult = new ValidateIOSReceiptResult(resultData);
-
-                    if(onComplete != null)
-                        onComplete(result);
-                }
-            }
-
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ValidateIOSReceipt", requetJson, "X-Authorization", authKey, onPostComplete);
-        }
-
         public static function GetCurrentGames(request:CurrentGamesRequest, onComplete:Function, onError:Function):void
         {
             if (authKey == null) throw new Error("Must be logged in to call this method");
@@ -2540,58 +2462,6 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/StartGame", requetJson, "X-Authorization", authKey, onPostComplete);
-        }
-
-        public static function AndroidDevicePushNotificationRegistration(request:AndroidDevicePushNotificationRegistrationRequest, onComplete:Function, onError:Function):void
-        {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
-            var requetJson:String = JSON.stringify( request );
-
-            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
-            {
-                if(error)
-                {
-                    if(onError != null)
-                        onError(error);
-                    if(PlayFabSettings.GlobalErrorHandler != null)
-                        PlayFabSettings.GlobalErrorHandler(error);
-                }
-                else
-                {
-                    var result:AndroidDevicePushNotificationRegistrationResult = new AndroidDevicePushNotificationRegistrationResult(resultData);
-
-                    if(onComplete != null)
-                        onComplete(result);
-                }
-            }
-
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/AndroidDevicePushNotificationRegistration", requetJson, "X-Authorization", authKey, onPostComplete);
-        }
-
-        public static function ValidateGooglePlayPurchase(request:ValidateGooglePlayPurchaseRequest, onComplete:Function, onError:Function):void
-        {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
-            var requetJson:String = JSON.stringify( request );
-
-            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
-            {
-                if(error)
-                {
-                    if(onError != null)
-                        onError(error);
-                    if(PlayFabSettings.GlobalErrorHandler != null)
-                        PlayFabSettings.GlobalErrorHandler(error);
-                }
-                else
-                {
-                    var result:ValidateGooglePlayPurchaseResult = new ValidateGooglePlayPurchaseResult(resultData);
-
-                    if(onComplete != null)
-                        onComplete(result);
-                }
-            }
-
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ValidateGooglePlayPurchase", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
         public static function WriteCharacterEvent(request:WriteClientCharacterEventRequest, onComplete:Function, onError:Function):void
@@ -3114,32 +2984,6 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UpdateCharacterData", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
-        public static function ValidateAmazonIAPReceipt(request:ValidateAmazonReceiptRequest, onComplete:Function, onError:Function):void
-        {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
-            var requetJson:String = JSON.stringify( request );
-
-            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
-            {
-                if(error)
-                {
-                    if(onError != null)
-                        onError(error);
-                    if(PlayFabSettings.GlobalErrorHandler != null)
-                        PlayFabSettings.GlobalErrorHandler(error);
-                }
-                else
-                {
-                    var result:ValidateAmazonReceiptResult = new ValidateAmazonReceiptResult(resultData);
-
-                    if(onComplete != null)
-                        onComplete(result);
-                }
-            }
-
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ValidateAmazonIAPReceipt", requetJson, "X-Authorization", authKey, onPostComplete);
-        }
-
         public static function AcceptTrade(request:AcceptTradeRequest, onComplete:Function, onError:Function):void
         {
             if (authKey == null) throw new Error("Must be logged in to call this method");
@@ -3348,6 +3192,162 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayerTags", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function AndroidDevicePushNotificationRegistration(request:AndroidDevicePushNotificationRegistrationRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:AndroidDevicePushNotificationRegistrationResult = new AndroidDevicePushNotificationRegistrationResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/AndroidDevicePushNotificationRegistration", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function RegisterForIOSPushNotification(request:RegisterForIOSPushNotificationRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:RegisterForIOSPushNotificationResult = new RegisterForIOSPushNotificationResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/RegisterForIOSPushNotification", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function RestoreIOSPurchases(request:RestoreIOSPurchasesRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:RestoreIOSPurchasesResult = new RestoreIOSPurchasesResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/RestoreIOSPurchases", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function ValidateAmazonIAPReceipt(request:ValidateAmazonReceiptRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:ValidateAmazonReceiptResult = new ValidateAmazonReceiptResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ValidateAmazonIAPReceipt", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function ValidateGooglePlayPurchase(request:ValidateGooglePlayPurchaseRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:ValidateGooglePlayPurchaseResult = new ValidateGooglePlayPurchaseResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ValidateGooglePlayPurchase", requetJson, "X-Authorization", authKey, onPostComplete);
+        }
+
+        public static function ValidateIOSReceipt(request:ValidateIOSReceiptRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:ValidateIOSReceiptResult = new ValidateIOSReceiptResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ValidateIOSReceipt", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
         public static function ValidateWindowsStoreReceipt(request:ValidateWindowsReceiptRequest, onComplete:Function, onError:Function):void
