@@ -4,7 +4,9 @@ package com.playfab.ServerModels
     public class SendPushNotificationRequest
     {
         public var Recipient:String;
+        // Deprecated, please use Package
         public var Message:String;
+        public var Package:PushNotificationPackage;
         public var Subject:String;
 
         public function SendPushNotificationRequest(data:Object=null)
@@ -13,6 +15,7 @@ package com.playfab.ServerModels
                 return;
             Recipient = data.Recipient;
             Message = data.Message;
+            Package = new PushNotificationPackage(data.Package);
             Subject = data.Subject;
 
         }

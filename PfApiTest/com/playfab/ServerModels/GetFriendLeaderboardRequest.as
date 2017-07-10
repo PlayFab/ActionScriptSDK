@@ -10,7 +10,6 @@ package com.playfab.ServerModels
         public var IncludeSteamFriends:*;
         public var IncludeFacebookFriends:*;
         public var Version:*;
-        public var UseSpecificVersion:*;
         public var ProfileConstraints:PlayerProfileViewConstraints;
 
         public function GetFriendLeaderboardRequest(data:Object=null)
@@ -24,7 +23,6 @@ package com.playfab.ServerModels
             IncludeSteamFriends = data.IncludeSteamFriends;
             IncludeFacebookFriends = data.IncludeFacebookFriends;
             Version = data.Version;
-            UseSpecificVersion = data.UseSpecificVersion;
             ProfileConstraints = new PlayerProfileViewConstraints(data.ProfileConstraints);
 
         }

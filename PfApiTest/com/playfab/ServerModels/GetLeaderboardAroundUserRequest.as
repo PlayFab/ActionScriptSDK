@@ -8,7 +8,6 @@ package com.playfab.ServerModels
         public var MaxResultsCount:int;
         public var ProfileConstraints:PlayerProfileViewConstraints;
         public var Version:*;
-        public var UseSpecificVersion:*;
 
         public function GetLeaderboardAroundUserRequest(data:Object=null)
         {
@@ -19,7 +18,6 @@ package com.playfab.ServerModels
             MaxResultsCount = data.MaxResultsCount;
             ProfileConstraints = new PlayerProfileViewConstraints(data.ProfileConstraints);
             Version = data.Version;
-            UseSpecificVersion = data.UseSpecificVersion;
 
         }
     }

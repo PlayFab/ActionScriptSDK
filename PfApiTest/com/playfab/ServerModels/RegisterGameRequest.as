@@ -3,6 +3,7 @@ package com.playfab.ServerModels
 {
     public class RegisterGameRequest
     {
+        public var LobbyId:String;
         public var ServerHost:String;
         public var ServerPort:String;
         public var Build:String;
@@ -14,6 +15,7 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
+            LobbyId = data.LobbyId;
             ServerHost = data.ServerHost;
             ServerPort = data.ServerPort;
             Build = data.Build;

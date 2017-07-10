@@ -30,6 +30,32 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPhotonAuthenticationToken", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
+        public static function GetTitlePublicKey(request:GetTitlePublicKeyRequest, onComplete:Function, onError:Function):void
+        {
+
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:GetTitlePublicKeyResult = new GetTitlePublicKeyResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetTitlePublicKey", requetJson, null, null, onPostComplete);
+        }
+
         public static function GetWindowsHelloChallenge(request:GetWindowsHelloChallengeRequest, onComplete:Function, onError:Function):void
         {
 
@@ -460,6 +486,32 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/RegisterWithWindowsHello", requetJson, null, null, onPostComplete);
+        }
+
+        public static function SetPlayerSecret(request:SetPlayerSecretRequest, onComplete:Function, onError:Function):void
+        {
+            if (authKey == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:SetPlayerSecretResult = new SetPlayerSecretResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/SetPlayerSecret", requetJson, "X-Authorization", authKey, onPostComplete);
         }
 
         public static function AddGenericID(request:AddGenericIDRequest, onComplete:Function, onError:Function):void
