@@ -7,7 +7,6 @@ package com.playfab.ClientModels
         public var StatisticName:String;
         public var MaxResultsCount:*;
         public var Version:*;
-        public var UseSpecificVersion:*;
         public var ProfileConstraints:PlayerProfileViewConstraints;
 
         public function GetLeaderboardAroundPlayerRequest(data:Object=null)
@@ -18,7 +17,6 @@ package com.playfab.ClientModels
             StatisticName = data.StatisticName;
             MaxResultsCount = data.MaxResultsCount;
             Version = data.Version;
-            UseSpecificVersion = data.UseSpecificVersion;
             ProfileConstraints = new PlayerProfileViewConstraints(data.ProfileConstraints);
 
         }
