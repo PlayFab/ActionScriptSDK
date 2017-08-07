@@ -302,6 +302,25 @@ package com.playfab
         public static const BadPartnerConfiguration:int = 1304;
         public static const XboxBPCertificateFailure:int = 1305;
         public static const XboxXASSExchangeFailure:int = 1306;
+        public static const InvalidEntityId:int = 1307;
+        public static const StatisticValueAggregationOverflow:int = 1308;
+        public static const EmailMessageFromAddressIsMissing:int = 1309;
+        public static const EmailMessageToAddressIsMissing:int = 1310;
+        public static const SmtpServerAuthenticationError:int = 1311;
+        public static const SmtpServerLimitExceeded:int = 1312;
+        public static const SmtpServerInsufficientStorage:int = 1313;
+        public static const SmtpServerCommunicationError:int = 1314;
+        public static const SmtpServerGeneralFailure:int = 1315;
+        public static const EmailClientTimeout:int = 1316;
+        public static const EmailClientCanceledTask:int = 1317;
+        public static const EmailTemplateMissing:int = 1318;
+        public static const InvalidHostForTitleId:int = 1319;
+        public static const EmailConfirmationTokenDoesNotExist:int = 1320;
+        public static const EmailConfirmationTokenExpired:int = 1321;
+        public static const AccountDeleted:int = 1322;
+        public static const PlayerSecretNotConfigured:int = 1323;
+        public static const InvalidSignatureTime:int = 1324;
+        public static const NoContactEmailAddressFound:int = 1325;
 
 
         public function PlayFabError(data:Object=null)

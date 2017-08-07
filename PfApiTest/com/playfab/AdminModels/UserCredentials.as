@@ -1,6 +1,7 @@
 
 package com.playfab.AdminModels
 {
+    // Deprecated
     public class UserCredentials
     {
         public var Username:String;
