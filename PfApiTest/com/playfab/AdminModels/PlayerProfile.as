@@ -24,6 +24,7 @@ package com.playfab.AdminModels
         public var PushNotificationRegistrations:Vector.<PushNotificationRegistration>;
         public var LinkedAccounts:Vector.<PlayerLinkedAccount>;
         public var PlayerStatistics:Vector.<PlayerStatistic>;
+        public var ContactEmailAddresses:Vector.<ContactEmailInfo>;
 
         public function PlayerProfile(data:Object=null)
         {
@@ -48,6 +49,7 @@ package com.playfab.AdminModels
             if(data.PushNotificationRegistrations) { PushNotificationRegistrations = new Vector.<PushNotificationRegistration>(); for(var PushNotificationRegistrations_iter:int = 0; PushNotificationRegistrations_iter < data.PushNotificationRegistrations.length; PushNotificationRegistrations_iter++) { PushNotificationRegistrations[PushNotificationRegistrations_iter] = new PushNotificationRegistration(data.PushNotificationRegistrations[PushNotificationRegistrations_iter]); }}
             if(data.LinkedAccounts) { LinkedAccounts = new Vector.<PlayerLinkedAccount>(); for(var LinkedAccounts_iter:int = 0; LinkedAccounts_iter < data.LinkedAccounts.length; LinkedAccounts_iter++) { LinkedAccounts[LinkedAccounts_iter] = new PlayerLinkedAccount(data.LinkedAccounts[LinkedAccounts_iter]); }}
             if(data.PlayerStatistics) { PlayerStatistics = new Vector.<PlayerStatistic>(); for(var PlayerStatistics_iter:int = 0; PlayerStatistics_iter < data.PlayerStatistics.length; PlayerStatistics_iter++) { PlayerStatistics[PlayerStatistics_iter] = new PlayerStatistic(data.PlayerStatistics[PlayerStatistics_iter]); }}
+            if(data.ContactEmailAddresses) { ContactEmailAddresses = new Vector.<ContactEmailInfo>(); for(var ContactEmailAddresses_iter:int = 0; ContactEmailAddresses_iter < data.ContactEmailAddresses.length; ContactEmailAddresses_iter++) { ContactEmailAddresses[ContactEmailAddresses_iter] = new ContactEmailInfo(data.ContactEmailAddresses[ContactEmailAddresses_iter]); }}
 
         }
     }

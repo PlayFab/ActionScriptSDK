@@ -1,6 +1,7 @@
 
 package com.playfab.AdminModels
 {
+    // Deprecated
     public class ResetUsersRequest
     {
         public var Users:Vector.<UserCredentials>;
