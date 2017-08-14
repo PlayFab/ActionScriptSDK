@@ -321,6 +321,10 @@ package com.playfab
         public static const PlayerSecretNotConfigured:int = 1323;
         public static const InvalidSignatureTime:int = 1324;
         public static const NoContactEmailAddressFound:int = 1325;
+        public static const InvalidAuthToken:int = 1326;
+        public static const AuthTokenDoesNotExist:int = 1327;
+        public static const AuthTokenExpired:int = 1328;
+        public static const AuthTokenAlreadyUsedToResetPassword:int = 1329;
 
 
         public function PlayFabError(data:Object=null)

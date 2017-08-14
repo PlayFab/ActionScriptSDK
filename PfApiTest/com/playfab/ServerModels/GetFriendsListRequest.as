@@ -6,6 +6,7 @@ package com.playfab.ServerModels
         public var PlayFabId:String;
         public var IncludeSteamFriends:*;
         public var IncludeFacebookFriends:*;
+        public var ProfileConstraints:PlayerProfileViewConstraints;
 
         public function GetFriendsListRequest(data:Object=null)
         {
@@ -14,6 +15,7 @@ package com.playfab.ServerModels
             PlayFabId = data.PlayFabId;
             IncludeSteamFriends = data.IncludeSteamFriends;
             IncludeFacebookFriends = data.IncludeFacebookFriends;
+            ProfileConstraints = new PlayerProfileViewConstraints(data.ProfileConstraints);
 
         }
     }
