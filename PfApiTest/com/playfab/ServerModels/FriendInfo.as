@@ -11,6 +11,7 @@ package com.playfab.ServerModels
         public var FacebookInfo:UserFacebookInfo;
         public var SteamInfo:UserSteamInfo;
         public var GameCenterInfo:UserGameCenterInfo;
+        public var Profile:PlayerProfileModel;
 
         public function FriendInfo(data:Object=null)
         {
@@ -24,6 +25,7 @@ package com.playfab.ServerModels
             FacebookInfo = new UserFacebookInfo(data.FacebookInfo);
             SteamInfo = new UserSteamInfo(data.SteamInfo);
             GameCenterInfo = new UserGameCenterInfo(data.GameCenterInfo);
+            Profile = new PlayerProfileModel(data.Profile);
 
         }
     }
