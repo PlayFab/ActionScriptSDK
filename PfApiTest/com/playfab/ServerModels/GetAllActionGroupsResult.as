@@ -1,6 +1,7 @@
 
 package com.playfab.ServerModels
 {
+    // Deprecated
     public class GetAllActionGroupsResult
     {
         public var ActionGroups:Vector.<GetActionGroupResult>;

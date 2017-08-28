@@ -2138,6 +2138,7 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Admin/AddPlayerTag", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
+        [Deprecated(message="The GetAllActionGroups API and its associated datatypes are scheduled for deprecation. Use GetTasks instead.", replacement="GetTasks")]
         public static function GetAllActionGroups(request:GetAllActionGroupsRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
@@ -2398,6 +2399,7 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Admin/DeleteTask", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
+        [Deprecated(message="The GetActionsOnPlayersInSegmentTaskInstance API and its associated datatypes are scheduled for deprecation. Use GetTasks instead.", replacement="GetTasks")]
         public static function GetActionsOnPlayersInSegmentTaskInstance(request:GetTaskInstanceRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");

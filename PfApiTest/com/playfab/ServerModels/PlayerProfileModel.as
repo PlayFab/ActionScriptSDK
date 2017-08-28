@@ -18,6 +18,7 @@ package com.playfab.ServerModels
         public var Tags:Vector.<TagModel>;
         public var PushNotificationRegistrations:Vector.<PushNotificationRegistrationModel>;
         public var LinkedAccounts:Vector.<LinkedPlatformAccountModel>;
+        public var ContactEmailAddresses:Vector.<ContactEmailInfoModel>;
         public var AdCampaignAttributions:Vector.<AdCampaignAttributionModel>;
         public var TotalValueToDateInUSD:*;
         public var ValuesToDate:Vector.<ValueToDateModel>;
@@ -41,6 +42,7 @@ package com.playfab.ServerModels
             if(data.Tags) { Tags = new Vector.<TagModel>(); for(var Tags_iter:int = 0; Tags_iter < data.Tags.length; Tags_iter++) { Tags[Tags_iter] = new TagModel(data.Tags[Tags_iter]); }}
             if(data.PushNotificationRegistrations) { PushNotificationRegistrations = new Vector.<PushNotificationRegistrationModel>(); for(var PushNotificationRegistrations_iter:int = 0; PushNotificationRegistrations_iter < data.PushNotificationRegistrations.length; PushNotificationRegistrations_iter++) { PushNotificationRegistrations[PushNotificationRegistrations_iter] = new PushNotificationRegistrationModel(data.PushNotificationRegistrations[PushNotificationRegistrations_iter]); }}
             if(data.LinkedAccounts) { LinkedAccounts = new Vector.<LinkedPlatformAccountModel>(); for(var LinkedAccounts_iter:int = 0; LinkedAccounts_iter < data.LinkedAccounts.length; LinkedAccounts_iter++) { LinkedAccounts[LinkedAccounts_iter] = new LinkedPlatformAccountModel(data.LinkedAccounts[LinkedAccounts_iter]); }}
+            if(data.ContactEmailAddresses) { ContactEmailAddresses = new Vector.<ContactEmailInfoModel>(); for(var ContactEmailAddresses_iter:int = 0; ContactEmailAddresses_iter < data.ContactEmailAddresses.length; ContactEmailAddresses_iter++) { ContactEmailAddresses[ContactEmailAddresses_iter] = new ContactEmailInfoModel(data.ContactEmailAddresses[ContactEmailAddresses_iter]); }}
             if(data.AdCampaignAttributions) { AdCampaignAttributions = new Vector.<AdCampaignAttributionModel>(); for(var AdCampaignAttributions_iter:int = 0; AdCampaignAttributions_iter < data.AdCampaignAttributions.length; AdCampaignAttributions_iter++) { AdCampaignAttributions[AdCampaignAttributions_iter] = new AdCampaignAttributionModel(data.AdCampaignAttributions[AdCampaignAttributions_iter]); }}
             TotalValueToDateInUSD = data.TotalValueToDateInUSD;
             if(data.ValuesToDate) { ValuesToDate = new Vector.<ValueToDateModel>(); for(var ValuesToDate_iter:int = 0; ValuesToDate_iter < data.ValuesToDate.length; ValuesToDate_iter++) { ValuesToDate[ValuesToDate_iter] = new ValueToDateModel(data.ValuesToDate[ValuesToDate_iter]); }}

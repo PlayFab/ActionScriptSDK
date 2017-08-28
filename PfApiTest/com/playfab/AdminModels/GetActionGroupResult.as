@@ -1,6 +1,7 @@
 
 package com.playfab.AdminModels
 {
+    // Deprecated
     public class GetActionGroupResult
     {
         public var Name:String;

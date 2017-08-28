@@ -13,7 +13,9 @@ package com.playfab.ClientModels
         public var MaxPlayers:*;
         public var PlayerUserIds:Vector.<String>;
         public var RunTime:uint;
-        public var GameServerState:String;
+        // Deprecated, please use GameServerStateEnum
+        public var GameServerState:*;
+        public var GameServerStateEnum:String;
         public var GameServerData:String;
         public var Tags:Object;
         public var LastHeartbeat:Date;
@@ -33,6 +35,7 @@ package com.playfab.ClientModels
             PlayerUserIds = data.PlayerUserIds ? Vector.<String>(data.PlayerUserIds) : null;
             RunTime = data.RunTime;
             GameServerState = data.GameServerState;
+            GameServerStateEnum = data.GameServerStateEnum;
             GameServerData = data.GameServerData;
             Tags = data.Tags;
             LastHeartbeat = PlayFabUtil.parseDate(data.LastHeartbeat);
