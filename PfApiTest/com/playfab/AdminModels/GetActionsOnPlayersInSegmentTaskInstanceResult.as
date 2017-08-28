@@ -1,6 +1,7 @@
 
 package com.playfab.AdminModels
 {
+    // Deprecated
     public class GetActionsOnPlayersInSegmentTaskInstanceResult
     {
         public var Summary:ActionsOnPlayersInSegmentTaskSummary;

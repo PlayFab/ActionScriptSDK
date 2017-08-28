@@ -325,6 +325,14 @@ package com.playfab
         public static const AuthTokenDoesNotExist:int = 1327;
         public static const AuthTokenExpired:int = 1328;
         public static const AuthTokenAlreadyUsedToResetPassword:int = 1329;
+        public static const MembershipNameTooLong:int = 1330;
+        public static const MembershipNotFound:int = 1331;
+        public static const GoogleServiceAccountInvalid:int = 1332;
+        public static const GoogleServiceAccountParseFailure:int = 1333;
+        public static const EntityTokenMissing:int = 1334;
+        public static const EntityTokenInvalid:int = 1335;
+        public static const EntityTokenExpired:int = 1336;
+        public static const EntityTokenRevoked:int = 1337;
 
 
         public function PlayFabError(data:Object=null)

@@ -12,6 +12,7 @@ package com.playfab.ServerModels
         public var ShowCampaignAttributions:Boolean;
         public var ShowPushNotificationRegistrations:Boolean;
         public var ShowLinkedAccounts:Boolean;
+        public var ShowContactEmailAddresses:Boolean;
         public var ShowTotalValueToDateInUsd:Boolean;
         public var ShowValuesToDate:Boolean;
         public var ShowTags:Boolean;
@@ -31,6 +32,7 @@ package com.playfab.ServerModels
             ShowCampaignAttributions = data.ShowCampaignAttributions;
             ShowPushNotificationRegistrations = data.ShowPushNotificationRegistrations;
             ShowLinkedAccounts = data.ShowLinkedAccounts;
+            ShowContactEmailAddresses = data.ShowContactEmailAddresses;
             ShowTotalValueToDateInUsd = data.ShowTotalValueToDateInUsd;
             ShowValuesToDate = data.ShowValuesToDate;
             ShowTags = data.ShowTags;

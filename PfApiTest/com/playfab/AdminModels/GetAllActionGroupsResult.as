@@ -1,6 +1,7 @@
 
 package com.playfab.AdminModels
 {
+    // Deprecated
     public class GetAllActionGroupsResult
     {
         public var ActionGroups:Vector.<GetActionGroupResult>;
