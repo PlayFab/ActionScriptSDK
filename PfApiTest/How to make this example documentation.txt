@@ -13,6 +13,7 @@ http://www.adobe.com/devnet/air/air-sdk-download.html
 I installed Air 22, to a temporary folder: C:/dev/AirSdk
 At this point copy paste the contents of C:/dev/AirSdk into C:/dev/flex_sdk_4.6.
 Both SDKs share a lot of folder structure, so by pasting AirSdk over Flex, you should be replacing a lot of folders and files.
+You can delete C:/dev/AirSdk once it is correctly pasted overtop of flex.
 
 Creating the Example Project, starting with the most useful help page:
 
