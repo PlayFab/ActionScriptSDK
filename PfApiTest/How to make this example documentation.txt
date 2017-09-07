@@ -1,17 +1,18 @@
 MS Windows 10
 
-Install the Adobe Air SDK
-http://www.adobe.com/devnet/air/air-sdk-download.html
-I installed Air 22, to C:/dev/AirSdk
-Add the air-bin path to your path environment variable:
-C:/dev/AirSdk/bin (in my case)
-
 Install the Adobe Flex SDK
 http://www.adobe.com/devnet/flex/flex-sdk-download.html
+SAVE THIS ZIP FILE!  You will need to follow these instructions again from scratch if you update your Air SDK version (below)
 I installed Flex 4.6, to C:/dev/flex_sdk_4.6
 Create a new environment variable: FLEX_HOME=C:/dev/flex_sdk_4.6 (in my case)
 Add the flex-bin path to your path environment variable:
 C:/dev/flex_sdk_4.6/bin (in my case)
+
+Install the Adobe Air SDK
+http://www.adobe.com/devnet/air/air-sdk-download.html
+I installed Air 22, to a temporary folder: C:/dev/AirSdk
+At this point copy paste the contents of C:/dev/AirSdk into C:/dev/flex_sdk_4.6.
+Both SDKs share a lot of folder structure, so by pasting AirSdk over Flex, you should be replacing a lot of folders and files.
 
 Creating the Example Project, starting with the most useful help page:
 
