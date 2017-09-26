@@ -5,31 +5,31 @@ package com.playfab.AdminModels
 
     public class GetMatchmakerGameInfoResult
     {
-        public var LobbyId:String;
-        public var TitleId:String;
-        public var StartTime:Date;
-        public var EndTime:Date;
-        public var Mode:String;
         public var BuildVersion:String;
-        public var Region:String;
+        public var EndTime:Date;
+        public var LobbyId:String;
+        public var Mode:String;
         public var Players:Vector.<String>;
+        public var Region:String;
         public var ServerAddress:String;
         public var ServerPort:uint;
+        public var StartTime:Date;
+        public var TitleId:String;
 
         public function GetMatchmakerGameInfoResult(data:Object=null)
         {
             if(data == null)
                 return;
-            LobbyId = data.LobbyId;
-            TitleId = data.TitleId;
-            StartTime = PlayFabUtil.parseDate(data.StartTime);
-            EndTime = PlayFabUtil.parseDate(data.EndTime);
-            Mode = data.Mode;
             BuildVersion = data.BuildVersion;
-            Region = data.Region;
+            EndTime = PlayFabUtil.parseDate(data.EndTime);
+            LobbyId = data.LobbyId;
+            Mode = data.Mode;
             Players = data.Players ? Vector.<String>(data.Players) : null;
+            Region = data.Region;
             ServerAddress = data.ServerAddress;
             ServerPort = data.ServerPort;
+            StartTime = PlayFabUtil.parseDate(data.StartTime);
+            TitleId = data.TitleId;
 
         }
     }

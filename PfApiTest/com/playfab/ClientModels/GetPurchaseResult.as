@@ -7,9 +7,9 @@ package com.playfab.ClientModels
     {
         public var OrderId:String;
         public var PaymentProvider:String;
+        public var PurchaseDate:Date;
         public var TransactionId:String;
         public var TransactionStatus:String;
-        public var PurchaseDate:Date;
 
         public function GetPurchaseResult(data:Object=null)
         {
@@ -17,9 +17,9 @@ package com.playfab.ClientModels
                 return;
             OrderId = data.OrderId;
             PaymentProvider = data.PaymentProvider;
+            PurchaseDate = PlayFabUtil.parseDate(data.PurchaseDate);
             TransactionId = data.TransactionId;
             TransactionStatus = data.TransactionStatus;
-            PurchaseDate = PlayFabUtil.parseDate(data.PurchaseDate);
 
         }
     }

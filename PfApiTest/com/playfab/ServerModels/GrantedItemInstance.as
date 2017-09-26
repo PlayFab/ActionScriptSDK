@@ -5,47 +5,47 @@ package com.playfab.ServerModels
 
     public class GrantedItemInstance
     {
-        public var PlayFabId:String;
+        public var Annotation:String;
+        public var BundleContents:Vector.<String>;
+        public var BundleParent:String;
+        public var CatalogVersion:String;
         public var CharacterId:String;
-        public var Result:Boolean;
+        public var CustomData:Object;
+        public var DisplayName:String;
+        public var Expiration:Date;
+        public var ItemClass:String;
         public var ItemId:String;
         public var ItemInstanceId:String;
-        public var ItemClass:String;
+        public var PlayFabId:String;
         public var PurchaseDate:Date;
-        public var Expiration:Date;
         public var RemainingUses:*;
-        public var UsesIncrementedBy:*;
-        public var Annotation:String;
-        public var CatalogVersion:String;
-        public var BundleParent:String;
-        public var DisplayName:String;
+        public var Result:Boolean;
         public var UnitCurrency:String;
         public var UnitPrice:uint;
-        public var BundleContents:Vector.<String>;
-        public var CustomData:Object;
+        public var UsesIncrementedBy:*;
 
         public function GrantedItemInstance(data:Object=null)
         {
             if(data == null)
                 return;
-            PlayFabId = data.PlayFabId;
+            Annotation = data.Annotation;
+            BundleContents = data.BundleContents ? Vector.<String>(data.BundleContents) : null;
+            BundleParent = data.BundleParent;
+            CatalogVersion = data.CatalogVersion;
             CharacterId = data.CharacterId;
-            Result = data.Result;
+            CustomData = data.CustomData;
+            DisplayName = data.DisplayName;
+            Expiration = PlayFabUtil.parseDate(data.Expiration);
+            ItemClass = data.ItemClass;
             ItemId = data.ItemId;
             ItemInstanceId = data.ItemInstanceId;
-            ItemClass = data.ItemClass;
+            PlayFabId = data.PlayFabId;
             PurchaseDate = PlayFabUtil.parseDate(data.PurchaseDate);
-            Expiration = PlayFabUtil.parseDate(data.Expiration);
             RemainingUses = data.RemainingUses;
-            UsesIncrementedBy = data.UsesIncrementedBy;
-            Annotation = data.Annotation;
-            CatalogVersion = data.CatalogVersion;
-            BundleParent = data.BundleParent;
-            DisplayName = data.DisplayName;
+            Result = data.Result;
             UnitCurrency = data.UnitCurrency;
             UnitPrice = data.UnitPrice;
-            BundleContents = data.BundleContents ? Vector.<String>(data.BundleContents) : null;
-            CustomData = data.CustomData;
+            UsesIncrementedBy = data.UsesIncrementedBy;
 
         }
     }

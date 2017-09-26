@@ -5,27 +5,27 @@ package com.playfab.AdminModels
 
     public class BanInfo
     {
-        public var PlayFabId:String;
+        public var Active:Boolean;
         public var BanId:String;
-        public var IPAddress:String;
-        public var MACAddress:String;
         public var Created:Date;
         public var Expires:Date;
+        public var IPAddress:String;
+        public var MACAddress:String;
+        public var PlayFabId:String;
         public var Reason:String;
-        public var Active:Boolean;
 
         public function BanInfo(data:Object=null)
         {
             if(data == null)
                 return;
-            PlayFabId = data.PlayFabId;
+            Active = data.Active;
             BanId = data.BanId;
-            IPAddress = data.IPAddress;
-            MACAddress = data.MACAddress;
             Created = PlayFabUtil.parseDate(data.Created);
             Expires = PlayFabUtil.parseDate(data.Expires);
+            IPAddress = data.IPAddress;
+            MACAddress = data.MACAddress;
+            PlayFabId = data.PlayFabId;
             Reason = data.Reason;
-            Active = data.Active;
 
         }
     }

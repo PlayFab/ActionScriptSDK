@@ -5,19 +5,19 @@ package com.playfab.ClientModels
 
     public class WriteClientCharacterEventRequest
     {
+        public var Body:Object;
         public var CharacterId:String;
         public var EventName:String;
         public var Timestamp:Date;
-        public var Body:Object;
 
         public function WriteClientCharacterEventRequest(data:Object=null)
         {
             if(data == null)
                 return;
+            Body = data.Body;
             CharacterId = data.CharacterId;
             EventName = data.EventName;
             Timestamp = PlayFabUtil.parseDate(data.Timestamp);
-            Body = data.Body;
 
         }
     }

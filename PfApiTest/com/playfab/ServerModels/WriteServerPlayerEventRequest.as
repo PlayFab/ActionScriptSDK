@@ -5,19 +5,19 @@ package com.playfab.ServerModels
 
     public class WriteServerPlayerEventRequest
     {
-        public var PlayFabId:String;
-        public var EventName:String;
-        public var Timestamp:Date;
         public var Body:Object;
+        public var EventName:String;
+        public var PlayFabId:String;
+        public var Timestamp:Date;
 
         public function WriteServerPlayerEventRequest(data:Object=null)
         {
             if(data == null)
                 return;
-            PlayFabId = data.PlayFabId;
-            EventName = data.EventName;
-            Timestamp = PlayFabUtil.parseDate(data.Timestamp);
             Body = data.Body;
+            EventName = data.EventName;
+            PlayFabId = data.PlayFabId;
+            Timestamp = PlayFabUtil.parseDate(data.Timestamp);
 
         }
     }

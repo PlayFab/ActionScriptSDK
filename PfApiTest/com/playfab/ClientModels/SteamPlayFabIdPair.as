@@ -3,15 +3,15 @@ package com.playfab.ClientModels
 {
     public class SteamPlayFabIdPair
     {
-        public var SteamStringId:String;
         public var PlayFabId:String;
+        public var SteamStringId:String;
 
         public function SteamPlayFabIdPair(data:Object=null)
         {
             if(data == null)
                 return;
-            SteamStringId = data.SteamStringId;
             PlayFabId = data.PlayFabId;
+            SteamStringId = data.SteamStringId;
 
         }
     }

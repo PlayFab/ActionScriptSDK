@@ -5,17 +5,17 @@ package com.playfab.AdminModels
 
     public class AddNewsRequest
     {
+        public var Body:String;
         public var Timestamp:Date;
         public var Title:String;
-        public var Body:String;
 
         public function AddNewsRequest(data:Object=null)
         {
             if(data == null)
                 return;
+            Body = data.Body;
             Timestamp = PlayFabUtil.parseDate(data.Timestamp);
             Title = data.Title;
-            Body = data.Body;
 
         }
     }

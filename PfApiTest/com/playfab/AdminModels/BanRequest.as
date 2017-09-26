@@ -3,21 +3,21 @@ package com.playfab.AdminModels
 {
     public class BanRequest
     {
-        public var PlayFabId:String;
+        public var DurationInHours:*;
         public var IPAddress:String;
         public var MACAddress:String;
+        public var PlayFabId:String;
         public var Reason:String;
-        public var DurationInHours:*;
 
         public function BanRequest(data:Object=null)
         {
             if(data == null)
                 return;
-            PlayFabId = data.PlayFabId;
+            DurationInHours = data.DurationInHours;
             IPAddress = data.IPAddress;
             MACAddress = data.MACAddress;
+            PlayFabId = data.PlayFabId;
             Reason = data.Reason;
-            DurationInHours = data.DurationInHours;
 
         }
     }

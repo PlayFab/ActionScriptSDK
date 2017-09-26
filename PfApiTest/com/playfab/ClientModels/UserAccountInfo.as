@@ -5,43 +5,43 @@ package com.playfab.ClientModels
 
     public class UserAccountInfo
     {
-        public var PlayFabId:String;
-        public var Created:Date;
-        public var Username:String;
-        public var TitleInfo:UserTitleInfo;
-        public var PrivateInfo:UserPrivateAccountInfo;
-        public var FacebookInfo:UserFacebookInfo;
-        public var SteamInfo:UserSteamInfo;
-        public var GameCenterInfo:UserGameCenterInfo;
-        public var IosDeviceInfo:UserIosDeviceInfo;
         public var AndroidDeviceInfo:UserAndroidDeviceInfo;
-        public var KongregateInfo:UserKongregateInfo;
-        public var TwitchInfo:UserTwitchInfo;
-        public var PsnInfo:UserPsnInfo;
-        public var GoogleInfo:UserGoogleInfo;
-        public var XboxInfo:UserXboxInfo;
+        public var Created:Date;
         public var CustomIdInfo:UserCustomIdInfo;
+        public var FacebookInfo:UserFacebookInfo;
+        public var GameCenterInfo:UserGameCenterInfo;
+        public var GoogleInfo:UserGoogleInfo;
+        public var IosDeviceInfo:UserIosDeviceInfo;
+        public var KongregateInfo:UserKongregateInfo;
+        public var PlayFabId:String;
+        public var PrivateInfo:UserPrivateAccountInfo;
+        public var PsnInfo:UserPsnInfo;
+        public var SteamInfo:UserSteamInfo;
+        public var TitleInfo:UserTitleInfo;
+        public var TwitchInfo:UserTwitchInfo;
+        public var Username:String;
+        public var XboxInfo:UserXboxInfo;
 
         public function UserAccountInfo(data:Object=null)
         {
             if(data == null)
                 return;
-            PlayFabId = data.PlayFabId;
-            Created = PlayFabUtil.parseDate(data.Created);
-            Username = data.Username;
-            TitleInfo = new UserTitleInfo(data.TitleInfo);
-            PrivateInfo = new UserPrivateAccountInfo(data.PrivateInfo);
-            FacebookInfo = new UserFacebookInfo(data.FacebookInfo);
-            SteamInfo = new UserSteamInfo(data.SteamInfo);
-            GameCenterInfo = new UserGameCenterInfo(data.GameCenterInfo);
-            IosDeviceInfo = new UserIosDeviceInfo(data.IosDeviceInfo);
             AndroidDeviceInfo = new UserAndroidDeviceInfo(data.AndroidDeviceInfo);
-            KongregateInfo = new UserKongregateInfo(data.KongregateInfo);
-            TwitchInfo = new UserTwitchInfo(data.TwitchInfo);
-            PsnInfo = new UserPsnInfo(data.PsnInfo);
-            GoogleInfo = new UserGoogleInfo(data.GoogleInfo);
-            XboxInfo = new UserXboxInfo(data.XboxInfo);
+            Created = PlayFabUtil.parseDate(data.Created);
             CustomIdInfo = new UserCustomIdInfo(data.CustomIdInfo);
+            FacebookInfo = new UserFacebookInfo(data.FacebookInfo);
+            GameCenterInfo = new UserGameCenterInfo(data.GameCenterInfo);
+            GoogleInfo = new UserGoogleInfo(data.GoogleInfo);
+            IosDeviceInfo = new UserIosDeviceInfo(data.IosDeviceInfo);
+            KongregateInfo = new UserKongregateInfo(data.KongregateInfo);
+            PlayFabId = data.PlayFabId;
+            PrivateInfo = new UserPrivateAccountInfo(data.PrivateInfo);
+            PsnInfo = new UserPsnInfo(data.PsnInfo);
+            SteamInfo = new UserSteamInfo(data.SteamInfo);
+            TitleInfo = new UserTitleInfo(data.TitleInfo);
+            TwitchInfo = new UserTwitchInfo(data.TwitchInfo);
+            Username = data.Username;
+            XboxInfo = new UserXboxInfo(data.XboxInfo);
 
         }
     }

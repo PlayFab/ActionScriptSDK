@@ -3,8 +3,8 @@ package com.playfab.ClientModels
 {
     public class CatalogItemContainerInfo
     {
-        public var KeyItemId:String;
         public var ItemContents:Vector.<String>;
+        public var KeyItemId:String;
         public var ResultTableContents:Vector.<String>;
         public var VirtualCurrencyContents:Object;
 
@@ -12,8 +12,8 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-            KeyItemId = data.KeyItemId;
             ItemContents = data.ItemContents ? Vector.<String>(data.ItemContents) : null;
+            KeyItemId = data.KeyItemId;
             ResultTableContents = data.ResultTableContents ? Vector.<String>(data.ResultTableContents) : null;
             VirtualCurrencyContents = data.VirtualCurrencyContents;
 

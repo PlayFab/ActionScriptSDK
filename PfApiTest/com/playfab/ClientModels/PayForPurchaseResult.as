@@ -3,31 +3,31 @@ package com.playfab.ClientModels
 {
     public class PayForPurchaseResult
     {
+        public var CreditApplied:uint;
         public var OrderId:String;
-        public var Status:String;
-        public var VCAmount:Object;
+        public var ProviderData:String;
+        public var ProviderToken:String;
+        public var PurchaseConfirmationPageURL:String;
         public var PurchaseCurrency:String;
         public var PurchasePrice:uint;
-        public var CreditApplied:uint;
-        public var ProviderData:String;
-        public var PurchaseConfirmationPageURL:String;
+        public var Status:String;
+        public var VCAmount:Object;
         public var VirtualCurrency:Object;
-        public var ProviderToken:String;
 
         public function PayForPurchaseResult(data:Object=null)
         {
             if(data == null)
                 return;
+            CreditApplied = data.CreditApplied;
             OrderId = data.OrderId;
-            Status = data.Status;
-            VCAmount = data.VCAmount;
+            ProviderData = data.ProviderData;
+            ProviderToken = data.ProviderToken;
+            PurchaseConfirmationPageURL = data.PurchaseConfirmationPageURL;
             PurchaseCurrency = data.PurchaseCurrency;
             PurchasePrice = data.PurchasePrice;
-            CreditApplied = data.CreditApplied;
-            ProviderData = data.ProviderData;
-            PurchaseConfirmationPageURL = data.PurchaseConfirmationPageURL;
+            Status = data.Status;
+            VCAmount = data.VCAmount;
             VirtualCurrency = data.VirtualCurrency;
-            ProviderToken = data.ProviderToken;
 
         }
     }

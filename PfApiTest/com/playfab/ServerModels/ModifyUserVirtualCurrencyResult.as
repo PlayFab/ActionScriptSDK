@@ -3,19 +3,19 @@ package com.playfab.ServerModels
 {
     public class ModifyUserVirtualCurrencyResult
     {
+        public var Balance:int;
+        public var BalanceChange:int;
         public var PlayFabId:String;
         public var VirtualCurrency:String;
-        public var BalanceChange:int;
-        public var Balance:int;
 
         public function ModifyUserVirtualCurrencyResult(data:Object=null)
         {
             if(data == null)
                 return;
+            Balance = data.Balance;
+            BalanceChange = data.BalanceChange;
             PlayFabId = data.PlayFabId;
             VirtualCurrency = data.VirtualCurrency;
-            BalanceChange = data.BalanceChange;
-            Balance = data.Balance;
 
         }
     }

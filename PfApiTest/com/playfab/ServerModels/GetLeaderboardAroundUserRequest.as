@@ -3,20 +3,20 @@ package com.playfab.ServerModels
 {
     public class GetLeaderboardAroundUserRequest
     {
-        public var StatisticName:String;
-        public var PlayFabId:String;
         public var MaxResultsCount:int;
+        public var PlayFabId:String;
         public var ProfileConstraints:PlayerProfileViewConstraints;
+        public var StatisticName:String;
         public var Version:*;
 
         public function GetLeaderboardAroundUserRequest(data:Object=null)
         {
             if(data == null)
                 return;
-            StatisticName = data.StatisticName;
-            PlayFabId = data.PlayFabId;
             MaxResultsCount = data.MaxResultsCount;
+            PlayFabId = data.PlayFabId;
             ProfileConstraints = new PlayerProfileViewConstraints(data.ProfileConstraints);
+            StatisticName = data.StatisticName;
             Version = data.Version;
 
         }

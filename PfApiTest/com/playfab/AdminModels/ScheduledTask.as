@@ -5,29 +5,29 @@ package com.playfab.AdminModels
 
     public class ScheduledTask
     {
-        public var TaskId:String;
-        public var Name:String;
         public var Description:String;
-        public var Schedule:String;
         public var IsActive:Boolean;
-        public var Type:String;
-        public var Parameter:Object;
         public var LastRunTime:Date;
+        public var Name:String;
         public var NextRunTime:Date;
+        public var Parameter:Object;
+        public var Schedule:String;
+        public var TaskId:String;
+        public var Type:String;
 
         public function ScheduledTask(data:Object=null)
         {
             if(data == null)
                 return;
-            TaskId = data.TaskId;
-            Name = data.Name;
             Description = data.Description;
-            Schedule = data.Schedule;
             IsActive = data.IsActive;
-            Type = data.Type;
-            Parameter = data.Parameter;
             LastRunTime = PlayFabUtil.parseDate(data.LastRunTime);
+            Name = data.Name;
             NextRunTime = PlayFabUtil.parseDate(data.NextRunTime);
+            Parameter = data.Parameter;
+            Schedule = data.Schedule;
+            TaskId = data.TaskId;
+            Type = data.Type;
 
         }
     }

@@ -3,27 +3,27 @@ package com.playfab.ClientModels
 {
     public class LoginWithAndroidDeviceIDRequest
     {
-        public var AndroidDeviceId:String;
-        public var OS:String;
         public var AndroidDevice:String;
+        public var AndroidDeviceId:String;
         public var CreateAccount:*;
-        public var TitleId:String;
         public var EncryptedRequest:String;
-        public var PlayerSecret:String;
         public var InfoRequestParameters:GetPlayerCombinedInfoRequestParams;
+        public var OS:String;
+        public var PlayerSecret:String;
+        public var TitleId:String;
 
         public function LoginWithAndroidDeviceIDRequest(data:Object=null)
         {
             if(data == null)
                 return;
-            AndroidDeviceId = data.AndroidDeviceId;
-            OS = data.OS;
             AndroidDevice = data.AndroidDevice;
+            AndroidDeviceId = data.AndroidDeviceId;
             CreateAccount = data.CreateAccount;
-            TitleId = data.TitleId;
             EncryptedRequest = data.EncryptedRequest;
-            PlayerSecret = data.PlayerSecret;
             InfoRequestParameters = new GetPlayerCombinedInfoRequestParams(data.InfoRequestParameters);
+            OS = data.OS;
+            PlayerSecret = data.PlayerSecret;
+            TitleId = data.TitleId;
 
         }
     }

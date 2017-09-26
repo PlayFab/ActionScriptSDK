@@ -3,19 +3,19 @@ package com.playfab.AdminModels
 {
     public class LookupUserAccountInfoRequest
     {
-        public var PlayFabId:String;
         public var Email:String;
-        public var Username:String;
+        public var PlayFabId:String;
         public var TitleDisplayName:String;
+        public var Username:String;
 
         public function LookupUserAccountInfoRequest(data:Object=null)
         {
             if(data == null)
                 return;
-            PlayFabId = data.PlayFabId;
             Email = data.Email;
-            Username = data.Username;
+            PlayFabId = data.PlayFabId;
             TitleDisplayName = data.TitleDisplayName;
+            Username = data.Username;
 
         }
     }

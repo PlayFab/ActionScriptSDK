@@ -3,19 +3,19 @@ package com.playfab.ServerModels
 {
     public class GetCharacterDataRequest
     {
-        public var PlayFabId:String;
         public var CharacterId:String;
-        public var Keys:Vector.<String>;
         public var IfChangedFromDataVersion:*;
+        public var Keys:Vector.<String>;
+        public var PlayFabId:String;
 
         public function GetCharacterDataRequest(data:Object=null)
         {
             if(data == null)
                 return;
-            PlayFabId = data.PlayFabId;
             CharacterId = data.CharacterId;
-            Keys = data.Keys ? Vector.<String>(data.Keys) : null;
             IfChangedFromDataVersion = data.IfChangedFromDataVersion;
+            Keys = data.Keys ? Vector.<String>(data.Keys) : null;
+            PlayFabId = data.PlayFabId;
 
         }
     }

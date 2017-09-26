@@ -5,17 +5,17 @@ package com.playfab.ClientModels
 
     public class UserDataRecord
     {
-        public var Value:String;
         public var LastUpdated:Date;
         public var Permission:String;
+        public var Value:String;
 
         public function UserDataRecord(data:Object=null)
         {
             if(data == null)
                 return;
-            Value = data.Value;
             LastUpdated = PlayFabUtil.parseDate(data.LastUpdated);
             Permission = data.Permission;
+            Value = data.Value;
 
         }
     }

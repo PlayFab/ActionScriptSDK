@@ -5,25 +5,25 @@ package com.playfab.AdminModels
 
     public class UserTitleInfo
     {
-        public var DisplayName:String;
-        public var Origination:String;
+        public var AvatarUrl:String;
         public var Created:Date;
-        public var LastLogin:Date;
+        public var DisplayName:String;
         public var FirstLogin:Date;
         public var isBanned:*;
-        public var AvatarUrl:String;
+        public var LastLogin:Date;
+        public var Origination:String;
 
         public function UserTitleInfo(data:Object=null)
         {
             if(data == null)
                 return;
-            DisplayName = data.DisplayName;
-            Origination = data.Origination;
+            AvatarUrl = data.AvatarUrl;
             Created = PlayFabUtil.parseDate(data.Created);
-            LastLogin = PlayFabUtil.parseDate(data.LastLogin);
+            DisplayName = data.DisplayName;
             FirstLogin = PlayFabUtil.parseDate(data.FirstLogin);
             isBanned = data.isBanned;
-            AvatarUrl = data.AvatarUrl;
+            LastLogin = PlayFabUtil.parseDate(data.LastLogin);
+            Origination = data.Origination;
 
         }
     }

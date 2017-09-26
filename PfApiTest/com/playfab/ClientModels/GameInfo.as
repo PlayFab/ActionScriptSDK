@@ -5,42 +5,42 @@ package com.playfab.ClientModels
 
     public class GameInfo
     {
-        public var Region:String;
-        public var LobbyID:String;
         public var BuildVersion:String;
         public var GameMode:String;
-        public var StatisticName:String;
-        public var MaxPlayers:*;
-        public var PlayerUserIds:Vector.<String>;
-        public var RunTime:uint;
+        public var GameServerData:String;
         // Deprecated, please use GameServerStateEnum
         public var GameServerState:*;
         public var GameServerStateEnum:String;
-        public var GameServerData:String;
-        public var Tags:Object;
         public var LastHeartbeat:Date;
+        public var LobbyID:String;
+        public var MaxPlayers:*;
+        public var PlayerUserIds:Vector.<String>;
+        public var Region:String;
+        public var RunTime:uint;
         public var ServerHostname:String;
         public var ServerPort:*;
+        public var StatisticName:String;
+        public var Tags:Object;
 
         public function GameInfo(data:Object=null)
         {
             if(data == null)
                 return;
-            Region = data.Region;
-            LobbyID = data.LobbyID;
             BuildVersion = data.BuildVersion;
             GameMode = data.GameMode;
-            StatisticName = data.StatisticName;
-            MaxPlayers = data.MaxPlayers;
-            PlayerUserIds = data.PlayerUserIds ? Vector.<String>(data.PlayerUserIds) : null;
-            RunTime = data.RunTime;
+            GameServerData = data.GameServerData;
             GameServerState = data.GameServerState;
             GameServerStateEnum = data.GameServerStateEnum;
-            GameServerData = data.GameServerData;
-            Tags = data.Tags;
             LastHeartbeat = PlayFabUtil.parseDate(data.LastHeartbeat);
+            LobbyID = data.LobbyID;
+            MaxPlayers = data.MaxPlayers;
+            PlayerUserIds = data.PlayerUserIds ? Vector.<String>(data.PlayerUserIds) : null;
+            Region = data.Region;
+            RunTime = data.RunTime;
             ServerHostname = data.ServerHostname;
             ServerPort = data.ServerPort;
+            StatisticName = data.StatisticName;
+            Tags = data.Tags;
 
         }
     }

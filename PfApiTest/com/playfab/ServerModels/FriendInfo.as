@@ -3,29 +3,29 @@ package com.playfab.ServerModels
 {
     public class FriendInfo
     {
-        public var FriendPlayFabId:String;
-        public var Username:String;
-        public var TitleDisplayName:String;
-        public var Tags:Vector.<String>;
         public var CurrentMatchmakerLobbyId:String;
         public var FacebookInfo:UserFacebookInfo;
-        public var SteamInfo:UserSteamInfo;
+        public var FriendPlayFabId:String;
         public var GameCenterInfo:UserGameCenterInfo;
         public var Profile:PlayerProfileModel;
+        public var SteamInfo:UserSteamInfo;
+        public var Tags:Vector.<String>;
+        public var TitleDisplayName:String;
+        public var Username:String;
 
         public function FriendInfo(data:Object=null)
         {
             if(data == null)
                 return;
-            FriendPlayFabId = data.FriendPlayFabId;
-            Username = data.Username;
-            TitleDisplayName = data.TitleDisplayName;
-            Tags = data.Tags ? Vector.<String>(data.Tags) : null;
             CurrentMatchmakerLobbyId = data.CurrentMatchmakerLobbyId;
             FacebookInfo = new UserFacebookInfo(data.FacebookInfo);
-            SteamInfo = new UserSteamInfo(data.SteamInfo);
+            FriendPlayFabId = data.FriendPlayFabId;
             GameCenterInfo = new UserGameCenterInfo(data.GameCenterInfo);
             Profile = new PlayerProfileModel(data.Profile);
+            SteamInfo = new UserSteamInfo(data.SteamInfo);
+            Tags = data.Tags ? Vector.<String>(data.Tags) : null;
+            TitleDisplayName = data.TitleDisplayName;
+            Username = data.Username;
 
         }
     }

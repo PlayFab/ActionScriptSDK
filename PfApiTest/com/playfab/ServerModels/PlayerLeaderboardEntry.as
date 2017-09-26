@@ -3,21 +3,21 @@ package com.playfab.ServerModels
 {
     public class PlayerLeaderboardEntry
     {
-        public var PlayFabId:String;
         public var DisplayName:String;
-        public var StatValue:int;
+        public var PlayFabId:String;
         public var Position:int;
         public var Profile:PlayerProfileModel;
+        public var StatValue:int;
 
         public function PlayerLeaderboardEntry(data:Object=null)
         {
             if(data == null)
                 return;
-            PlayFabId = data.PlayFabId;
             DisplayName = data.DisplayName;
-            StatValue = data.StatValue;
+            PlayFabId = data.PlayFabId;
             Position = data.Position;
             Profile = new PlayerProfileModel(data.Profile);
+            StatValue = data.StatValue;
 
         }
     }

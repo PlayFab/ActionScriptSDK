@@ -3,15 +3,15 @@ package com.playfab.AdminModels
 {
     public class PushNotificationRegistrationModel
     {
-        public var Platform:String;
         public var NotificationEndpointARN:String;
+        public var Platform:String;
 
         public function PushNotificationRegistrationModel(data:Object=null)
         {
             if(data == null)
                 return;
-            Platform = data.Platform;
             NotificationEndpointARN = data.NotificationEndpointARN;
+            Platform = data.Platform;
 
         }
     }
