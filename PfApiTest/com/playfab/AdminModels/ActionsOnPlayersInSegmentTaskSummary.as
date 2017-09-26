@@ -3,19 +3,18 @@ package com.playfab.AdminModels
 {
     import com.playfab.PlayFabUtil;
 
-    // Deprecated
     public class ActionsOnPlayersInSegmentTaskSummary
     {
-        public var TaskInstanceId:String;
-        public var TaskIdentifier:NameIdentifier;
-        public var StartedAt:Date;
         public var CompletedAt:Date;
-        public var Status:String;
-        public var PercentComplete:*;
-        public var EstimatedSecondsRemaining:*;
-        public var ScheduledByUserId:String;
         public var ErrorMessage:String;
         public var ErrorWasFatal:*;
+        public var EstimatedSecondsRemaining:*;
+        public var PercentComplete:*;
+        public var ScheduledByUserId:String;
+        public var StartedAt:Date;
+        public var Status:String;
+        public var TaskIdentifier:NameIdentifier;
+        public var TaskInstanceId:String;
         public var TotalPlayersInSegment:*;
         public var TotalPlayersProcessed:*;
 
@@ -23,16 +22,16 @@ package com.playfab.AdminModels
         {
             if(data == null)
                 return;
-            TaskInstanceId = data.TaskInstanceId;
-            TaskIdentifier = new NameIdentifier(data.TaskIdentifier);
-            StartedAt = PlayFabUtil.parseDate(data.StartedAt);
             CompletedAt = PlayFabUtil.parseDate(data.CompletedAt);
-            Status = data.Status;
-            PercentComplete = data.PercentComplete;
-            EstimatedSecondsRemaining = data.EstimatedSecondsRemaining;
-            ScheduledByUserId = data.ScheduledByUserId;
             ErrorMessage = data.ErrorMessage;
             ErrorWasFatal = data.ErrorWasFatal;
+            EstimatedSecondsRemaining = data.EstimatedSecondsRemaining;
+            PercentComplete = data.PercentComplete;
+            ScheduledByUserId = data.ScheduledByUserId;
+            StartedAt = PlayFabUtil.parseDate(data.StartedAt);
+            Status = data.Status;
+            TaskIdentifier = new NameIdentifier(data.TaskIdentifier);
+            TaskInstanceId = data.TaskInstanceId;
             TotalPlayersInSegment = data.TotalPlayersInSegment;
             TotalPlayersProcessed = data.TotalPlayersProcessed;
 

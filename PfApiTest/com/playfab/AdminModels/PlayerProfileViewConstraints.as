@@ -3,41 +3,43 @@ package com.playfab.AdminModels
 {
     public class PlayerProfileViewConstraints
     {
-        public var ShowDisplayName:Boolean;
-        public var ShowCreated:Boolean;
-        public var ShowOrigination:Boolean;
-        public var ShowLastLogin:Boolean;
+        public var ShowAvatarUrl:Boolean;
         public var ShowBannedUntil:Boolean;
-        public var ShowStatistics:Boolean;
         public var ShowCampaignAttributions:Boolean;
-        public var ShowPushNotificationRegistrations:Boolean;
-        public var ShowLinkedAccounts:Boolean;
         public var ShowContactEmailAddresses:Boolean;
+        public var ShowCreated:Boolean;
+        public var ShowDisplayName:Boolean;
+        public var ShowLastLogin:Boolean;
+        public var ShowLinkedAccounts:Boolean;
+        public var ShowLocations:Boolean;
+        public var ShowMemberships:Boolean;
+        public var ShowOrigination:Boolean;
+        public var ShowPushNotificationRegistrations:Boolean;
+        public var ShowStatistics:Boolean;
+        public var ShowTags:Boolean;
         public var ShowTotalValueToDateInUsd:Boolean;
         public var ShowValuesToDate:Boolean;
-        public var ShowTags:Boolean;
-        public var ShowLocations:Boolean;
-        public var ShowAvatarUrl:Boolean;
 
         public function PlayerProfileViewConstraints(data:Object=null)
         {
             if(data == null)
                 return;
-            ShowDisplayName = data.ShowDisplayName;
-            ShowCreated = data.ShowCreated;
-            ShowOrigination = data.ShowOrigination;
-            ShowLastLogin = data.ShowLastLogin;
+            ShowAvatarUrl = data.ShowAvatarUrl;
             ShowBannedUntil = data.ShowBannedUntil;
-            ShowStatistics = data.ShowStatistics;
             ShowCampaignAttributions = data.ShowCampaignAttributions;
-            ShowPushNotificationRegistrations = data.ShowPushNotificationRegistrations;
-            ShowLinkedAccounts = data.ShowLinkedAccounts;
             ShowContactEmailAddresses = data.ShowContactEmailAddresses;
+            ShowCreated = data.ShowCreated;
+            ShowDisplayName = data.ShowDisplayName;
+            ShowLastLogin = data.ShowLastLogin;
+            ShowLinkedAccounts = data.ShowLinkedAccounts;
+            ShowLocations = data.ShowLocations;
+            ShowMemberships = data.ShowMemberships;
+            ShowOrigination = data.ShowOrigination;
+            ShowPushNotificationRegistrations = data.ShowPushNotificationRegistrations;
+            ShowStatistics = data.ShowStatistics;
+            ShowTags = data.ShowTags;
             ShowTotalValueToDateInUsd = data.ShowTotalValueToDateInUsd;
             ShowValuesToDate = data.ShowValuesToDate;
-            ShowTags = data.ShowTags;
-            ShowLocations = data.ShowLocations;
-            ShowAvatarUrl = data.ShowAvatarUrl;
 
         }
     }

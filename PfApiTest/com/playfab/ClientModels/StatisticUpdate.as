@@ -4,16 +4,16 @@ package com.playfab.ClientModels
     public class StatisticUpdate
     {
         public var StatisticName:String;
-        public var Version:*;
         public var Value:int;
+        public var Version:*;
 
         public function StatisticUpdate(data:Object=null)
         {
             if(data == null)
                 return;
             StatisticName = data.StatisticName;
-            Version = data.Version;
             Value = data.Value;
+            Version = data.Version;
 
         }
     }

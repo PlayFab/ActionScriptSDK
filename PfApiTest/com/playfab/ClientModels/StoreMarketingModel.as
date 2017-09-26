@@ -3,16 +3,16 @@ package com.playfab.ClientModels
 {
     public class StoreMarketingModel
     {
-        public var DisplayName:String;
         public var Description:String;
+        public var DisplayName:String;
         public var Metadata:Object;
 
         public function StoreMarketingModel(data:Object=null)
         {
             if(data == null)
                 return;
-            DisplayName = data.DisplayName;
             Description = data.Description;
+            DisplayName = data.DisplayName;
             Metadata = data.Metadata;
 
         }

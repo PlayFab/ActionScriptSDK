@@ -3,35 +3,35 @@ package com.playfab.ClientModels
 {
     public class ExecuteCloudScriptResult
     {
+        public var APIRequestsIssued:int;
+        public var Error:ScriptExecutionError;
+        public var ExecutionTimeSeconds:Number;
         public var FunctionName:String;
-        public var Revision:int;
         public var FunctionResult:Object;
         public var FunctionResultTooLarge:*;
+        public var HttpRequestsIssued:int;
         public var Logs:Vector.<LogStatement>;
         public var LogsTooLarge:*;
-        public var ExecutionTimeSeconds:Number;
-        public var ProcessorTimeSeconds:Number;
         public var MemoryConsumedBytes:uint;
-        public var APIRequestsIssued:int;
-        public var HttpRequestsIssued:int;
-        public var Error:ScriptExecutionError;
+        public var ProcessorTimeSeconds:Number;
+        public var Revision:int;
 
         public function ExecuteCloudScriptResult(data:Object=null)
         {
             if(data == null)
                 return;
+            APIRequestsIssued = data.APIRequestsIssued;
+            Error = new ScriptExecutionError(data.Error);
+            ExecutionTimeSeconds = data.ExecutionTimeSeconds;
             FunctionName = data.FunctionName;
-            Revision = data.Revision;
             FunctionResult = data.FunctionResult;
             FunctionResultTooLarge = data.FunctionResultTooLarge;
+            HttpRequestsIssued = data.HttpRequestsIssued;
             if(data.Logs) { Logs = new Vector.<LogStatement>(); for(var Logs_iter:int = 0; Logs_iter < data.Logs.length; Logs_iter++) { Logs[Logs_iter] = new LogStatement(data.Logs[Logs_iter]); }}
             LogsTooLarge = data.LogsTooLarge;
-            ExecutionTimeSeconds = data.ExecutionTimeSeconds;
-            ProcessorTimeSeconds = data.ProcessorTimeSeconds;
             MemoryConsumedBytes = data.MemoryConsumedBytes;
-            APIRequestsIssued = data.APIRequestsIssued;
-            HttpRequestsIssued = data.HttpRequestsIssued;
-            Error = new ScriptExecutionError(data.Error);
+            ProcessorTimeSeconds = data.ProcessorTimeSeconds;
+            Revision = data.Revision;
 
         }
     }

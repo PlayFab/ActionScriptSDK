@@ -3,25 +3,25 @@ package com.playfab.ClientModels
 {
     public class GetFriendLeaderboardAroundPlayerRequest
     {
-        public var StatisticName:String;
+        public var IncludeFacebookFriends:*;
+        public var IncludeSteamFriends:*;
         public var MaxResultsCount:*;
         public var PlayFabId:String;
-        public var IncludeSteamFriends:*;
-        public var IncludeFacebookFriends:*;
-        public var Version:*;
         public var ProfileConstraints:PlayerProfileViewConstraints;
+        public var StatisticName:String;
+        public var Version:*;
 
         public function GetFriendLeaderboardAroundPlayerRequest(data:Object=null)
         {
             if(data == null)
                 return;
-            StatisticName = data.StatisticName;
+            IncludeFacebookFriends = data.IncludeFacebookFriends;
+            IncludeSteamFriends = data.IncludeSteamFriends;
             MaxResultsCount = data.MaxResultsCount;
             PlayFabId = data.PlayFabId;
-            IncludeSteamFriends = data.IncludeSteamFriends;
-            IncludeFacebookFriends = data.IncludeFacebookFriends;
-            Version = data.Version;
             ProfileConstraints = new PlayerProfileViewConstraints(data.ProfileConstraints);
+            StatisticName = data.StatisticName;
+            Version = data.Version;
 
         }
     }

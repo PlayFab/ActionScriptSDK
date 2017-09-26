@@ -5,10 +5,10 @@ package com.playfab.ClientModels
     {
         public var AccessToken:String;
         public var CreateAccount:*;
-        public var TitleId:String;
         public var EncryptedRequest:String;
-        public var PlayerSecret:String;
         public var InfoRequestParameters:GetPlayerCombinedInfoRequestParams;
+        public var PlayerSecret:String;
+        public var TitleId:String;
 
         public function LoginWithTwitchRequest(data:Object=null)
         {
@@ -16,10 +16,10 @@ package com.playfab.ClientModels
                 return;
             AccessToken = data.AccessToken;
             CreateAccount = data.CreateAccount;
-            TitleId = data.TitleId;
             EncryptedRequest = data.EncryptedRequest;
-            PlayerSecret = data.PlayerSecret;
             InfoRequestParameters = new GetPlayerCombinedInfoRequestParams(data.InfoRequestParameters);
+            PlayerSecret = data.PlayerSecret;
+            TitleId = data.TitleId;
 
         }
     }

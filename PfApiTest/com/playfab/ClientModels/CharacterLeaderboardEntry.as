@@ -3,25 +3,25 @@ package com.playfab.ClientModels
 {
     public class CharacterLeaderboardEntry
     {
-        public var PlayFabId:String;
         public var CharacterId:String;
         public var CharacterName:String;
-        public var DisplayName:String;
         public var CharacterType:String;
-        public var StatValue:int;
+        public var DisplayName:String;
+        public var PlayFabId:String;
         public var Position:int;
+        public var StatValue:int;
 
         public function CharacterLeaderboardEntry(data:Object=null)
         {
             if(data == null)
                 return;
-            PlayFabId = data.PlayFabId;
             CharacterId = data.CharacterId;
             CharacterName = data.CharacterName;
-            DisplayName = data.DisplayName;
             CharacterType = data.CharacterType;
-            StatValue = data.StatValue;
+            DisplayName = data.DisplayName;
+            PlayFabId = data.PlayFabId;
             Position = data.Position;
+            StatValue = data.StatValue;
 
         }
     }

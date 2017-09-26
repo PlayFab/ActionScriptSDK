@@ -3,9 +3,9 @@ package com.playfab.ServerModels
 {
     public class LocationModel
     {
+        public var City:String;
         public var ContinentCode:String;
         public var CountryCode:String;
-        public var City:String;
         public var Latitude:*;
         public var Longitude:*;
 
@@ -13,9 +13,9 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
+            City = data.City;
             ContinentCode = data.ContinentCode;
             CountryCode = data.CountryCode;
-            City = data.City;
             Latitude = data.Latitude;
             Longitude = data.Longitude;
 

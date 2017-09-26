@@ -333,6 +333,12 @@ package com.playfab
         public static const EntityTokenInvalid:int = 1335;
         public static const EntityTokenExpired:int = 1336;
         public static const EntityTokenRevoked:int = 1337;
+        public static const InvalidProductForSubscription:int = 1338;
+        public static const XboxInaccessible:int = 1339;
+        public static const SubscriptionAlreadyTaken:int = 1340;
+        public static const SmtpAddonNotEnabled:int = 1341;
+        public static const APIConcurrentRequestLimitExceeded:int = 1342;
+        public static const XboxRejectedXSTSExchangeRequest:int = 1343;
 
 
         public function PlayFabError(data:Object=null)
@@ -352,5 +358,15 @@ package com.playfab
         public var errorCode:int; // PlayFab error code
         public var errorMessage:String; // PlayFab specific error message
         public var errorDetails:Object; // Additional error details: frequently null, but if errorMessage is vague, this may contain more information
+
+        public function GenerateErrorReport() : String
+        {
+            var message:String = errorMessage;
+            for (var key:String in errorDetails) {
+                message += "\n";
+                message += key + ": " + errorDetails[key];
+            }
+            return message;
+        }
     }
 }

@@ -5,17 +5,17 @@ package com.playfab.MatchmakerModels
 
     public class VirtualCurrencyRechargeTime
     {
-        public var SecondsToRecharge:int;
-        public var RechargeTime:Date;
         public var RechargeMax:int;
+        public var RechargeTime:Date;
+        public var SecondsToRecharge:int;
 
         public function VirtualCurrencyRechargeTime(data:Object=null)
         {
             if(data == null)
                 return;
-            SecondsToRecharge = data.SecondsToRecharge;
-            RechargeTime = PlayFabUtil.parseDate(data.RechargeTime);
             RechargeMax = data.RechargeMax;
+            RechargeTime = PlayFabUtil.parseDate(data.RechargeTime);
+            SecondsToRecharge = data.SecondsToRecharge;
 
         }
     }

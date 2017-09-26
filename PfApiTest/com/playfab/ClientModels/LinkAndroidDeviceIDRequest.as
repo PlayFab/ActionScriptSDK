@@ -3,19 +3,19 @@ package com.playfab.ClientModels
 {
     public class LinkAndroidDeviceIDRequest
     {
-        public var AndroidDeviceId:String;
-        public var OS:String;
         public var AndroidDevice:String;
+        public var AndroidDeviceId:String;
         public var ForceLink:*;
+        public var OS:String;
 
         public function LinkAndroidDeviceIDRequest(data:Object=null)
         {
             if(data == null)
                 return;
-            AndroidDeviceId = data.AndroidDeviceId;
-            OS = data.OS;
             AndroidDevice = data.AndroidDevice;
+            AndroidDeviceId = data.AndroidDeviceId;
             ForceLink = data.ForceLink;
+            OS = data.OS;
 
         }
     }

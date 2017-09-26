@@ -5,17 +5,17 @@ package com.playfab.ClientModels
 
     public class AdCampaignAttributionModel
     {
-        public var Platform:String;
-        public var CampaignId:String;
         public var AttributedAt:Date;
+        public var CampaignId:String;
+        public var Platform:String;
 
         public function AdCampaignAttributionModel(data:Object=null)
         {
             if(data == null)
                 return;
-            Platform = data.Platform;
-            CampaignId = data.CampaignId;
             AttributedAt = PlayFabUtil.parseDate(data.AttributedAt);
+            CampaignId = data.CampaignId;
+            Platform = data.Platform;
 
         }
     }

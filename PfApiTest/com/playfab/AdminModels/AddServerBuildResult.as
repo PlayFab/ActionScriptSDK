@@ -5,31 +5,31 @@ package com.playfab.AdminModels
 
     public class AddServerBuildResult
     {
-        public var BuildId:String;
         public var ActiveRegions:Vector.<String>;
+        public var BuildId:String;
+        public var CommandLineTemplate:String;
+        public var Comment:String;
+        public var ExecutablePath:String;
         public var MaxGamesPerHost:int;
         public var MinFreeGameSlots:int;
-        public var CommandLineTemplate:String;
-        public var ExecutablePath:String;
-        public var Comment:String;
+        public var Status:String;
         public var Timestamp:Date;
         public var TitleId:String;
-        public var Status:String;
 
         public function AddServerBuildResult(data:Object=null)
         {
             if(data == null)
                 return;
-            BuildId = data.BuildId;
             ActiveRegions = data.ActiveRegions ? Vector.<String>(data.ActiveRegions) : null;
+            BuildId = data.BuildId;
+            CommandLineTemplate = data.CommandLineTemplate;
+            Comment = data.Comment;
+            ExecutablePath = data.ExecutablePath;
             MaxGamesPerHost = data.MaxGamesPerHost;
             MinFreeGameSlots = data.MinFreeGameSlots;
-            CommandLineTemplate = data.CommandLineTemplate;
-            ExecutablePath = data.ExecutablePath;
-            Comment = data.Comment;
+            Status = data.Status;
             Timestamp = PlayFabUtil.parseDate(data.Timestamp);
             TitleId = data.TitleId;
-            Status = data.Status;
 
         }
     }

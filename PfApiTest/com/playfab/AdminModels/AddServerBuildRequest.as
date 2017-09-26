@@ -3,11 +3,11 @@ package com.playfab.AdminModels
 {
     public class AddServerBuildRequest
     {
+        public var ActiveRegions:Vector.<String>;
         public var BuildId:String;
         public var CommandLineTemplate:String;
-        public var ExecutablePath:String;
-        public var ActiveRegions:Vector.<String>;
         public var Comment:String;
+        public var ExecutablePath:String;
         public var MaxGamesPerHost:int;
         public var MinFreeGameSlots:int;
 
@@ -15,11 +15,11 @@ package com.playfab.AdminModels
         {
             if(data == null)
                 return;
+            ActiveRegions = data.ActiveRegions ? Vector.<String>(data.ActiveRegions) : null;
             BuildId = data.BuildId;
             CommandLineTemplate = data.CommandLineTemplate;
-            ExecutablePath = data.ExecutablePath;
-            ActiveRegions = data.ActiveRegions ? Vector.<String>(data.ActiveRegions) : null;
             Comment = data.Comment;
+            ExecutablePath = data.ExecutablePath;
             MaxGamesPerHost = data.MaxGamesPerHost;
             MinFreeGameSlots = data.MinFreeGameSlots;
 

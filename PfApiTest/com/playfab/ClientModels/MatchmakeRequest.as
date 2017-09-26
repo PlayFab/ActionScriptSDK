@@ -4,12 +4,12 @@ package com.playfab.ClientModels
     public class MatchmakeRequest
     {
         public var BuildVersion:String;
-        public var Region:String;
+        public var CharacterId:String;
         public var GameMode:String;
         public var LobbyId:String;
-        public var StatisticName:String;
-        public var CharacterId:String;
+        public var Region:String;
         public var StartNewIfNoneFound:*;
+        public var StatisticName:String;
         public var TagFilter:CollectionFilter;
 
         public function MatchmakeRequest(data:Object=null)
@@ -17,12 +17,12 @@ package com.playfab.ClientModels
             if(data == null)
                 return;
             BuildVersion = data.BuildVersion;
-            Region = data.Region;
+            CharacterId = data.CharacterId;
             GameMode = data.GameMode;
             LobbyId = data.LobbyId;
-            StatisticName = data.StatisticName;
-            CharacterId = data.CharacterId;
+            Region = data.Region;
             StartNewIfNoneFound = data.StartNewIfNoneFound;
+            StatisticName = data.StatisticName;
             TagFilter = new CollectionFilter(data.TagFilter);
 
         }

@@ -3,9 +3,9 @@ package com.playfab.ClientModels
 {
     public class CurrentGamesRequest
     {
-        public var Region:String;
         public var BuildVersion:String;
         public var GameMode:String;
+        public var Region:String;
         public var StatisticName:String;
         public var TagFilter:CollectionFilter;
 
@@ -13,9 +13,9 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-            Region = data.Region;
             BuildVersion = data.BuildVersion;
             GameMode = data.GameMode;
+            Region = data.Region;
             StatisticName = data.StatisticName;
             TagFilter = new CollectionFilter(data.TagFilter);
 

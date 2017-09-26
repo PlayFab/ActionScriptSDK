@@ -5,9 +5,9 @@ package com.playfab.ClientModels
     {
         public var FunctionName:String;
         public var FunctionParameter:Object;
+        public var GeneratePlayStreamEvent:*;
         public var RevisionSelection:String;
         public var SpecificRevision:*;
-        public var GeneratePlayStreamEvent:*;
 
         public function ExecuteCloudScriptRequest(data:Object=null)
         {
@@ -15,9 +15,9 @@ package com.playfab.ClientModels
                 return;
             FunctionName = data.FunctionName;
             FunctionParameter = data.FunctionParameter;
+            GeneratePlayStreamEvent = data.GeneratePlayStreamEvent;
             RevisionSelection = data.RevisionSelection;
             SpecificRevision = data.SpecificRevision;
-            GeneratePlayStreamEvent = data.GeneratePlayStreamEvent;
 
         }
     }
