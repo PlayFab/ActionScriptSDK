@@ -8,8 +8,6 @@ package com.playfab.ClientModels
         public var BuildVersion:String;
         public var GameMode:String;
         public var GameServerData:String;
-        // Deprecated, please use GameServerStateEnum
-        public var GameServerState:*;
         public var GameServerStateEnum:String;
         public var LastHeartbeat:Date;
         public var LobbyID:String;
@@ -29,7 +27,6 @@ package com.playfab.ClientModels
             BuildVersion = data.BuildVersion;
             GameMode = data.GameMode;
             GameServerData = data.GameServerData;
-            GameServerState = data.GameServerState;
             GameServerStateEnum = data.GameServerStateEnum;
             LastHeartbeat = PlayFabUtil.parseDate(data.LastHeartbeat);
             LobbyID = data.LobbyID;
