@@ -3,9 +3,11 @@ package com.playfab.ServerModels
 {
     public class PushNotificationPackage
     {
+        public var Badge:int;
         public var CustomData:String;
         public var Icon:String;
         public var Message:String;
+        // Deprecated, please use CustomData
         public var ScheduleDate:String;
         public var Sound:String;
         public var Title:String;
@@ -14,6 +16,7 @@ package com.playfab.ServerModels
         {
             if(data == null)
                 return;
+            Badge = data.Badge;
             CustomData = data.CustomData;
             Icon = data.Icon;
             Message = data.Message;
