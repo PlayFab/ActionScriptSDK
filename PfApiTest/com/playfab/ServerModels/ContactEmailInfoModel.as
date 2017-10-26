@@ -5,6 +5,7 @@ package com.playfab.ServerModels
     {
         public var EmailAddress:String;
         public var Name:String;
+        public var VerificationStatus:String;
 
         public function ContactEmailInfoModel(data:Object=null)
         {
@@ -12,6 +13,7 @@ package com.playfab.ServerModels
                 return;
             EmailAddress = data.EmailAddress;
             Name = data.Name;
+            VerificationStatus = data.VerificationStatus;
 
         }
     }

@@ -8,6 +8,7 @@ package com.playfab.MatchmakerModels
         public var LobbyId:String;
         public var Region:String;
         public var ServerHost:String;
+        public var ServerIPV6Address:String;
         public var ServerPort:String;
         public var Tags:Object;
 
@@ -20,6 +21,7 @@ package com.playfab.MatchmakerModels
             LobbyId = data.LobbyId;
             Region = data.Region;
             ServerHost = data.ServerHost;
+            ServerIPV6Address = data.ServerIPV6Address;
             ServerPort = data.ServerPort;
             Tags = data.Tags;
 
