@@ -7,6 +7,7 @@ package com.playfab.ClientModels
         public var LobbyID:String;
         public var PollWaitTimeMS:*;
         public var ServerHostname:String;
+        public var ServerIPV6Address:String;
         public var ServerPort:*;
         public var Status:String;
         public var Ticket:String;
@@ -19,6 +20,7 @@ package com.playfab.ClientModels
             LobbyID = data.LobbyID;
             PollWaitTimeMS = data.PollWaitTimeMS;
             ServerHostname = data.ServerHostname;
+            ServerIPV6Address = data.ServerIPV6Address;
             ServerPort = data.ServerPort;
             Status = data.Status;
             Ticket = data.Ticket;

@@ -339,6 +339,12 @@ package com.playfab
         public static const SmtpAddonNotEnabled:int = 1341;
         public static const APIConcurrentRequestLimitExceeded:int = 1342;
         public static const XboxRejectedXSTSExchangeRequest:int = 1343;
+        public static const VariableNotDefined:int = 1344;
+        public static const TemplateVersionNotDefined:int = 1345;
+        public static const FileTooLarge:int = 1346;
+        public static const TitleDeleted:int = 1347;
+        public static const TitleContainsUserAccounts:int = 1348;
+        public static const TitleDeletionPlayerCleanupFailure:int = 1349;
 
 
         public function PlayFabError(data:Object=null)

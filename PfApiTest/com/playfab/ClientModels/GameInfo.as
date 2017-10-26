@@ -16,6 +16,7 @@ package com.playfab.ClientModels
         public var Region:String;
         public var RunTime:uint;
         public var ServerHostname:String;
+        public var ServerIPV6Address:String;
         public var ServerPort:*;
         public var StatisticName:String;
         public var Tags:Object;
@@ -35,6 +36,7 @@ package com.playfab.ClientModels
             Region = data.Region;
             RunTime = data.RunTime;
             ServerHostname = data.ServerHostname;
+            ServerIPV6Address = data.ServerIPV6Address;
             ServerPort = data.ServerPort;
             StatisticName = data.StatisticName;
             Tags = data.Tags;

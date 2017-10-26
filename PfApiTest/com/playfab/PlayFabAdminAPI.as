@@ -420,8 +420,7 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Admin/DeleteTask", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
-        [Deprecated(message="The DeleteUsers API and its associated datatypes are scheduled for deprecation. Use DeleteUser instead.", replacement="DeleteUser")]
-        public static function DeleteUsers(request:DeleteUsersRequest, onComplete:Function, onError:Function):void
+        public static function DeleteTitle(request:DeleteTitleRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
             var requetJson:String = JSON.stringify( request );
@@ -437,14 +436,14 @@ package com.playfab
                 }
                 else
                 {
-                    var result:DeleteUsersResult = new DeleteUsersResult(resultData);
+                    var result:DeleteTitleResult = new DeleteTitleResult(resultData);
 
                     if(onComplete != null)
                         onComplete(result);
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Admin/DeleteUsers", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Admin/DeleteTitle", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetActionsOnPlayersInSegmentTaskInstance(request:GetTaskInstanceRequest, onComplete:Function, onError:Function):void
@@ -1667,33 +1666,6 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Admin/ResetCharacterStatistics", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
-        }
-
-        [Deprecated(message="The ResetUsers API and its associated datatypes are scheduled for deprecation. Use DeletePlayer instead.", replacement="DeletePlayer")]
-        public static function ResetUsers(request:ResetUsersRequest, onComplete:Function, onError:Function):void
-        {
-            if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-            var requetJson:String = JSON.stringify( request );
-
-            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
-            {
-                if(error)
-                {
-                    if(onError != null)
-                        onError(error);
-                    if(PlayFabSettings.GlobalErrorHandler != null)
-                        PlayFabSettings.GlobalErrorHandler(error);
-                }
-                else
-                {
-                    var result:BlankResult = new BlankResult(resultData);
-
-                    if(onComplete != null)
-                        onComplete(result);
-                }
-            }
-
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Admin/ResetUsers", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function ResetUserStatistics(request:ResetUserStatisticsRequest, onComplete:Function, onError:Function):void

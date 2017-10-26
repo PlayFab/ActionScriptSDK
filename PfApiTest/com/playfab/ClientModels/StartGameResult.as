@@ -7,6 +7,7 @@ package com.playfab.ClientModels
         public var LobbyID:String;
         public var Password:String;
         public var ServerHostname:String;
+        public var ServerIPV6Address:String;
         public var ServerPort:*;
         public var Ticket:String;
 
@@ -18,6 +19,7 @@ package com.playfab.ClientModels
             LobbyID = data.LobbyID;
             Password = data.Password;
             ServerHostname = data.ServerHostname;
+            ServerIPV6Address = data.ServerIPV6Address;
             ServerPort = data.ServerPort;
             Ticket = data.Ticket;
 
