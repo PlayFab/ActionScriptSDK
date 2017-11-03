@@ -345,6 +345,9 @@ package com.playfab
         public static const TitleDeleted:int = 1347;
         public static const TitleContainsUserAccounts:int = 1348;
         public static const TitleDeletionPlayerCleanupFailure:int = 1349;
+        public static const EntityFileOperationPending:int = 1350;
+        public static const NoEntityFileOperationPending:int = 1351;
+        public static const EntityProfileVersionMismatch:int = 1352;
 
 
         public function PlayFabError(data:Object=null)
