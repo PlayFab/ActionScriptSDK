@@ -186,6 +186,32 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Admin/BanUsers", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
+        public static function CheckLimitedEditionItemAvailability(request:CheckLimitedEditionItemAvailabilityRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:CheckLimitedEditionItemAvailabilityResult = new CheckLimitedEditionItemAvailabilityResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Admin/CheckLimitedEditionItemAvailability", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+        }
+
         public static function CreateActionsOnPlayersInSegmentTask(request:CreateActionsOnPlayerSegmentTaskRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
@@ -1458,6 +1484,32 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Admin/GrantItemsToUsers", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+        }
+
+        public static function IncrementLimitedEditionItemAvailability(request:IncrementLimitedEditionItemAvailabilityRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:IncrementLimitedEditionItemAvailabilityResult = new IncrementLimitedEditionItemAvailabilityResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Admin/IncrementLimitedEditionItemAvailability", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function IncrementPlayerStatisticVersion(request:IncrementPlayerStatisticVersionRequest, onComplete:Function, onError:Function):void

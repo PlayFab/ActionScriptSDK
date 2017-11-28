@@ -6,7 +6,7 @@ package com.playfab
     {
         public static function AcceptTrade(request:AcceptTradeRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -27,12 +27,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/AcceptTrade", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/AcceptTrade", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function AddFriend(request:AddFriendRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -53,12 +53,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/AddFriend", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/AddFriend", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function AddGenericID(request:AddGenericIDRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -79,12 +79,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/AddGenericID", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/AddGenericID", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function AddOrUpdateContactEmail(request:AddOrUpdateContactEmailRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -105,12 +105,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/AddOrUpdateContactEmail", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/AddOrUpdateContactEmail", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function AddSharedGroupMembers(request:AddSharedGroupMembersRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -131,12 +131,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/AddSharedGroupMembers", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/AddSharedGroupMembers", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function AddUsernamePassword(request:AddUsernamePasswordRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -157,12 +157,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/AddUsernamePassword", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/AddUsernamePassword", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function AddUserVirtualCurrency(request:AddUserVirtualCurrencyRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -183,12 +183,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/AddUserVirtualCurrency", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/AddUserVirtualCurrency", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function AndroidDevicePushNotificationRegistration(request:AndroidDevicePushNotificationRegistrationRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -209,12 +209,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/AndroidDevicePushNotificationRegistration", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/AndroidDevicePushNotificationRegistration", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function AttributeInstall(request:AttributeInstallRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -237,12 +237,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/AttributeInstall", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/AttributeInstall", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function CancelTrade(request:CancelTradeRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -263,12 +263,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/CancelTrade", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/CancelTrade", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function ConfirmPurchase(request:ConfirmPurchaseRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -289,12 +289,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ConfirmPurchase", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ConfirmPurchase", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function ConsumeItem(request:ConsumeItemRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -315,12 +315,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ConsumeItem", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ConsumeItem", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function CreateSharedGroup(request:CreateSharedGroupRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -341,12 +341,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/CreateSharedGroup", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/CreateSharedGroup", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function ExecuteCloudScript(request:ExecuteCloudScriptRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -367,12 +367,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ExecuteCloudScript", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ExecuteCloudScript", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetAccountInfo(request:GetAccountInfoRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -393,12 +393,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetAccountInfo", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetAccountInfo", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetAllUsersCharacters(request:ListUsersCharactersRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -419,12 +419,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetAllUsersCharacters", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetAllUsersCharacters", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetCatalogItems(request:GetCatalogItemsRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -445,12 +445,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetCatalogItems", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetCatalogItems", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetCharacterData(request:GetCharacterDataRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -471,12 +471,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetCharacterData", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetCharacterData", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetCharacterInventory(request:GetCharacterInventoryRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -497,12 +497,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetCharacterInventory", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetCharacterInventory", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetCharacterLeaderboard(request:GetCharacterLeaderboardRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -523,12 +523,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetCharacterLeaderboard", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetCharacterLeaderboard", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetCharacterReadOnlyData(request:GetCharacterDataRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -549,12 +549,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetCharacterReadOnlyData", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetCharacterReadOnlyData", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetCharacterStatistics(request:GetCharacterStatisticsRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -575,12 +575,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetCharacterStatistics", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetCharacterStatistics", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetContentDownloadUrl(request:GetContentDownloadUrlRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -601,12 +601,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetContentDownloadUrl", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetContentDownloadUrl", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetCurrentGames(request:CurrentGamesRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -627,12 +627,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetCurrentGames", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetCurrentGames", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetFriendLeaderboard(request:GetFriendLeaderboardRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -653,12 +653,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetFriendLeaderboard", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetFriendLeaderboard", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetFriendLeaderboardAroundPlayer(request:GetFriendLeaderboardAroundPlayerRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -679,12 +679,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetFriendLeaderboardAroundPlayer", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetFriendLeaderboardAroundPlayer", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetFriendsList(request:GetFriendsListRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -705,12 +705,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetFriendsList", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetFriendsList", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetGameServerRegions(request:GameServerRegionsRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -731,12 +731,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetGameServerRegions", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetGameServerRegions", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetLeaderboard(request:GetLeaderboardRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -757,12 +757,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetLeaderboard", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetLeaderboard", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetLeaderboardAroundCharacter(request:GetLeaderboardAroundCharacterRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -783,12 +783,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetLeaderboardAroundCharacter", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetLeaderboardAroundCharacter", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetLeaderboardAroundPlayer(request:GetLeaderboardAroundPlayerRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -809,12 +809,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetLeaderboardAroundPlayer", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetLeaderboardAroundPlayer", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetLeaderboardForUserCharacters(request:GetLeaderboardForUsersCharactersRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -835,12 +835,38 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetLeaderboardForUserCharacters", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetLeaderboardForUserCharacters", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
+        }
+
+        public static function GetPaymentToken(request:GetPaymentTokenRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:GetPaymentTokenResult = new GetPaymentTokenResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPaymentToken", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetPhotonAuthenticationToken(request:GetPhotonAuthenticationTokenRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -861,12 +887,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPhotonAuthenticationToken", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPhotonAuthenticationToken", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetPlayerCombinedInfo(request:GetPlayerCombinedInfoRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -887,12 +913,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayerCombinedInfo", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayerCombinedInfo", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetPlayerProfile(request:GetPlayerProfileRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -913,12 +939,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayerProfile", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayerProfile", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetPlayerSegments(request:GetPlayerSegmentsRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -939,12 +965,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayerSegments", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayerSegments", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetPlayerStatistics(request:GetPlayerStatisticsRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -965,12 +991,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayerStatistics", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayerStatistics", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetPlayerStatisticVersions(request:GetPlayerStatisticVersionsRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -991,12 +1017,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayerStatisticVersions", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayerStatisticVersions", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetPlayerTags(request:GetPlayerTagsRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1017,12 +1043,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayerTags", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayerTags", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetPlayerTrades(request:GetPlayerTradesRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1043,12 +1069,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayerTrades", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayerTrades", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetPlayFabIDsFromFacebookIDs(request:GetPlayFabIDsFromFacebookIDsRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1069,12 +1095,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayFabIDsFromFacebookIDs", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayFabIDsFromFacebookIDs", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetPlayFabIDsFromGameCenterIDs(request:GetPlayFabIDsFromGameCenterIDsRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1095,12 +1121,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayFabIDsFromGameCenterIDs", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayFabIDsFromGameCenterIDs", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetPlayFabIDsFromGenericIDs(request:GetPlayFabIDsFromGenericIDsRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1121,12 +1147,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayFabIDsFromGenericIDs", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayFabIDsFromGenericIDs", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetPlayFabIDsFromGoogleIDs(request:GetPlayFabIDsFromGoogleIDsRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1147,12 +1173,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayFabIDsFromGoogleIDs", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayFabIDsFromGoogleIDs", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetPlayFabIDsFromKongregateIDs(request:GetPlayFabIDsFromKongregateIDsRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1173,12 +1199,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayFabIDsFromKongregateIDs", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayFabIDsFromKongregateIDs", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetPlayFabIDsFromSteamIDs(request:GetPlayFabIDsFromSteamIDsRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1199,12 +1225,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayFabIDsFromSteamIDs", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayFabIDsFromSteamIDs", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetPlayFabIDsFromTwitchIDs(request:GetPlayFabIDsFromTwitchIDsRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1225,12 +1251,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayFabIDsFromTwitchIDs", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayFabIDsFromTwitchIDs", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetPublisherData(request:GetPublisherDataRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1251,12 +1277,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPublisherData", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPublisherData", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetPurchase(request:GetPurchaseRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1277,12 +1303,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPurchase", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPurchase", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetSharedGroupData(request:GetSharedGroupDataRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1303,12 +1329,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetSharedGroupData", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetSharedGroupData", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetStoreItems(request:GetStoreItemsRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1329,12 +1355,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetStoreItems", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetStoreItems", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetTime(request:GetTimeRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1355,12 +1381,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetTime", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetTime", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetTitleData(request:GetTitleDataRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1381,12 +1407,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetTitleData", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetTitleData", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetTitleNews(request:GetTitleNewsRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1407,7 +1433,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetTitleNews", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetTitleNews", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetTitlePublicKey(request:GetTitlePublicKeyRequest, onComplete:Function, onError:Function):void
@@ -1438,7 +1464,7 @@ package com.playfab
 
         public static function GetTradeStatus(request:GetTradeStatusRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1459,12 +1485,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetTradeStatus", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetTradeStatus", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetUserData(request:GetUserDataRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1485,12 +1511,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetUserData", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetUserData", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetUserInventory(request:GetUserInventoryRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1511,12 +1537,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetUserInventory", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetUserInventory", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetUserPublisherData(request:GetUserDataRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1537,12 +1563,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetUserPublisherData", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetUserPublisherData", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetUserPublisherReadOnlyData(request:GetUserDataRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1563,12 +1589,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetUserPublisherReadOnlyData", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetUserPublisherReadOnlyData", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetUserReadOnlyData(request:GetUserDataRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1589,7 +1615,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetUserReadOnlyData", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetUserReadOnlyData", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetWindowsHelloChallenge(request:GetWindowsHelloChallengeRequest, onComplete:Function, onError:Function):void
@@ -1620,7 +1646,7 @@ package com.playfab
 
         public static function GrantCharacterToUser(request:GrantCharacterToUserRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1641,12 +1667,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GrantCharacterToUser", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GrantCharacterToUser", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function LinkAndroidDeviceID(request:LinkAndroidDeviceIDRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1667,12 +1693,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkAndroidDeviceID", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkAndroidDeviceID", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function LinkCustomID(request:LinkCustomIDRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1693,12 +1719,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkCustomID", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkCustomID", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function LinkFacebookAccount(request:LinkFacebookAccountRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1719,12 +1745,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkFacebookAccount", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkFacebookAccount", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function LinkGameCenterAccount(request:LinkGameCenterAccountRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1745,12 +1771,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkGameCenterAccount", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkGameCenterAccount", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function LinkGoogleAccount(request:LinkGoogleAccountRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1771,12 +1797,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkGoogleAccount", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkGoogleAccount", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function LinkIOSDeviceID(request:LinkIOSDeviceIDRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1797,12 +1823,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkIOSDeviceID", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkIOSDeviceID", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function LinkKongregate(request:LinkKongregateAccountRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1823,12 +1849,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkKongregate", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkKongregate", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function LinkSteamAccount(request:LinkSteamAccountRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1849,12 +1875,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkSteamAccount", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkSteamAccount", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function LinkTwitch(request:LinkTwitchAccountRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1875,12 +1901,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkTwitch", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkTwitch", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function LinkWindowsHello(request:LinkWindowsHelloAccountRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1901,7 +1927,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkWindowsHello", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkWindowsHello", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function LoginWithAndroidDeviceID(request:LoginWithAndroidDeviceIDRequest, onComplete:Function, onError:Function):void
@@ -1922,7 +1948,7 @@ package com.playfab
                 else
                 {
                     var result:LoginResult = new LoginResult(resultData);
-                    authKey = result.SessionTicket != null ? result.SessionTicket : authKey;
+                    PlayFabSettings.ClientSessionTicket = result.SessionTicket != null ? result.SessionTicket : PlayFabSettings.ClientSessionTicket;
                     MultiStepClientLogin(result.SettingsForUser.NeedsAttribution);
 
                     if(onComplete != null)
@@ -1951,7 +1977,7 @@ package com.playfab
                 else
                 {
                     var result:LoginResult = new LoginResult(resultData);
-                    authKey = result.SessionTicket != null ? result.SessionTicket : authKey;
+                    PlayFabSettings.ClientSessionTicket = result.SessionTicket != null ? result.SessionTicket : PlayFabSettings.ClientSessionTicket;
                     MultiStepClientLogin(result.SettingsForUser.NeedsAttribution);
 
                     if(onComplete != null)
@@ -1980,7 +2006,7 @@ package com.playfab
                 else
                 {
                     var result:LoginResult = new LoginResult(resultData);
-                    authKey = result.SessionTicket != null ? result.SessionTicket : authKey;
+                    PlayFabSettings.ClientSessionTicket = result.SessionTicket != null ? result.SessionTicket : PlayFabSettings.ClientSessionTicket;
                     MultiStepClientLogin(result.SettingsForUser.NeedsAttribution);
 
                     if(onComplete != null)
@@ -2009,7 +2035,7 @@ package com.playfab
                 else
                 {
                     var result:LoginResult = new LoginResult(resultData);
-                    authKey = result.SessionTicket != null ? result.SessionTicket : authKey;
+                    PlayFabSettings.ClientSessionTicket = result.SessionTicket != null ? result.SessionTicket : PlayFabSettings.ClientSessionTicket;
                     MultiStepClientLogin(result.SettingsForUser.NeedsAttribution);
 
                     if(onComplete != null)
@@ -2038,7 +2064,7 @@ package com.playfab
                 else
                 {
                     var result:LoginResult = new LoginResult(resultData);
-                    authKey = result.SessionTicket != null ? result.SessionTicket : authKey;
+                    PlayFabSettings.ClientSessionTicket = result.SessionTicket != null ? result.SessionTicket : PlayFabSettings.ClientSessionTicket;
                     MultiStepClientLogin(result.SettingsForUser.NeedsAttribution);
 
                     if(onComplete != null)
@@ -2067,7 +2093,7 @@ package com.playfab
                 else
                 {
                     var result:LoginResult = new LoginResult(resultData);
-                    authKey = result.SessionTicket != null ? result.SessionTicket : authKey;
+                    PlayFabSettings.ClientSessionTicket = result.SessionTicket != null ? result.SessionTicket : PlayFabSettings.ClientSessionTicket;
                     MultiStepClientLogin(result.SettingsForUser.NeedsAttribution);
 
                     if(onComplete != null)
@@ -2096,7 +2122,7 @@ package com.playfab
                 else
                 {
                     var result:LoginResult = new LoginResult(resultData);
-                    authKey = result.SessionTicket != null ? result.SessionTicket : authKey;
+                    PlayFabSettings.ClientSessionTicket = result.SessionTicket != null ? result.SessionTicket : PlayFabSettings.ClientSessionTicket;
                     MultiStepClientLogin(result.SettingsForUser.NeedsAttribution);
 
                     if(onComplete != null)
@@ -2125,7 +2151,7 @@ package com.playfab
                 else
                 {
                     var result:LoginResult = new LoginResult(resultData);
-                    authKey = result.SessionTicket != null ? result.SessionTicket : authKey;
+                    PlayFabSettings.ClientSessionTicket = result.SessionTicket != null ? result.SessionTicket : PlayFabSettings.ClientSessionTicket;
                     MultiStepClientLogin(result.SettingsForUser.NeedsAttribution);
 
                     if(onComplete != null)
@@ -2154,7 +2180,7 @@ package com.playfab
                 else
                 {
                     var result:LoginResult = new LoginResult(resultData);
-                    authKey = result.SessionTicket != null ? result.SessionTicket : authKey;
+                    PlayFabSettings.ClientSessionTicket = result.SessionTicket != null ? result.SessionTicket : PlayFabSettings.ClientSessionTicket;
                     MultiStepClientLogin(result.SettingsForUser.NeedsAttribution);
 
                     if(onComplete != null)
@@ -2183,7 +2209,7 @@ package com.playfab
                 else
                 {
                     var result:LoginResult = new LoginResult(resultData);
-                    authKey = result.SessionTicket != null ? result.SessionTicket : authKey;
+                    PlayFabSettings.ClientSessionTicket = result.SessionTicket != null ? result.SessionTicket : PlayFabSettings.ClientSessionTicket;
                     MultiStepClientLogin(result.SettingsForUser.NeedsAttribution);
 
                     if(onComplete != null)
@@ -2212,7 +2238,7 @@ package com.playfab
                 else
                 {
                     var result:LoginResult = new LoginResult(resultData);
-                    authKey = result.SessionTicket != null ? result.SessionTicket : authKey;
+                    PlayFabSettings.ClientSessionTicket = result.SessionTicket != null ? result.SessionTicket : PlayFabSettings.ClientSessionTicket;
                     MultiStepClientLogin(result.SettingsForUser.NeedsAttribution);
 
                     if(onComplete != null)
@@ -2241,7 +2267,7 @@ package com.playfab
                 else
                 {
                     var result:LoginResult = new LoginResult(resultData);
-                    authKey = result.SessionTicket != null ? result.SessionTicket : authKey;
+                    PlayFabSettings.ClientSessionTicket = result.SessionTicket != null ? result.SessionTicket : PlayFabSettings.ClientSessionTicket;
                     MultiStepClientLogin(result.SettingsForUser.NeedsAttribution);
 
                     if(onComplete != null)
@@ -2254,7 +2280,7 @@ package com.playfab
 
         public static function Matchmake(request:MatchmakeRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -2275,12 +2301,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/Matchmake", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/Matchmake", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function OpenTrade(request:OpenTradeRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -2301,12 +2327,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/OpenTrade", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/OpenTrade", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function PayForPurchase(request:PayForPurchaseRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -2327,12 +2353,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/PayForPurchase", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/PayForPurchase", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function PurchaseItem(request:PurchaseItemRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -2353,12 +2379,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/PurchaseItem", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/PurchaseItem", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function RedeemCoupon(request:RedeemCouponRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -2379,12 +2405,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/RedeemCoupon", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/RedeemCoupon", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function RegisterForIOSPushNotification(request:RegisterForIOSPushNotificationRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -2405,7 +2431,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/RegisterForIOSPushNotification", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/RegisterForIOSPushNotification", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function RegisterPlayFabUser(request:RegisterPlayFabUserRequest, onComplete:Function, onError:Function):void
@@ -2426,7 +2452,7 @@ package com.playfab
                 else
                 {
                     var result:RegisterPlayFabUserResult = new RegisterPlayFabUserResult(resultData);
-                    authKey = result.SessionTicket != null ? result.SessionTicket : authKey;
+                    PlayFabSettings.ClientSessionTicket = result.SessionTicket != null ? result.SessionTicket : PlayFabSettings.ClientSessionTicket;
                     MultiStepClientLogin(result.SettingsForUser.NeedsAttribution);
 
                     if(onComplete != null)
@@ -2455,7 +2481,7 @@ package com.playfab
                 else
                 {
                     var result:LoginResult = new LoginResult(resultData);
-                    authKey = result.SessionTicket != null ? result.SessionTicket : authKey;
+                    PlayFabSettings.ClientSessionTicket = result.SessionTicket != null ? result.SessionTicket : PlayFabSettings.ClientSessionTicket;
                     MultiStepClientLogin(result.SettingsForUser.NeedsAttribution);
 
                     if(onComplete != null)
@@ -2468,7 +2494,7 @@ package com.playfab
 
         public static function RemoveContactEmail(request:RemoveContactEmailRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -2489,12 +2515,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/RemoveContactEmail", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/RemoveContactEmail", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function RemoveFriend(request:RemoveFriendRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -2515,12 +2541,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/RemoveFriend", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/RemoveFriend", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function RemoveGenericID(request:RemoveGenericIDRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -2541,12 +2567,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/RemoveGenericID", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/RemoveGenericID", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function RemoveSharedGroupMembers(request:RemoveSharedGroupMembersRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -2567,12 +2593,38 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/RemoveSharedGroupMembers", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/RemoveSharedGroupMembers", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
+        }
+
+        public static function ReportDeviceInfo(request:DeviceInfoRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:EmptyResult = new EmptyResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ReportDeviceInfo", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function ReportPlayer(request:ReportPlayerClientRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -2593,12 +2645,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ReportPlayer", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ReportPlayer", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function RestoreIOSPurchases(request:RestoreIOSPurchasesRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -2619,7 +2671,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/RestoreIOSPurchases", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/RestoreIOSPurchases", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function SendAccountRecoveryEmail(request:SendAccountRecoveryEmailRequest, onComplete:Function, onError:Function):void
@@ -2650,7 +2702,7 @@ package com.playfab
 
         public static function SetFriendTags(request:SetFriendTagsRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -2671,12 +2723,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/SetFriendTags", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/SetFriendTags", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function SetPlayerSecret(request:SetPlayerSecretRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -2697,12 +2749,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/SetPlayerSecret", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/SetPlayerSecret", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function StartGame(request:StartGameRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -2723,12 +2775,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/StartGame", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/StartGame", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function StartPurchase(request:StartPurchaseRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -2749,12 +2801,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/StartPurchase", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/StartPurchase", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function SubtractUserVirtualCurrency(request:SubtractUserVirtualCurrencyRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -2775,12 +2827,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/SubtractUserVirtualCurrency", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/SubtractUserVirtualCurrency", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function UnlinkAndroidDeviceID(request:UnlinkAndroidDeviceIDRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -2801,12 +2853,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkAndroidDeviceID", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkAndroidDeviceID", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function UnlinkCustomID(request:UnlinkCustomIDRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -2827,12 +2879,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkCustomID", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkCustomID", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function UnlinkFacebookAccount(request:UnlinkFacebookAccountRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -2853,12 +2905,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkFacebookAccount", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkFacebookAccount", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function UnlinkGameCenterAccount(request:UnlinkGameCenterAccountRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -2879,12 +2931,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkGameCenterAccount", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkGameCenterAccount", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function UnlinkGoogleAccount(request:UnlinkGoogleAccountRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -2905,12 +2957,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkGoogleAccount", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkGoogleAccount", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function UnlinkIOSDeviceID(request:UnlinkIOSDeviceIDRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -2931,12 +2983,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkIOSDeviceID", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkIOSDeviceID", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function UnlinkKongregate(request:UnlinkKongregateAccountRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -2957,12 +3009,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkKongregate", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkKongregate", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function UnlinkSteamAccount(request:UnlinkSteamAccountRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -2983,12 +3035,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkSteamAccount", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkSteamAccount", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function UnlinkTwitch(request:UnlinkTwitchAccountRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -3009,12 +3061,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkTwitch", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkTwitch", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function UnlinkWindowsHello(request:UnlinkWindowsHelloAccountRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -3035,12 +3087,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkWindowsHello", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkWindowsHello", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function UnlockContainerInstance(request:UnlockContainerInstanceRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -3061,12 +3113,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlockContainerInstance", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlockContainerInstance", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function UnlockContainerItem(request:UnlockContainerItemRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -3087,12 +3139,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlockContainerItem", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlockContainerItem", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function UpdateAvatarUrl(request:UpdateAvatarUrlRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -3113,12 +3165,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UpdateAvatarUrl", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UpdateAvatarUrl", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function UpdateCharacterData(request:UpdateCharacterDataRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -3139,12 +3191,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UpdateCharacterData", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UpdateCharacterData", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function UpdateCharacterStatistics(request:UpdateCharacterStatisticsRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -3165,12 +3217,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UpdateCharacterStatistics", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UpdateCharacterStatistics", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function UpdatePlayerStatistics(request:UpdatePlayerStatisticsRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -3191,12 +3243,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UpdatePlayerStatistics", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UpdatePlayerStatistics", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function UpdateSharedGroupData(request:UpdateSharedGroupDataRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -3217,12 +3269,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UpdateSharedGroupData", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UpdateSharedGroupData", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function UpdateUserData(request:UpdateUserDataRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -3243,12 +3295,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UpdateUserData", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UpdateUserData", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function UpdateUserPublisherData(request:UpdateUserDataRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -3269,12 +3321,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UpdateUserPublisherData", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UpdateUserPublisherData", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function UpdateUserTitleDisplayName(request:UpdateUserTitleDisplayNameRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -3295,12 +3347,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UpdateUserTitleDisplayName", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UpdateUserTitleDisplayName", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function ValidateAmazonIAPReceipt(request:ValidateAmazonReceiptRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -3321,12 +3373,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ValidateAmazonIAPReceipt", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ValidateAmazonIAPReceipt", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function ValidateGooglePlayPurchase(request:ValidateGooglePlayPurchaseRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -3347,12 +3399,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ValidateGooglePlayPurchase", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ValidateGooglePlayPurchase", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function ValidateIOSReceipt(request:ValidateIOSReceiptRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -3373,12 +3425,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ValidateIOSReceipt", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ValidateIOSReceipt", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function ValidateWindowsStoreReceipt(request:ValidateWindowsReceiptRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -3399,12 +3451,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ValidateWindowsStoreReceipt", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ValidateWindowsStoreReceipt", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function WriteCharacterEvent(request:WriteClientCharacterEventRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -3425,12 +3477,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/WriteCharacterEvent", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/WriteCharacterEvent", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function WritePlayerEvent(request:WriteClientPlayerEventRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -3451,12 +3503,12 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/WritePlayerEvent", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/WritePlayerEvent", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function WriteTitleEvent(request:WriteTitleEventRequest, onComplete:Function, onError:Function):void
         {
-            if (authKey == null) throw new Error("Must be logged in to call this method");
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -3477,7 +3529,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/WriteTitleEvent", requetJson, "X-Authorization", authKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/WriteTitleEvent", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function MultiStepClientLogin(needsAttribution:Boolean):void
@@ -3494,7 +3546,5 @@ package com.playfab
                 AttributeInstall(request, null, null);
             }
         }
-
-        private static var authKey:String = null;
     }
 }

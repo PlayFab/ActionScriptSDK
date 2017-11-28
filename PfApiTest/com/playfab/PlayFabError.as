@@ -348,6 +348,8 @@ package com.playfab
         public static const EntityFileOperationPending:int = 1350;
         public static const NoEntityFileOperationPending:int = 1351;
         public static const EntityProfileVersionMismatch:int = 1352;
+        public static const TemplateVersionTooOld:int = 1353;
+        public static const MembershipDefinitionInUse:int = 1354;
 
 
         public function PlayFabError(data:Object=null)
