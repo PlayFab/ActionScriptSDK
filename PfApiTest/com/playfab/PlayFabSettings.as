@@ -5,7 +5,9 @@ package com.playfab
         public static var ProductionEnvironmentURL:String = ".playfabapi.com";
         public static var TitleId:String = null; // You must set this value for PlayFabSdk to work properly (Found in the Game Manager for your title, at the PlayFab Website)
         public static var GlobalErrorHandler:Function;
+        public static var EntityToken:String = null; // Internal variable used for Entity API Access (basically Entity Login)
         public static var DeveloperSecretKey:String = null; // You must set this value for PlayFabSdk to work properly (Found in the Game Manager for your title, at the PlayFab Website)
+        public static var ClientSessionTicket:String = null; // This is set
         public static var AdvertisingIdType:String = null; // Set this to the appropriate AD_TYPE_X constant below
         public static var AdvertisingIdValue:String = null; // Set this to corresponding device value
 

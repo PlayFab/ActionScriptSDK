@@ -24,7 +24,6 @@ package com.playfab.ServerModels
         public var TitleId:String;
         public var TotalValueToDateInUSD:*;
         public var ValuesToDate:Vector.<ValueToDateModel>;
-        public var VirtualCurrencyBalances:Vector.<VirtualCurrencyBalanceModel>;
 
         public function PlayerProfileModel(data:Object=null)
         {
@@ -49,7 +48,6 @@ package com.playfab.ServerModels
             TitleId = data.TitleId;
             TotalValueToDateInUSD = data.TotalValueToDateInUSD;
             if(data.ValuesToDate) { ValuesToDate = new Vector.<ValueToDateModel>(); for(var ValuesToDate_iter:int = 0; ValuesToDate_iter < data.ValuesToDate.length; ValuesToDate_iter++) { ValuesToDate[ValuesToDate_iter] = new ValueToDateModel(data.ValuesToDate[ValuesToDate_iter]); }}
-            if(data.VirtualCurrencyBalances) { VirtualCurrencyBalances = new Vector.<VirtualCurrencyBalanceModel>(); for(var VirtualCurrencyBalances_iter:int = 0; VirtualCurrencyBalances_iter < data.VirtualCurrencyBalances.length; VirtualCurrencyBalances_iter++) { VirtualCurrencyBalances[VirtualCurrencyBalances_iter] = new VirtualCurrencyBalanceModel(data.VirtualCurrencyBalances[VirtualCurrencyBalances_iter]); }}
 
         }
     }

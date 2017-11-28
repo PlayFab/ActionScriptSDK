@@ -7,8 +7,6 @@ package com.playfab.ServerModels
         public var CustomData:String;
         public var Icon:String;
         public var Message:String;
-        // Deprecated, please use CustomData
-        public var ScheduleDate:String;
         public var Sound:String;
         public var Title:String;
 
@@ -20,7 +18,6 @@ package com.playfab.ServerModels
             CustomData = data.CustomData;
             Icon = data.Icon;
             Message = data.Message;
-            ScheduleDate = data.ScheduleDate;
             Sound = data.Sound;
             Title = data.Title;
 
