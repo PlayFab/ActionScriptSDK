@@ -350,6 +350,8 @@ package com.playfab
         public static const EntityProfileVersionMismatch:int = 1352;
         public static const TemplateVersionTooOld:int = 1353;
         public static const MembershipDefinitionInUse:int = 1354;
+        public static const PaymentPageNotConfigured:int = 1355;
+        public static const FailedLoginAttemptRateLimitExceeded:int = 1356;
 
 
         public function PlayFabError(data:Object=null)
