@@ -5,6 +5,7 @@ package com.playfab.ClientModels
     {
         public var Email:String;
         public var InfoRequestParameters:GetPlayerCombinedInfoRequestParams;
+        public var LoginTitlePlayerAccountEntity:*;
         public var Password:String;
         public var TitleId:String;
 
@@ -14,6 +15,7 @@ package com.playfab.ClientModels
                 return;
             Email = data.Email;
             InfoRequestParameters = new GetPlayerCombinedInfoRequestParams(data.InfoRequestParameters);
+            LoginTitlePlayerAccountEntity = data.LoginTitlePlayerAccountEntity;
             Password = data.Password;
             TitleId = data.TitleId;
 

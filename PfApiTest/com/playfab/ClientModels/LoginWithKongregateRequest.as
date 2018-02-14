@@ -8,6 +8,7 @@ package com.playfab.ClientModels
         public var EncryptedRequest:String;
         public var InfoRequestParameters:GetPlayerCombinedInfoRequestParams;
         public var KongregateId:String;
+        public var LoginTitlePlayerAccountEntity:*;
         public var PlayerSecret:String;
         public var TitleId:String;
 
@@ -20,6 +21,7 @@ package com.playfab.ClientModels
             EncryptedRequest = data.EncryptedRequest;
             InfoRequestParameters = new GetPlayerCombinedInfoRequestParams(data.InfoRequestParameters);
             KongregateId = data.KongregateId;
+            LoginTitlePlayerAccountEntity = data.LoginTitlePlayerAccountEntity;
             PlayerSecret = data.PlayerSecret;
             TitleId = data.TitleId;
 
