@@ -5,6 +5,7 @@ package com.playfab.ClientModels
 
     public class LoginResult
     {
+        public var EntityToken:EntityTokenResponse;
         public var InfoResultPayload:GetPlayerCombinedInfoResultPayload;
         public var LastLoginTime:Date;
         public var NewlyCreated:Boolean;
@@ -16,6 +17,7 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
+            EntityToken = new EntityTokenResponse(data.EntityToken);
             InfoResultPayload = new GetPlayerCombinedInfoResultPayload(data.InfoResultPayload);
             LastLoginTime = PlayFabUtil.parseDate(data.LastLoginTime);
             NewlyCreated = data.NewlyCreated;

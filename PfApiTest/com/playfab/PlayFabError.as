@@ -352,6 +352,20 @@ package com.playfab
         public static const MembershipDefinitionInUse:int = 1354;
         public static const PaymentPageNotConfigured:int = 1355;
         public static const FailedLoginAttemptRateLimitExceeded:int = 1356;
+        public static const EntityBlockedByGroup:int = 1357;
+        public static const EntityIsNotGroupOrRole:int = 1358;
+        public static const EntityIsAlreadyMember:int = 1359;
+        public static const MalformedGroupTemplate:int = 1360;
+        public static const GroupInvitationNotFound:int = 1361;
+        public static const GroupJoinRequestNotFound:int = 1362;
+        public static const OutstandingInvitationAcceptedInstead:int = 1363;
+        public static const OutstandingJoinRequestAcceptedInstead:int = 1364;
+        public static const RoleIsGroupDefaultMember:int = 1365;
+        public static const RoleIsGroupAdmin:int = 1366;
+        public static const RoleNameNotAvailable:int = 1367;
+        public static const GroupNameNotAvailable:int = 1368;
+        public static const EmailReportAlreadySent:int = 1369;
+        public static const EmailReportRecipientBlacklisted:int = 1370;
 
 
         public function PlayFabError(data:Object=null)
