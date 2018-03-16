@@ -1,15 +1,15 @@
 
-package com.playfab.ClientModels
+package com.playfab.EntityModels
 {
     import com.playfab.PlayFabUtil;
 
-    public class EntityTokenResponse
+    public class GetEntityTokenResponse
     {
         public var Entity:EntityKey;
         public var EntityToken:String;
         public var TokenExpiration:Date;
 
-        public function EntityTokenResponse(data:Object=null)
+        public function GetEntityTokenResponse(data:Object=null)
         {
             if(data == null)
                 return;
