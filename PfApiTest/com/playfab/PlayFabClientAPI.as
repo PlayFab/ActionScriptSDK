@@ -1949,6 +1949,7 @@ package com.playfab
                 {
                     var result:LoginResult = new LoginResult(resultData);
                     PlayFabSettings.ClientSessionTicket = result.SessionTicket != null ? result.SessionTicket : PlayFabSettings.ClientSessionTicket;
+                    PlayFabSettings.EntityToken = result.EntityToken != null ? result.EntityToken.EntityToken : PlayFabSettings.EntityToken;
                     MultiStepClientLogin(result.SettingsForUser.NeedsAttribution);
 
                     if(onComplete != null)
@@ -1978,6 +1979,7 @@ package com.playfab
                 {
                     var result:LoginResult = new LoginResult(resultData);
                     PlayFabSettings.ClientSessionTicket = result.SessionTicket != null ? result.SessionTicket : PlayFabSettings.ClientSessionTicket;
+                    PlayFabSettings.EntityToken = result.EntityToken != null ? result.EntityToken.EntityToken : PlayFabSettings.EntityToken;
                     MultiStepClientLogin(result.SettingsForUser.NeedsAttribution);
 
                     if(onComplete != null)
@@ -2007,6 +2009,7 @@ package com.playfab
                 {
                     var result:LoginResult = new LoginResult(resultData);
                     PlayFabSettings.ClientSessionTicket = result.SessionTicket != null ? result.SessionTicket : PlayFabSettings.ClientSessionTicket;
+                    PlayFabSettings.EntityToken = result.EntityToken != null ? result.EntityToken.EntityToken : PlayFabSettings.EntityToken;
                     MultiStepClientLogin(result.SettingsForUser.NeedsAttribution);
 
                     if(onComplete != null)
@@ -2036,6 +2039,7 @@ package com.playfab
                 {
                     var result:LoginResult = new LoginResult(resultData);
                     PlayFabSettings.ClientSessionTicket = result.SessionTicket != null ? result.SessionTicket : PlayFabSettings.ClientSessionTicket;
+                    PlayFabSettings.EntityToken = result.EntityToken != null ? result.EntityToken.EntityToken : PlayFabSettings.EntityToken;
                     MultiStepClientLogin(result.SettingsForUser.NeedsAttribution);
 
                     if(onComplete != null)
@@ -2065,6 +2069,7 @@ package com.playfab
                 {
                     var result:LoginResult = new LoginResult(resultData);
                     PlayFabSettings.ClientSessionTicket = result.SessionTicket != null ? result.SessionTicket : PlayFabSettings.ClientSessionTicket;
+                    PlayFabSettings.EntityToken = result.EntityToken != null ? result.EntityToken.EntityToken : PlayFabSettings.EntityToken;
                     MultiStepClientLogin(result.SettingsForUser.NeedsAttribution);
 
                     if(onComplete != null)
@@ -2094,6 +2099,7 @@ package com.playfab
                 {
                     var result:LoginResult = new LoginResult(resultData);
                     PlayFabSettings.ClientSessionTicket = result.SessionTicket != null ? result.SessionTicket : PlayFabSettings.ClientSessionTicket;
+                    PlayFabSettings.EntityToken = result.EntityToken != null ? result.EntityToken.EntityToken : PlayFabSettings.EntityToken;
                     MultiStepClientLogin(result.SettingsForUser.NeedsAttribution);
 
                     if(onComplete != null)
@@ -2123,6 +2129,7 @@ package com.playfab
                 {
                     var result:LoginResult = new LoginResult(resultData);
                     PlayFabSettings.ClientSessionTicket = result.SessionTicket != null ? result.SessionTicket : PlayFabSettings.ClientSessionTicket;
+                    PlayFabSettings.EntityToken = result.EntityToken != null ? result.EntityToken.EntityToken : PlayFabSettings.EntityToken;
                     MultiStepClientLogin(result.SettingsForUser.NeedsAttribution);
 
                     if(onComplete != null)
@@ -2152,6 +2159,7 @@ package com.playfab
                 {
                     var result:LoginResult = new LoginResult(resultData);
                     PlayFabSettings.ClientSessionTicket = result.SessionTicket != null ? result.SessionTicket : PlayFabSettings.ClientSessionTicket;
+                    PlayFabSettings.EntityToken = result.EntityToken != null ? result.EntityToken.EntityToken : PlayFabSettings.EntityToken;
                     MultiStepClientLogin(result.SettingsForUser.NeedsAttribution);
 
                     if(onComplete != null)
@@ -2181,6 +2189,7 @@ package com.playfab
                 {
                     var result:LoginResult = new LoginResult(resultData);
                     PlayFabSettings.ClientSessionTicket = result.SessionTicket != null ? result.SessionTicket : PlayFabSettings.ClientSessionTicket;
+                    PlayFabSettings.EntityToken = result.EntityToken != null ? result.EntityToken.EntityToken : PlayFabSettings.EntityToken;
                     MultiStepClientLogin(result.SettingsForUser.NeedsAttribution);
 
                     if(onComplete != null)
@@ -2210,6 +2219,7 @@ package com.playfab
                 {
                     var result:LoginResult = new LoginResult(resultData);
                     PlayFabSettings.ClientSessionTicket = result.SessionTicket != null ? result.SessionTicket : PlayFabSettings.ClientSessionTicket;
+                    PlayFabSettings.EntityToken = result.EntityToken != null ? result.EntityToken.EntityToken : PlayFabSettings.EntityToken;
                     MultiStepClientLogin(result.SettingsForUser.NeedsAttribution);
 
                     if(onComplete != null)
@@ -2239,6 +2249,7 @@ package com.playfab
                 {
                     var result:LoginResult = new LoginResult(resultData);
                     PlayFabSettings.ClientSessionTicket = result.SessionTicket != null ? result.SessionTicket : PlayFabSettings.ClientSessionTicket;
+                    PlayFabSettings.EntityToken = result.EntityToken != null ? result.EntityToken.EntityToken : PlayFabSettings.EntityToken;
                     MultiStepClientLogin(result.SettingsForUser.NeedsAttribution);
 
                     if(onComplete != null)
@@ -2268,6 +2279,7 @@ package com.playfab
                 {
                     var result:LoginResult = new LoginResult(resultData);
                     PlayFabSettings.ClientSessionTicket = result.SessionTicket != null ? result.SessionTicket : PlayFabSettings.ClientSessionTicket;
+                    PlayFabSettings.EntityToken = result.EntityToken != null ? result.EntityToken.EntityToken : PlayFabSettings.EntityToken;
                     MultiStepClientLogin(result.SettingsForUser.NeedsAttribution);
 
                     if(onComplete != null)
@@ -2482,6 +2494,7 @@ package com.playfab
                 {
                     var result:LoginResult = new LoginResult(resultData);
                     PlayFabSettings.ClientSessionTicket = result.SessionTicket != null ? result.SessionTicket : PlayFabSettings.ClientSessionTicket;
+                    PlayFabSettings.EntityToken = result.EntityToken != null ? result.EntityToken.EntityToken : PlayFabSettings.EntityToken;
                     MultiStepClientLogin(result.SettingsForUser.NeedsAttribution);
 
                     if(onComplete != null)
