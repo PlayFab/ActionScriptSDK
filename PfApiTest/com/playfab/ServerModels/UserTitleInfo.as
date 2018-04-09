@@ -12,6 +12,7 @@ package com.playfab.ServerModels
         public var isBanned:*;
         public var LastLogin:Date;
         public var Origination:String;
+        public var TitlePlayerAccount:EntityKey;
 
         public function UserTitleInfo(data:Object=null)
         {
@@ -24,6 +25,7 @@ package com.playfab.ServerModels
             isBanned = data.isBanned;
             LastLogin = PlayFabUtil.parseDate(data.LastLogin);
             Origination = data.Origination;
+            TitlePlayerAccount = new EntityKey(data.TitlePlayerAccount);
 
         }
     }

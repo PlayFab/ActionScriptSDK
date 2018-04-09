@@ -363,6 +363,8 @@ package com.playfab.ServerModels
         public static const GroupNameNotAvailable:String = "GroupNameNotAvailable";
         public static const EmailReportAlreadySent:String = "EmailReportAlreadySent";
         public static const EmailReportRecipientBlacklisted:String = "EmailReportRecipientBlacklisted";
+        public static const EventNamespaceNotAllowed:String = "EventNamespaceNotAllowed";
+        public static const EventEntityNotAllowed:String = "EventEntityNotAllowed";
 
     }
 }

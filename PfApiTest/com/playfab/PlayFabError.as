@@ -366,6 +366,8 @@ package com.playfab
         public static const GroupNameNotAvailable:int = 1368;
         public static const EmailReportAlreadySent:int = 1369;
         public static const EmailReportRecipientBlacklisted:int = 1370;
+        public static const EventNamespaceNotAllowed:int = 1371;
+        public static const EventEntityNotAllowed:int = 1372;
 
 
         public function PlayFabError(data:Object=null)
