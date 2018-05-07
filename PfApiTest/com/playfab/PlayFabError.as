@@ -7,6 +7,7 @@ package com.playfab
         public static const FlashSecurityError:int = 3;
 
         public static const Success:int = 0;
+        public static const UnkownError:int = 500;
         public static const InvalidParams:int = 1000;
         public static const AccountNotFound:int = 1001;
         public static const AccountBanned:int = 1002;
@@ -368,6 +369,12 @@ package com.playfab
         public static const EmailReportRecipientBlacklisted:int = 1370;
         public static const EventNamespaceNotAllowed:int = 1371;
         public static const EventEntityNotAllowed:int = 1372;
+        public static const InvalidEntityType:int = 1373;
+        public static const NullTokenResultFromAad:int = 1374;
+        public static const InvalidTokenResultFromAad:int = 1375;
+        public static const NoValidCertificateForAad:int = 1376;
+        public static const InvalidCertificateForAad:int = 1377;
+        public static const DuplicateDropTableId:int = 1378;
 
 
         public function PlayFabError(data:Object=null)

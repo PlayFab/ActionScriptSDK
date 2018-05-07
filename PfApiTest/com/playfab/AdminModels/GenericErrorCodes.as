@@ -4,6 +4,7 @@ package com.playfab.AdminModels
     public class 
     {
         public static const Success:String = "Success";
+        public static const UnkownError:String = "UnkownError";
         public static const InvalidParams:String = "InvalidParams";
         public static const AccountNotFound:String = "AccountNotFound";
         public static const AccountBanned:String = "AccountBanned";
@@ -365,6 +366,12 @@ package com.playfab.AdminModels
         public static const EmailReportRecipientBlacklisted:String = "EmailReportRecipientBlacklisted";
         public static const EventNamespaceNotAllowed:String = "EventNamespaceNotAllowed";
         public static const EventEntityNotAllowed:String = "EventEntityNotAllowed";
+        public static const InvalidEntityType:String = "InvalidEntityType";
+        public static const NullTokenResultFromAad:String = "NullTokenResultFromAad";
+        public static const InvalidTokenResultFromAad:String = "InvalidTokenResultFromAad";
+        public static const NoValidCertificateForAad:String = "NoValidCertificateForAad";
+        public static const InvalidCertificateForAad:String = "InvalidCertificateForAad";
+        public static const DuplicateDropTableId:String = "DuplicateDropTableId";
 
     }
 }
