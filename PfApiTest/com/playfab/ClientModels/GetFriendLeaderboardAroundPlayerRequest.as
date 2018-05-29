@@ -10,6 +10,7 @@ package com.playfab.ClientModels
         public var ProfileConstraints:PlayerProfileViewConstraints;
         public var StatisticName:String;
         public var Version:*;
+        public var XboxToken:String;
 
         public function GetFriendLeaderboardAroundPlayerRequest(data:Object=null)
         {
@@ -22,6 +23,7 @@ package com.playfab.ClientModels
             ProfileConstraints = new PlayerProfileViewConstraints(data.ProfileConstraints);
             StatisticName = data.StatisticName;
             Version = data.Version;
+            XboxToken = data.XboxToken;
 
         }
     }

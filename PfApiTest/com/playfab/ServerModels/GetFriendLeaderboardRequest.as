@@ -11,6 +11,7 @@ package com.playfab.ServerModels
         public var StartPosition:int;
         public var StatisticName:String;
         public var Version:*;
+        public var XboxToken:String;
 
         public function GetFriendLeaderboardRequest(data:Object=null)
         {
@@ -24,6 +25,7 @@ package com.playfab.ServerModels
             StartPosition = data.StartPosition;
             StatisticName = data.StatisticName;
             Version = data.Version;
+            XboxToken = data.XboxToken;
 
         }
     }

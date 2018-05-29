@@ -342,6 +342,32 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Admin/DeleteContent", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
+        public static function DeleteMasterPlayerAccount(request:DeleteMasterPlayerAccountRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:DeleteMasterPlayerAccountResult = new DeleteMasterPlayerAccountResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Admin/DeleteMasterPlayerAccount", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+        }
+
         public static function DeletePlayer(request:DeletePlayerRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
@@ -470,6 +496,32 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Admin/DeleteTitle", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+        }
+
+        public static function ExportMasterPlayerData(request:ExportMasterPlayerDataRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:ExportMasterPlayerDataResult = new ExportMasterPlayerDataResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Admin/ExportMasterPlayerData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetActionsOnPlayersInSegmentTaskInstance(request:GetTaskInstanceRequest, onComplete:Function, onError:Function):void
@@ -756,6 +808,32 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Admin/GetMatchmakerGameModes", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+        }
+
+        public static function GetPlayedTitleList(request:GetPlayedTitleListRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:GetPlayedTitleListResult = new GetPlayedTitleListResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Admin/GetPlayedTitleList", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetPlayerIdFromAuthToken(request:GetPlayerIdFromAuthTokenRequest, onComplete:Function, onError:Function):void
