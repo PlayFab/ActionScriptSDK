@@ -7,6 +7,7 @@ package com.playfab.ServerModels
         public var IncludeSteamFriends:*;
         public var PlayFabId:String;
         public var ProfileConstraints:PlayerProfileViewConstraints;
+        public var XboxToken:String;
 
         public function GetFriendsListRequest(data:Object=null)
         {
@@ -16,6 +17,7 @@ package com.playfab.ServerModels
             IncludeSteamFriends = data.IncludeSteamFriends;
             PlayFabId = data.PlayFabId;
             ProfileConstraints = new PlayerProfileViewConstraints(data.ProfileConstraints);
+            XboxToken = data.XboxToken;
 
         }
     }

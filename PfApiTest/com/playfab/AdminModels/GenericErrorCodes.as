@@ -372,6 +372,16 @@ package com.playfab.AdminModels
         public static const NoValidCertificateForAad:String = "NoValidCertificateForAad";
         public static const InvalidCertificateForAad:String = "InvalidCertificateForAad";
         public static const DuplicateDropTableId:String = "DuplicateDropTableId";
+        public static const ComputeOK:String = "ComputeOK";
+        public static const ComputeAccepted:String = "ComputeAccepted";
+        public static const ComputeNoContent:String = "ComputeNoContent";
+        public static const ComputeBadRequest:String = "ComputeBadRequest";
+        public static const ComputeUnauthorized:String = "ComputeUnauthorized";
+        public static const ComputeForbidden:String = "ComputeForbidden";
+        public static const ComputeNotFound:String = "ComputeNotFound";
+        public static const ComputeConflict:String = "ComputeConflict";
+        public static const ComputeInternalServerError:String = "ComputeInternalServerError";
+        public static const ComputeServiceUnavailable:String = "ComputeServiceUnavailable";
 
     }
 }

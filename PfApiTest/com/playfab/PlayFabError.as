@@ -375,6 +375,16 @@ package com.playfab
         public static const NoValidCertificateForAad:int = 1376;
         public static const InvalidCertificateForAad:int = 1377;
         public static const DuplicateDropTableId:int = 1378;
+        public static const ComputeOK:int = 1379;
+        public static const ComputeAccepted:int = 1380;
+        public static const ComputeNoContent:int = 1381;
+        public static const ComputeBadRequest:int = 1382;
+        public static const ComputeUnauthorized:int = 1383;
+        public static const ComputeForbidden:int = 1384;
+        public static const ComputeNotFound:int = 1385;
+        public static const ComputeConflict:int = 1386;
+        public static const ComputeInternalServerError:int = 1387;
+        public static const ComputeServiceUnavailable:int = 1388;
 
 
         public function PlayFabError(data:Object=null)

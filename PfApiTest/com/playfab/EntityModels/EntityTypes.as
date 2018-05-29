@@ -8,6 +8,7 @@ package com.playfab.EntityModels
         public static const title_player_account:String = "title_player_account";
         public static const character:String = "character";
         public static const group:String = "group";
+        public static const service:String = "service";
 
     }
 }
