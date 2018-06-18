@@ -4,6 +4,7 @@ package com.playfab.AdminModels
     public class 
     {
         public static const Success:String = "Success";
+        public static const MatchmakingHopperIdInvalid:String = "MatchmakingHopperIdInvalid";
         public static const UnkownError:String = "UnkownError";
         public static const InvalidParams:String = "InvalidParams";
         public static const AccountNotFound:String = "AccountNotFound";
@@ -372,16 +373,47 @@ package com.playfab.AdminModels
         public static const NoValidCertificateForAad:String = "NoValidCertificateForAad";
         public static const InvalidCertificateForAad:String = "InvalidCertificateForAad";
         public static const DuplicateDropTableId:String = "DuplicateDropTableId";
-        public static const ComputeOK:String = "ComputeOK";
-        public static const ComputeAccepted:String = "ComputeAccepted";
-        public static const ComputeNoContent:String = "ComputeNoContent";
-        public static const ComputeBadRequest:String = "ComputeBadRequest";
-        public static const ComputeUnauthorized:String = "ComputeUnauthorized";
-        public static const ComputeForbidden:String = "ComputeForbidden";
-        public static const ComputeNotFound:String = "ComputeNotFound";
-        public static const ComputeConflict:String = "ComputeConflict";
-        public static const ComputeInternalServerError:String = "ComputeInternalServerError";
-        public static const ComputeServiceUnavailable:String = "ComputeServiceUnavailable";
+        public static const GameServerOk:String = "GameServerOk";
+        public static const GameServerAccepted:String = "GameServerAccepted";
+        public static const GameServerNoContent:String = "GameServerNoContent";
+        public static const GameServerBadRequest:String = "GameServerBadRequest";
+        public static const GameServerUnauthorized:String = "GameServerUnauthorized";
+        public static const GameServerForbidden:String = "GameServerForbidden";
+        public static const GameServerNotFound:String = "GameServerNotFound";
+        public static const GameServerConflict:String = "GameServerConflict";
+        public static const GameServerInternalServerError:String = "GameServerInternalServerError";
+        public static const GameServerServiceUnavailable:String = "GameServerServiceUnavailable";
+        public static const MatchmakingInvalidEntityKeyList:String = "MatchmakingInvalidEntityKeyList";
+        public static const MatchmakingInvalidTicketCreatorProfile:String = "MatchmakingInvalidTicketCreatorProfile";
+        public static const MatchmakingInvalidUserAttributes:String = "MatchmakingInvalidUserAttributes";
+        public static const MatchmakingCreateRequestMissing:String = "MatchmakingCreateRequestMissing";
+        public static const MatchmakingCreateRequestCreatorMissing:String = "MatchmakingCreateRequestCreatorMissing";
+        public static const MatchmakingCreateRequestCreatorIdMissing:String = "MatchmakingCreateRequestCreatorIdMissing";
+        public static const MatchmakingCreateRequestUserListMissing:String = "MatchmakingCreateRequestUserListMissing";
+        public static const MatchmakingCreateRequestGiveUpAfterInvalid:String = "MatchmakingCreateRequestGiveUpAfterInvalid";
+        public static const MatchmakingTicketIdMissing:String = "MatchmakingTicketIdMissing";
+        public static const MatchmakingMatchIdMissing:String = "MatchmakingMatchIdMissing";
+        public static const MatchmakingMatchIdIdMissing:String = "MatchmakingMatchIdIdMissing";
+        public static const MatchmakingHopperIdMissing:String = "MatchmakingHopperIdMissing";
+        public static const MatchmakingTitleIdMissing:String = "MatchmakingTitleIdMissing";
+        public static const MatchmakingTicketIdIdMissing:String = "MatchmakingTicketIdIdMissing";
+        public static const MatchmakingUserIdMissing:String = "MatchmakingUserIdMissing";
+        public static const MatchmakingJoinRequestUserMissing:String = "MatchmakingJoinRequestUserMissing";
+        public static const MatchmakingHopperConfigNotFound:String = "MatchmakingHopperConfigNotFound";
+        public static const MatchmakingMatchNotFound:String = "MatchmakingMatchNotFound";
+        public static const MatchmakingTicketNotFound:String = "MatchmakingTicketNotFound";
+        public static const MatchmakingCreateTicketServerIdentityInvalid:String = "MatchmakingCreateTicketServerIdentityInvalid";
+        public static const MatchmakingCreateTicketClientIdentityInvalid:String = "MatchmakingCreateTicketClientIdentityInvalid";
+        public static const MatchmakingGetTicketUserMismatch:String = "MatchmakingGetTicketUserMismatch";
+        public static const MatchmakingJoinTicketServerIdentityInvalid:String = "MatchmakingJoinTicketServerIdentityInvalid";
+        public static const MatchmakingJoinTicketUserIdentityMismatch:String = "MatchmakingJoinTicketUserIdentityMismatch";
+        public static const MatchmakingCancelTicketServerIdentityInvalid:String = "MatchmakingCancelTicketServerIdentityInvalid";
+        public static const MatchmakingCancelTicketUserIdentityMismatch:String = "MatchmakingCancelTicketUserIdentityMismatch";
+        public static const MatchmakingGetMatchIdentityMismatch:String = "MatchmakingGetMatchIdentityMismatch";
+        public static const MatchmakingUserIdentityMismatch:String = "MatchmakingUserIdentityMismatch";
+        public static const MatchmakingAlreadyJoinedTicket:String = "MatchmakingAlreadyJoinedTicket";
+        public static const MatchmakingTicketAlreadyCompleted:String = "MatchmakingTicketAlreadyCompleted";
+        public static const MatchmakingHopperConfigInvalid:String = "MatchmakingHopperConfigInvalid";
 
     }
 }
