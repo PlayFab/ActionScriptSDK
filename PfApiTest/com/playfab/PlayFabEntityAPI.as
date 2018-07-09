@@ -316,6 +316,32 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Group/DeleteRole", requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
         }
 
+        public static function ExecuteEntityCloudScript(request:ExecuteEntityCloudScriptRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:ExecuteCloudScriptResult = new ExecuteCloudScriptResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/CloudScript/ExecuteEntityCloudScript", requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+        }
+
         public static function FinalizeFileUploads(request:FinalizeFileUploadsRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
@@ -994,6 +1020,32 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Group/UpdateRole", requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+        }
+
+        public static function WriteEvents(request:WriteEventsRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:WriteEventsResponse = new WriteEventsResponse(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Event/WriteEvents", requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
         }
 
     }
