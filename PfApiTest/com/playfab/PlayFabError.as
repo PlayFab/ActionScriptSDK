@@ -7,7 +7,6 @@ package com.playfab
         public static const FlashSecurityError:int = 3;
 
         public static const Success:int = 0;
-        public static const MatchmakingHopperIdInvalid:int = 230;
         public static const UnkownError:int = 500;
         public static const InvalidParams:int = 1000;
         public static const AccountNotFound:int = 1001;
@@ -386,9 +385,11 @@ package com.playfab
         public static const GameServerConflict:int = 1386;
         public static const GameServerInternalServerError:int = 1387;
         public static const GameServerServiceUnavailable:int = 1388;
-        public static const MatchmakingInvalidEntityKeyList:int = 2000;
-        public static const MatchmakingInvalidTicketCreatorProfile:int = 2001;
-        public static const MatchmakingInvalidUserAttributes:int = 2002;
+        public static const ExplicitContentDetected:int = 1389;
+        public static const PIIContentDetected:int = 1390;
+        public static const InvalidScheduledTaskParameter:int = 1391;
+        public static const MatchmakingEntityInvalid:int = 2001;
+        public static const MatchmakingPlayerAttributesInvalid:int = 2002;
         public static const MatchmakingCreateRequestMissing:int = 2003;
         public static const MatchmakingCreateRequestCreatorMissing:int = 2004;
         public static const MatchmakingCreateRequestCreatorIdMissing:int = 2005;
@@ -400,7 +401,7 @@ package com.playfab
         public static const MatchmakingHopperIdMissing:int = 2011;
         public static const MatchmakingTitleIdMissing:int = 2012;
         public static const MatchmakingTicketIdIdMissing:int = 2013;
-        public static const MatchmakingUserIdMissing:int = 2014;
+        public static const MatchmakingPlayerIdMissing:int = 2014;
         public static const MatchmakingJoinRequestUserMissing:int = 2015;
         public static const MatchmakingHopperConfigNotFound:int = 2016;
         public static const MatchmakingMatchNotFound:int = 2017;
@@ -413,10 +414,12 @@ package com.playfab
         public static const MatchmakingCancelTicketServerIdentityInvalid:int = 2024;
         public static const MatchmakingCancelTicketUserIdentityMismatch:int = 2025;
         public static const MatchmakingGetMatchIdentityMismatch:int = 2026;
-        public static const MatchmakingUserIdentityMismatch:int = 2027;
+        public static const MatchmakingPlayerIdentityMismatch:int = 2027;
         public static const MatchmakingAlreadyJoinedTicket:int = 2028;
         public static const MatchmakingTicketAlreadyCompleted:int = 2029;
+        public static const MatchmakingHopperIdInvalid:int = 2030;
         public static const MatchmakingHopperConfigInvalid:int = 2031;
+        public static const MatchmakingMemberProfileInvalid:int = 2032;
 
 
         public function PlayFabError(data:Object=null)
