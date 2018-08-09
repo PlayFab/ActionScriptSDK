@@ -1098,6 +1098,32 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayFabIDsFromFacebookIDs", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
+        public static function GetPlayFabIDsFromFacebookInstantGamesIds(request:GetPlayFabIDsFromFacebookInstantGamesIdsRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:GetPlayFabIDsFromFacebookInstantGamesIdsResult = new GetPlayFabIDsFromFacebookInstantGamesIdsResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayFabIDsFromFacebookInstantGamesIds", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
+        }
+
         public static function GetPlayFabIDsFromGameCenterIDs(request:GetPlayFabIDsFromGameCenterIDsRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
@@ -1200,6 +1226,32 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayFabIDsFromKongregateIDs", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
+        }
+
+        public static function GetPlayFabIDsFromNintendoSwitchDeviceIds(request:GetPlayFabIDsFromNintendoSwitchDeviceIdsRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:GetPlayFabIDsFromNintendoSwitchDeviceIdsResult = new GetPlayFabIDsFromNintendoSwitchDeviceIdsResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/GetPlayFabIDsFromNintendoSwitchDeviceIds", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function GetPlayFabIDsFromSteamIDs(request:GetPlayFabIDsFromSteamIDsRequest, onComplete:Function, onError:Function):void
@@ -1748,6 +1800,32 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkFacebookAccount", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
+        public static function LinkFacebookInstantGamesId(request:LinkFacebookInstantGamesIdRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:LinkFacebookInstantGamesIdResult = new LinkFacebookInstantGamesIdResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkFacebookInstantGamesId", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
+        }
+
         public static function LinkGameCenterAccount(request:LinkGameCenterAccountRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
@@ -1850,6 +1928,32 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkKongregate", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
+        }
+
+        public static function LinkNintendoSwitchDeviceId(request:LinkNintendoSwitchDeviceIdRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:LinkNintendoSwitchDeviceIdResult = new LinkNintendoSwitchDeviceIdResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkNintendoSwitchDeviceId", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function LinkSteamAccount(request:LinkSteamAccountRequest, onComplete:Function, onError:Function):void
@@ -2050,6 +2154,36 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LoginWithFacebook", requetJson, null, null, onPostComplete);
         }
 
+        public static function LoginWithFacebookInstantGamesId(request:LoginWithFacebookInstantGamesIdRequest, onComplete:Function, onError:Function):void
+        {
+            request.TitleId = PlayFabSettings.TitleId != null ? PlayFabSettings.TitleId : request.TitleId;
+            if(request.TitleId == null) throw new Error ("Must be have PlayFabSettings.TitleId set to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:LoginResult = new LoginResult(resultData);
+                    PlayFabSettings.ClientSessionTicket = result.SessionTicket != null ? result.SessionTicket : PlayFabSettings.ClientSessionTicket;
+                    PlayFabSettings.EntityToken = result.EntityToken != null ? result.EntityToken.EntityToken : PlayFabSettings.EntityToken;
+                    MultiStepClientLogin(result.SettingsForUser.NeedsAttribution);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LoginWithFacebookInstantGamesId", requetJson, null, null, onPostComplete);
+        }
+
         public static function LoginWithGameCenter(request:LoginWithGameCenterRequest, onComplete:Function, onError:Function):void
         {
             request.TitleId = PlayFabSettings.TitleId != null ? PlayFabSettings.TitleId : request.TitleId;
@@ -2168,6 +2302,36 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LoginWithKongregate", requetJson, null, null, onPostComplete);
+        }
+
+        public static function LoginWithNintendoSwitchDeviceId(request:LoginWithNintendoSwitchDeviceIdRequest, onComplete:Function, onError:Function):void
+        {
+            request.TitleId = PlayFabSettings.TitleId != null ? PlayFabSettings.TitleId : request.TitleId;
+            if(request.TitleId == null) throw new Error ("Must be have PlayFabSettings.TitleId set to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:LoginResult = new LoginResult(resultData);
+                    PlayFabSettings.ClientSessionTicket = result.SessionTicket != null ? result.SessionTicket : PlayFabSettings.ClientSessionTicket;
+                    PlayFabSettings.EntityToken = result.EntityToken != null ? result.EntityToken.EntityToken : PlayFabSettings.EntityToken;
+                    MultiStepClientLogin(result.SettingsForUser.NeedsAttribution);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LoginWithNintendoSwitchDeviceId", requetJson, null, null, onPostComplete);
         }
 
         public static function LoginWithPlayFab(request:LoginWithPlayFabRequest, onComplete:Function, onError:Function):void
@@ -2921,6 +3085,32 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkFacebookAccount", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
+        public static function UnlinkFacebookInstantGamesId(request:UnlinkFacebookInstantGamesIdRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:UnlinkFacebookInstantGamesIdResult = new UnlinkFacebookInstantGamesIdResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkFacebookInstantGamesId", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
+        }
+
         public static function UnlinkGameCenterAccount(request:UnlinkGameCenterAccountRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
@@ -3023,6 +3213,32 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkKongregate", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
+        }
+
+        public static function UnlinkNintendoSwitchDeviceId(request:UnlinkNintendoSwitchDeviceIdRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:UnlinkNintendoSwitchDeviceIdResult = new UnlinkNintendoSwitchDeviceIdResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkNintendoSwitchDeviceId", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function UnlinkSteamAccount(request:UnlinkSteamAccountRequest, onComplete:Function, onError:Function):void

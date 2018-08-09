@@ -17,6 +17,10 @@ package com.playfab.AdminModels
         public static const AndroidDevice:String = "AndroidDevice";
         public static const Twitch:String = "Twitch";
         public static const WindowsHello:String = "WindowsHello";
+        public static const GameServer:String = "GameServer";
+        public static const CustomServer:String = "CustomServer";
+        public static const NintendoSwitch:String = "NintendoSwitch";
+        public static const FacebookInstantGames:String = "FacebookInstantGames";
 
     }
 }

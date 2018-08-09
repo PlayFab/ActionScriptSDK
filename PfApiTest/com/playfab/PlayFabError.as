@@ -388,6 +388,12 @@ package com.playfab
         public static const ExplicitContentDetected:int = 1389;
         public static const PIIContentDetected:int = 1390;
         public static const InvalidScheduledTaskParameter:int = 1391;
+        public static const PerEntityEventRateLimitExceeded:int = 1392;
+        public static const TitleDefaultLanguageNotSet:int = 1393;
+        public static const EmailTemplateMissingDefaultVersion:int = 1394;
+        public static const FacebookInstantGamesIdNotLinked:int = 1395;
+        public static const InvalidFacebookInstantGamesSignature:int = 1396;
+        public static const FacebookInstantGamesAuthNotConfiguredForTitle:int = 1397;
         public static const MatchmakingEntityInvalid:int = 2001;
         public static const MatchmakingPlayerAttributesInvalid:int = 2002;
         public static const MatchmakingCreateRequestMissing:int = 2003;
@@ -398,12 +404,12 @@ package com.playfab
         public static const MatchmakingTicketIdMissing:int = 2008;
         public static const MatchmakingMatchIdMissing:int = 2009;
         public static const MatchmakingMatchIdIdMissing:int = 2010;
-        public static const MatchmakingHopperIdMissing:int = 2011;
+        public static const MatchmakingQueueNameMissing:int = 2011;
         public static const MatchmakingTitleIdMissing:int = 2012;
         public static const MatchmakingTicketIdIdMissing:int = 2013;
         public static const MatchmakingPlayerIdMissing:int = 2014;
         public static const MatchmakingJoinRequestUserMissing:int = 2015;
-        public static const MatchmakingHopperConfigNotFound:int = 2016;
+        public static const MatchmakingQueueConfigNotFound:int = 2016;
         public static const MatchmakingMatchNotFound:int = 2017;
         public static const MatchmakingTicketNotFound:int = 2018;
         public static const MatchmakingCreateTicketServerIdentityInvalid:int = 2019;
@@ -417,9 +423,12 @@ package com.playfab
         public static const MatchmakingPlayerIdentityMismatch:int = 2027;
         public static const MatchmakingAlreadyJoinedTicket:int = 2028;
         public static const MatchmakingTicketAlreadyCompleted:int = 2029;
-        public static const MatchmakingHopperIdInvalid:int = 2030;
-        public static const MatchmakingHopperConfigInvalid:int = 2031;
+        public static const MatchmakingQueueNameInvalid:int = 2030;
+        public static const MatchmakingQueueConfigInvalid:int = 2031;
         public static const MatchmakingMemberProfileInvalid:int = 2032;
+        public static const WriteAttemptedDuringExport:int = 2033;
+        public static const NintendoSwitchDeviceIdNotLinked:int = 2034;
+        public static const MatchmakingNotEnabled:int = 2035;
 
 
         public function PlayFabError(data:Object=null)

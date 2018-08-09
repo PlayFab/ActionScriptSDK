@@ -11,8 +11,12 @@ package com.playfab.AdminModels
         public var Mode:String;
         public var Players:Vector.<String>;
         public var Region:String;
+        // Deprecated, please use ServerIPV4Address
         public var ServerAddress:String;
+        public var ServerIPV4Address:String;
+        public var ServerIPV6Address:String;
         public var ServerPort:uint;
+        public var ServerPublicDNSName:String;
         public var StartTime:Date;
         public var TitleId:String;
 
@@ -27,7 +31,10 @@ package com.playfab.AdminModels
             Players = data.Players ? Vector.<String>(data.Players) : null;
             Region = data.Region;
             ServerAddress = data.ServerAddress;
+            ServerIPV4Address = data.ServerIPV4Address;
+            ServerIPV6Address = data.ServerIPV6Address;
             ServerPort = data.ServerPort;
+            ServerPublicDNSName = data.ServerPublicDNSName;
             StartTime = PlayFabUtil.parseDate(data.StartTime);
             TitleId = data.TitleId;
 
