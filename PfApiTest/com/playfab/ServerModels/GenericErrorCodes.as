@@ -385,6 +385,12 @@ package com.playfab.ServerModels
         public static const ExplicitContentDetected:String = "ExplicitContentDetected";
         public static const PIIContentDetected:String = "PIIContentDetected";
         public static const InvalidScheduledTaskParameter:String = "InvalidScheduledTaskParameter";
+        public static const PerEntityEventRateLimitExceeded:String = "PerEntityEventRateLimitExceeded";
+        public static const TitleDefaultLanguageNotSet:String = "TitleDefaultLanguageNotSet";
+        public static const EmailTemplateMissingDefaultVersion:String = "EmailTemplateMissingDefaultVersion";
+        public static const FacebookInstantGamesIdNotLinked:String = "FacebookInstantGamesIdNotLinked";
+        public static const InvalidFacebookInstantGamesSignature:String = "InvalidFacebookInstantGamesSignature";
+        public static const FacebookInstantGamesAuthNotConfiguredForTitle:String = "FacebookInstantGamesAuthNotConfiguredForTitle";
         public static const MatchmakingEntityInvalid:String = "MatchmakingEntityInvalid";
         public static const MatchmakingPlayerAttributesInvalid:String = "MatchmakingPlayerAttributesInvalid";
         public static const MatchmakingCreateRequestMissing:String = "MatchmakingCreateRequestMissing";
@@ -395,12 +401,12 @@ package com.playfab.ServerModels
         public static const MatchmakingTicketIdMissing:String = "MatchmakingTicketIdMissing";
         public static const MatchmakingMatchIdMissing:String = "MatchmakingMatchIdMissing";
         public static const MatchmakingMatchIdIdMissing:String = "MatchmakingMatchIdIdMissing";
-        public static const MatchmakingHopperIdMissing:String = "MatchmakingHopperIdMissing";
+        public static const MatchmakingQueueNameMissing:String = "MatchmakingQueueNameMissing";
         public static const MatchmakingTitleIdMissing:String = "MatchmakingTitleIdMissing";
         public static const MatchmakingTicketIdIdMissing:String = "MatchmakingTicketIdIdMissing";
         public static const MatchmakingPlayerIdMissing:String = "MatchmakingPlayerIdMissing";
         public static const MatchmakingJoinRequestUserMissing:String = "MatchmakingJoinRequestUserMissing";
-        public static const MatchmakingHopperConfigNotFound:String = "MatchmakingHopperConfigNotFound";
+        public static const MatchmakingQueueConfigNotFound:String = "MatchmakingQueueConfigNotFound";
         public static const MatchmakingMatchNotFound:String = "MatchmakingMatchNotFound";
         public static const MatchmakingTicketNotFound:String = "MatchmakingTicketNotFound";
         public static const MatchmakingCreateTicketServerIdentityInvalid:String = "MatchmakingCreateTicketServerIdentityInvalid";
@@ -414,9 +420,12 @@ package com.playfab.ServerModels
         public static const MatchmakingPlayerIdentityMismatch:String = "MatchmakingPlayerIdentityMismatch";
         public static const MatchmakingAlreadyJoinedTicket:String = "MatchmakingAlreadyJoinedTicket";
         public static const MatchmakingTicketAlreadyCompleted:String = "MatchmakingTicketAlreadyCompleted";
-        public static const MatchmakingHopperIdInvalid:String = "MatchmakingHopperIdInvalid";
-        public static const MatchmakingHopperConfigInvalid:String = "MatchmakingHopperConfigInvalid";
+        public static const MatchmakingQueueNameInvalid:String = "MatchmakingQueueNameInvalid";
+        public static const MatchmakingQueueConfigInvalid:String = "MatchmakingQueueConfigInvalid";
         public static const MatchmakingMemberProfileInvalid:String = "MatchmakingMemberProfileInvalid";
+        public static const WriteAttemptedDuringExport:String = "WriteAttemptedDuringExport";
+        public static const NintendoSwitchDeviceIdNotLinked:String = "NintendoSwitchDeviceIdNotLinked";
+        public static const MatchmakingNotEnabled:String = "MatchmakingNotEnabled";
 
     }
 }

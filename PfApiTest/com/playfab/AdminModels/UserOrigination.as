@@ -21,6 +21,9 @@ package com.playfab.AdminModels
         public static const Parse:String = "Parse";
         public static const Twitch:String = "Twitch";
         public static const WindowsHello:String = "WindowsHello";
+        public static const ServerCustomId:String = "ServerCustomId";
+        public static const NintendoSwitchDeviceId:String = "NintendoSwitchDeviceId";
+        public static const FacebookInstantGamesId:String = "FacebookInstantGamesId";
 
     }
 }
