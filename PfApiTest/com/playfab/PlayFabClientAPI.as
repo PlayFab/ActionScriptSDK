@@ -318,6 +318,32 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ConsumeItem", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
+        public static function ConsumeXboxEntitlements(request:ConsumeXboxEntitlementsRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:ConsumeXboxEntitlementsResult = new ConsumeXboxEntitlementsResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/ConsumeXboxEntitlements", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
+        }
+
         public static function CreateSharedGroup(request:CreateSharedGroupRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
@@ -2034,6 +2060,32 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkWindowsHello", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
+        public static function LinkXboxAccount(request:LinkXboxAccountRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:LinkXboxAccountResult = new LinkXboxAccountResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LinkXboxAccount", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
+        }
+
         public static function LoginWithAndroidDeviceID(request:LoginWithAndroidDeviceIDRequest, onComplete:Function, onError:Function):void
         {
             request.TitleId = PlayFabSettings.TitleId != null ? PlayFabSettings.TitleId : request.TitleId;
@@ -2454,6 +2506,36 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LoginWithWindowsHello", requetJson, null, null, onPostComplete);
         }
 
+        public static function LoginWithXbox(request:LoginWithXboxRequest, onComplete:Function, onError:Function):void
+        {
+            request.TitleId = PlayFabSettings.TitleId != null ? PlayFabSettings.TitleId : request.TitleId;
+            if(request.TitleId == null) throw new Error ("Must be have PlayFabSettings.TitleId set to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:LoginResult = new LoginResult(resultData);
+                    PlayFabSettings.ClientSessionTicket = result.SessionTicket != null ? result.SessionTicket : PlayFabSettings.ClientSessionTicket;
+                    PlayFabSettings.EntityToken = result.EntityToken != null ? result.EntityToken.EntityToken : PlayFabSettings.EntityToken;
+                    MultiStepClientLogin(result.SettingsForUser.NeedsAttribution);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/LoginWithXbox", requetJson, null, null, onPostComplete);
+        }
+
         public static function Matchmake(request:MatchmakeRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
@@ -2789,7 +2871,7 @@ package com.playfab
                 }
                 else
                 {
-                    var result:EmptyResult = new EmptyResult(resultData);
+                    var result:EmptyResponse = new EmptyResponse(resultData);
 
                     if(onComplete != null)
                         onComplete(result);
@@ -3319,6 +3401,32 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkWindowsHello", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
+        public static function UnlinkXboxAccount(request:UnlinkXboxAccountRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:UnlinkXboxAccountResult = new UnlinkXboxAccountResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Client/UnlinkXboxAccount", requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
+        }
+
         public static function UnlockContainerInstance(request:UnlockContainerInstanceRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
@@ -3387,7 +3495,7 @@ package com.playfab
                 }
                 else
                 {
-                    var result:EmptyResult = new EmptyResult(resultData);
+                    var result:EmptyResponse = new EmptyResponse(resultData);
 
                     if(onComplete != null)
                         onComplete(result);

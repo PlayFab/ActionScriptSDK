@@ -5,7 +5,6 @@ package com.playfab.AdminModels
     {
         public var Id:String;
         public var Type:String;
-        public var TypeString:String;
 
         public function EntityKey(data:Object=null)
         {
@@ -13,7 +12,6 @@ package com.playfab.AdminModels
                 return;
             Id = data.Id;
             Type = data.Type;
-            TypeString = data.TypeString;
 
         }
     }

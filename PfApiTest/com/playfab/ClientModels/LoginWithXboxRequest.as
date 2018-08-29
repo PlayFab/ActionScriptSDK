@@ -1,7 +1,7 @@
 
 package com.playfab.ClientModels
 {
-    public class LoginWithSteamRequest
+    public class LoginWithXboxRequest
     {
         public var CreateAccount:*;
         public var EncryptedRequest:String;
@@ -9,10 +9,10 @@ package com.playfab.ClientModels
         // Deprecated
         public var LoginTitlePlayerAccountEntity:*;
         public var PlayerSecret:String;
-        public var SteamTicket:String;
         public var TitleId:String;
+        public var XboxToken:String;
 
-        public function LoginWithSteamRequest(data:Object=null)
+        public function LoginWithXboxRequest(data:Object=null)
         {
             if(data == null)
                 return;
@@ -21,8 +21,8 @@ package com.playfab.ClientModels
             InfoRequestParameters = new GetPlayerCombinedInfoRequestParams(data.InfoRequestParameters);
             LoginTitlePlayerAccountEntity = data.LoginTitlePlayerAccountEntity;
             PlayerSecret = data.PlayerSecret;
-            SteamTicket = data.SteamTicket;
             TitleId = data.TitleId;
+            XboxToken = data.XboxToken;
 
         }
     }

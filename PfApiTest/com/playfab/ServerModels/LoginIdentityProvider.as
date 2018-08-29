@@ -21,6 +21,7 @@ package com.playfab.ServerModels
         public static const CustomServer:String = "CustomServer";
         public static const NintendoSwitch:String = "NintendoSwitch";
         public static const FacebookInstantGames:String = "FacebookInstantGames";
+        public static const OpenIdConnect:String = "OpenIdConnect";
 
     }
 }
