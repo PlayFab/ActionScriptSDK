@@ -46,7 +46,7 @@ package com.playfab
                 }
                 else
                 {
-                    var result:EmptyResult = new EmptyResult(resultData);
+                    var result:EmptyResponse = new EmptyResponse(resultData);
 
                     if(onComplete != null)
                         onComplete(result);
@@ -306,7 +306,7 @@ package com.playfab
                 }
                 else
                 {
-                    var result:EmptyResult = new EmptyResult(resultData);
+                    var result:EmptyResponse = new EmptyResponse(resultData);
 
                     if(onComplete != null)
                         onComplete(result);
@@ -1892,7 +1892,7 @@ package com.playfab
                 }
                 else
                 {
-                    var result:EmptyResult = new EmptyResult(resultData);
+                    var result:EmptyResponse = new EmptyResponse(resultData);
 
                     if(onComplete != null)
                         onComplete(result);
@@ -2178,7 +2178,7 @@ package com.playfab
                 }
                 else
                 {
-                    var result:EmptyResult = new EmptyResult(resultData);
+                    var result:EmptyResponse = new EmptyResponse(resultData);
 
                     if(onComplete != null)
                         onComplete(result);
@@ -2490,7 +2490,7 @@ package com.playfab
                 }
                 else
                 {
-                    var result:EmptyResult = new EmptyResult(resultData);
+                    var result:EmptyResponse = new EmptyResponse(resultData);
 
                     if(onComplete != null)
                         onComplete(result);
@@ -2750,7 +2750,7 @@ package com.playfab
                 }
                 else
                 {
-                    var result:EmptyResult = new EmptyResult(resultData);
+                    var result:EmptyResponse = new EmptyResponse(resultData);
 
                     if(onComplete != null)
                         onComplete(result);

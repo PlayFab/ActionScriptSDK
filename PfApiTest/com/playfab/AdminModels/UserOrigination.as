@@ -24,6 +24,7 @@ package com.playfab.AdminModels
         public static const ServerCustomId:String = "ServerCustomId";
         public static const NintendoSwitchDeviceId:String = "NintendoSwitchDeviceId";
         public static const FacebookInstantGamesId:String = "FacebookInstantGamesId";
+        public static const OpenIdConnect:String = "OpenIdConnect";
 
     }
 }

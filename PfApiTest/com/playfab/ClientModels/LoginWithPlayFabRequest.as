@@ -4,6 +4,7 @@ package com.playfab.ClientModels
     public class LoginWithPlayFabRequest
     {
         public var InfoRequestParameters:GetPlayerCombinedInfoRequestParams;
+        // Deprecated
         public var LoginTitlePlayerAccountEntity:*;
         public var Password:String;
         public var TitleId:String;

@@ -1,10 +1,10 @@
 
 package com.playfab.ClientModels
 {
-    public class EmptyResult
+    public class UnlinkXboxAccountResult
     {
 
-        public function EmptyResult(data:Object=null)
+        public function UnlinkXboxAccountResult(data:Object=null)
         {
             if(data == null)
                 return;

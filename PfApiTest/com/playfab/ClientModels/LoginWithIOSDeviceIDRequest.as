@@ -8,6 +8,7 @@ package com.playfab.ClientModels
         public var DeviceModel:String;
         public var EncryptedRequest:String;
         public var InfoRequestParameters:GetPlayerCombinedInfoRequestParams;
+        // Deprecated
         public var LoginTitlePlayerAccountEntity:*;
         public var OS:String;
         public var PlayerSecret:String;

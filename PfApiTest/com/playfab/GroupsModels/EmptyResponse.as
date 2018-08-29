@@ -1,10 +1,10 @@
 
 package com.playfab.GroupsModels
 {
-    public class EmptyResult
+    public class EmptyResponse
     {
 
-        public function EmptyResult(data:Object=null)
+        public function EmptyResponse(data:Object=null)
         {
             if(data == null)
                 return;

@@ -5,6 +5,7 @@ package com.playfab.ClientModels
     {
         public var ChallengeSignature:String;
         public var InfoRequestParameters:GetPlayerCombinedInfoRequestParams;
+        // Deprecated
         public var LoginTitlePlayerAccountEntity:*;
         public var PublicKeyHint:String;
         public var TitleId:String;

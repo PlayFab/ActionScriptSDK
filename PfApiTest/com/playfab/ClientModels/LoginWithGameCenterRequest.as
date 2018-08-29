@@ -6,6 +6,7 @@ package com.playfab.ClientModels
         public var CreateAccount:*;
         public var EncryptedRequest:String;
         public var InfoRequestParameters:GetPlayerCombinedInfoRequestParams;
+        // Deprecated
         public var LoginTitlePlayerAccountEntity:*;
         public var PlayerId:String;
         public var PlayerSecret:String;
