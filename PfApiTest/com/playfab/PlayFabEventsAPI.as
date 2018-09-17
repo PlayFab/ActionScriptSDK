@@ -27,7 +27,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Event/WriteEvents", requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Event/WriteEvents"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
         }
 
     }

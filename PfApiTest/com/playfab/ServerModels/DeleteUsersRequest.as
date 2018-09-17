@@ -1,6 +1,7 @@
 
 package com.playfab.ServerModels
 {
+    // Deprecated
     public class DeleteUsersRequest
     {
         public var PlayFabIds:Vector.<String>;

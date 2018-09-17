@@ -27,7 +27,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Profile/GetGlobalPolicy", requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Profile/GetGlobalPolicy"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
         }
 
         public static function GetProfile(request:GetEntityProfileRequest, onComplete:Function, onError:Function):void
@@ -53,7 +53,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Profile/GetProfile", requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Profile/GetProfile"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
         }
 
         public static function GetProfiles(request:GetEntityProfilesRequest, onComplete:Function, onError:Function):void
@@ -79,7 +79,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Profile/GetProfiles", requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Profile/GetProfiles"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
         }
 
         public static function SetGlobalPolicy(request:SetGlobalPolicyRequest, onComplete:Function, onError:Function):void
@@ -105,7 +105,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Profile/SetGlobalPolicy", requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Profile/SetGlobalPolicy"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
         }
 
         public static function SetProfileLanguage(request:SetProfileLanguageRequest, onComplete:Function, onError:Function):void
@@ -131,7 +131,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Profile/SetProfileLanguage", requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Profile/SetProfileLanguage"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
         }
 
         public static function SetProfilePolicy(request:SetEntityProfilePolicyRequest, onComplete:Function, onError:Function):void
@@ -157,7 +157,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Profile/SetProfilePolicy", requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Profile/SetProfilePolicy"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
         }
 
     }

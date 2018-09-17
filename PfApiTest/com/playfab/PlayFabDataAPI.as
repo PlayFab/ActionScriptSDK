@@ -27,7 +27,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/File/AbortFileUploads", requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/File/AbortFileUploads"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
         }
 
         public static function DeleteFiles(request:DeleteFilesRequest, onComplete:Function, onError:Function):void
@@ -53,7 +53,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/File/DeleteFiles", requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/File/DeleteFiles"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
         }
 
         public static function FinalizeFileUploads(request:FinalizeFileUploadsRequest, onComplete:Function, onError:Function):void
@@ -79,7 +79,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/File/FinalizeFileUploads", requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/File/FinalizeFileUploads"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
         }
 
         public static function GetFiles(request:GetFilesRequest, onComplete:Function, onError:Function):void
@@ -105,7 +105,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/File/GetFiles", requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/File/GetFiles"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
         }
 
         public static function GetObjects(request:GetObjectsRequest, onComplete:Function, onError:Function):void
@@ -131,7 +131,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Object/GetObjects", requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Object/GetObjects"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
         }
 
         public static function InitiateFileUploads(request:InitiateFileUploadsRequest, onComplete:Function, onError:Function):void
@@ -157,7 +157,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/File/InitiateFileUploads", requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/File/InitiateFileUploads"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
         }
 
         public static function SetObjects(request:SetObjectsRequest, onComplete:Function, onError:Function):void
@@ -183,7 +183,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Object/SetObjects", requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Object/SetObjects"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
         }
 
     }
