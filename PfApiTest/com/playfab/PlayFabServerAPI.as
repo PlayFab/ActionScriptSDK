@@ -27,7 +27,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/AddCharacterVirtualCurrency", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/AddCharacterVirtualCurrency"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function AddFriend(request:AddFriendRequest, onComplete:Function, onError:Function):void
@@ -53,7 +53,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/AddFriend", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/AddFriend"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function AddPlayerTag(request:AddPlayerTagRequest, onComplete:Function, onError:Function):void
@@ -79,7 +79,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/AddPlayerTag", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/AddPlayerTag"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function AddSharedGroupMembers(request:AddSharedGroupMembersRequest, onComplete:Function, onError:Function):void
@@ -105,7 +105,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/AddSharedGroupMembers", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/AddSharedGroupMembers"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function AddUserVirtualCurrency(request:AddUserVirtualCurrencyRequest, onComplete:Function, onError:Function):void
@@ -131,7 +131,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/AddUserVirtualCurrency", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/AddUserVirtualCurrency"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function AuthenticateSessionTicket(request:AuthenticateSessionTicketRequest, onComplete:Function, onError:Function):void
@@ -157,7 +157,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/AuthenticateSessionTicket", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/AuthenticateSessionTicket"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function AwardSteamAchievement(request:AwardSteamAchievementRequest, onComplete:Function, onError:Function):void
@@ -183,7 +183,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/AwardSteamAchievement", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/AwardSteamAchievement"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function BanUsers(request:BanUsersRequest, onComplete:Function, onError:Function):void
@@ -209,7 +209,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/BanUsers", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/BanUsers"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function ConsumeItem(request:ConsumeItemRequest, onComplete:Function, onError:Function):void
@@ -235,7 +235,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/ConsumeItem", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/ConsumeItem"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function CreateSharedGroup(request:CreateSharedGroupRequest, onComplete:Function, onError:Function):void
@@ -261,7 +261,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/CreateSharedGroup", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/CreateSharedGroup"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function DeleteCharacterFromUser(request:DeleteCharacterFromUserRequest, onComplete:Function, onError:Function):void
@@ -287,7 +287,33 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/DeleteCharacterFromUser", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/DeleteCharacterFromUser"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+        }
+
+        public static function DeletePlayer(request:DeletePlayerRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:DeletePlayerResult = new DeletePlayerResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/DeletePlayer"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function DeleteSharedGroup(request:DeleteSharedGroupRequest, onComplete:Function, onError:Function):void
@@ -313,9 +339,10 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/DeleteSharedGroup", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/DeleteSharedGroup"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
+        [Deprecated(message="The DeleteUsers API and its associated datatypes are scheduled for deprecation. Use DeletePlayer instead.", replacement="DeletePlayer")]
         public static function DeleteUsers(request:DeleteUsersRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
@@ -339,7 +366,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/DeleteUsers", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/DeleteUsers"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function DeregisterGame(request:DeregisterGameRequest, onComplete:Function, onError:Function):void
@@ -365,7 +392,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/DeregisterGame", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/DeregisterGame"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function EvaluateRandomResultTable(request:EvaluateRandomResultTableRequest, onComplete:Function, onError:Function):void
@@ -391,7 +418,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/EvaluateRandomResultTable", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/EvaluateRandomResultTable"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function ExecuteCloudScript(request:ExecuteCloudScriptServerRequest, onComplete:Function, onError:Function):void
@@ -417,7 +444,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/ExecuteCloudScript", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/ExecuteCloudScript"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetAllSegments(request:GetAllSegmentsRequest, onComplete:Function, onError:Function):void
@@ -443,7 +470,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetAllSegments", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetAllSegments"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetAllUsersCharacters(request:ListUsersCharactersRequest, onComplete:Function, onError:Function):void
@@ -469,7 +496,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetAllUsersCharacters", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetAllUsersCharacters"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetCatalogItems(request:GetCatalogItemsRequest, onComplete:Function, onError:Function):void
@@ -495,7 +522,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetCatalogItems", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetCatalogItems"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetCharacterData(request:GetCharacterDataRequest, onComplete:Function, onError:Function):void
@@ -521,7 +548,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetCharacterData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetCharacterData"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetCharacterInternalData(request:GetCharacterDataRequest, onComplete:Function, onError:Function):void
@@ -547,7 +574,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetCharacterInternalData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetCharacterInternalData"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetCharacterInventory(request:GetCharacterInventoryRequest, onComplete:Function, onError:Function):void
@@ -573,7 +600,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetCharacterInventory", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetCharacterInventory"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetCharacterLeaderboard(request:GetCharacterLeaderboardRequest, onComplete:Function, onError:Function):void
@@ -599,7 +626,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetCharacterLeaderboard", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetCharacterLeaderboard"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetCharacterReadOnlyData(request:GetCharacterDataRequest, onComplete:Function, onError:Function):void
@@ -625,7 +652,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetCharacterReadOnlyData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetCharacterReadOnlyData"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetCharacterStatistics(request:GetCharacterStatisticsRequest, onComplete:Function, onError:Function):void
@@ -651,7 +678,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetCharacterStatistics", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetCharacterStatistics"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetContentDownloadUrl(request:GetContentDownloadUrlRequest, onComplete:Function, onError:Function):void
@@ -677,7 +704,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetContentDownloadUrl", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetContentDownloadUrl"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetFriendLeaderboard(request:GetFriendLeaderboardRequest, onComplete:Function, onError:Function):void
@@ -703,7 +730,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetFriendLeaderboard", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetFriendLeaderboard"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetFriendsList(request:GetFriendsListRequest, onComplete:Function, onError:Function):void
@@ -729,7 +756,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetFriendsList", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetFriendsList"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetLeaderboard(request:GetLeaderboardRequest, onComplete:Function, onError:Function):void
@@ -755,7 +782,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetLeaderboard", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetLeaderboard"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetLeaderboardAroundCharacter(request:GetLeaderboardAroundCharacterRequest, onComplete:Function, onError:Function):void
@@ -781,7 +808,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetLeaderboardAroundCharacter", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetLeaderboardAroundCharacter"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetLeaderboardAroundUser(request:GetLeaderboardAroundUserRequest, onComplete:Function, onError:Function):void
@@ -807,7 +834,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetLeaderboardAroundUser", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetLeaderboardAroundUser"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetLeaderboardForUserCharacters(request:GetLeaderboardForUsersCharactersRequest, onComplete:Function, onError:Function):void
@@ -833,7 +860,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetLeaderboardForUserCharacters", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetLeaderboardForUserCharacters"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetPlayerCombinedInfo(request:GetPlayerCombinedInfoRequest, onComplete:Function, onError:Function):void
@@ -859,7 +886,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetPlayerCombinedInfo", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetPlayerCombinedInfo"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetPlayerProfile(request:GetPlayerProfileRequest, onComplete:Function, onError:Function):void
@@ -885,7 +912,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetPlayerProfile", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetPlayerProfile"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetPlayerSegments(request:GetPlayersSegmentsRequest, onComplete:Function, onError:Function):void
@@ -911,7 +938,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetPlayerSegments", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetPlayerSegments"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetPlayersInSegment(request:GetPlayersInSegmentRequest, onComplete:Function, onError:Function):void
@@ -937,7 +964,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetPlayersInSegment", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetPlayersInSegment"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetPlayerStatistics(request:GetPlayerStatisticsRequest, onComplete:Function, onError:Function):void
@@ -963,7 +990,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetPlayerStatistics", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetPlayerStatistics"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetPlayerStatisticVersions(request:GetPlayerStatisticVersionsRequest, onComplete:Function, onError:Function):void
@@ -989,7 +1016,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetPlayerStatisticVersions", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetPlayerStatisticVersions"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetPlayerTags(request:GetPlayerTagsRequest, onComplete:Function, onError:Function):void
@@ -1015,7 +1042,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetPlayerTags", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetPlayerTags"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetPlayFabIDsFromFacebookIDs(request:GetPlayFabIDsFromFacebookIDsRequest, onComplete:Function, onError:Function):void
@@ -1041,7 +1068,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetPlayFabIDsFromFacebookIDs", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetPlayFabIDsFromFacebookIDs"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetPlayFabIDsFromFacebookInstantGamesIds(request:GetPlayFabIDsFromFacebookInstantGamesIdsRequest, onComplete:Function, onError:Function):void
@@ -1067,7 +1094,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetPlayFabIDsFromFacebookInstantGamesIds", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetPlayFabIDsFromFacebookInstantGamesIds"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetPlayFabIDsFromNintendoSwitchDeviceIds(request:GetPlayFabIDsFromNintendoSwitchDeviceIdsRequest, onComplete:Function, onError:Function):void
@@ -1093,7 +1120,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetPlayFabIDsFromNintendoSwitchDeviceIds", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetPlayFabIDsFromNintendoSwitchDeviceIds"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetPlayFabIDsFromSteamIDs(request:GetPlayFabIDsFromSteamIDsRequest, onComplete:Function, onError:Function):void
@@ -1119,7 +1146,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetPlayFabIDsFromSteamIDs", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetPlayFabIDsFromSteamIDs"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetPublisherData(request:GetPublisherDataRequest, onComplete:Function, onError:Function):void
@@ -1145,7 +1172,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetPublisherData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetPublisherData"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetRandomResultTables(request:GetRandomResultTablesRequest, onComplete:Function, onError:Function):void
@@ -1171,7 +1198,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetRandomResultTables", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetRandomResultTables"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetSharedGroupData(request:GetSharedGroupDataRequest, onComplete:Function, onError:Function):void
@@ -1197,7 +1224,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetSharedGroupData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetSharedGroupData"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetTime(request:GetTimeRequest, onComplete:Function, onError:Function):void
@@ -1223,7 +1250,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetTime", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetTime"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetTitleData(request:GetTitleDataRequest, onComplete:Function, onError:Function):void
@@ -1249,7 +1276,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetTitleData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetTitleData"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetTitleInternalData(request:GetTitleDataRequest, onComplete:Function, onError:Function):void
@@ -1275,7 +1302,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetTitleInternalData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetTitleInternalData"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetTitleNews(request:GetTitleNewsRequest, onComplete:Function, onError:Function):void
@@ -1301,7 +1328,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetTitleNews", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetTitleNews"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetUserAccountInfo(request:GetUserAccountInfoRequest, onComplete:Function, onError:Function):void
@@ -1327,7 +1354,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetUserAccountInfo", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetUserAccountInfo"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetUserBans(request:GetUserBansRequest, onComplete:Function, onError:Function):void
@@ -1353,7 +1380,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetUserBans", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetUserBans"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetUserData(request:GetUserDataRequest, onComplete:Function, onError:Function):void
@@ -1379,7 +1406,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetUserData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetUserData"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetUserInternalData(request:GetUserDataRequest, onComplete:Function, onError:Function):void
@@ -1405,7 +1432,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetUserInternalData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetUserInternalData"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetUserInventory(request:GetUserInventoryRequest, onComplete:Function, onError:Function):void
@@ -1431,7 +1458,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetUserInventory", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetUserInventory"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetUserPublisherData(request:GetUserDataRequest, onComplete:Function, onError:Function):void
@@ -1457,7 +1484,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetUserPublisherData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetUserPublisherData"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetUserPublisherInternalData(request:GetUserDataRequest, onComplete:Function, onError:Function):void
@@ -1483,7 +1510,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetUserPublisherInternalData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetUserPublisherInternalData"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetUserPublisherReadOnlyData(request:GetUserDataRequest, onComplete:Function, onError:Function):void
@@ -1509,7 +1536,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetUserPublisherReadOnlyData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetUserPublisherReadOnlyData"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GetUserReadOnlyData(request:GetUserDataRequest, onComplete:Function, onError:Function):void
@@ -1535,7 +1562,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GetUserReadOnlyData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GetUserReadOnlyData"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GrantCharacterToUser(request:GrantCharacterToUserRequest, onComplete:Function, onError:Function):void
@@ -1561,7 +1588,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GrantCharacterToUser", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GrantCharacterToUser"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GrantItemsToCharacter(request:GrantItemsToCharacterRequest, onComplete:Function, onError:Function):void
@@ -1587,7 +1614,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GrantItemsToCharacter", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GrantItemsToCharacter"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GrantItemsToUser(request:GrantItemsToUserRequest, onComplete:Function, onError:Function):void
@@ -1613,7 +1640,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GrantItemsToUser", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GrantItemsToUser"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function GrantItemsToUsers(request:GrantItemsToUsersRequest, onComplete:Function, onError:Function):void
@@ -1639,7 +1666,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/GrantItemsToUsers", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/GrantItemsToUsers"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function ModifyItemUses(request:ModifyItemUsesRequest, onComplete:Function, onError:Function):void
@@ -1665,7 +1692,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/ModifyItemUses", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/ModifyItemUses"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function MoveItemToCharacterFromCharacter(request:MoveItemToCharacterFromCharacterRequest, onComplete:Function, onError:Function):void
@@ -1691,7 +1718,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/MoveItemToCharacterFromCharacter", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/MoveItemToCharacterFromCharacter"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function MoveItemToCharacterFromUser(request:MoveItemToCharacterFromUserRequest, onComplete:Function, onError:Function):void
@@ -1717,7 +1744,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/MoveItemToCharacterFromUser", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/MoveItemToCharacterFromUser"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function MoveItemToUserFromCharacter(request:MoveItemToUserFromCharacterRequest, onComplete:Function, onError:Function):void
@@ -1743,7 +1770,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/MoveItemToUserFromCharacter", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/MoveItemToUserFromCharacter"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function NotifyMatchmakerPlayerLeft(request:NotifyMatchmakerPlayerLeftRequest, onComplete:Function, onError:Function):void
@@ -1769,7 +1796,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/NotifyMatchmakerPlayerLeft", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/NotifyMatchmakerPlayerLeft"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function RedeemCoupon(request:RedeemCouponRequest, onComplete:Function, onError:Function):void
@@ -1795,7 +1822,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/RedeemCoupon", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/RedeemCoupon"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function RedeemMatchmakerTicket(request:RedeemMatchmakerTicketRequest, onComplete:Function, onError:Function):void
@@ -1821,7 +1848,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/RedeemMatchmakerTicket", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/RedeemMatchmakerTicket"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function RefreshGameServerInstanceHeartbeat(request:RefreshGameServerInstanceHeartbeatRequest, onComplete:Function, onError:Function):void
@@ -1847,7 +1874,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/RefreshGameServerInstanceHeartbeat", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/RefreshGameServerInstanceHeartbeat"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function RegisterGame(request:RegisterGameRequest, onComplete:Function, onError:Function):void
@@ -1873,7 +1900,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/RegisterGame", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/RegisterGame"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function RemoveFriend(request:RemoveFriendRequest, onComplete:Function, onError:Function):void
@@ -1899,7 +1926,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/RemoveFriend", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/RemoveFriend"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function RemovePlayerTag(request:RemovePlayerTagRequest, onComplete:Function, onError:Function):void
@@ -1925,7 +1952,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/RemovePlayerTag", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/RemovePlayerTag"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function RemoveSharedGroupMembers(request:RemoveSharedGroupMembersRequest, onComplete:Function, onError:Function):void
@@ -1951,7 +1978,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/RemoveSharedGroupMembers", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/RemoveSharedGroupMembers"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function ReportPlayer(request:ReportPlayerServerRequest, onComplete:Function, onError:Function):void
@@ -1977,7 +2004,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/ReportPlayer", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/ReportPlayer"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function RevokeAllBansForUser(request:RevokeAllBansForUserRequest, onComplete:Function, onError:Function):void
@@ -2003,7 +2030,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/RevokeAllBansForUser", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/RevokeAllBansForUser"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function RevokeBans(request:RevokeBansRequest, onComplete:Function, onError:Function):void
@@ -2029,7 +2056,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/RevokeBans", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/RevokeBans"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function RevokeInventoryItem(request:RevokeInventoryItemRequest, onComplete:Function, onError:Function):void
@@ -2055,7 +2082,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/RevokeInventoryItem", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/RevokeInventoryItem"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function RevokeInventoryItems(request:RevokeInventoryItemsRequest, onComplete:Function, onError:Function):void
@@ -2081,7 +2108,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/RevokeInventoryItems", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/RevokeInventoryItems"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function SendCustomAccountRecoveryEmail(request:SendCustomAccountRecoveryEmailRequest, onComplete:Function, onError:Function):void
@@ -2107,7 +2134,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/SendCustomAccountRecoveryEmail", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/SendCustomAccountRecoveryEmail"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function SendEmailFromTemplate(request:SendEmailFromTemplateRequest, onComplete:Function, onError:Function):void
@@ -2133,7 +2160,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/SendEmailFromTemplate", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/SendEmailFromTemplate"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function SendPushNotification(request:SendPushNotificationRequest, onComplete:Function, onError:Function):void
@@ -2159,7 +2186,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/SendPushNotification", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/SendPushNotification"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function SetFriendTags(request:SetFriendTagsRequest, onComplete:Function, onError:Function):void
@@ -2185,7 +2212,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/SetFriendTags", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/SetFriendTags"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function SetGameServerInstanceData(request:SetGameServerInstanceDataRequest, onComplete:Function, onError:Function):void
@@ -2211,7 +2238,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/SetGameServerInstanceData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/SetGameServerInstanceData"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function SetGameServerInstanceState(request:SetGameServerInstanceStateRequest, onComplete:Function, onError:Function):void
@@ -2237,7 +2264,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/SetGameServerInstanceState", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/SetGameServerInstanceState"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function SetGameServerInstanceTags(request:SetGameServerInstanceTagsRequest, onComplete:Function, onError:Function):void
@@ -2263,7 +2290,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/SetGameServerInstanceTags", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/SetGameServerInstanceTags"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function SetPlayerSecret(request:SetPlayerSecretRequest, onComplete:Function, onError:Function):void
@@ -2289,7 +2316,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/SetPlayerSecret", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/SetPlayerSecret"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function SetPublisherData(request:SetPublisherDataRequest, onComplete:Function, onError:Function):void
@@ -2315,7 +2342,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/SetPublisherData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/SetPublisherData"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function SetTitleData(request:SetTitleDataRequest, onComplete:Function, onError:Function):void
@@ -2341,7 +2368,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/SetTitleData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/SetTitleData"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function SetTitleInternalData(request:SetTitleDataRequest, onComplete:Function, onError:Function):void
@@ -2367,7 +2394,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/SetTitleInternalData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/SetTitleInternalData"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function SubtractCharacterVirtualCurrency(request:SubtractCharacterVirtualCurrencyRequest, onComplete:Function, onError:Function):void
@@ -2393,7 +2420,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/SubtractCharacterVirtualCurrency", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/SubtractCharacterVirtualCurrency"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function SubtractUserVirtualCurrency(request:SubtractUserVirtualCurrencyRequest, onComplete:Function, onError:Function):void
@@ -2419,7 +2446,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/SubtractUserVirtualCurrency", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/SubtractUserVirtualCurrency"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function UnlockContainerInstance(request:UnlockContainerInstanceRequest, onComplete:Function, onError:Function):void
@@ -2445,7 +2472,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/UnlockContainerInstance", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/UnlockContainerInstance"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function UnlockContainerItem(request:UnlockContainerItemRequest, onComplete:Function, onError:Function):void
@@ -2471,7 +2498,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/UnlockContainerItem", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/UnlockContainerItem"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function UpdateAvatarUrl(request:UpdateAvatarUrlRequest, onComplete:Function, onError:Function):void
@@ -2497,7 +2524,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/UpdateAvatarUrl", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/UpdateAvatarUrl"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function UpdateBans(request:UpdateBansRequest, onComplete:Function, onError:Function):void
@@ -2523,7 +2550,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/UpdateBans", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/UpdateBans"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function UpdateCharacterData(request:UpdateCharacterDataRequest, onComplete:Function, onError:Function):void
@@ -2549,7 +2576,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/UpdateCharacterData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/UpdateCharacterData"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function UpdateCharacterInternalData(request:UpdateCharacterDataRequest, onComplete:Function, onError:Function):void
@@ -2575,7 +2602,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/UpdateCharacterInternalData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/UpdateCharacterInternalData"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function UpdateCharacterReadOnlyData(request:UpdateCharacterDataRequest, onComplete:Function, onError:Function):void
@@ -2601,7 +2628,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/UpdateCharacterReadOnlyData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/UpdateCharacterReadOnlyData"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function UpdateCharacterStatistics(request:UpdateCharacterStatisticsRequest, onComplete:Function, onError:Function):void
@@ -2627,7 +2654,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/UpdateCharacterStatistics", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/UpdateCharacterStatistics"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function UpdatePlayerStatistics(request:UpdatePlayerStatisticsRequest, onComplete:Function, onError:Function):void
@@ -2653,7 +2680,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/UpdatePlayerStatistics", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/UpdatePlayerStatistics"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function UpdateSharedGroupData(request:UpdateSharedGroupDataRequest, onComplete:Function, onError:Function):void
@@ -2679,7 +2706,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/UpdateSharedGroupData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/UpdateSharedGroupData"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function UpdateUserData(request:UpdateUserDataRequest, onComplete:Function, onError:Function):void
@@ -2705,7 +2732,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/UpdateUserData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/UpdateUserData"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function UpdateUserInternalData(request:UpdateUserInternalDataRequest, onComplete:Function, onError:Function):void
@@ -2731,7 +2758,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/UpdateUserInternalData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/UpdateUserInternalData"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function UpdateUserInventoryItemCustomData(request:UpdateUserInventoryItemDataRequest, onComplete:Function, onError:Function):void
@@ -2757,7 +2784,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/UpdateUserInventoryItemCustomData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/UpdateUserInventoryItemCustomData"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function UpdateUserPublisherData(request:UpdateUserDataRequest, onComplete:Function, onError:Function):void
@@ -2783,7 +2810,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/UpdateUserPublisherData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/UpdateUserPublisherData"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function UpdateUserPublisherInternalData(request:UpdateUserInternalDataRequest, onComplete:Function, onError:Function):void
@@ -2809,7 +2836,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/UpdateUserPublisherInternalData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/UpdateUserPublisherInternalData"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function UpdateUserPublisherReadOnlyData(request:UpdateUserDataRequest, onComplete:Function, onError:Function):void
@@ -2835,7 +2862,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/UpdateUserPublisherReadOnlyData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/UpdateUserPublisherReadOnlyData"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function UpdateUserReadOnlyData(request:UpdateUserDataRequest, onComplete:Function, onError:Function):void
@@ -2861,7 +2888,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/UpdateUserReadOnlyData", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/UpdateUserReadOnlyData"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function WriteCharacterEvent(request:WriteServerCharacterEventRequest, onComplete:Function, onError:Function):void
@@ -2887,7 +2914,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/WriteCharacterEvent", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/WriteCharacterEvent"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function WritePlayerEvent(request:WriteServerPlayerEventRequest, onComplete:Function, onError:Function):void
@@ -2913,7 +2940,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/WritePlayerEvent", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/WritePlayerEvent"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function WriteTitleEvent(request:WriteTitleEventRequest, onComplete:Function, onError:Function):void
@@ -2939,7 +2966,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Server/WriteTitleEvent", requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Server/WriteTitleEvent"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
     }

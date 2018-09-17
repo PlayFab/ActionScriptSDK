@@ -31,7 +31,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL()+"/Authentication/GetEntityToken", requetJson, authKey, authValue, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Authentication/GetEntityToken"), requetJson, authKey, authValue, onPostComplete);
         }
 
     }

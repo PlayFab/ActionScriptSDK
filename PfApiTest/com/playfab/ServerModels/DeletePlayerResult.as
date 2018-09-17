@@ -1,11 +1,10 @@
 
 package com.playfab.ServerModels
 {
-    // Deprecated
-    public class DeleteUsersResult
+    public class DeletePlayerResult
     {
 
-        public function DeleteUsersResult(data:Object=null)
+        public function DeletePlayerResult(data:Object=null)
         {
             if(data == null)
                 return;
