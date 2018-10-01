@@ -810,32 +810,6 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL("/Admin/GetMatchmakerGameModes"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
-        public static function GetMatchmakingQueue(request:GetMatchmakingQueueRequest, onComplete:Function, onError:Function):void
-        {
-            if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-            var requetJson:String = JSON.stringify( request );
-
-            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
-            {
-                if(error)
-                {
-                    if(onError != null)
-                        onError(error);
-                    if(PlayFabSettings.GlobalErrorHandler != null)
-                        PlayFabSettings.GlobalErrorHandler(error);
-                }
-                else
-                {
-                    var result:GetMatchmakingQueueResult = new GetMatchmakingQueueResult(resultData);
-
-                    if(onComplete != null)
-                        onComplete(result);
-                }
-            }
-
-            PlayFabHTTP.post(PlayFabSettings.GetURL("/Admin/GetMatchmakingQueue"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
-        }
-
         public static function GetPlayedTitleList(request:GetPlayedTitleListRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
@@ -1642,32 +1616,6 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL("/Admin/IncrementPlayerStatisticVersion"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
-        public static function ListMatchmakingQueues(request:ListMatchmakingQueuesRequest, onComplete:Function, onError:Function):void
-        {
-            if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-            var requetJson:String = JSON.stringify( request );
-
-            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
-            {
-                if(error)
-                {
-                    if(onError != null)
-                        onError(error);
-                    if(PlayFabSettings.GlobalErrorHandler != null)
-                        PlayFabSettings.GlobalErrorHandler(error);
-                }
-                else
-                {
-                    var result:ListMatchmakingQueuesResult = new ListMatchmakingQueuesResult(resultData);
-
-                    if(onComplete != null)
-                        onComplete(result);
-                }
-            }
-
-            PlayFabHTTP.post(PlayFabSettings.GetURL("/Admin/ListMatchmakingQueues"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
-        }
-
         public static function ListServerBuilds(request:ListBuildsRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
@@ -1796,32 +1744,6 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL("/Admin/RefundPurchase"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
-        }
-
-        public static function RemoveMatchmakingQueue(request:RemoveMatchmakingQueueRequest, onComplete:Function, onError:Function):void
-        {
-            if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-            var requetJson:String = JSON.stringify( request );
-
-            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
-            {
-                if(error)
-                {
-                    if(onError != null)
-                        onError(error);
-                    if(PlayFabSettings.GlobalErrorHandler != null)
-                        PlayFabSettings.GlobalErrorHandler(error);
-                }
-                else
-                {
-                    var result:RemoveMatchmakingQueueResult = new RemoveMatchmakingQueueResult(resultData);
-
-                    if(onComplete != null)
-                        onComplete(result);
-                }
-            }
-
-            PlayFabHTTP.post(PlayFabSettings.GetURL("/Admin/RemoveMatchmakingQueue"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function RemovePlayerTag(request:RemovePlayerTagRequest, onComplete:Function, onError:Function):void
@@ -2186,32 +2108,6 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL("/Admin/SetCatalogItems"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
-        }
-
-        public static function SetMatchmakingQueue(request:SetMatchmakingQueueRequest, onComplete:Function, onError:Function):void
-        {
-            if (PlayFabSettings.DeveloperSecretKey == null) throw new Error ("Must have PlayFabSettings.DeveloperSecretKey set to call this method");
-            var requetJson:String = JSON.stringify( request );
-
-            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
-            {
-                if(error)
-                {
-                    if(onError != null)
-                        onError(error);
-                    if(PlayFabSettings.GlobalErrorHandler != null)
-                        PlayFabSettings.GlobalErrorHandler(error);
-                }
-                else
-                {
-                    var result:SetMatchmakingQueueResult = new SetMatchmakingQueueResult(resultData);
-
-                    if(onComplete != null)
-                        onComplete(result);
-                }
-            }
-
-            PlayFabHTTP.post(PlayFabSettings.GetURL("/Admin/SetMatchmakingQueue"), requetJson, "X-SecretKey", PlayFabSettings.DeveloperSecretKey, onPostComplete);
         }
 
         public static function SetPlayerSecret(request:SetPlayerSecretRequest, onComplete:Function, onError:Function):void
