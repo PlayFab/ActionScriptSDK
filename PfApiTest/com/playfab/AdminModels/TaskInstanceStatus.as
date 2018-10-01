@@ -8,7 +8,7 @@ package com.playfab.AdminModels
         public static const InProgress:String = "InProgress";
         public static const Failed:String = "Failed";
         public static const Aborted:String = "Aborted";
-        public static const Pending:String = "Pending";
+        public static const Stalled:String = "Stalled";
 
     }
 }
