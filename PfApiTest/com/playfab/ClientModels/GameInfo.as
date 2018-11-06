@@ -15,8 +15,6 @@ package com.playfab.ClientModels
         public var PlayerUserIds:Vector.<String>;
         public var Region:String;
         public var RunTime:uint;
-        // Deprecated, please use ServerIPV4Address
-        public var ServerHostname:String;
         public var ServerIPV4Address:String;
         public var ServerIPV6Address:String;
         public var ServerPort:*;
@@ -38,7 +36,6 @@ package com.playfab.ClientModels
             PlayerUserIds = data.PlayerUserIds ? Vector.<String>(data.PlayerUserIds) : null;
             Region = data.Region;
             RunTime = data.RunTime;
-            ServerHostname = data.ServerHostname;
             ServerIPV4Address = data.ServerIPV4Address;
             ServerIPV6Address = data.ServerIPV6Address;
             ServerPort = data.ServerPort;
