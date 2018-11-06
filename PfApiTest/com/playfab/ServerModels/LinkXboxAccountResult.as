@@ -1,11 +1,10 @@
 
 package com.playfab.ServerModels
 {
-    // Deprecated
-    public class DeleteUsersResult
+    public class LinkXboxAccountResult
     {
 
-        public function DeleteUsersResult(data:Object=null)
+        public function LinkXboxAccountResult(data:Object=null)
         {
             if(data == null)
                 return;
