@@ -392,10 +392,11 @@ package com.playfab.AdminModels
         public static const InvalidFacebookInstantGamesSignature:String = "InvalidFacebookInstantGamesSignature";
         public static const FacebookInstantGamesAuthNotConfiguredForTitle:String = "FacebookInstantGamesAuthNotConfiguredForTitle";
         public static const EntityProfileConstraintValidationFailed:String = "EntityProfileConstraintValidationFailed";
-        public static const PlayInsightsIngestionKeyPending:String = "PlayInsightsIngestionKeyPending";
-        public static const PlayInsightsIngestionKeyNotFound:String = "PlayInsightsIngestionKeyNotFound";
+        public static const TelemetryIngestionKeyPending:String = "TelemetryIngestionKeyPending";
+        public static const TelemetryIngestionKeyNotFound:String = "TelemetryIngestionKeyNotFound";
         public static const StatisticTagRequired:String = "StatisticTagRequired";
         public static const StatisticTagInvalid:String = "StatisticTagInvalid";
+        public static const DataIntegrityError:String = "DataIntegrityError";
         public static const MatchmakingEntityInvalid:String = "MatchmakingEntityInvalid";
         public static const MatchmakingPlayerAttributesInvalid:String = "MatchmakingPlayerAttributesInvalid";
         public static const MatchmakingCreateRequestMissing:String = "MatchmakingCreateRequestMissing";
@@ -433,6 +434,7 @@ package com.playfab.AdminModels
         public static const MatchmakingNotEnabled:String = "MatchmakingNotEnabled";
         public static const MatchmakingGetStatisticsIdentityInvalid:String = "MatchmakingGetStatisticsIdentityInvalid";
         public static const MatchmakingStatisticsIdMissing:String = "MatchmakingStatisticsIdMissing";
+        public static const CannotEnableMultiplayerServersForTitle:String = "CannotEnableMultiplayerServersForTitle";
 
     }
 }

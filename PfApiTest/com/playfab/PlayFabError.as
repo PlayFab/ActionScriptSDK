@@ -395,10 +395,11 @@ package com.playfab
         public static const InvalidFacebookInstantGamesSignature:int = 1396;
         public static const FacebookInstantGamesAuthNotConfiguredForTitle:int = 1397;
         public static const EntityProfileConstraintValidationFailed:int = 1398;
-        public static const PlayInsightsIngestionKeyPending:int = 1399;
-        public static const PlayInsightsIngestionKeyNotFound:int = 1400;
+        public static const TelemetryIngestionKeyPending:int = 1399;
+        public static const TelemetryIngestionKeyNotFound:int = 1400;
         public static const StatisticTagRequired:int = 1401;
         public static const StatisticTagInvalid:int = 1402;
+        public static const DataIntegrityError:int = 1403;
         public static const MatchmakingEntityInvalid:int = 2001;
         public static const MatchmakingPlayerAttributesInvalid:int = 2002;
         public static const MatchmakingCreateRequestMissing:int = 2003;
@@ -436,6 +437,7 @@ package com.playfab
         public static const MatchmakingNotEnabled:int = 2035;
         public static const MatchmakingGetStatisticsIdentityInvalid:int = 2036;
         public static const MatchmakingStatisticsIdMissing:int = 2037;
+        public static const CannotEnableMultiplayerServersForTitle:int = 2038;
 
 
         public function PlayFabError(data:Object=null)
