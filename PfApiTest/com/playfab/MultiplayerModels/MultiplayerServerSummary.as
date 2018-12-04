@@ -9,6 +9,7 @@ package com.playfab.MultiplayerModels
         public var LastStateTransitionTime:Date;
         public var Region:String;
         public var ServerId:String;
+        public var SessionId:String;
         public var State:String;
         public var VmId:String;
 
@@ -20,6 +21,7 @@ package com.playfab.MultiplayerModels
             LastStateTransitionTime = PlayFabUtil.parseDate(data.LastStateTransitionTime);
             Region = data.Region;
             ServerId = data.ServerId;
+            SessionId = data.SessionId;
             State = data.State;
             VmId = data.VmId;
 

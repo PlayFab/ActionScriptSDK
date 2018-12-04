@@ -7,6 +7,7 @@ package com.playfab.MultiplayerModels
     {
         public var BuildId:String;
         public var BuildName:String;
+        public var BuildStatus:String;
         public var ContainerFlavor:String;
         public var ContainerRunCommand:String;
         public var CreationTime:Date;
@@ -26,6 +27,7 @@ package com.playfab.MultiplayerModels
                 return;
             BuildId = data.BuildId;
             BuildName = data.BuildName;
+            BuildStatus = data.BuildStatus;
             ContainerFlavor = data.ContainerFlavor;
             ContainerRunCommand = data.ContainerRunCommand;
             CreationTime = PlayFabUtil.parseDate(data.CreationTime);

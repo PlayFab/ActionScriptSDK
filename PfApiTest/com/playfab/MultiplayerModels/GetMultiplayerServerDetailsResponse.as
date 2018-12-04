@@ -6,6 +6,7 @@ package com.playfab.MultiplayerModels
     public class GetMultiplayerServerDetailsResponse
     {
         public var ConnectedPlayers:Vector.<ConnectedPlayer>;
+        public var FQDN:String;
         public var IPV4Address:String;
         public var LastStateTransitionTime:Date;
         public var Ports:Vector.<Port>;
@@ -20,6 +21,7 @@ package com.playfab.MultiplayerModels
             if(data == null)
                 return;
             if(data.ConnectedPlayers) { ConnectedPlayers = new Vector.<ConnectedPlayer>(); for(var ConnectedPlayers_iter:int = 0; ConnectedPlayers_iter < data.ConnectedPlayers.length; ConnectedPlayers_iter++) { ConnectedPlayers[ConnectedPlayers_iter] = new ConnectedPlayer(data.ConnectedPlayers[ConnectedPlayers_iter]); }}
+            FQDN = data.FQDN;
             IPV4Address = data.IPV4Address;
             LastStateTransitionTime = PlayFabUtil.parseDate(data.LastStateTransitionTime);
             if(data.Ports) { Ports = new Vector.<Port>(); for(var Ports_iter:int = 0; Ports_iter < data.Ports.length; Ports_iter++) { Ports[Ports_iter] = new Port(data.Ports[Ports_iter]); }}
