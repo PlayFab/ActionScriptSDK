@@ -12,6 +12,15 @@ package com.playfab.MultiplayerModels
         public static const Standard_A2_v2:String = "Standard_A2_v2";
         public static const Standard_A4_v2:String = "Standard_A4_v2";
         public static const Standard_A8_v2:String = "Standard_A8_v2";
+        public static const Standard_F1:String = "Standard_F1";
+        public static const Standard_F2:String = "Standard_F2";
+        public static const Standard_F4:String = "Standard_F4";
+        public static const Standard_F8:String = "Standard_F8";
+        public static const Standard_F16:String = "Standard_F16";
+        public static const Standard_F2s_v2:String = "Standard_F2s_v2";
+        public static const Standard_F4s_v2:String = "Standard_F4s_v2";
+        public static const Standard_F8s_v2:String = "Standard_F8s_v2";
+        public static const Standard_F16s_v2:String = "Standard_F16s_v2";
         public static const Standard_A1:String = "Standard_A1";
         public static const Standard_A2:String = "Standard_A2";
         public static const Standard_A3:String = "Standard_A3";
