@@ -417,6 +417,7 @@ package com.playfab
         public static const PushNotificationTemplateMissingDefaultVersion:int = 1418;
         public static const PushNotificationTemplateInvalidSyntax:int = 1419;
         public static const PushNotificationTemplateNoCustomPayloadForV1:int = 1420;
+        public static const NoLeaderboardForStatistic:int = 1421;
         public static const MatchmakingEntityInvalid:int = 2001;
         public static const MatchmakingPlayerAttributesInvalid:int = 2002;
         public static const MatchmakingCreateRequestMissing:int = 2003;

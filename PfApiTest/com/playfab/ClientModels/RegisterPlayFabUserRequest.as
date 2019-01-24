@@ -7,8 +7,6 @@ package com.playfab.ClientModels
         public var Email:String;
         public var EncryptedRequest:String;
         public var InfoRequestParameters:GetPlayerCombinedInfoRequestParams;
-        // Deprecated
-        public var LoginTitlePlayerAccountEntity:*;
         public var Password:String;
         public var PlayerSecret:String;
         public var RequireBothUsernameAndEmail:*;
@@ -23,7 +21,6 @@ package com.playfab.ClientModels
             Email = data.Email;
             EncryptedRequest = data.EncryptedRequest;
             InfoRequestParameters = new GetPlayerCombinedInfoRequestParams(data.InfoRequestParameters);
-            LoginTitlePlayerAccountEntity = data.LoginTitlePlayerAccountEntity;
             Password = data.Password;
             PlayerSecret = data.PlayerSecret;
             RequireBothUsernameAndEmail = data.RequireBothUsernameAndEmail;
