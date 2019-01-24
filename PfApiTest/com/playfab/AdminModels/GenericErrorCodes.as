@@ -414,6 +414,7 @@ package com.playfab.AdminModels
         public static const PushNotificationTemplateMissingDefaultVersion:String = "PushNotificationTemplateMissingDefaultVersion";
         public static const PushNotificationTemplateInvalidSyntax:String = "PushNotificationTemplateInvalidSyntax";
         public static const PushNotificationTemplateNoCustomPayloadForV1:String = "PushNotificationTemplateNoCustomPayloadForV1";
+        public static const NoLeaderboardForStatistic:String = "NoLeaderboardForStatistic";
         public static const MatchmakingEntityInvalid:String = "MatchmakingEntityInvalid";
         public static const MatchmakingPlayerAttributesInvalid:String = "MatchmakingPlayerAttributesInvalid";
         public static const MatchmakingCreateRequestMissing:String = "MatchmakingCreateRequestMissing";

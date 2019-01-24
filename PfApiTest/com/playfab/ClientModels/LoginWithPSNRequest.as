@@ -8,8 +8,6 @@ package com.playfab.ClientModels
         public var EncryptedRequest:String;
         public var InfoRequestParameters:GetPlayerCombinedInfoRequestParams;
         public var IssuerId:*;
-        // Deprecated
-        public var LoginTitlePlayerAccountEntity:*;
         public var PlayerSecret:String;
         public var RedirectUri:String;
         public var TitleId:String;
@@ -23,7 +21,6 @@ package com.playfab.ClientModels
             EncryptedRequest = data.EncryptedRequest;
             InfoRequestParameters = new GetPlayerCombinedInfoRequestParams(data.InfoRequestParameters);
             IssuerId = data.IssuerId;
-            LoginTitlePlayerAccountEntity = data.LoginTitlePlayerAccountEntity;
             PlayerSecret = data.PlayerSecret;
             RedirectUri = data.RedirectUri;
             TitleId = data.TitleId;

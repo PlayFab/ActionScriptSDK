@@ -7,8 +7,6 @@ package com.playfab.ClientModels
         public var EncryptedRequest:String;
         public var FacebookInstantGamesSignature:String;
         public var InfoRequestParameters:GetPlayerCombinedInfoRequestParams;
-        // Deprecated
-        public var LoginTitlePlayerAccountEntity:*;
         public var PlayerSecret:String;
         public var TitleId:String;
 
@@ -20,7 +18,6 @@ package com.playfab.ClientModels
             EncryptedRequest = data.EncryptedRequest;
             FacebookInstantGamesSignature = data.FacebookInstantGamesSignature;
             InfoRequestParameters = new GetPlayerCombinedInfoRequestParams(data.InfoRequestParameters);
-            LoginTitlePlayerAccountEntity = data.LoginTitlePlayerAccountEntity;
             PlayerSecret = data.PlayerSecret;
             TitleId = data.TitleId;
 

@@ -5,8 +5,6 @@ package com.playfab.ServerModels
     {
         public var CreateAccount:*;
         public var InfoRequestParameters:GetPlayerCombinedInfoRequestParams;
-        // Deprecated
-        public var LoginTitlePlayerAccountEntity:*;
         public var PlayerSecret:String;
         public var ServerCustomId:String;
 
@@ -16,7 +14,6 @@ package com.playfab.ServerModels
                 return;
             CreateAccount = data.CreateAccount;
             InfoRequestParameters = new GetPlayerCombinedInfoRequestParams(data.InfoRequestParameters);
-            LoginTitlePlayerAccountEntity = data.LoginTitlePlayerAccountEntity;
             PlayerSecret = data.PlayerSecret;
             ServerCustomId = data.ServerCustomId;
 

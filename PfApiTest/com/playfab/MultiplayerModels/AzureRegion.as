@@ -18,6 +18,8 @@ package com.playfab.MultiplayerModels
         public static const SoutheastAsia:String = "SoutheastAsia";
         public static const WestEurope:String = "WestEurope";
         public static const WestUs:String = "WestUs";
+        public static const ChinaEast2:String = "ChinaEast2";
+        public static const ChinaNorth2:String = "ChinaNorth2";
 
     }
 }
