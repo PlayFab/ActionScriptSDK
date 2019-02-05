@@ -418,6 +418,12 @@ package com.playfab
         public static const PushNotificationTemplateInvalidSyntax:int = 1419;
         public static const PushNotificationTemplateNoCustomPayloadForV1:int = 1420;
         public static const NoLeaderboardForStatistic:int = 1421;
+        public static const TitleNewsMissingDefaultLanguage:int = 1422;
+        public static const TitleNewsNotFound:int = 1423;
+        public static const TitleNewsDuplicateLanguage:int = 1424;
+        public static const TitleNewsMissingTitleOrBody:int = 1425;
+        public static const TitleNewsInvalidLanguage:int = 1426;
+        public static const EmailRecipientBlacklisted:int = 1427;
         public static const MatchmakingEntityInvalid:int = 2001;
         public static const MatchmakingPlayerAttributesInvalid:int = 2002;
         public static const MatchmakingCreateRequestMissing:int = 2003;
@@ -456,6 +462,9 @@ package com.playfab
         public static const MatchmakingGetStatisticsIdentityInvalid:int = 2036;
         public static const MatchmakingStatisticsIdMissing:int = 2037;
         public static const CannotEnableMultiplayerServersForTitle:int = 2038;
+        public static const TitleConfigNotFound:int = 3001;
+        public static const TitleConfigUpdateConflict:int = 3002;
+        public static const TitleConfigSerializationError:int = 3003;
 
 
         public function PlayFabError(data:Object=null)

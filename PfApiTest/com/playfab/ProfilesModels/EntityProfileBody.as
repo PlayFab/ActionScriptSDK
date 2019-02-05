@@ -3,10 +3,10 @@ package com.playfab.ProfilesModels
 {
     public class EntityProfileBody
     {
+        public var DisplayName:String;
         public var Entity:EntityKey;
         public var EntityChain:String;
         public var Files:Object;
-        public var FriendlyName:String;
         public var Language:String;
         public var Lineage:EntityLineage;
         public var Objects:Object;
@@ -17,10 +17,10 @@ package com.playfab.ProfilesModels
         {
             if(data == null)
                 return;
+            DisplayName = data.DisplayName;
             Entity = new EntityKey(data.Entity);
             EntityChain = data.EntityChain;
             if(data.Files) { Files = {}; for(var Files_iter:String in data.Files) { Files[Files_iter] = new EntityProfileFileMetadata(data.Files[Files_iter]); }}
-            FriendlyName = data.FriendlyName;
             Language = data.Language;
             Lineage = new EntityLineage(data.Lineage);
             if(data.Objects) { Objects = {}; for(var Objects_iter:String in data.Objects) { Objects[Objects_iter] = new EntityDataObject(data.Objects[Objects_iter]); }}

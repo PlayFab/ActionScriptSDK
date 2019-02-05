@@ -3,6 +3,7 @@ package com.playfab.ClientModels
 {
     public class FriendInfo
     {
+        // Deprecated
         public var CurrentMatchmakerLobbyId:String;
         public var FacebookInfo:UserFacebookInfo;
         public var FriendPlayFabId:String;
