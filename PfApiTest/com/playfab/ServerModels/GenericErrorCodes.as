@@ -415,6 +415,12 @@ package com.playfab.ServerModels
         public static const PushNotificationTemplateInvalidSyntax:String = "PushNotificationTemplateInvalidSyntax";
         public static const PushNotificationTemplateNoCustomPayloadForV1:String = "PushNotificationTemplateNoCustomPayloadForV1";
         public static const NoLeaderboardForStatistic:String = "NoLeaderboardForStatistic";
+        public static const TitleNewsMissingDefaultLanguage:String = "TitleNewsMissingDefaultLanguage";
+        public static const TitleNewsNotFound:String = "TitleNewsNotFound";
+        public static const TitleNewsDuplicateLanguage:String = "TitleNewsDuplicateLanguage";
+        public static const TitleNewsMissingTitleOrBody:String = "TitleNewsMissingTitleOrBody";
+        public static const TitleNewsInvalidLanguage:String = "TitleNewsInvalidLanguage";
+        public static const EmailRecipientBlacklisted:String = "EmailRecipientBlacklisted";
         public static const MatchmakingEntityInvalid:String = "MatchmakingEntityInvalid";
         public static const MatchmakingPlayerAttributesInvalid:String = "MatchmakingPlayerAttributesInvalid";
         public static const MatchmakingCreateRequestMissing:String = "MatchmakingCreateRequestMissing";
@@ -453,6 +459,9 @@ package com.playfab.ServerModels
         public static const MatchmakingGetStatisticsIdentityInvalid:String = "MatchmakingGetStatisticsIdentityInvalid";
         public static const MatchmakingStatisticsIdMissing:String = "MatchmakingStatisticsIdMissing";
         public static const CannotEnableMultiplayerServersForTitle:String = "CannotEnableMultiplayerServersForTitle";
+        public static const TitleConfigNotFound:String = "TitleConfigNotFound";
+        public static const TitleConfigUpdateConflict:String = "TitleConfigUpdateConflict";
+        public static const TitleConfigSerializationError:String = "TitleConfigSerializationError";
 
     }
 }
