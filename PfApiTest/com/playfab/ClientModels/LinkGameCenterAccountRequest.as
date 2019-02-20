@@ -5,6 +5,10 @@ package com.playfab.ClientModels
     {
         public var ForceLink:*;
         public var GameCenterId:String;
+        public var PublicKeyUrl:String;
+        public var Salt:String;
+        public var Signature:String;
+        public var Timestamp:String;
 
         public function LinkGameCenterAccountRequest(data:Object=null)
         {
@@ -12,6 +16,10 @@ package com.playfab.ClientModels
                 return;
             ForceLink = data.ForceLink;
             GameCenterId = data.GameCenterId;
+            PublicKeyUrl = data.PublicKeyUrl;
+            Salt = data.Salt;
+            Signature = data.Signature;
+            Timestamp = data.Timestamp;
 
         }
     }
