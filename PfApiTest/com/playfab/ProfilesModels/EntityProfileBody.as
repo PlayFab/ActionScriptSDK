@@ -1,8 +1,11 @@
 
 package com.playfab.ProfilesModels
 {
+    import com.playfab.PlayFabUtil;
+
     public class EntityProfileBody
     {
+        public var Created:Date;
         public var DisplayName:String;
         public var Entity:EntityKey;
         public var EntityChain:String;
@@ -17,6 +20,7 @@ package com.playfab.ProfilesModels
         {
             if(data == null)
                 return;
+            Created = PlayFabUtil.parseDate(data.Created);
             DisplayName = data.DisplayName;
             Entity = new EntityKey(data.Entity);
             EntityChain = data.EntityChain;
