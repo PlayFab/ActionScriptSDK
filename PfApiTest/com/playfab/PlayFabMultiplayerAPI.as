@@ -4,6 +4,58 @@ package com.playfab
 
     public class PlayFabMultiplayerAPI
     {
+        public static function CancelAllMatchmakingTicketsForPlayer(request:CancelAllMatchmakingTicketsForPlayerRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:CancelAllMatchmakingTicketsForPlayerResult = new CancelAllMatchmakingTicketsForPlayerResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Match/CancelAllMatchmakingTicketsForPlayer"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+        }
+
+        public static function CancelMatchmakingTicket(request:CancelMatchmakingTicketRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:CancelMatchmakingTicketResult = new CancelMatchmakingTicketResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Match/CancelMatchmakingTicket"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+        }
+
         public static function CreateBuildWithCustomContainer(request:CreateBuildWithCustomContainerRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
@@ -56,6 +108,32 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL("/MultiplayerServer/CreateBuildWithManagedContainer"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
         }
 
+        public static function CreateMatchmakingTicket(request:CreateMatchmakingTicketRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:CreateMatchmakingTicketResult = new CreateMatchmakingTicketResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Match/CreateMatchmakingTicket"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+        }
+
         public static function CreateRemoteUser(request:CreateRemoteUserRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
@@ -80,6 +158,32 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL("/MultiplayerServer/CreateRemoteUser"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+        }
+
+        public static function CreateServerMatchmakingTicket(request:CreateServerMatchmakingTicketRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:CreateMatchmakingTicketResult = new CreateMatchmakingTicketResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Match/CreateServerMatchmakingTicket"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
         }
 
         public static function DeleteAsset(request:DeleteAssetRequest, onComplete:Function, onError:Function):void
@@ -290,6 +394,84 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL("/MultiplayerServer/GetContainerRegistryCredentials"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
         }
 
+        public static function GetMatch(request:GetMatchRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:GetMatchResult = new GetMatchResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Match/GetMatch"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+        }
+
+        public static function GetMatchmakingQueue(request:GetMatchmakingQueueRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:GetMatchmakingQueueResult = new GetMatchmakingQueueResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Match/GetMatchmakingQueue"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+        }
+
+        public static function GetMatchmakingTicket(request:GetMatchmakingTicketRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:GetMatchmakingTicketResult = new GetMatchmakingTicketResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Match/GetMatchmakingTicket"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+        }
+
         public static function GetMultiplayerServerDetails(request:GetMultiplayerServerDetailsRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
@@ -314,6 +496,32 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL("/MultiplayerServer/GetMultiplayerServerDetails"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+        }
+
+        public static function GetQueueStatistics(request:GetQueueStatisticsRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:GetQueueStatisticsResult = new GetQueueStatisticsResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Match/GetQueueStatistics"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
         }
 
         public static function GetRemoteLoginEndpoint(request:GetRemoteLoginEndpointRequest, onComplete:Function, onError:Function):void
@@ -366,6 +574,32 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL("/MultiplayerServer/GetTitleEnabledForMultiplayerServersStatus"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+        }
+
+        public static function JoinMatchmakingTicket(request:JoinMatchmakingTicketRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:JoinMatchmakingTicketResult = new JoinMatchmakingTicketResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Match/JoinMatchmakingTicket"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
         }
 
         public static function ListArchivedMultiplayerServers(request:ListMultiplayerServersRequest, onComplete:Function, onError:Function):void
@@ -524,6 +758,58 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL("/MultiplayerServer/ListContainerImageTags"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
         }
 
+        public static function ListMatchmakingQueues(request:ListMatchmakingQueuesRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:ListMatchmakingQueuesResult = new ListMatchmakingQueuesResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Match/ListMatchmakingQueues"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+        }
+
+        public static function ListMatchmakingTicketsForPlayer(request:ListMatchmakingTicketsForPlayerRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:ListMatchmakingTicketsForPlayerResult = new ListMatchmakingTicketsForPlayerResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Match/ListMatchmakingTicketsForPlayer"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+        }
+
         public static function ListMultiplayerServers(request:ListMultiplayerServersRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
@@ -602,6 +888,32 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL("/MultiplayerServer/ListVirtualMachineSummaries"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
         }
 
+        public static function RemoveMatchmakingQueue(request:RemoveMatchmakingQueueRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:RemoveMatchmakingQueueResult = new RemoveMatchmakingQueueResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Match/RemoveMatchmakingQueue"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+        }
+
         public static function RequestMultiplayerServer(request:RequestMultiplayerServerRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
@@ -652,6 +964,32 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL("/MultiplayerServer/RolloverContainerRegistryCredentials"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+        }
+
+        public static function SetMatchmakingQueue(request:SetMatchmakingQueueRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:SetMatchmakingQueueResult = new SetMatchmakingQueueResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Match/SetMatchmakingQueue"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
         }
 
         public static function ShutdownMultiplayerServer(request:ShutdownMultiplayerServerRequest, onComplete:Function, onError:Function):void
