@@ -14,6 +14,7 @@ package com.playfab.ProfilesModels
         public var Lineage:EntityLineage;
         public var Objects:Object;
         public var Permissions:Vector.<EntityPermissionStatement>;
+        public var Statistics:Object;
         public var VersionNumber:int;
 
         public function EntityProfileBody(data:Object=null)
@@ -29,6 +30,7 @@ package com.playfab.ProfilesModels
             Lineage = new EntityLineage(data.Lineage);
             if(data.Objects) { Objects = {}; for(var Objects_iter:String in data.Objects) { Objects[Objects_iter] = new EntityDataObject(data.Objects[Objects_iter]); }}
             if(data.Permissions) { Permissions = new Vector.<EntityPermissionStatement>(); for(var Permissions_iter:int = 0; Permissions_iter < data.Permissions.length; Permissions_iter++) { Permissions[Permissions_iter] = new EntityPermissionStatement(data.Permissions[Permissions_iter]); }}
+            if(data.Statistics) { Statistics = {}; for(var Statistics_iter:String in data.Statistics) { Statistics[Statistics_iter] = new EntityStatisticValue(data.Statistics[Statistics_iter]); }}
             VersionNumber = data.VersionNumber;
 
         }

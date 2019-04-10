@@ -3,8 +3,6 @@ package com.playfab.ClientModels
 {
     public class FriendInfo
     {
-        // Deprecated
-        public var CurrentMatchmakerLobbyId:String;
         public var FacebookInfo:UserFacebookInfo;
         public var FriendPlayFabId:String;
         public var GameCenterInfo:UserGameCenterInfo;
@@ -20,7 +18,6 @@ package com.playfab.ClientModels
         {
             if(data == null)
                 return;
-            CurrentMatchmakerLobbyId = data.CurrentMatchmakerLobbyId;
             FacebookInfo = new UserFacebookInfo(data.FacebookInfo);
             FriendPlayFabId = data.FriendPlayFabId;
             GameCenterInfo = new UserGameCenterInfo(data.GameCenterInfo);

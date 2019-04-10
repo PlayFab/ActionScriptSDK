@@ -438,6 +438,7 @@ package com.playfab.ServerModels
         public static const CannotEnableMultiplayerServersForTitle:String = "CannotEnableMultiplayerServersForTitle";
         public static const WriteAttemptedDuringExport:String = "WriteAttemptedDuringExport";
         public static const MultiplayerServerTitleQuotaCoresExceeded:String = "MultiplayerServerTitleQuotaCoresExceeded";
+        public static const AutomationRuleNotFound:String = "AutomationRuleNotFound";
         public static const MatchmakingEntityInvalid:String = "MatchmakingEntityInvalid";
         public static const MatchmakingPlayerAttributesInvalid:String = "MatchmakingPlayerAttributesInvalid";
         public static const MatchmakingQueueNotFound:String = "MatchmakingQueueNotFound";
@@ -456,6 +457,7 @@ package com.playfab.ServerModels
         public static const MatchmakingRateLimitExceeded:String = "MatchmakingRateLimitExceeded";
         public static const MatchmakingTicketMembershipLimitExceeded:String = "MatchmakingTicketMembershipLimitExceeded";
         public static const MatchmakingUnauthorized:String = "MatchmakingUnauthorized";
+        public static const MatchmakingQueueLimitExceeded:String = "MatchmakingQueueLimitExceeded";
         public static const TitleConfigNotFound:String = "TitleConfigNotFound";
         public static const TitleConfigUpdateConflict:String = "TitleConfigUpdateConflict";
         public static const TitleConfigSerializationError:String = "TitleConfigSerializationError";
@@ -473,6 +475,13 @@ package com.playfab.ServerModels
         public static const CatalogConfigContentTypeTooLong:String = "CatalogConfigContentTypeTooLong";
         public static const CatalogConfigTooManyTags:String = "CatalogConfigTooManyTags";
         public static const CatalogConfigTagTooLong:String = "CatalogConfigTagTooLong";
+        public static const CatalogConfigInvalidDeepLinkObject:String = "CatalogConfigInvalidDeepLinkObject";
+        public static const CatalogConfigInvalidDeepLinkPlatform:String = "CatalogConfigInvalidDeepLinkPlatform";
+        public static const CatalogConfigInvalidDeepLinkFormat:String = "CatalogConfigInvalidDeepLinkFormat";
+        public static const CatalogConfigInvalidDisplayPropertyObject:String = "CatalogConfigInvalidDisplayPropertyObject";
+        public static const CatalogConfigInvalidDisplayPropertyName:String = "CatalogConfigInvalidDisplayPropertyName";
+        public static const CatalogConfigInvalidDisplayPropertyType:String = "CatalogConfigInvalidDisplayPropertyType";
+        public static const CatalogConfigDisplayPropertyMappingLimit:String = "CatalogConfigDisplayPropertyMappingLimit";
         public static const ExportInvalidStatusUpdate:String = "ExportInvalidStatusUpdate";
         public static const ExportInvalidPrefix:String = "ExportInvalidPrefix";
         public static const ExportBlobContainerDoesNotExist:String = "ExportBlobContainerDoesNotExist";
@@ -480,6 +489,13 @@ package com.playfab.ServerModels
         public static const ExportExportTitleIdNotFound:String = "ExportExportTitleIdNotFound";
         public static const ExportCouldNotUpdate:String = "ExportCouldNotUpdate";
         public static const ExportInvalidStorageType:String = "ExportInvalidStorageType";
+        public static const ExportAmazonBucketDoesNotExist:String = "ExportAmazonBucketDoesNotExist";
+        public static const ExportInvalidBlobStorage:String = "ExportInvalidBlobStorage";
+        public static const ExportKustoException:String = "ExportKustoException";
+        public static const ExportKustoExceptionNew_SomeResources:String = "ExportKustoExceptionNew_SomeResources";
+        public static const ExportKustoExceptionEdit:String = "ExportKustoExceptionEdit";
+        public static const ExportKustoConnectionFailed:String = "ExportKustoConnectionFailed";
+        public static const ExportUnknownError:String = "ExportUnknownError";
 
     }
 }
