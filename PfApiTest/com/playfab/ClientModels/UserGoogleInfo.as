@@ -7,6 +7,7 @@ package com.playfab.ClientModels
         public var GoogleGender:String;
         public var GoogleId:String;
         public var GoogleLocale:String;
+        public var GoogleName:String;
 
         public function UserGoogleInfo(data:Object=null)
         {
@@ -16,6 +17,7 @@ package com.playfab.ClientModels
             GoogleGender = data.GoogleGender;
             GoogleId = data.GoogleId;
             GoogleLocale = data.GoogleLocale;
+            GoogleName = data.GoogleName;
 
         }
     }

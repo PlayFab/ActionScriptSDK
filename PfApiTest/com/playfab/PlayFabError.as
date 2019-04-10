@@ -441,6 +441,7 @@ package com.playfab
         public static const CannotEnableMultiplayerServersForTitle:int = 1443;
         public static const WriteAttemptedDuringExport:int = 1444;
         public static const MultiplayerServerTitleQuotaCoresExceeded:int = 1445;
+        public static const AutomationRuleNotFound:int = 1446;
         public static const MatchmakingEntityInvalid:int = 2001;
         public static const MatchmakingPlayerAttributesInvalid:int = 2002;
         public static const MatchmakingQueueNotFound:int = 2016;
@@ -459,6 +460,7 @@ package com.playfab
         public static const MatchmakingRateLimitExceeded:int = 2054;
         public static const MatchmakingTicketMembershipLimitExceeded:int = 2055;
         public static const MatchmakingUnauthorized:int = 2056;
+        public static const MatchmakingQueueLimitExceeded:int = 2057;
         public static const TitleConfigNotFound:int = 3001;
         public static const TitleConfigUpdateConflict:int = 3002;
         public static const TitleConfigSerializationError:int = 3003;
@@ -476,6 +478,13 @@ package com.playfab
         public static const CatalogConfigContentTypeTooLong:int = 4102;
         public static const CatalogConfigTooManyTags:int = 4103;
         public static const CatalogConfigTagTooLong:int = 4104;
+        public static const CatalogConfigInvalidDeepLinkObject:int = 4105;
+        public static const CatalogConfigInvalidDeepLinkPlatform:int = 4106;
+        public static const CatalogConfigInvalidDeepLinkFormat:int = 4107;
+        public static const CatalogConfigInvalidDisplayPropertyObject:int = 4108;
+        public static const CatalogConfigInvalidDisplayPropertyName:int = 4109;
+        public static const CatalogConfigInvalidDisplayPropertyType:int = 4110;
+        public static const CatalogConfigDisplayPropertyMappingLimit:int = 4111;
         public static const ExportInvalidStatusUpdate:int = 5000;
         public static const ExportInvalidPrefix:int = 5001;
         public static const ExportBlobContainerDoesNotExist:int = 5002;
@@ -483,6 +492,13 @@ package com.playfab
         public static const ExportExportTitleIdNotFound:int = 5004;
         public static const ExportCouldNotUpdate:int = 5005;
         public static const ExportInvalidStorageType:int = 5006;
+        public static const ExportAmazonBucketDoesNotExist:int = 5007;
+        public static const ExportInvalidBlobStorage:int = 5008;
+        public static const ExportKustoException:int = 5009;
+        public static const ExportKustoExceptionNew_SomeResources:int = 5010;
+        public static const ExportKustoExceptionEdit:int = 5011;
+        public static const ExportKustoConnectionFailed:int = 5012;
+        public static const ExportUnknownError:int = 5013;
 
 
         public function PlayFabError(data:Object=null)

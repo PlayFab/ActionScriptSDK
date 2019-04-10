@@ -7,6 +7,7 @@ package com.playfab.ServerModels
         public var SteamCountry:String;
         public var SteamCurrency:String;
         public var SteamId:String;
+        public var SteamName:String;
 
         public function UserSteamInfo(data:Object=null)
         {
@@ -16,6 +17,7 @@ package com.playfab.ServerModels
             SteamCountry = data.SteamCountry;
             SteamCurrency = data.SteamCurrency;
             SteamId = data.SteamId;
+            SteamName = data.SteamName;
 
         }
     }
