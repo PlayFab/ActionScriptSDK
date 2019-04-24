@@ -442,6 +442,9 @@ package com.playfab
         public static const WriteAttemptedDuringExport:int = 1444;
         public static const MultiplayerServerTitleQuotaCoresExceeded:int = 1445;
         public static const AutomationRuleNotFound:int = 1446;
+        public static const EntityAPIKeyLimitExceeded:int = 1447;
+        public static const EntityAPIKeyNotFound:int = 1448;
+        public static const EntityAPIKeyOrSecretInvalid:int = 1449;
         public static const MatchmakingEntityInvalid:int = 2001;
         public static const MatchmakingPlayerAttributesInvalid:int = 2002;
         public static const MatchmakingQueueNotFound:int = 2016;
@@ -473,18 +476,7 @@ package com.playfab
         public static const CatalogItemIdInvalid:int = 4007;
         public static const CatalogSearchParameterInvalid:int = 4008;
         public static const CatalogFeatureDisabled:int = 4009;
-        public static const CatalogConfigMissing:int = 4100;
-        public static const CatalogConfigTooManyContentTypes:int = 4101;
-        public static const CatalogConfigContentTypeTooLong:int = 4102;
-        public static const CatalogConfigTooManyTags:int = 4103;
-        public static const CatalogConfigTagTooLong:int = 4104;
-        public static const CatalogConfigInvalidDeepLinkObject:int = 4105;
-        public static const CatalogConfigInvalidDeepLinkPlatform:int = 4106;
-        public static const CatalogConfigInvalidDeepLinkFormat:int = 4107;
-        public static const CatalogConfigInvalidDisplayPropertyObject:int = 4108;
-        public static const CatalogConfigInvalidDisplayPropertyName:int = 4109;
-        public static const CatalogConfigInvalidDisplayPropertyType:int = 4110;
-        public static const CatalogConfigDisplayPropertyMappingLimit:int = 4111;
+        public static const CatalogConfigInvalid:int = 4010;
         public static const ExportInvalidStatusUpdate:int = 5000;
         public static const ExportInvalidPrefix:int = 5001;
         public static const ExportBlobContainerDoesNotExist:int = 5002;
@@ -499,6 +491,9 @@ package com.playfab
         public static const ExportKustoExceptionEdit:int = 5011;
         public static const ExportKustoConnectionFailed:int = 5012;
         public static const ExportUnknownError:int = 5013;
+        public static const ExportCantEditPendingExport:int = 5014;
+        public static const ExportLimitExports:int = 5015;
+        public static const ExportLimitEvents:int = 5016;
 
 
         public function PlayFabError(data:Object=null)
