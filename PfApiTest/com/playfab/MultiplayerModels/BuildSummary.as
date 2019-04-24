@@ -9,6 +9,7 @@ package com.playfab.MultiplayerModels
         public var BuildName:String;
         public var CreationTime:Date;
         public var Metadata:Object;
+        public var RegionConfigurations:Vector.<BuildRegion>;
 
         public function BuildSummary(data:Object=null)
         {
@@ -18,6 +19,7 @@ package com.playfab.MultiplayerModels
             BuildName = data.BuildName;
             CreationTime = PlayFabUtil.parseDate(data.CreationTime);
             Metadata = data.Metadata;
+            if(data.RegionConfigurations) { RegionConfigurations = new Vector.<BuildRegion>(); for(var RegionConfigurations_iter:int = 0; RegionConfigurations_iter < data.RegionConfigurations.length; RegionConfigurations_iter++) { RegionConfigurations[RegionConfigurations_iter] = new BuildRegion(data.RegionConfigurations[RegionConfigurations_iter]); }}
 
         }
     }
