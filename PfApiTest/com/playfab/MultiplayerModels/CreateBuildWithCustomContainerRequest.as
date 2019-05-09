@@ -5,8 +5,11 @@ package com.playfab.MultiplayerModels
     {
         public var BuildName:String;
         public var ContainerFlavor:String;
+        public var ContainerImageReference:ContainerImageReference;
+        // Deprecated, please use ContainerImageReference
         public var ContainerRepositoryName:String;
         public var ContainerRunCommand:String;
+        // Deprecated, please use ContainerImageReference
         public var ContainerTag:String;
         public var GameAssetReferences:Vector.<AssetReferenceParams>;
         public var GameCertificateReferences:Vector.<GameCertificateReferenceParams>;
@@ -22,6 +25,7 @@ package com.playfab.MultiplayerModels
                 return;
             BuildName = data.BuildName;
             ContainerFlavor = data.ContainerFlavor;
+            ContainerImageReference = new ContainerImageReference(data.ContainerImageReference);
             ContainerRepositoryName = data.ContainerRepositoryName;
             ContainerRunCommand = data.ContainerRunCommand;
             ContainerTag = data.ContainerTag;

@@ -5,6 +5,7 @@ package com.playfab.ProfilesModels
 
     public class EntityProfileBody
     {
+        public var AvatarUrl:String;
         public var Created:Date;
         public var DisplayName:String;
         public var Entity:EntityKey;
@@ -21,6 +22,7 @@ package com.playfab.ProfilesModels
         {
             if(data == null)
                 return;
+            AvatarUrl = data.AvatarUrl;
             Created = PlayFabUtil.parseDate(data.Created);
             DisplayName = data.DisplayName;
             Entity = new EntityKey(data.Entity);

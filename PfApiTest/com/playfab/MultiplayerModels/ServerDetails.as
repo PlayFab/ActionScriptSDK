@@ -5,6 +5,7 @@ package com.playfab.MultiplayerModels
     {
         public var IPV4Address:String;
         public var Ports:Vector.<Port>;
+        public var Region:String;
 
         public function ServerDetails(data:Object=null)
         {
@@ -12,6 +13,7 @@ package com.playfab.MultiplayerModels
                 return;
             IPV4Address = data.IPV4Address;
             if(data.Ports) { Ports = new Vector.<Port>(); for(var Ports_iter:int = 0; Ports_iter < data.Ports.length; Ports_iter++) { Ports[Ports_iter] = new Port(data.Ports[Ports_iter]); }}
+            Region = data.Region;
 
         }
     }
