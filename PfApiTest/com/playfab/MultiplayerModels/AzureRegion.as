@@ -20,6 +20,7 @@ package com.playfab.MultiplayerModels
         public static const WestUs:String = "WestUs";
         public static const ChinaEast2:String = "ChinaEast2";
         public static const ChinaNorth2:String = "ChinaNorth2";
+        public static const SouthAfricaNorth:String = "SouthAfricaNorth";
 
     }
 }
