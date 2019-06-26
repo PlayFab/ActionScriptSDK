@@ -517,6 +517,8 @@ package com.playfab.AdminModels
         public static const ExportCantEditPendingExport:String = "ExportCantEditPendingExport";
         public static const ExportLimitExports:String = "ExportLimitExports";
         public static const ExportLimitEvents:String = "ExportLimitEvents";
+        public static const TitleNotEnabledForParty:String = "TitleNotEnabledForParty";
+        public static const PartyVersionNotFound:String = "PartyVersionNotFound";
 
     }
 }
