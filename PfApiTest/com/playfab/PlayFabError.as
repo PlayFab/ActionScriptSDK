@@ -520,6 +520,8 @@ package com.playfab
         public static const ExportCantEditPendingExport:int = 5014;
         public static const ExportLimitExports:int = 5015;
         public static const ExportLimitEvents:int = 5016;
+        public static const TitleNotEnabledForParty:int = 6000;
+        public static const PartyVersionNotFound:int = 6001;
 
 
         public function PlayFabError(data:Object=null)

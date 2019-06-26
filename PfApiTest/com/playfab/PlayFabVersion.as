@@ -3,8 +3,8 @@ package com.playfab
 {
     public class PlayFabVersion
     {
-        public static const SdkVersion:String = "0.87.190610";
-        public static const BuildIdentifier:String = "jbuild_actionscriptsdk__sdk-genericslave-1_2";
+        public static const SdkVersion:String = "0.88.190625";
+        public static const BuildIdentifier:String = "jbuild_actionscriptsdk__sdk-genericslave-3_0";
         
         public static function getVersionString():String
         {
