@@ -5,7 +5,9 @@ package com.playfab.MultiplayerModels
 
     public class GetMatchmakingTicketResult
     {
+        // Deprecated, please use CancellationReasonString
         public var CancellationReason:String;
+        public var CancellationReasonString:String;
         public var Created:Date;
         public var Creator:EntityKey;
         public var GiveUpAfterSeconds:int;
@@ -21,6 +23,7 @@ package com.playfab.MultiplayerModels
             if(data == null)
                 return;
             CancellationReason = data.CancellationReason;
+            CancellationReasonString = data.CancellationReasonString;
             Created = PlayFabUtil.parseDate(data.Created);
             Creator = new EntityKey(data.Creator);
             GiveUpAfterSeconds = data.GiveUpAfterSeconds;

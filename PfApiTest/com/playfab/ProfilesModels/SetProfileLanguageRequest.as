@@ -4,7 +4,7 @@ package com.playfab.ProfilesModels
     public class SetProfileLanguageRequest
     {
         public var Entity:EntityKey;
-        public var ExpectedVersion:int;
+        public var ExpectedVersion:*;
         public var Language:String;
 
         public function SetProfileLanguageRequest(data:Object=null)
