@@ -449,6 +449,7 @@ package com.playfab
         public static const EconomyServiceInternalError:int = 1451;
         public static const QueryRateLimitExceeded:int = 1452;
         public static const EntityAPIKeyCreationDisabledForEntity:int = 1453;
+        public static const ForbiddenByEntityPolicy:int = 1454;
         public static const StudioCreationRateLimited:int = 1456;
         public static const StudioCreationInProgress:int = 1457;
         public static const DuplicateStudioName:int = 1458;
@@ -467,6 +468,14 @@ package com.playfab
         public static const CloudScriptAzureFunctionsArgumentSizeExceeded:int = 1471;
         public static const CloudScriptAzureFunctionsReturnSizeExceeded:int = 1472;
         public static const CloudScriptAzureFunctionsHTTPRequestError:int = 1473;
+        public static const VirtualCurrencyBetaGetError:int = 1474;
+        public static const VirtualCurrencyBetaCreateError:int = 1475;
+        public static const VirtualCurrencyBetaInitialDepositSaveError:int = 1476;
+        public static const VirtualCurrencyBetaSaveError:int = 1477;
+        public static const VirtualCurrencyBetaDeleteError:int = 1478;
+        public static const VirtualCurrencyBetaRestoreError:int = 1479;
+        public static const VirtualCurrencyBetaSaveConflict:int = 1480;
+        public static const VirtualCurrencyBetaUpdateError:int = 1481;
         public static const MatchmakingEntityInvalid:int = 2001;
         public static const MatchmakingPlayerAttributesInvalid:int = 2002;
         public static const MatchmakingQueueNotFound:int = 2016;
@@ -506,15 +515,12 @@ package com.playfab
         public static const ExportInvalidStatusUpdate:int = 5000;
         public static const ExportInvalidPrefix:int = 5001;
         public static const ExportBlobContainerDoesNotExist:int = 5002;
-        public static const ExportEventNameNotFound:int = 5003;
-        public static const ExportExportTitleIdNotFound:int = 5004;
+        public static const ExportNotFound:int = 5004;
         public static const ExportCouldNotUpdate:int = 5005;
         public static const ExportInvalidStorageType:int = 5006;
         public static const ExportAmazonBucketDoesNotExist:int = 5007;
         public static const ExportInvalidBlobStorage:int = 5008;
         public static const ExportKustoException:int = 5009;
-        public static const ExportKustoExceptionPartialErrorOnNewExport:int = 5010;
-        public static const ExportKustoExceptionEdit:int = 5011;
         public static const ExportKustoConnectionFailed:int = 5012;
         public static const ExportUnknownError:int = 5013;
         public static const ExportCantEditPendingExport:int = 5014;
@@ -522,6 +528,17 @@ package com.playfab
         public static const ExportLimitEvents:int = 5016;
         public static const TitleNotEnabledForParty:int = 6000;
         public static const PartyVersionNotFound:int = 6001;
+        public static const MultiplayerServerBuildReferencedByMatchmakingQueue:int = 6002;
+        public static const ExperimentationExperimentStopped:int = 7000;
+        public static const ExperimentationExperimentRunning:int = 7001;
+        public static const ExperimentationExperimentNotFound:int = 7002;
+        public static const ExperimentationExperimentNeverStarted:int = 7003;
+        public static const ExperimentationExperimentDeleted:int = 7004;
+        public static const ExperimentationClientTimeout:int = 7005;
+        public static const ExperimentationExceededVariantNameLength:int = 7006;
+        public static const ExperimentationExceededMaxVariantLength:int = 7007;
+        public static const ExperimentInvalidId:int = 7008;
+        public static const SnapshotNotFound:int = 11000;
 
 
         public function PlayFabError(data:Object=null)

@@ -446,6 +446,7 @@ package com.playfab.AdminModels
         public static const EconomyServiceInternalError:String = "EconomyServiceInternalError";
         public static const QueryRateLimitExceeded:String = "QueryRateLimitExceeded";
         public static const EntityAPIKeyCreationDisabledForEntity:String = "EntityAPIKeyCreationDisabledForEntity";
+        public static const ForbiddenByEntityPolicy:String = "ForbiddenByEntityPolicy";
         public static const StudioCreationRateLimited:String = "StudioCreationRateLimited";
         public static const StudioCreationInProgress:String = "StudioCreationInProgress";
         public static const DuplicateStudioName:String = "DuplicateStudioName";
@@ -464,6 +465,14 @@ package com.playfab.AdminModels
         public static const CloudScriptAzureFunctionsArgumentSizeExceeded:String = "CloudScriptAzureFunctionsArgumentSizeExceeded";
         public static const CloudScriptAzureFunctionsReturnSizeExceeded:String = "CloudScriptAzureFunctionsReturnSizeExceeded";
         public static const CloudScriptAzureFunctionsHTTPRequestError:String = "CloudScriptAzureFunctionsHTTPRequestError";
+        public static const VirtualCurrencyBetaGetError:String = "VirtualCurrencyBetaGetError";
+        public static const VirtualCurrencyBetaCreateError:String = "VirtualCurrencyBetaCreateError";
+        public static const VirtualCurrencyBetaInitialDepositSaveError:String = "VirtualCurrencyBetaInitialDepositSaveError";
+        public static const VirtualCurrencyBetaSaveError:String = "VirtualCurrencyBetaSaveError";
+        public static const VirtualCurrencyBetaDeleteError:String = "VirtualCurrencyBetaDeleteError";
+        public static const VirtualCurrencyBetaRestoreError:String = "VirtualCurrencyBetaRestoreError";
+        public static const VirtualCurrencyBetaSaveConflict:String = "VirtualCurrencyBetaSaveConflict";
+        public static const VirtualCurrencyBetaUpdateError:String = "VirtualCurrencyBetaUpdateError";
         public static const MatchmakingEntityInvalid:String = "MatchmakingEntityInvalid";
         public static const MatchmakingPlayerAttributesInvalid:String = "MatchmakingPlayerAttributesInvalid";
         public static const MatchmakingQueueNotFound:String = "MatchmakingQueueNotFound";
@@ -503,15 +512,12 @@ package com.playfab.AdminModels
         public static const ExportInvalidStatusUpdate:String = "ExportInvalidStatusUpdate";
         public static const ExportInvalidPrefix:String = "ExportInvalidPrefix";
         public static const ExportBlobContainerDoesNotExist:String = "ExportBlobContainerDoesNotExist";
-        public static const ExportEventNameNotFound:String = "ExportEventNameNotFound";
-        public static const ExportExportTitleIdNotFound:String = "ExportExportTitleIdNotFound";
+        public static const ExportNotFound:String = "ExportNotFound";
         public static const ExportCouldNotUpdate:String = "ExportCouldNotUpdate";
         public static const ExportInvalidStorageType:String = "ExportInvalidStorageType";
         public static const ExportAmazonBucketDoesNotExist:String = "ExportAmazonBucketDoesNotExist";
         public static const ExportInvalidBlobStorage:String = "ExportInvalidBlobStorage";
         public static const ExportKustoException:String = "ExportKustoException";
-        public static const ExportKustoExceptionPartialErrorOnNewExport:String = "ExportKustoExceptionPartialErrorOnNewExport";
-        public static const ExportKustoExceptionEdit:String = "ExportKustoExceptionEdit";
         public static const ExportKustoConnectionFailed:String = "ExportKustoConnectionFailed";
         public static const ExportUnknownError:String = "ExportUnknownError";
         public static const ExportCantEditPendingExport:String = "ExportCantEditPendingExport";
@@ -519,6 +525,17 @@ package com.playfab.AdminModels
         public static const ExportLimitEvents:String = "ExportLimitEvents";
         public static const TitleNotEnabledForParty:String = "TitleNotEnabledForParty";
         public static const PartyVersionNotFound:String = "PartyVersionNotFound";
+        public static const MultiplayerServerBuildReferencedByMatchmakingQueue:String = "MultiplayerServerBuildReferencedByMatchmakingQueue";
+        public static const ExperimentationExperimentStopped:String = "ExperimentationExperimentStopped";
+        public static const ExperimentationExperimentRunning:String = "ExperimentationExperimentRunning";
+        public static const ExperimentationExperimentNotFound:String = "ExperimentationExperimentNotFound";
+        public static const ExperimentationExperimentNeverStarted:String = "ExperimentationExperimentNeverStarted";
+        public static const ExperimentationExperimentDeleted:String = "ExperimentationExperimentDeleted";
+        public static const ExperimentationClientTimeout:String = "ExperimentationClientTimeout";
+        public static const ExperimentationExceededVariantNameLength:String = "ExperimentationExceededVariantNameLength";
+        public static const ExperimentationExceededMaxVariantLength:String = "ExperimentationExceededMaxVariantLength";
+        public static const ExperimentInvalidId:String = "ExperimentInvalidId";
+        public static const SnapshotNotFound:String = "SnapshotNotFound";
 
     }
 }

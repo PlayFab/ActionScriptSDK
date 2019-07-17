@@ -12,6 +12,7 @@ package com.playfab.ProfilesModels
         public var EntityChain:String;
         public var Files:Object;
         public var Language:String;
+        public var LeaderboardMetadata:String;
         public var Lineage:EntityLineage;
         public var Objects:Object;
         public var Permissions:Vector.<EntityPermissionStatement>;
@@ -29,6 +30,7 @@ package com.playfab.ProfilesModels
             EntityChain = data.EntityChain;
             if(data.Files) { Files = {}; for(var Files_iter:String in data.Files) { Files[Files_iter] = new EntityProfileFileMetadata(data.Files[Files_iter]); }}
             Language = data.Language;
+            LeaderboardMetadata = data.LeaderboardMetadata;
             Lineage = new EntityLineage(data.Lineage);
             if(data.Objects) { Objects = {}; for(var Objects_iter:String in data.Objects) { Objects[Objects_iter] = new EntityDataObject(data.Objects[Objects_iter]); }}
             if(data.Permissions) { Permissions = new Vector.<EntityPermissionStatement>(); for(var Permissions_iter:int = 0; Permissions_iter < data.Permissions.length; Permissions_iter++) { Permissions[Permissions_iter] = new EntityPermissionStatement(data.Permissions[Permissions_iter]); }}
