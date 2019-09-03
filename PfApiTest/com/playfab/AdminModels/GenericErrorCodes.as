@@ -447,6 +447,7 @@ package com.playfab.AdminModels
         public static const QueryRateLimitExceeded:String = "QueryRateLimitExceeded";
         public static const EntityAPIKeyCreationDisabledForEntity:String = "EntityAPIKeyCreationDisabledForEntity";
         public static const ForbiddenByEntityPolicy:String = "ForbiddenByEntityPolicy";
+        public static const UpdateInventoryRateLimitExceeded:String = "UpdateInventoryRateLimitExceeded";
         public static const StudioCreationRateLimited:String = "StudioCreationRateLimited";
         public static const StudioCreationInProgress:String = "StudioCreationInProgress";
         public static const DuplicateStudioName:String = "DuplicateStudioName";

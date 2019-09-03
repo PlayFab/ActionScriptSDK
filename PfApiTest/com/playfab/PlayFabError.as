@@ -450,6 +450,7 @@ package com.playfab
         public static const QueryRateLimitExceeded:int = 1452;
         public static const EntityAPIKeyCreationDisabledForEntity:int = 1453;
         public static const ForbiddenByEntityPolicy:int = 1454;
+        public static const UpdateInventoryRateLimitExceeded:int = 1455;
         public static const StudioCreationRateLimited:int = 1456;
         public static const StudioCreationInProgress:int = 1457;
         public static const DuplicateStudioName:int = 1458;

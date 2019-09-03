@@ -14,6 +14,7 @@ package com.playfab.MultiplayerModels
         public var CustomGameContainerImage:ContainerImageReference;
         public var GameAssetReferences:Vector.<AssetReference>;
         public var GameCertificateReferences:Vector.<GameCertificateReference>;
+        public var InstrumentationConfiguration:InstrumentationConfiguration;
         public var Metadata:Object;
         public var MultiplayerServerCountPerVm:int;
         public var Ports:Vector.<Port>;
@@ -34,6 +35,7 @@ package com.playfab.MultiplayerModels
             CustomGameContainerImage = new ContainerImageReference(data.CustomGameContainerImage);
             if(data.GameAssetReferences) { GameAssetReferences = new Vector.<AssetReference>(); for(var GameAssetReferences_iter:int = 0; GameAssetReferences_iter < data.GameAssetReferences.length; GameAssetReferences_iter++) { GameAssetReferences[GameAssetReferences_iter] = new AssetReference(data.GameAssetReferences[GameAssetReferences_iter]); }}
             if(data.GameCertificateReferences) { GameCertificateReferences = new Vector.<GameCertificateReference>(); for(var GameCertificateReferences_iter:int = 0; GameCertificateReferences_iter < data.GameCertificateReferences.length; GameCertificateReferences_iter++) { GameCertificateReferences[GameCertificateReferences_iter] = new GameCertificateReference(data.GameCertificateReferences[GameCertificateReferences_iter]); }}
+            InstrumentationConfiguration = new InstrumentationConfiguration(data.InstrumentationConfiguration);
             Metadata = data.Metadata;
             MultiplayerServerCountPerVm = data.MultiplayerServerCountPerVm;
             if(data.Ports) { Ports = new Vector.<Port>(); for(var Ports_iter:int = 0; Ports_iter < data.Ports.length; Ports_iter++) { Ports[Ports_iter] = new Port(data.Ports[Ports_iter]); }}
