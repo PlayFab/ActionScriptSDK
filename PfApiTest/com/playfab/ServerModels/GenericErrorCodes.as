@@ -474,6 +474,13 @@ package com.playfab.ServerModels
         public static const VirtualCurrencyBetaRestoreError:String = "VirtualCurrencyBetaRestoreError";
         public static const VirtualCurrencyBetaSaveConflict:String = "VirtualCurrencyBetaSaveConflict";
         public static const VirtualCurrencyBetaUpdateError:String = "VirtualCurrencyBetaUpdateError";
+        public static const InsightsManagementDatabaseNotFound:String = "InsightsManagementDatabaseNotFound";
+        public static const InsightsManagementOperationNotFound:String = "InsightsManagementOperationNotFound";
+        public static const InsightsManagementErrorPendingOperationExists:String = "InsightsManagementErrorPendingOperationExists";
+        public static const InsightsManagementSetPerformanceLevelInvalidParameter:String = "InsightsManagementSetPerformanceLevelInvalidParameter";
+        public static const InsightsManagementSetStorageRetentionInvalidParameter:String = "InsightsManagementSetStorageRetentionInvalidParameter";
+        public static const InsightsManagementGetStorageUsageInvalidParameter:String = "InsightsManagementGetStorageUsageInvalidParameter";
+        public static const InsightsManagementGetOperationStatusInvalidParameter:String = "InsightsManagementGetOperationStatusInvalidParameter";
         public static const MatchmakingEntityInvalid:String = "MatchmakingEntityInvalid";
         public static const MatchmakingPlayerAttributesInvalid:String = "MatchmakingPlayerAttributesInvalid";
         public static const MatchmakingQueueNotFound:String = "MatchmakingQueueNotFound";
@@ -536,6 +543,7 @@ package com.playfab.ServerModels
         public static const ExperimentationExceededVariantNameLength:String = "ExperimentationExceededVariantNameLength";
         public static const ExperimentationExceededMaxVariantLength:String = "ExperimentationExceededMaxVariantLength";
         public static const ExperimentInvalidId:String = "ExperimentInvalidId";
+        public static const MaxActionDepthExceeded:String = "MaxActionDepthExceeded";
         public static const SnapshotNotFound:String = "SnapshotNotFound";
 
     }

@@ -477,6 +477,13 @@ package com.playfab
         public static const VirtualCurrencyBetaRestoreError:int = 1479;
         public static const VirtualCurrencyBetaSaveConflict:int = 1480;
         public static const VirtualCurrencyBetaUpdateError:int = 1481;
+        public static const InsightsManagementDatabaseNotFound:int = 1482;
+        public static const InsightsManagementOperationNotFound:int = 1483;
+        public static const InsightsManagementErrorPendingOperationExists:int = 1484;
+        public static const InsightsManagementSetPerformanceLevelInvalidParameter:int = 1485;
+        public static const InsightsManagementSetStorageRetentionInvalidParameter:int = 1486;
+        public static const InsightsManagementGetStorageUsageInvalidParameter:int = 1487;
+        public static const InsightsManagementGetOperationStatusInvalidParameter:int = 1488;
         public static const MatchmakingEntityInvalid:int = 2001;
         public static const MatchmakingPlayerAttributesInvalid:int = 2002;
         public static const MatchmakingQueueNotFound:int = 2016;
@@ -539,6 +546,7 @@ package com.playfab
         public static const ExperimentationExceededVariantNameLength:int = 7006;
         public static const ExperimentationExceededMaxVariantLength:int = 7007;
         public static const ExperimentInvalidId:int = 7008;
+        public static const MaxActionDepthExceeded:int = 8000;
         public static const SnapshotNotFound:int = 11000;
 
 
