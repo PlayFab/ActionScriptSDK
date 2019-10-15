@@ -10,6 +10,7 @@ package com.playfab.ProfilesModels
         public var DisplayName:String;
         public var Entity:EntityKey;
         public var EntityChain:String;
+        public var ExperimentVariants:Vector.<String>;
         public var Files:Object;
         public var Language:String;
         public var LeaderboardMetadata:String;
@@ -28,6 +29,7 @@ package com.playfab.ProfilesModels
             DisplayName = data.DisplayName;
             Entity = new EntityKey(data.Entity);
             EntityChain = data.EntityChain;
+            ExperimentVariants = data.ExperimentVariants ? Vector.<String>(data.ExperimentVariants) : null;
             if(data.Files) { Files = {}; for(var Files_iter:String in data.Files) { Files[Files_iter] = new EntityProfileFileMetadata(data.Files[Files_iter]); }}
             Language = data.Language;
             LeaderboardMetadata = data.LeaderboardMetadata;
