@@ -56,6 +56,32 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL("/Match/CancelMatchmakingTicket"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
         }
 
+        public static function CreateBuildAlias(request:CreateBuildAliasRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:BuildAliasDetailsResponse = new BuildAliasDetailsResponse(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/MultiplayerServer/CreateBuildAlias"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+        }
+
         public static function CreateBuildWithCustomContainer(request:CreateBuildWithCustomContainerRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
@@ -238,6 +264,32 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL("/MultiplayerServer/DeleteBuild"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
         }
 
+        public static function DeleteBuildAlias(request:DeleteBuildAliasRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:EmptyResponse = new EmptyResponse(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/MultiplayerServer/DeleteBuildAlias"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+        }
+
         public static function DeleteCertificate(request:DeleteCertificateRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
@@ -366,6 +418,32 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL("/MultiplayerServer/GetBuild"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+        }
+
+        public static function GetBuildAlias(request:GetBuildAliasRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:BuildAliasDetailsResponse = new BuildAliasDetailsResponse(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/MultiplayerServer/GetBuildAlias"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
         }
 
         public static function GetContainerRegistryCredentials(request:GetContainerRegistryCredentialsRequest, onComplete:Function, onError:Function):void
@@ -652,6 +730,32 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL("/MultiplayerServer/ListAssetSummaries"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+        }
+
+        public static function ListBuildAliases(request:MultiplayerEmptyRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:ListBuildAliasesForTitleResponse = new ListBuildAliasesForTitleResponse(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/MultiplayerServer/ListBuildAliases"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
         }
 
         public static function ListBuildSummaries(request:ListBuildSummariesRequest, onComplete:Function, onError:Function):void
@@ -990,6 +1094,32 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL("/MultiplayerServer/ShutdownMultiplayerServer"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+        }
+
+        public static function UpdateBuildAlias(request:UpdateBuildAliasRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:BuildAliasDetailsResponse = new BuildAliasDetailsResponse(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/MultiplayerServer/UpdateBuildAlias"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
         }
 
         public static function UpdateBuildRegions(request:UpdateBuildRegionsRequest, onComplete:Function, onError:Function):void

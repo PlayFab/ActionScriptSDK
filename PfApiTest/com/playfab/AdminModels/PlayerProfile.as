@@ -15,6 +15,7 @@ package com.playfab.AdminModels
         public var LinkedAccounts:Vector.<PlayerLinkedAccount>;
         public var Locations:Object;
         public var Origination:String;
+        public var PlayerExperimentVariants:Vector.<String>;
         public var PlayerId:String;
         public var PlayerStatistics:Vector.<PlayerStatistic>;
         public var PublisherId:String;
@@ -40,6 +41,7 @@ package com.playfab.AdminModels
             if(data.LinkedAccounts) { LinkedAccounts = new Vector.<PlayerLinkedAccount>(); for(var LinkedAccounts_iter:int = 0; LinkedAccounts_iter < data.LinkedAccounts.length; LinkedAccounts_iter++) { LinkedAccounts[LinkedAccounts_iter] = new PlayerLinkedAccount(data.LinkedAccounts[LinkedAccounts_iter]); }}
             if(data.Locations) { Locations = {}; for(var Locations_iter:String in data.Locations) { Locations[Locations_iter] = new PlayerLocation(data.Locations[Locations_iter]); }}
             Origination = data.Origination;
+            PlayerExperimentVariants = data.PlayerExperimentVariants ? Vector.<String>(data.PlayerExperimentVariants) : null;
             PlayerId = data.PlayerId;
             if(data.PlayerStatistics) { PlayerStatistics = new Vector.<PlayerStatistic>(); for(var PlayerStatistics_iter:int = 0; PlayerStatistics_iter < data.PlayerStatistics.length; PlayerStatistics_iter++) { PlayerStatistics[PlayerStatistics_iter] = new PlayerStatistic(data.PlayerStatistics[PlayerStatistics_iter]); }}
             PublisherId = data.PublisherId;
