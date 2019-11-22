@@ -484,6 +484,12 @@ package com.playfab
         public static const InsightsManagementSetStorageRetentionInvalidParameter:int = 1486;
         public static const InsightsManagementGetStorageUsageInvalidParameter:int = 1487;
         public static const InsightsManagementGetOperationStatusInvalidParameter:int = 1488;
+        public static const DuplicatePurchaseTransactionId:int = 1489;
+        public static const EvaluationModePlayerCountExceeded:int = 1490;
+        public static const GetPlayersInSegmentRateLimitExceeded:int = 1491;
+        public static const CloudScriptFunctionNameSizeExceeded:int = 1492;
+        public static const InsightsManagementTitleInEvaluationMode:int = 1493;
+        public static const CloudScriptAzureFunctionsQueueRequestError:int = 1494;
         public static const MatchmakingEntityInvalid:int = 2001;
         public static const MatchmakingPlayerAttributesInvalid:int = 2002;
         public static const MatchmakingQueueNotFound:int = 2016;
@@ -520,6 +526,8 @@ package com.playfab
         public static const CatalogConfigInvalid:int = 4010;
         public static const CatalogUnauthorized:int = 4011;
         public static const CatalogItemTypeInvalid:int = 4012;
+        public static const CatalogBadRequest:int = 4013;
+        public static const CatalogTooManyRequests:int = 4014;
         public static const ExportInvalidStatusUpdate:int = 5000;
         public static const ExportInvalidPrefix:int = 5001;
         public static const ExportBlobContainerDoesNotExist:int = 5002;
@@ -534,6 +542,7 @@ package com.playfab
         public static const ExportCantEditPendingExport:int = 5014;
         public static const ExportLimitExports:int = 5015;
         public static const ExportLimitEvents:int = 5016;
+        public static const ExportInvalidPartitionStatusModification:int = 5017;
         public static const TitleNotEnabledForParty:int = 6000;
         public static const PartyVersionNotFound:int = 6001;
         public static const MultiplayerServerBuildReferencedByMatchmakingQueue:int = 6002;
@@ -546,6 +555,9 @@ package com.playfab
         public static const ExperimentationExceededVariantNameLength:int = 7006;
         public static const ExperimentationExceededMaxVariantLength:int = 7007;
         public static const ExperimentInvalidId:int = 7008;
+        public static const ExperimentationNoScorecard:int = 7009;
+        public static const ExperimentationTreatmentAssignmentFailed:int = 7010;
+        public static const ExperimentationTreatmentAssignmentDisabled:int = 7011;
         public static const MaxActionDepthExceeded:int = 8000;
         public static const SnapshotNotFound:int = 11000;
 

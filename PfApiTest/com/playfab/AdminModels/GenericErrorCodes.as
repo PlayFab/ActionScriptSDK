@@ -481,6 +481,12 @@ package com.playfab.AdminModels
         public static const InsightsManagementSetStorageRetentionInvalidParameter:String = "InsightsManagementSetStorageRetentionInvalidParameter";
         public static const InsightsManagementGetStorageUsageInvalidParameter:String = "InsightsManagementGetStorageUsageInvalidParameter";
         public static const InsightsManagementGetOperationStatusInvalidParameter:String = "InsightsManagementGetOperationStatusInvalidParameter";
+        public static const DuplicatePurchaseTransactionId:String = "DuplicatePurchaseTransactionId";
+        public static const EvaluationModePlayerCountExceeded:String = "EvaluationModePlayerCountExceeded";
+        public static const GetPlayersInSegmentRateLimitExceeded:String = "GetPlayersInSegmentRateLimitExceeded";
+        public static const CloudScriptFunctionNameSizeExceeded:String = "CloudScriptFunctionNameSizeExceeded";
+        public static const InsightsManagementTitleInEvaluationMode:String = "InsightsManagementTitleInEvaluationMode";
+        public static const CloudScriptAzureFunctionsQueueRequestError:String = "CloudScriptAzureFunctionsQueueRequestError";
         public static const MatchmakingEntityInvalid:String = "MatchmakingEntityInvalid";
         public static const MatchmakingPlayerAttributesInvalid:String = "MatchmakingPlayerAttributesInvalid";
         public static const MatchmakingQueueNotFound:String = "MatchmakingQueueNotFound";
@@ -517,6 +523,8 @@ package com.playfab.AdminModels
         public static const CatalogConfigInvalid:String = "CatalogConfigInvalid";
         public static const CatalogUnauthorized:String = "CatalogUnauthorized";
         public static const CatalogItemTypeInvalid:String = "CatalogItemTypeInvalid";
+        public static const CatalogBadRequest:String = "CatalogBadRequest";
+        public static const CatalogTooManyRequests:String = "CatalogTooManyRequests";
         public static const ExportInvalidStatusUpdate:String = "ExportInvalidStatusUpdate";
         public static const ExportInvalidPrefix:String = "ExportInvalidPrefix";
         public static const ExportBlobContainerDoesNotExist:String = "ExportBlobContainerDoesNotExist";
@@ -531,6 +539,7 @@ package com.playfab.AdminModels
         public static const ExportCantEditPendingExport:String = "ExportCantEditPendingExport";
         public static const ExportLimitExports:String = "ExportLimitExports";
         public static const ExportLimitEvents:String = "ExportLimitEvents";
+        public static const ExportInvalidPartitionStatusModification:String = "ExportInvalidPartitionStatusModification";
         public static const TitleNotEnabledForParty:String = "TitleNotEnabledForParty";
         public static const PartyVersionNotFound:String = "PartyVersionNotFound";
         public static const MultiplayerServerBuildReferencedByMatchmakingQueue:String = "MultiplayerServerBuildReferencedByMatchmakingQueue";
@@ -543,6 +552,9 @@ package com.playfab.AdminModels
         public static const ExperimentationExceededVariantNameLength:String = "ExperimentationExceededVariantNameLength";
         public static const ExperimentationExceededMaxVariantLength:String = "ExperimentationExceededMaxVariantLength";
         public static const ExperimentInvalidId:String = "ExperimentInvalidId";
+        public static const ExperimentationNoScorecard:String = "ExperimentationNoScorecard";
+        public static const ExperimentationTreatmentAssignmentFailed:String = "ExperimentationTreatmentAssignmentFailed";
+        public static const ExperimentationTreatmentAssignmentDisabled:String = "ExperimentationTreatmentAssignmentDisabled";
         public static const MaxActionDepthExceeded:String = "MaxActionDepthExceeded";
         public static const SnapshotNotFound:String = "SnapshotNotFound";
 
