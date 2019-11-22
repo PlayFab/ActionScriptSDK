@@ -11,6 +11,7 @@ package com.playfab.ServerModels
         public var ContactEmailAddresses:Vector.<ContactEmailInfoModel>;
         public var Created:Date;
         public var DisplayName:String;
+        public var ExperimentVariants:Vector.<String>;
         public var LastLogin:Date;
         public var LinkedAccounts:Vector.<LinkedPlatformAccountModel>;
         public var Locations:Vector.<LocationModel>;
@@ -35,6 +36,7 @@ package com.playfab.ServerModels
             if(data.ContactEmailAddresses) { ContactEmailAddresses = new Vector.<ContactEmailInfoModel>(); for(var ContactEmailAddresses_iter:int = 0; ContactEmailAddresses_iter < data.ContactEmailAddresses.length; ContactEmailAddresses_iter++) { ContactEmailAddresses[ContactEmailAddresses_iter] = new ContactEmailInfoModel(data.ContactEmailAddresses[ContactEmailAddresses_iter]); }}
             Created = PlayFabUtil.parseDate(data.Created);
             DisplayName = data.DisplayName;
+            ExperimentVariants = data.ExperimentVariants ? Vector.<String>(data.ExperimentVariants) : null;
             LastLogin = PlayFabUtil.parseDate(data.LastLogin);
             if(data.LinkedAccounts) { LinkedAccounts = new Vector.<LinkedPlatformAccountModel>(); for(var LinkedAccounts_iter:int = 0; LinkedAccounts_iter < data.LinkedAccounts.length; LinkedAccounts_iter++) { LinkedAccounts[LinkedAccounts_iter] = new LinkedPlatformAccountModel(data.LinkedAccounts[LinkedAccounts_iter]); }}
             if(data.Locations) { Locations = new Vector.<LocationModel>(); for(var Locations_iter:int = 0; Locations_iter < data.Locations.length; Locations_iter++) { Locations[Locations_iter] = new LocationModel(data.Locations[Locations_iter]); }}

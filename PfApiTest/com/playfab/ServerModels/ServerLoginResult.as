@@ -12,6 +12,7 @@ package com.playfab.ServerModels
         public var PlayFabId:String;
         public var SessionTicket:String;
         public var SettingsForUser:UserSettings;
+        public var TreatmentAssignment:com.playfab.ServerModels.TreatmentAssignment;
 
         public function ServerLoginResult(data:Object=null)
         {
@@ -24,6 +25,7 @@ package com.playfab.ServerModels
             PlayFabId = data.PlayFabId;
             SessionTicket = data.SessionTicket;
             SettingsForUser = new UserSettings(data.SettingsForUser);
+            TreatmentAssignment = new com.playfab.ServerModels.TreatmentAssignment(data.TreatmentAssignment);
 
         }
     }

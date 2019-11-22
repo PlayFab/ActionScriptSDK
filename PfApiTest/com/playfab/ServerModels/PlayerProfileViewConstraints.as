@@ -9,6 +9,7 @@ package com.playfab.ServerModels
         public var ShowContactEmailAddresses:Boolean;
         public var ShowCreated:Boolean;
         public var ShowDisplayName:Boolean;
+        public var ShowExperimentVariants:Boolean;
         public var ShowLastLogin:Boolean;
         public var ShowLinkedAccounts:Boolean;
         public var ShowLocations:Boolean;
@@ -30,6 +31,7 @@ package com.playfab.ServerModels
             ShowContactEmailAddresses = data.ShowContactEmailAddresses;
             ShowCreated = data.ShowCreated;
             ShowDisplayName = data.ShowDisplayName;
+            ShowExperimentVariants = data.ShowExperimentVariants;
             ShowLastLogin = data.ShowLastLogin;
             ShowLinkedAccounts = data.ShowLinkedAccounts;
             ShowLocations = data.ShowLocations;
