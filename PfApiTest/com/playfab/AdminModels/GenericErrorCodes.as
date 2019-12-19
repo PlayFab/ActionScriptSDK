@@ -487,6 +487,7 @@ package com.playfab.AdminModels
         public static const CloudScriptFunctionNameSizeExceeded:String = "CloudScriptFunctionNameSizeExceeded";
         public static const InsightsManagementTitleInEvaluationMode:String = "InsightsManagementTitleInEvaluationMode";
         public static const CloudScriptAzureFunctionsQueueRequestError:String = "CloudScriptAzureFunctionsQueueRequestError";
+        public static const EvaluationModeTitleCountExceeded:String = "EvaluationModeTitleCountExceeded";
         public static const MatchmakingEntityInvalid:String = "MatchmakingEntityInvalid";
         public static const MatchmakingPlayerAttributesInvalid:String = "MatchmakingPlayerAttributesInvalid";
         public static const MatchmakingQueueNotFound:String = "MatchmakingQueueNotFound";
@@ -540,6 +541,9 @@ package com.playfab.AdminModels
         public static const ExportLimitExports:String = "ExportLimitExports";
         public static const ExportLimitEvents:String = "ExportLimitEvents";
         public static const ExportInvalidPartitionStatusModification:String = "ExportInvalidPartitionStatusModification";
+        public static const ExportCouldNotCreate:String = "ExportCouldNotCreate";
+        public static const ExportNoBackingDatabaseFound:String = "ExportNoBackingDatabaseFound";
+        public static const ExportCouldNotDelete:String = "ExportCouldNotDelete";
         public static const TitleNotEnabledForParty:String = "TitleNotEnabledForParty";
         public static const PartyVersionNotFound:String = "PartyVersionNotFound";
         public static const MultiplayerServerBuildReferencedByMatchmakingQueue:String = "MultiplayerServerBuildReferencedByMatchmakingQueue";
@@ -549,8 +553,8 @@ package com.playfab.AdminModels
         public static const ExperimentationExperimentNeverStarted:String = "ExperimentationExperimentNeverStarted";
         public static const ExperimentationExperimentDeleted:String = "ExperimentationExperimentDeleted";
         public static const ExperimentationClientTimeout:String = "ExperimentationClientTimeout";
-        public static const ExperimentationExceededVariantNameLength:String = "ExperimentationExceededVariantNameLength";
-        public static const ExperimentationExceededMaxVariantLength:String = "ExperimentationExceededMaxVariantLength";
+        public static const ExperimentationInvalidVariantConfiguration:String = "ExperimentationInvalidVariantConfiguration";
+        public static const ExperimentationInvalidVariableConfiguration:String = "ExperimentationInvalidVariableConfiguration";
         public static const ExperimentInvalidId:String = "ExperimentInvalidId";
         public static const ExperimentationNoScorecard:String = "ExperimentationNoScorecard";
         public static const ExperimentationTreatmentAssignmentFailed:String = "ExperimentationTreatmentAssignmentFailed";
