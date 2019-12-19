@@ -490,6 +490,7 @@ package com.playfab
         public static const CloudScriptFunctionNameSizeExceeded:int = 1492;
         public static const InsightsManagementTitleInEvaluationMode:int = 1493;
         public static const CloudScriptAzureFunctionsQueueRequestError:int = 1494;
+        public static const EvaluationModeTitleCountExceeded:int = 1495;
         public static const MatchmakingEntityInvalid:int = 2001;
         public static const MatchmakingPlayerAttributesInvalid:int = 2002;
         public static const MatchmakingQueueNotFound:int = 2016;
@@ -543,6 +544,9 @@ package com.playfab
         public static const ExportLimitExports:int = 5015;
         public static const ExportLimitEvents:int = 5016;
         public static const ExportInvalidPartitionStatusModification:int = 5017;
+        public static const ExportCouldNotCreate:int = 5018;
+        public static const ExportNoBackingDatabaseFound:int = 5019;
+        public static const ExportCouldNotDelete:int = 5020;
         public static const TitleNotEnabledForParty:int = 6000;
         public static const PartyVersionNotFound:int = 6001;
         public static const MultiplayerServerBuildReferencedByMatchmakingQueue:int = 6002;
@@ -552,8 +556,8 @@ package com.playfab
         public static const ExperimentationExperimentNeverStarted:int = 7003;
         public static const ExperimentationExperimentDeleted:int = 7004;
         public static const ExperimentationClientTimeout:int = 7005;
-        public static const ExperimentationExceededVariantNameLength:int = 7006;
-        public static const ExperimentationExceededMaxVariantLength:int = 7007;
+        public static const ExperimentationInvalidVariantConfiguration:int = 7006;
+        public static const ExperimentationInvalidVariableConfiguration:int = 7007;
         public static const ExperimentInvalidId:int = 7008;
         public static const ExperimentationNoScorecard:int = 7009;
         public static const ExperimentationTreatmentAssignmentFailed:int = 7010;
