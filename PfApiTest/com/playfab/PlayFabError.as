@@ -491,6 +491,7 @@ package com.playfab
         public static const InsightsManagementTitleInEvaluationMode:int = 1493;
         public static const CloudScriptAzureFunctionsQueueRequestError:int = 1494;
         public static const EvaluationModeTitleCountExceeded:int = 1495;
+        public static const InsightsManagementTitleNotInFlight:int = 1496;
         public static const MatchmakingEntityInvalid:int = 2001;
         public static const MatchmakingPlayerAttributesInvalid:int = 2002;
         public static const MatchmakingQueueNotFound:int = 2016;

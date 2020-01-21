@@ -30,6 +30,32 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL("/Match/CancelAllMatchmakingTicketsForPlayer"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
         }
 
+        public static function CancelAllServerBackfillTicketsForPlayer(request:CancelAllServerBackfillTicketsForPlayerRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:CancelAllServerBackfillTicketsForPlayerResult = new CancelAllServerBackfillTicketsForPlayerResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Match/CancelAllServerBackfillTicketsForPlayer"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+        }
+
         public static function CancelMatchmakingTicket(request:CancelMatchmakingTicketRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
@@ -54,6 +80,32 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL("/Match/CancelMatchmakingTicket"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+        }
+
+        public static function CancelServerBackfillTicket(request:CancelServerBackfillTicketRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:CancelServerBackfillTicketResult = new CancelServerBackfillTicketResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Match/CancelServerBackfillTicket"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
         }
 
         public static function CreateBuildAlias(request:CreateBuildAliasRequest, onComplete:Function, onError:Function):void
@@ -184,6 +236,32 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL("/MultiplayerServer/CreateRemoteUser"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+        }
+
+        public static function CreateServerBackfillTicket(request:CreateServerBackfillTicketRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:CreateServerBackfillTicketResult = new CreateServerBackfillTicketResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Match/CreateServerBackfillTicket"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
         }
 
         public static function CreateServerMatchmakingTicket(request:CreateServerMatchmakingTicketRequest, onComplete:Function, onError:Function):void
@@ -628,6 +706,32 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL("/MultiplayerServer/GetRemoteLoginEndpoint"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
         }
 
+        public static function GetServerBackfillTicket(request:GetServerBackfillTicketRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:GetServerBackfillTicketResult = new GetServerBackfillTicketResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Match/GetServerBackfillTicket"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+        }
+
         public static function GetTitleEnabledForMultiplayerServersStatus(request:GetTitleEnabledForMultiplayerServersStatusRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
@@ -1016,6 +1120,32 @@ package com.playfab
             }
 
             PlayFabHTTP.post(PlayFabSettings.GetURL("/MultiplayerServer/ListQosServersForTitle"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+        }
+
+        public static function ListServerBackfillTicketsForPlayer(request:ListServerBackfillTicketsForPlayerRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:ListServerBackfillTicketsForPlayerResult = new ListServerBackfillTicketsForPlayerResult(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Match/ListServerBackfillTicketsForPlayer"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
         }
 
         public static function ListVirtualMachineSummaries(request:ListVirtualMachineSummariesRequest, onComplete:Function, onError:Function):void
