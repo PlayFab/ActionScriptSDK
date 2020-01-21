@@ -488,6 +488,7 @@ package com.playfab.AdminModels
         public static const InsightsManagementTitleInEvaluationMode:String = "InsightsManagementTitleInEvaluationMode";
         public static const CloudScriptAzureFunctionsQueueRequestError:String = "CloudScriptAzureFunctionsQueueRequestError";
         public static const EvaluationModeTitleCountExceeded:String = "EvaluationModeTitleCountExceeded";
+        public static const InsightsManagementTitleNotInFlight:String = "InsightsManagementTitleNotInFlight";
         public static const MatchmakingEntityInvalid:String = "MatchmakingEntityInvalid";
         public static const MatchmakingPlayerAttributesInvalid:String = "MatchmakingPlayerAttributesInvalid";
         public static const MatchmakingQueueNotFound:String = "MatchmakingQueueNotFound";

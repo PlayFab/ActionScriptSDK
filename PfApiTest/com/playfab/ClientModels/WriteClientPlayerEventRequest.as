@@ -6,7 +6,6 @@ package com.playfab.ClientModels
     public class WriteClientPlayerEventRequest
     {
         public var Body:Object;
-        public var EventCustomTags:Object;
         public var EventName:String;
         public var Timestamp:Date;
 
@@ -15,7 +14,6 @@ package com.playfab.ClientModels
             if(data == null)
                 return;
             Body = data.Body;
-            EventCustomTags = data.EventCustomTags;
             EventName = data.EventName;
             Timestamp = PlayFabUtil.parseDate(data.Timestamp);
 
