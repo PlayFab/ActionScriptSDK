@@ -3,6 +3,7 @@ package com.playfab.MultiplayerModels
 {
     public class GetMultiplayerServerLogsRequest
     {
+        // Deprecated
         public var Region:String;
         public var ServerId:String;
 

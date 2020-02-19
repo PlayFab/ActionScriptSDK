@@ -6,6 +6,7 @@ package com.playfab.AdminModels
         public static const CloudScript:String = "CloudScript";
         public static const ActionsOnPlayerSegment:String = "ActionsOnPlayerSegment";
         public static const CloudScriptAzureFunctions:String = "CloudScriptAzureFunctions";
+        public static const InsightsScheduledScaling:String = "InsightsScheduledScaling";
 
     }
 }
