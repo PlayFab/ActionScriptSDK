@@ -563,6 +563,8 @@ package com.playfab
         public static const ExperimentationNoScorecard:int = 7009;
         public static const ExperimentationTreatmentAssignmentFailed:int = 7010;
         public static const ExperimentationTreatmentAssignmentDisabled:int = 7011;
+        public static const ExperimentationInvalidDuration:int = 7012;
+        public static const ExperimentationMaxExperimentsReached:int = 7013;
         public static const MaxActionDepthExceeded:int = 8000;
         public static const SnapshotNotFound:int = 11000;
 

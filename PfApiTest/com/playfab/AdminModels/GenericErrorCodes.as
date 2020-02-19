@@ -560,6 +560,8 @@ package com.playfab.AdminModels
         public static const ExperimentationNoScorecard:String = "ExperimentationNoScorecard";
         public static const ExperimentationTreatmentAssignmentFailed:String = "ExperimentationTreatmentAssignmentFailed";
         public static const ExperimentationTreatmentAssignmentDisabled:String = "ExperimentationTreatmentAssignmentDisabled";
+        public static const ExperimentationInvalidDuration:String = "ExperimentationInvalidDuration";
+        public static const ExperimentationMaxExperimentsReached:String = "ExperimentationMaxExperimentsReached";
         public static const MaxActionDepthExceeded:String = "MaxActionDepthExceeded";
         public static const SnapshotNotFound:String = "SnapshotNotFound";
 
