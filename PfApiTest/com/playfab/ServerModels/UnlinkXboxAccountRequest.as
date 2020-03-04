@@ -4,6 +4,7 @@ package com.playfab.ServerModels
     public class UnlinkXboxAccountRequest
     {
         public var PlayFabId:String;
+        // Deprecated
         public var XboxToken:String;
 
         public function UnlinkXboxAccountRequest(data:Object=null)
