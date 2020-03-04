@@ -492,6 +492,12 @@ package com.playfab
         public static const CloudScriptAzureFunctionsQueueRequestError:int = 1494;
         public static const EvaluationModeTitleCountExceeded:int = 1495;
         public static const InsightsManagementTitleNotInFlight:int = 1496;
+        public static const LimitNotFound:int = 1497;
+        public static const LimitNotAvailableViaAPI:int = 1498;
+        public static const InsightsManagementSetStorageRetentionBelowMinimum:int = 1499;
+        public static const InsightsManagementSetStorageRetentionAboveMaximum:int = 1500;
+        public static const AppleNotEnabledForTitle:int = 1501;
+        public static const InsightsManagementNewActiveEventArchiveLimitInvalid:int = 1502;
         public static const MatchmakingEntityInvalid:int = 2001;
         public static const MatchmakingPlayerAttributesInvalid:int = 2002;
         public static const MatchmakingQueueNotFound:int = 2016;
