@@ -497,7 +497,11 @@ package com.playfab
         public static const InsightsManagementSetStorageRetentionBelowMinimum:int = 1499;
         public static const InsightsManagementSetStorageRetentionAboveMaximum:int = 1500;
         public static const AppleNotEnabledForTitle:int = 1501;
-        public static const InsightsManagementNewActiveEventArchiveLimitInvalid:int = 1502;
+        public static const InsightsManagementNewActiveEventExportLimitInvalid:int = 1502;
+        public static const InsightsManagementSetPerformanceRateLimited:int = 1503;
+        public static const PartyRequestsThrottledFromRateLimiter:int = 1504;
+        public static const XboxServiceTooManyRequests:int = 1505;
+        public static const NintendoSwitchNotEnabledForTitle:int = 1506;
         public static const MatchmakingEntityInvalid:int = 2001;
         public static const MatchmakingPlayerAttributesInvalid:int = 2002;
         public static const MatchmakingQueueNotFound:int = 2016;
@@ -554,6 +558,11 @@ package com.playfab
         public static const ExportCouldNotCreate:int = 5018;
         public static const ExportNoBackingDatabaseFound:int = 5019;
         public static const ExportCouldNotDelete:int = 5020;
+        public static const ExportCannotDetermineEventQuery:int = 5021;
+        public static const ExportInvalidQuerySchemaModification:int = 5022;
+        public static const ExportQuerySchemaMissingRequiredColumns:int = 5023;
+        public static const ExportCannotParseQuery:int = 5024;
+        public static const ExportControlCommandsNotAllowed:int = 5025;
         public static const TitleNotEnabledForParty:int = 6000;
         public static const PartyVersionNotFound:int = 6001;
         public static const MultiplayerServerBuildReferencedByMatchmakingQueue:int = 6002;
@@ -572,6 +581,7 @@ package com.playfab
         public static const ExperimentationInvalidDuration:int = 7012;
         public static const ExperimentationMaxExperimentsReached:int = 7013;
         public static const MaxActionDepthExceeded:int = 8000;
+        public static const TitleNotOnUpdatedPricingPlan:int = 9000;
         public static const SnapshotNotFound:int = 11000;
 
 
