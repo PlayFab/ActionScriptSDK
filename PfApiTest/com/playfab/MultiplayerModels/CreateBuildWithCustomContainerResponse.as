@@ -15,8 +15,10 @@ package com.playfab.MultiplayerModels
         public var GameCertificateReferences:Vector.<GameCertificateReference>;
         public var Metadata:Object;
         public var MultiplayerServerCountPerVm:int;
+        public var OsPlatform:String;
         public var Ports:Vector.<Port>;
         public var RegionConfigurations:Vector.<BuildRegion>;
+        public var ServerType:String;
         public var VmSize:String;
 
         public function CreateBuildWithCustomContainerResponse(data:Object=null)
@@ -33,8 +35,10 @@ package com.playfab.MultiplayerModels
             if(data.GameCertificateReferences) { GameCertificateReferences = new Vector.<GameCertificateReference>(); for(var GameCertificateReferences_iter:int = 0; GameCertificateReferences_iter < data.GameCertificateReferences.length; GameCertificateReferences_iter++) { GameCertificateReferences[GameCertificateReferences_iter] = new GameCertificateReference(data.GameCertificateReferences[GameCertificateReferences_iter]); }}
             Metadata = data.Metadata;
             MultiplayerServerCountPerVm = data.MultiplayerServerCountPerVm;
+            OsPlatform = data.OsPlatform;
             if(data.Ports) { Ports = new Vector.<Port>(); for(var Ports_iter:int = 0; Ports_iter < data.Ports.length; Ports_iter++) { Ports[Ports_iter] = new Port(data.Ports[Ports_iter]); }}
             if(data.RegionConfigurations) { RegionConfigurations = new Vector.<BuildRegion>(); for(var RegionConfigurations_iter:int = 0; RegionConfigurations_iter < data.RegionConfigurations.length; RegionConfigurations_iter++) { RegionConfigurations[RegionConfigurations_iter] = new BuildRegion(data.RegionConfigurations[RegionConfigurations_iter]); }}
+            ServerType = data.ServerType;
             VmSize = data.VmSize;
 
         }

@@ -23,6 +23,7 @@ package com.playfab.ClientModels
         public static const FacebookInstantGames:String = "FacebookInstantGames";
         public static const OpenIdConnect:String = "OpenIdConnect";
         public static const Apple:String = "Apple";
+        public static const NintendoSwitchAccount:String = "NintendoSwitchAccount";
 
     }
 }

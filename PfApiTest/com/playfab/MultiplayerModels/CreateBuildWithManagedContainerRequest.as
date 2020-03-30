@@ -7,6 +7,7 @@ package com.playfab.MultiplayerModels
         public var ContainerFlavor:String;
         public var GameAssetReferences:Vector.<AssetReferenceParams>;
         public var GameCertificateReferences:Vector.<GameCertificateReferenceParams>;
+        public var GameWorkingDirectory:String;
         public var InstrumentationConfiguration:InstrumentationConfiguration;
         public var Metadata:Object;
         public var MultiplayerServerCountPerVm:int;
@@ -23,6 +24,7 @@ package com.playfab.MultiplayerModels
             ContainerFlavor = data.ContainerFlavor;
             if(data.GameAssetReferences) { GameAssetReferences = new Vector.<AssetReferenceParams>(); for(var GameAssetReferences_iter:int = 0; GameAssetReferences_iter < data.GameAssetReferences.length; GameAssetReferences_iter++) { GameAssetReferences[GameAssetReferences_iter] = new AssetReferenceParams(data.GameAssetReferences[GameAssetReferences_iter]); }}
             if(data.GameCertificateReferences) { GameCertificateReferences = new Vector.<GameCertificateReferenceParams>(); for(var GameCertificateReferences_iter:int = 0; GameCertificateReferences_iter < data.GameCertificateReferences.length; GameCertificateReferences_iter++) { GameCertificateReferences[GameCertificateReferences_iter] = new GameCertificateReferenceParams(data.GameCertificateReferences[GameCertificateReferences_iter]); }}
+            GameWorkingDirectory = data.GameWorkingDirectory;
             InstrumentationConfiguration = new InstrumentationConfiguration(data.InstrumentationConfiguration);
             Metadata = data.Metadata;
             MultiplayerServerCountPerVm = data.MultiplayerServerCountPerVm;

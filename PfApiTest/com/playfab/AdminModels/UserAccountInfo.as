@@ -6,6 +6,7 @@ package com.playfab.AdminModels
     public class UserAccountInfo
     {
         public var AndroidDeviceInfo:UserAndroidDeviceInfo;
+        public var AppleAccountInfo:UserAppleIdInfo;
         public var Created:Date;
         public var CustomIdInfo:UserCustomIdInfo;
         public var FacebookInfo:UserFacebookInfo;
@@ -14,6 +15,7 @@ package com.playfab.AdminModels
         public var GoogleInfo:UserGoogleInfo;
         public var IosDeviceInfo:UserIosDeviceInfo;
         public var KongregateInfo:UserKongregateInfo;
+        public var NintendoSwitchAccountInfo:UserNintendoSwitchAccountIdInfo;
         public var NintendoSwitchDeviceIdInfo:UserNintendoSwitchDeviceIdInfo;
         public var OpenIdInfo:Vector.<UserOpenIdInfo>;
         public var PlayFabId:String;
@@ -31,6 +33,7 @@ package com.playfab.AdminModels
             if(data == null)
                 return;
             AndroidDeviceInfo = new UserAndroidDeviceInfo(data.AndroidDeviceInfo);
+            AppleAccountInfo = new UserAppleIdInfo(data.AppleAccountInfo);
             Created = PlayFabUtil.parseDate(data.Created);
             CustomIdInfo = new UserCustomIdInfo(data.CustomIdInfo);
             FacebookInfo = new UserFacebookInfo(data.FacebookInfo);
@@ -39,6 +42,7 @@ package com.playfab.AdminModels
             GoogleInfo = new UserGoogleInfo(data.GoogleInfo);
             IosDeviceInfo = new UserIosDeviceInfo(data.IosDeviceInfo);
             KongregateInfo = new UserKongregateInfo(data.KongregateInfo);
+            NintendoSwitchAccountInfo = new UserNintendoSwitchAccountIdInfo(data.NintendoSwitchAccountInfo);
             NintendoSwitchDeviceIdInfo = new UserNintendoSwitchDeviceIdInfo(data.NintendoSwitchDeviceIdInfo);
             if(data.OpenIdInfo) { OpenIdInfo = new Vector.<UserOpenIdInfo>(); for(var OpenIdInfo_iter:int = 0; OpenIdInfo_iter < data.OpenIdInfo.length; OpenIdInfo_iter++) { OpenIdInfo[OpenIdInfo_iter] = new UserOpenIdInfo(data.OpenIdInfo[OpenIdInfo_iter]); }}
             PlayFabId = data.PlayFabId;

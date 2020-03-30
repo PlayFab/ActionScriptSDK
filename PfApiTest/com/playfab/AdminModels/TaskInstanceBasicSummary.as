@@ -6,6 +6,7 @@ package com.playfab.AdminModels
     public class TaskInstanceBasicSummary
     {
         public var CompletedAt:Date;
+        public var ErrorMessage:String;
         public var EstimatedSecondsRemaining:*;
         public var PercentComplete:*;
         public var ScheduledByUserId:String;
@@ -20,6 +21,7 @@ package com.playfab.AdminModels
             if(data == null)
                 return;
             CompletedAt = PlayFabUtil.parseDate(data.CompletedAt);
+            ErrorMessage = data.ErrorMessage;
             EstimatedSecondsRemaining = data.EstimatedSecondsRemaining;
             PercentComplete = data.PercentComplete;
             ScheduledByUserId = data.ScheduledByUserId;

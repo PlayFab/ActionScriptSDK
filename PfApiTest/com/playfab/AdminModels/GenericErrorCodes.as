@@ -494,7 +494,11 @@ package com.playfab.AdminModels
         public static const InsightsManagementSetStorageRetentionBelowMinimum:String = "InsightsManagementSetStorageRetentionBelowMinimum";
         public static const InsightsManagementSetStorageRetentionAboveMaximum:String = "InsightsManagementSetStorageRetentionAboveMaximum";
         public static const AppleNotEnabledForTitle:String = "AppleNotEnabledForTitle";
-        public static const InsightsManagementNewActiveEventArchiveLimitInvalid:String = "InsightsManagementNewActiveEventArchiveLimitInvalid";
+        public static const InsightsManagementNewActiveEventExportLimitInvalid:String = "InsightsManagementNewActiveEventExportLimitInvalid";
+        public static const InsightsManagementSetPerformanceRateLimited:String = "InsightsManagementSetPerformanceRateLimited";
+        public static const PartyRequestsThrottledFromRateLimiter:String = "PartyRequestsThrottledFromRateLimiter";
+        public static const XboxServiceTooManyRequests:String = "XboxServiceTooManyRequests";
+        public static const NintendoSwitchNotEnabledForTitle:String = "NintendoSwitchNotEnabledForTitle";
         public static const MatchmakingEntityInvalid:String = "MatchmakingEntityInvalid";
         public static const MatchmakingPlayerAttributesInvalid:String = "MatchmakingPlayerAttributesInvalid";
         public static const MatchmakingQueueNotFound:String = "MatchmakingQueueNotFound";
@@ -551,6 +555,11 @@ package com.playfab.AdminModels
         public static const ExportCouldNotCreate:String = "ExportCouldNotCreate";
         public static const ExportNoBackingDatabaseFound:String = "ExportNoBackingDatabaseFound";
         public static const ExportCouldNotDelete:String = "ExportCouldNotDelete";
+        public static const ExportCannotDetermineEventQuery:String = "ExportCannotDetermineEventQuery";
+        public static const ExportInvalidQuerySchemaModification:String = "ExportInvalidQuerySchemaModification";
+        public static const ExportQuerySchemaMissingRequiredColumns:String = "ExportQuerySchemaMissingRequiredColumns";
+        public static const ExportCannotParseQuery:String = "ExportCannotParseQuery";
+        public static const ExportControlCommandsNotAllowed:String = "ExportControlCommandsNotAllowed";
         public static const TitleNotEnabledForParty:String = "TitleNotEnabledForParty";
         public static const PartyVersionNotFound:String = "PartyVersionNotFound";
         public static const MultiplayerServerBuildReferencedByMatchmakingQueue:String = "MultiplayerServerBuildReferencedByMatchmakingQueue";
@@ -569,6 +578,7 @@ package com.playfab.AdminModels
         public static const ExperimentationInvalidDuration:String = "ExperimentationInvalidDuration";
         public static const ExperimentationMaxExperimentsReached:String = "ExperimentationMaxExperimentsReached";
         public static const MaxActionDepthExceeded:String = "MaxActionDepthExceeded";
+        public static const TitleNotOnUpdatedPricingPlan:String = "TitleNotOnUpdatedPricingPlan";
         public static const SnapshotNotFound:String = "SnapshotNotFound";
 
     }
