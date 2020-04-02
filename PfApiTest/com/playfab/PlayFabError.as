@@ -563,6 +563,7 @@ package com.playfab
         public static const ExportQuerySchemaMissingRequiredColumns:int = 5023;
         public static const ExportCannotParseQuery:int = 5024;
         public static const ExportControlCommandsNotAllowed:int = 5025;
+        public static const ExportQueryMissingTableReference:int = 5026;
         public static const TitleNotEnabledForParty:int = 6000;
         public static const PartyVersionNotFound:int = 6001;
         public static const MultiplayerServerBuildReferencedByMatchmakingQueue:int = 6002;
@@ -580,6 +581,7 @@ package com.playfab
         public static const ExperimentationTreatmentAssignmentDisabled:int = 7011;
         public static const ExperimentationInvalidDuration:int = 7012;
         public static const ExperimentationMaxExperimentsReached:int = 7013;
+        public static const ExperimentationExperimentSchedulingInProgress:int = 7014;
         public static const MaxActionDepthExceeded:int = 8000;
         public static const TitleNotOnUpdatedPricingPlan:int = 9000;
         public static const SnapshotNotFound:int = 11000;
