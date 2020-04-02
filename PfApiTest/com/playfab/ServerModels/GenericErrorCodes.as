@@ -560,6 +560,7 @@ package com.playfab.ServerModels
         public static const ExportQuerySchemaMissingRequiredColumns:String = "ExportQuerySchemaMissingRequiredColumns";
         public static const ExportCannotParseQuery:String = "ExportCannotParseQuery";
         public static const ExportControlCommandsNotAllowed:String = "ExportControlCommandsNotAllowed";
+        public static const ExportQueryMissingTableReference:String = "ExportQueryMissingTableReference";
         public static const TitleNotEnabledForParty:String = "TitleNotEnabledForParty";
         public static const PartyVersionNotFound:String = "PartyVersionNotFound";
         public static const MultiplayerServerBuildReferencedByMatchmakingQueue:String = "MultiplayerServerBuildReferencedByMatchmakingQueue";
@@ -577,6 +578,7 @@ package com.playfab.ServerModels
         public static const ExperimentationTreatmentAssignmentDisabled:String = "ExperimentationTreatmentAssignmentDisabled";
         public static const ExperimentationInvalidDuration:String = "ExperimentationInvalidDuration";
         public static const ExperimentationMaxExperimentsReached:String = "ExperimentationMaxExperimentsReached";
+        public static const ExperimentationExperimentSchedulingInProgress:String = "ExperimentationExperimentSchedulingInProgress";
         public static const MaxActionDepthExceeded:String = "MaxActionDepthExceeded";
         public static const TitleNotOnUpdatedPricingPlan:String = "TitleNotOnUpdatedPricingPlan";
         public static const SnapshotNotFound:String = "SnapshotNotFound";
