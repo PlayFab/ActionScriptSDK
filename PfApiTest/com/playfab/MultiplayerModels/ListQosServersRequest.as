@@ -1,6 +1,7 @@
 
 package com.playfab.MultiplayerModels
 {
+    // Deprecated
     public class ListQosServersRequest
     {
 

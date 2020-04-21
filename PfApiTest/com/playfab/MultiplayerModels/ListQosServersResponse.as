@@ -1,6 +1,7 @@
 
 package com.playfab.MultiplayerModels
 {
+    // Deprecated
     public class ListQosServersResponse
     {
         public var PageSize:int;
