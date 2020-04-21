@@ -502,6 +502,7 @@ package com.playfab
         public static const PartyRequestsThrottledFromRateLimiter:int = 1504;
         public static const XboxServiceTooManyRequests:int = 1505;
         public static const NintendoSwitchNotEnabledForTitle:int = 1506;
+        public static const RequestMultiplayerServersThrottledFromRateLimiter:int = 1507;
         public static const MatchmakingEntityInvalid:int = 2001;
         public static const MatchmakingPlayerAttributesInvalid:int = 2002;
         public static const MatchmakingQueueNotFound:int = 2016;

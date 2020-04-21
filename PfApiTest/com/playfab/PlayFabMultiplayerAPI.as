@@ -420,6 +420,32 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL("/MultiplayerServer/DeleteCertificate"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
         }
 
+        public static function DeleteContainerImageRepository(request:DeleteContainerImageRequest, onComplete:Function, onError:Function):void
+        {
+            if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
+            var requetJson:String = JSON.stringify( request );
+
+            var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
+            {
+                if(error)
+                {
+                    if(onError != null)
+                        onError(error);
+                    if(PlayFabSettings.GlobalErrorHandler != null)
+                        PlayFabSettings.GlobalErrorHandler(error);
+                }
+                else
+                {
+                    var result:EmptyResponse = new EmptyResponse(resultData);
+
+                    if(onComplete != null)
+                        onComplete(result);
+                }
+            }
+
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/MultiplayerServer/DeleteContainerImageRepository"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+        }
+
         public static function DeleteRemoteUser(request:DeleteRemoteUserRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
@@ -1122,6 +1148,7 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL("/MultiplayerServer/ListPartyQosServers"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
         }
 
+        [Deprecated(message="The ListQosServers API and its associated datatypes are scheduled for deprecation. Use ListQosServersForTitle instead.", replacement="ListQosServersForTitle")]
         public static function ListQosServers(request:ListQosServersRequest, onComplete:Function, onError:Function):void
         {
 

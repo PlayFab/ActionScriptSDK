@@ -499,6 +499,7 @@ package com.playfab.ServerModels
         public static const PartyRequestsThrottledFromRateLimiter:String = "PartyRequestsThrottledFromRateLimiter";
         public static const XboxServiceTooManyRequests:String = "XboxServiceTooManyRequests";
         public static const NintendoSwitchNotEnabledForTitle:String = "NintendoSwitchNotEnabledForTitle";
+        public static const RequestMultiplayerServersThrottledFromRateLimiter:String = "RequestMultiplayerServersThrottledFromRateLimiter";
         public static const MatchmakingEntityInvalid:String = "MatchmakingEntityInvalid";
         public static const MatchmakingPlayerAttributesInvalid:String = "MatchmakingPlayerAttributesInvalid";
         public static const MatchmakingQueueNotFound:String = "MatchmakingQueueNotFound";
