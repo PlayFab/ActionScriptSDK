@@ -7,6 +7,7 @@ package com.playfab.ExperimentationModels
         public var Id:String;
         public var IsControl:Boolean;
         public var Name:String;
+        public var TitleDataOverrideId:String;
         public var TrafficPercentage:uint;
         public var Variables:Vector.<Variable>;
 
@@ -18,6 +19,7 @@ package com.playfab.ExperimentationModels
             Id = data.Id;
             IsControl = data.IsControl;
             Name = data.Name;
+            TitleDataOverrideId = data.TitleDataOverrideId;
             TrafficPercentage = data.TrafficPercentage;
             if(data.Variables) { Variables = new Vector.<Variable>(); for(var Variables_iter:int = 0; Variables_iter < data.Variables.length; Variables_iter++) { Variables[Variables_iter] = new Variable(data.Variables[Variables_iter]); }}
 

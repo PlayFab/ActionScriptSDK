@@ -500,6 +500,8 @@ package com.playfab.AdminModels
         public static const XboxServiceTooManyRequests:String = "XboxServiceTooManyRequests";
         public static const NintendoSwitchNotEnabledForTitle:String = "NintendoSwitchNotEnabledForTitle";
         public static const RequestMultiplayerServersThrottledFromRateLimiter:String = "RequestMultiplayerServersThrottledFromRateLimiter";
+        public static const TitleDataInstanceNotFound:String = "TitleDataInstanceNotFound";
+        public static const DuplicateTitleDataOverrideInstanceName:String = "DuplicateTitleDataOverrideInstanceName";
         public static const MatchmakingEntityInvalid:String = "MatchmakingEntityInvalid";
         public static const MatchmakingPlayerAttributesInvalid:String = "MatchmakingPlayerAttributesInvalid";
         public static const MatchmakingQueueNotFound:String = "MatchmakingQueueNotFound";
@@ -580,6 +582,7 @@ package com.playfab.AdminModels
         public static const ExperimentationInvalidDuration:String = "ExperimentationInvalidDuration";
         public static const ExperimentationMaxExperimentsReached:String = "ExperimentationMaxExperimentsReached";
         public static const ExperimentationExperimentSchedulingInProgress:String = "ExperimentationExperimentSchedulingInProgress";
+        public static const ExperimentationExistingCodelessScheduled:String = "ExperimentationExistingCodelessScheduled";
         public static const MaxActionDepthExceeded:String = "MaxActionDepthExceeded";
         public static const TitleNotOnUpdatedPricingPlan:String = "TitleNotOnUpdatedPricingPlan";
         public static const SnapshotNotFound:String = "SnapshotNotFound";
