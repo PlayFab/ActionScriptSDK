@@ -1124,7 +1124,7 @@ package com.playfab
 
         public static function ListPartyQosServers(request:ListPartyQosServersRequest, onComplete:Function, onError:Function):void
         {
-            if (PlayFabSettings.EntityToken == null) throw new Error("Must call GetEntityToken to call this method");
+
             var requetJson:String = JSON.stringify( request );
 
             var onPostComplete:Function = function(resultData:Object, error:PlayFabError):void
@@ -1145,7 +1145,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL("/MultiplayerServer/ListPartyQosServers"), requetJson, "X-EntityToken", PlayFabSettings.EntityToken, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/MultiplayerServer/ListPartyQosServers"), requetJson, null, null, onPostComplete);
         }
 
         [Deprecated(message="The ListQosServers API and its associated datatypes are scheduled for deprecation. Use ListQosServersForTitle instead.", replacement="ListQosServersForTitle")]

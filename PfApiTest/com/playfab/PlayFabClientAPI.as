@@ -2086,7 +2086,7 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL("/Client/LinkKongregate"), requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
-        public static function LinkNintendoSwitchAccount(request:LinkNintendoSwitchAccountRequest, onComplete:Function, onError:Function):void
+        public static function LinkNintendoAccount(request:LinkNintendoAccountRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
@@ -2109,7 +2109,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL("/Client/LinkNintendoSwitchAccount"), requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Client/LinkNintendoAccount"), requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function LinkNintendoSwitchDeviceId(request:LinkNintendoSwitchDeviceIdRequest, onComplete:Function, onError:Function):void
@@ -2594,7 +2594,7 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL("/Client/LoginWithKongregate"), requetJson, null, null, onPostComplete);
         }
 
-        public static function LoginWithNintendoSwitchAccount(request:LoginWithNintendoSwitchAccountRequest, onComplete:Function, onError:Function):void
+        public static function LoginWithNintendoAccount(request:LoginWithNintendoAccountRequest, onComplete:Function, onError:Function):void
         {
             request.TitleId = PlayFabSettings.TitleId != null ? PlayFabSettings.TitleId : request.TitleId;
             if(request.TitleId == null) throw new Error ("Must be have PlayFabSettings.TitleId set to call this method");
@@ -2621,7 +2621,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL("/Client/LoginWithNintendoSwitchAccount"), requetJson, null, null, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Client/LoginWithNintendoAccount"), requetJson, null, null, onPostComplete);
         }
 
         public static function LoginWithNintendoSwitchDeviceId(request:LoginWithNintendoSwitchDeviceIdRequest, onComplete:Function, onError:Function):void
@@ -3729,7 +3729,7 @@ package com.playfab
             PlayFabHTTP.post(PlayFabSettings.GetURL("/Client/UnlinkKongregate"), requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
-        public static function UnlinkNintendoSwitchAccount(request:UnlinkNintendoSwitchAccountRequest, onComplete:Function, onError:Function):void
+        public static function UnlinkNintendoAccount(request:UnlinkNintendoAccountRequest, onComplete:Function, onError:Function):void
         {
             if (PlayFabSettings.ClientSessionTicket == null) throw new Error("Must be logged in to call this method");
             var requetJson:String = JSON.stringify( request );
@@ -3752,7 +3752,7 @@ package com.playfab
                 }
             }
 
-            PlayFabHTTP.post(PlayFabSettings.GetURL("/Client/UnlinkNintendoSwitchAccount"), requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
+            PlayFabHTTP.post(PlayFabSettings.GetURL("/Client/UnlinkNintendoAccount"), requetJson, "X-Authorization", PlayFabSettings.ClientSessionTicket, onPostComplete);
         }
 
         public static function UnlinkNintendoSwitchDeviceId(request:UnlinkNintendoSwitchDeviceIdRequest, onComplete:Function, onError:Function):void
