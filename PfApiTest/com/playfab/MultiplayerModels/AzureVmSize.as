@@ -29,6 +29,10 @@ package com.playfab.MultiplayerModels
         public static const Standard_F4s_v2:String = "Standard_F4s_v2";
         public static const Standard_F8s_v2:String = "Standard_F8s_v2";
         public static const Standard_F16s_v2:String = "Standard_F16s_v2";
+        public static const Standard_D2as_v4:String = "Standard_D2as_v4";
+        public static const Standard_D4as_v4:String = "Standard_D4as_v4";
+        public static const Standard_D8as_v4:String = "Standard_D8as_v4";
+        public static const Standard_D16as_v4:String = "Standard_D16as_v4";
 
     }
 }
