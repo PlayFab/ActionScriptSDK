@@ -3,6 +3,7 @@ package com.playfab.MultiplayerModels
 {
     public class CreateBuildWithCustomContainerRequest
     {
+        public var AreAssetsReadonly:*;
         public var BuildName:String;
         public var ContainerFlavor:String;
         public var ContainerImageReference:ContainerImageReference;
@@ -13,12 +14,14 @@ package com.playfab.MultiplayerModels
         public var MultiplayerServerCountPerVm:int;
         public var Ports:Vector.<Port>;
         public var RegionConfigurations:Vector.<BuildRegionParams>;
+        public var UseStreamingForAssetDownloads:*;
         public var VmSize:String;
 
         public function CreateBuildWithCustomContainerRequest(data:Object=null)
         {
             if(data == null)
                 return;
+            AreAssetsReadonly = data.AreAssetsReadonly;
             BuildName = data.BuildName;
             ContainerFlavor = data.ContainerFlavor;
             ContainerImageReference = new ContainerImageReference(data.ContainerImageReference);
@@ -29,6 +32,7 @@ package com.playfab.MultiplayerModels
             MultiplayerServerCountPerVm = data.MultiplayerServerCountPerVm;
             if(data.Ports) { Ports = new Vector.<Port>(); for(var Ports_iter:int = 0; Ports_iter < data.Ports.length; Ports_iter++) { Ports[Ports_iter] = new Port(data.Ports[Ports_iter]); }}
             if(data.RegionConfigurations) { RegionConfigurations = new Vector.<BuildRegionParams>(); for(var RegionConfigurations_iter:int = 0; RegionConfigurations_iter < data.RegionConfigurations.length; RegionConfigurations_iter++) { RegionConfigurations[RegionConfigurations_iter] = new BuildRegionParams(data.RegionConfigurations[RegionConfigurations_iter]); }}
+            UseStreamingForAssetDownloads = data.UseStreamingForAssetDownloads;
             VmSize = data.VmSize;
 
         }

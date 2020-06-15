@@ -3,6 +3,7 @@ package com.playfab.MultiplayerModels
 {
     public class CreateBuildWithManagedContainerRequest
     {
+        public var AreAssetsReadonly:*;
         public var BuildName:String;
         public var ContainerFlavor:String;
         public var GameAssetReferences:Vector.<AssetReferenceParams>;
@@ -14,12 +15,14 @@ package com.playfab.MultiplayerModels
         public var Ports:Vector.<Port>;
         public var RegionConfigurations:Vector.<BuildRegionParams>;
         public var StartMultiplayerServerCommand:String;
+        public var UseStreamingForAssetDownloads:*;
         public var VmSize:String;
 
         public function CreateBuildWithManagedContainerRequest(data:Object=null)
         {
             if(data == null)
                 return;
+            AreAssetsReadonly = data.AreAssetsReadonly;
             BuildName = data.BuildName;
             ContainerFlavor = data.ContainerFlavor;
             if(data.GameAssetReferences) { GameAssetReferences = new Vector.<AssetReferenceParams>(); for(var GameAssetReferences_iter:int = 0; GameAssetReferences_iter < data.GameAssetReferences.length; GameAssetReferences_iter++) { GameAssetReferences[GameAssetReferences_iter] = new AssetReferenceParams(data.GameAssetReferences[GameAssetReferences_iter]); }}
@@ -31,6 +34,7 @@ package com.playfab.MultiplayerModels
             if(data.Ports) { Ports = new Vector.<Port>(); for(var Ports_iter:int = 0; Ports_iter < data.Ports.length; Ports_iter++) { Ports[Ports_iter] = new Port(data.Ports[Ports_iter]); }}
             if(data.RegionConfigurations) { RegionConfigurations = new Vector.<BuildRegionParams>(); for(var RegionConfigurations_iter:int = 0; RegionConfigurations_iter < data.RegionConfigurations.length; RegionConfigurations_iter++) { RegionConfigurations[RegionConfigurations_iter] = new BuildRegionParams(data.RegionConfigurations[RegionConfigurations_iter]); }}
             StartMultiplayerServerCommand = data.StartMultiplayerServerCommand;
+            UseStreamingForAssetDownloads = data.UseStreamingForAssetDownloads;
             VmSize = data.VmSize;
 
         }

@@ -503,8 +503,8 @@ package com.playfab
         public static const XboxServiceTooManyRequests:int = 1505;
         public static const NintendoSwitchNotEnabledForTitle:int = 1506;
         public static const RequestMultiplayerServersThrottledFromRateLimiter:int = 1507;
-        public static const TitleDataInstanceNotFound:int = 1508;
-        public static const DuplicateTitleDataOverrideInstanceName:int = 1509;
+        public static const TitleDataOverrideNotFound:int = 1508;
+        public static const DuplicateKeys:int = 1509;
         public static const MatchmakingEntityInvalid:int = 2001;
         public static const MatchmakingPlayerAttributesInvalid:int = 2002;
         public static const MatchmakingQueueNotFound:int = 2016;
