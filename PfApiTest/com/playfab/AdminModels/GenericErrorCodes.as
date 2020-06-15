@@ -500,8 +500,8 @@ package com.playfab.AdminModels
         public static const XboxServiceTooManyRequests:String = "XboxServiceTooManyRequests";
         public static const NintendoSwitchNotEnabledForTitle:String = "NintendoSwitchNotEnabledForTitle";
         public static const RequestMultiplayerServersThrottledFromRateLimiter:String = "RequestMultiplayerServersThrottledFromRateLimiter";
-        public static const TitleDataInstanceNotFound:String = "TitleDataInstanceNotFound";
-        public static const DuplicateTitleDataOverrideInstanceName:String = "DuplicateTitleDataOverrideInstanceName";
+        public static const TitleDataOverrideNotFound:String = "TitleDataOverrideNotFound";
+        public static const DuplicateKeys:String = "DuplicateKeys";
         public static const MatchmakingEntityInvalid:String = "MatchmakingEntityInvalid";
         public static const MatchmakingPlayerAttributesInvalid:String = "MatchmakingPlayerAttributesInvalid";
         public static const MatchmakingQueueNotFound:String = "MatchmakingQueueNotFound";

@@ -5,6 +5,7 @@ package com.playfab.MultiplayerModels
 
     public class CreateBuildWithManagedContainerResponse
     {
+        public var AreAssetsReadonly:*;
         public var BuildId:String;
         public var BuildName:String;
         public var ContainerFlavor:String;
@@ -20,12 +21,14 @@ package com.playfab.MultiplayerModels
         public var RegionConfigurations:Vector.<BuildRegion>;
         public var ServerType:String;
         public var StartMultiplayerServerCommand:String;
+        public var UseStreamingForAssetDownloads:*;
         public var VmSize:String;
 
         public function CreateBuildWithManagedContainerResponse(data:Object=null)
         {
             if(data == null)
                 return;
+            AreAssetsReadonly = data.AreAssetsReadonly;
             BuildId = data.BuildId;
             BuildName = data.BuildName;
             ContainerFlavor = data.ContainerFlavor;
@@ -41,6 +44,7 @@ package com.playfab.MultiplayerModels
             if(data.RegionConfigurations) { RegionConfigurations = new Vector.<BuildRegion>(); for(var RegionConfigurations_iter:int = 0; RegionConfigurations_iter < data.RegionConfigurations.length; RegionConfigurations_iter++) { RegionConfigurations[RegionConfigurations_iter] = new BuildRegion(data.RegionConfigurations[RegionConfigurations_iter]); }}
             ServerType = data.ServerType;
             StartMultiplayerServerCommand = data.StartMultiplayerServerCommand;
+            UseStreamingForAssetDownloads = data.UseStreamingForAssetDownloads;
             VmSize = data.VmSize;
 
         }
