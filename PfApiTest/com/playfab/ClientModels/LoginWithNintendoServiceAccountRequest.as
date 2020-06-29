@@ -1,7 +1,7 @@
 
 package com.playfab.ClientModels
 {
-    public class LoginWithNintendoAccountRequest
+    public class LoginWithNintendoServiceAccountRequest
     {
         public var CreateAccount:*;
         public var EncryptedRequest:String;
@@ -10,7 +10,7 @@ package com.playfab.ClientModels
         public var PlayerSecret:String;
         public var TitleId:String;
 
-        public function LoginWithNintendoAccountRequest(data:Object=null)
+        public function LoginWithNintendoServiceAccountRequest(data:Object=null)
         {
             if(data == null)
                 return;
