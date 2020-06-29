@@ -1,12 +1,12 @@
 
 package com.playfab.ClientModels
 {
-    public class LinkNintendoAccountRequest
+    public class LinkNintendoServiceAccountRequest
     {
         public var ForceLink:*;
         public var IdentityToken:String;
 
-        public function LinkNintendoAccountRequest(data:Object=null)
+        public function LinkNintendoServiceAccountRequest(data:Object=null)
         {
             if(data == null)
                 return;
