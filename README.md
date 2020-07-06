@@ -1,5 +1,6 @@
 # ActionScriptSDK README
 
+**NOTICE: This repo is locked and deprecated. No additional updates will be made to this repo.**
 
 ## 1. Overview:
 
